@@ -4,10 +4,11 @@
 
 <script>
 // TODO REMOVE SERV
-import stayService from '../services/stay.service.js';
+import stayService from "../services/stay.service.js";
+import userService from "../services/user.service.js";
 
 export default {
-  name: 'home-page',
+  name: "home-page",
   data() {
     return {
       stays: null,
