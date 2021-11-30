@@ -4,14 +4,14 @@
 // const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 // var gWatchedUser = null;
 
-import { utilService } from "./util.service.js";
+import { utilService } from './util.service.js';
 // import { storageService } from './async-storage.service.js';
 
-const USERS_KEY = "users";
+const USERS_KEY = 'users';
 let gUsers;
 _createUsers();
 
-console.log("gUsers", gUsers);
+console.log('gUsers', gUsers);
 
 export const userService = {
   login,
@@ -29,23 +29,23 @@ export const userService = {
 window.userService = userService;
 
 function getUsers() {
-  return storageService.query("user");
+  return storageService.query('user');
   // return httpService.get(`user`)
 }
 
 async function getById(userId) {
-  const user = await storageService.get("user", userId);
+  const user = await storageService.get('user', userId);
   // const user = await httpService.get(`user/${userId}`)
   gWatchedUser = user;
   return user;
 }
 function remove(userId) {
-  return storageService.remove("user", userId);
+  return storageService.remove('user', userId);
   // return httpService.delete(`user/${userId}`)
 }
 
 async function update(user) {
-  await storageService.put("user", user);
+  await storageService.put('user', user);
   // user = await httpService.put(`user/${user._id}`, user)
   // Handle case in which admin updates other user's details
   if (getLoggedInUser()._id === user._id) _saveLocalUser(user);
@@ -53,7 +53,7 @@ async function update(user) {
 }
 
 async function login(userCred) {
-  const users = await storageService.query("user");
+  const users = await storageService.query('user');
   const user = users.find((user) => user.username === userCred.username);
   return _saveLocalUser(user);
 
@@ -63,7 +63,7 @@ async function login(userCred) {
 }
 async function signup(userCred) {
   userCred.score = 10000;
-  const user = await storageService.post("user", userCred);
+  const user = await storageService.post('user', userCred);
   // const user = await httpService.post('auth/signup', userCred)
   // socketService.emit('set-user-socket', user._id);
   return _saveLocalUser(user);
@@ -76,7 +76,7 @@ async function logout() {
 
 async function changeScore(by) {
   const user = getLoggedInUser();
-  if (!user) throw new Error("Not loggedin");
+  if (!user) throw new Error('Not loggedin');
   user.score = user.score + by || by;
   await update(user);
   return user.score;
@@ -89,7 +89,7 @@ function _saveLocalUser(user) {
 
 function getLoggedInUser() {
   return JSON.parse(
-    sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || "null"
+    sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || 'null'
   );
 }
 
@@ -106,14 +106,14 @@ function getLoggedInUser() {
   // Dev Helper: Listens to when localStorage changes in OTHER browser
 
   // Here we are listening to changes for the watched user (comming from other browsers)
-  window.addEventListener("storage", async () => {
+  window.addEventListener('storage', async () => {
     if (!gWatchedUser) return;
-    const freshUsers = await storageService.query("user");
+    const freshUsers = await storageService.query('user');
     const watchedUser = freshUsers.find((u) => u._id === gWatchedUser._id);
     if (!watchedUser) return;
     if (gWatchedUser.score !== watchedUser.score) {
       console.log(
-        "Watched user score changed - localStorage updated from another browser"
+        'Watched user score changed - localStorage updated from another browser'
       );
       socketService.emit(SOCKET_EVENT_USER_UPDATED, watchedUser);
     }
@@ -130,74 +130,94 @@ function getLoggedInUser() {
 function _createUsers() {
   const users = [
     {
-      _id: "kj900",
-      fullname: "Marlon Bordo",
+      _id: 'kj900',
+      fullname: 'Marlon Bordo',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638300062/our_kind_of_people_lance_gross_2x_ssvg9h.jpg",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638300062/our_kind_of_people_lance_gross_2x_ssvg9h.jpg',
       isAdmin: false,
       isHost: true,
-      username: "marlo",
-      password: "123",
+      username: 'marlo',
+      password: '123',
     },
     {
-      _id: "f8989",
-      fullname: "Bonnie Bonno",
+      _id: 'f8989',
+      fullname: 'Bonnie Bonno',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638299789/host_qszv7p.jpg",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638299789/host_qszv7p.jpg',
       isAdmin: false,
       isHost: true,
-      username: "bonnie",
-      password: "123",
+      username: 'bonnie',
+      password: '123',
     },
     {
-      _id: "t36367",
-      fullname: "Tee Tyrel",
+      _id: 't36367',
+      fullname: 'Tee Tyrel',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638300901/pexels-photo-1300402_wtxf88.jpg",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638300901/pexels-photo-1300402_wtxf88.jpg',
       isAdmin: false,
       isHost: true,
-      username: "tee",
-      password: "123",
+      username: 'tee',
+      password: '123',
     },
     {
-      _id: "u120",
-      fullname: "Will Smit",
+      _id: 'u120',
+      fullname: 'Will Smit',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638299465/tel-aviv/apr1/wouter-aghina_fc-mask_profile_1536x1152_wmamov.webp",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638299465/tel-aviv/apr1/wouter-aghina_fc-mask_profile_1536x1152_wmamov.webp',
       isAdmin: false,
       isHost: true,
-      username: "WillS",
-      password: "",
+      username: 'WillS',
+      password: '',
     },
     {
-      _id: "u121",
-      fullname: "Limor Ronen",
+      _id: 'u121',
+      fullname: 'Limor Ronen',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638299259/tel-aviv/apr2/host_csyws6.jpg",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638299259/tel-aviv/apr2/host_csyws6.jpg',
       isAdmin: false,
       isHost: true,
-      username: "LimRon",
-      password: "",
+      username: 'LimRon',
+      password: '',
     },
     {
-      _id: "u122",
-      fullname: "Tom Dvir",
+      _id: 'u122',
+      fullname: 'Tom Dvir',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638300900/depositphotos_11412590-stock-photo-handsome-young-man_f1iwbg.jpg",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638300900/depositphotos_11412590-stock-photo-handsome-young-man_f1iwbg.jpg',
       isAdmin: false,
       isHost: true,
-      username: "tom123",
-      password: "",
+      username: 'tom123',
+      password: '',
     },
     {
-      _id: "u123",
-      fullname: "Tamar Choen",
+      _id: 'u123',
+      fullname: 'Tamar Choen',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638300901/istockphoto-969233490-612x612_pls00z.jpg",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638300901/istockphoto-969233490-612x612_pls00z.jpg',
       isAdmin: false,
       isHost: true,
-      username: "tamar909",
-      password: "",
+      username: 'tamar909',
+      password: '',
+    },
+    {
+      _id: 3463463462244,
+      fullname: 'Emma Wilson',
+      imgUrl:
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638299902/photo-1438761681033-6461ffad8d80_bhahe9.jpg',
+      isAdmin: false,
+      isHost: true,
+      username: 'EmmaW89',
+      password: '',
+    },
+    {
+      _id: 807807856456,
+      fullname: 'Christopher Louise',
+      imgUrl:
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638299987/images_gj0cfe.jpg',
+      isAdmin: false,
+      isHost: true,
+      username: 'Chris6',
+      password: '',
     },
   ];
   gUsers = users;

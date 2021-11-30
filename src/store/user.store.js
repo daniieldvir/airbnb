@@ -10,7 +10,7 @@ import {
 
 export const userStore = {
   state: {
-    loggedInUser: userService.getLoggedInUser(),
+    // loggedInUser: userService.getLoggedInUser(),
     users: [],
     watchedUser: null,
   },
