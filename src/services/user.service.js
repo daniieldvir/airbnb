@@ -1,8 +1,15 @@
-import { storageService } from './async-storage.service'
-import { httpService } from './http.service'
-import { socketService, SOCKET_EVENT_USER_UPDATED } from './socket.service'
-const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
-var gWatchedUser = null;
+// import { storageService } from './async-storage.service'
+// import { httpService } from './http.service'
+// import { socketService, SOCKET_EVENT_USER_UPDATED } from './socket.service'
+// const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
+// var gWatchedUser = null;
+
+import { utilService } from './util.service.js';
+// import { storageService } from './async-storage.service.js';
+
+const USERS_KEY = 'users';
+let gUsers;
+
 
 export const userService = {
     login,
@@ -119,3 +126,36 @@ function getLoggedinUser() {
 //     if (user) socketService.emit('set-user-socket', user._id)
 // })();
 
+function _createUsers() {
+    const users = [
+        {
+            _id: utilService.makeId(),
+            fullname: "Marlon Bordo",
+            imgUrl: "https://res.cloudinary.com/disku3v4j/image/upload/v1638300062/our_kind_of_people_lance_gross_2x_ssvg9h.jpg",
+            isAdmin: false,
+            isHost: true,
+            username: "marlo",
+            password: "123"
+        },
+        {
+            _id: utilService.makeId(),
+            fullname: "Bonnie Bonno",
+            imgUrl: "https://res.cloudinary.com/disku3v4j/image/upload/v1638299789/host_qszv7p.jpg",
+            isAdmin: false,
+            isHost: true,
+            username: "bonnie",
+            password: "123"
+        },
+        {
+            _id: utilService.makeId(),
+            fullname: "Tee Tyrel",
+            imgUrl: "https://res.cloudinary.com/disku3v4j/image/upload/v1638300901/pexels-photo-1300402_wtxf88.jpg",
+            isAdmin: false,
+            isHost: true,
+            username: "tee",
+            password: "123"
+        },
+    ]
+    gUsers = users;
+    utilService.saveToStorage(USERS_KEY, gUsers);
+}
