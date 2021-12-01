@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/home-page";
+import stayDetails from "@views/stay-details.vue";
 
 Vue.use(VueRouter);
 
@@ -18,9 +19,20 @@ const routes = [
     path: "/become-host",
     name: "BecomeHost",
   },
+  // {
+  //   path: '/stay-app',
+  //   name: 'stayApp',
+  //   component: stayApp,
+  // },
+  // {
+  //   path: '/stay-app/edit/',
+  //   name: 'stayEdit',
+  //   component: stayEdit,
+  // },
   {
-    path: "/about",
-    name: "About",
+    path: '/stay-app/:stayId',
+    name: 'stayDetails',
+    component: stayDetails,
   },
 ];
 

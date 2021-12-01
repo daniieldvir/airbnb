@@ -5,6 +5,7 @@ export const stayStore = {
   state: {
     stays: null,
     filterBy: { city: '', guests: '' },
+    currStay: null
   },
   //   getters: {
   //     filterBy(state) {
@@ -22,20 +23,32 @@ export const stayStore = {
       state.stays = stays;
       console.log('stays', state.stays);
     },
+    setStay(state, { stay }) {
+      state.currStay = stay
+    },
   },
   actions: {
     loadStays({ commit }) {
       stayService.query().then((stays) => commit({ type: 'setStays', stays }));
     },
-    // async loadStays(context, { filterBy }) {
-    //     try {
-    //       const stays = await stayService.query();
-    //       context.commit({ type: 'setStay', stays });
-    //     } catch (err) {
-    //       console.log('stayService: Error in loading stays', err);
-    //       throw err;
-    //     }
+    // loadStays({ commit, state }) {
+    //   var filterBy = state.filterBy ? state.filterBy : ''
+    //   commit({ type: 'setLoading', isLoading: true })
+    //   stayService
+    //     .query(filterBy)
+    //     .then((stays) => {
+    //       commit({ type: 'setStays', stays })
+    //     })
+    //     .finally(() => {
+    //       commit({ type: 'setLoading', isLoading: false })
+    //     })
     // },
+    getStayById({ commit }, { stayId }) {
+      return stayService.getById(stayId).then((stay) => {
+        commit({ type: 'setStay', stay })
+        return stay
+      })
+    },
   },
   modules: {},
 };
