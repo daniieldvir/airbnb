@@ -8,3 +8,13 @@
     <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  components: {},
+  created() {
+    this.$store.dispatch("loadStays");
+    console.log("created app!");
+  },
+};
+</script>
