@@ -13,8 +13,8 @@
 export default {
   components: {},
   created() {
-    this.$store.dispatch("loadStays");
-    console.log("created app!");
+    this.$store.dispatch('loadStays');
+    console.log('created app!');
   },
 };
 </script>

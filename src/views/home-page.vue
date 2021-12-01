@@ -2,6 +2,7 @@
   <section class="home-page">
     <h1 class="main-header">Find a place to stay anywhere, anytime.</h1>
     <stayFilter @filtered="setFilter" />
+    {{ topStays }}
   </section>
 </template>
 
@@ -22,8 +23,11 @@ export default {
   methods: {
     setFilter(filterBy) {
       this.$store.commit({ type: 'loadStays', filterBy });
-      const currFilter = this.$store.getters.filterBy;
-      console.log(currFilter);
+    },
+  },
+  computed: {
+    topStays() {
+      return this.$store.getters.stays;
     },
   },
   components: {
