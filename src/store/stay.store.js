@@ -1,11 +1,6 @@
-import Vue from "vue";
-import Vuex from "vuex";
-
 import { stayService } from "../services/stay.service.js";
 
-Vue.use(Vuex);
-
-export const stayStore = new Vuex.Store({
+export const stayStore = {
   strict: true,
   state: {
     stays: null,
@@ -21,18 +16,18 @@ export const stayStore = new Vuex.Store({
   //   },
   mutations: {
     setFilter(state, { filterBy }) {
-      console.log("store", filterBy);
       state.filterBy = filterBy;
     },
     setStays(state, { stays }) {
+      console.log("stays mutation", stays);
       state.stays = stays;
-      console.log("stays", stays);
     },
   },
   actions: {
     loadStays(context, { filterBy }) {
-      const stays = stayService.query();
-      context.commit({ type: "setStays", stays });
+      const stays = stayService
+        .query()
+        .then(context.commit({ type: "setStays", stays }));
 
       //   try {
       //     const stays = await stayService.query();
@@ -44,4 +39,4 @@ export const stayStore = new Vuex.Store({
     },
   },
   modules: {},
-});
+};
