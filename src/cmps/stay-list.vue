@@ -7,13 +7,13 @@
 </template>
 
 <script>
-import stayPreview from "./stay-preview.vue";
+import stayPreview from './stay-preview.vue';
 export default {
-  name: "trip-list",
-  prop: ["stays"],
+  name: 'trip-list',
+  prop: ['stays'],
   created() {
-    this.$store.dispatch({ type: "loadStays" });
-    console.log("created app!");
+    this.$store.dispatch({ type: 'loadStays' });
+    console.log('created app!');
   },
 
   components: {
