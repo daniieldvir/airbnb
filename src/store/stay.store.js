@@ -33,13 +33,16 @@ export const store = new Vuex.Store({
   },
   actions: {
     loadStays(context, { filterBy }) {
-      try {
-        const stays = await stayService.query();
-        context.commit({ type: 'setStay', stays });
-      } catch (err) {
-        console.log('stayService: Error in loading stays', err);
-        throw err;
-      }
+      const stays = stayService.query();
+      context.commit({ type: 'setStay', stays });
+
+      //   try {
+      //     const stays = await stayService.query();
+      //     context.commit({ type: 'setStay', stays });
+      //   } catch (err) {
+      //     console.log('stayService: Error in loading stays', err);
+      //     throw err;
+      //   }
     },
   },
   modules: {},
