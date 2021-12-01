@@ -34,6 +34,7 @@ export const stayStore = new Vuex.Store({
   actions: {
     loadStays({ commit }, { filterBy }) {
       stayService.query().then((stays) => {
+        console.log(stays);
         commit({ type: "setStay", stays });
       });
     },
