@@ -1,5 +1,5 @@
 <template>
-  <section class="header">
+  <section class="header main-container">
     <div class="details">
       <h2>{{ stay.name }}</h2>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <section class="home-page">
+  <section class="home-page main-container">
     <h1 class="main-header">Find a place to stay anywhere, anytime.</h1>
     <stayFilter @filtered="setFilter" />
     <section class="topRated">ffff{{ topStays }}</section>

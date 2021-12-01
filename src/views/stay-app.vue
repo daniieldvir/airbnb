@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="stay-app main-container">
     <stay-list :stays="stays"> </stay-list>
   </section>
 </template>
