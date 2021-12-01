@@ -30,7 +30,7 @@ export const stayStore = {
   mutations: {
     setFilter(state, { filterBy }) {
       state.filterBy = filterBy;
-      console.log(state.filterBy);
+      // console.log(state.filterBy);
     },
     setStays(state, { stays }) {
       state.stays = stays;
@@ -43,7 +43,7 @@ export const stayStore = {
     loadStays({ commit, state }) {
       stayService.query(state.filterBy).then((stays) => {
         commit({ type: 'setStays', stays });
-        console.log('stay', stays);
+        // console.log('stay', stays);
       });
     },
     setFilter({ commit, dispatch }, { filterBy }) {

@@ -19,10 +19,10 @@
         >
       </div>
     </nav>
-    <section class="loggedin-user" v-if="loggedInUser">
+    <!-- <section class="loggedin-user" v-if="loggedInUser">
       <router-link :to="`/user/${loggedInUser._id}`"> {{}} </router-link>
       <span>{{ loggedInUser.score }}</span>
-    </section>
+    </section> -->
   </header>
 </template>
 <script>
