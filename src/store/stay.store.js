@@ -5,7 +5,7 @@ import { stayService } from "../services/stay.service.js";
 
 Vue.use(Vuex);
 
-export const store = new Vuex.Store({
+export const stayStore = new Vuex.Store({
   strict: true,
   state: {
     stays: null,

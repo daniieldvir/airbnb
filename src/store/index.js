@@ -7,14 +7,11 @@ import { stayStore } from "./stay.store.js";
 
 Vue.use(Vuex);
 
-export const store = new Vuex.Store({
+export default new Vuex.Store({
   strict: true,
   modules: {
     userStore,
     reviewStore,
     stayStore,
   },
-  state: {},
-  mutations: {},
-  actions: {},
 });
