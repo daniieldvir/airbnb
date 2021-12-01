@@ -1,20 +1,33 @@
 <template>
-  <div class="home-page"></div>
+  <section class="home-page">
+    <h1 class="main-header">Find a place to stay anywhere, anytime.</h1>
+    <stayFilter @filtered="setFilter" />
+  </section>
 </template>
 
 <script>
+import stayFilter from '../cmps/stay-filter.vue';
 // TODO REMOVE SERV
-import stayService from "../services/stay.service.js";
-import userService from "../services/user.service.js";
+import stayService from '../services/stay.service.js';
+import userService from '../services/user.service.js';
 
 export default {
-  name: "home-page",
+  name: 'home-page',
   data() {
     return {
       stays: null,
     };
   },
   created() {},
-  components: {},
+  methods: {
+    setFilter(filterBy) {
+      this.$store.commit({ type: 'loadStays', filterBy });
+      const currFilter = this.$store.getters.filterBy;
+      console.log(currFilter);
+    },
+  },
+  components: {
+    stayFilter,
+  },
 };
 </script>
