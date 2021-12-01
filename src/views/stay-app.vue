@@ -11,7 +11,7 @@ export default {
   name: 'stay-app',
   computed: {
     stays() {
-      return this.$store.getters.loadStays;
+      return this.$store.getters.staysToShow;
     },
   },
 };
