@@ -9,7 +9,6 @@
         <option>Hong Kong</option>
       </select>
     </label>
-    {{ filterBy }}
     <button @click="filter">Search</button>
   </section>
 </template>

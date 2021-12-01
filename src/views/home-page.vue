@@ -2,12 +2,15 @@
   <section class="home-page">
     <h1 class="main-header">Find a place to stay anywhere, anytime.</h1>
     <stayFilter @filtered="setFilter" />
-    <section class="topRated">ffff{{ topStays }}</section>
+    <section class="top-rated">
+      <stay-list :stays="topStays" />
+    </section>
   </section>
 </template>
 
 <script>
 import stayFilter from '../cmps/stay-filter.vue';
+import stayList from '../cmps/stay-list.vue';
 
 export default {
   name: 'home-page',
@@ -18,28 +21,30 @@ export default {
   },
   created() {
     // this.$store.dispatch({ type: 'loadStays' }).then(this.loadTopRated());
-    this.$store.dispatch({ type: 'loadStays' }).then((stays) => {
+    this.$store.dispatch({ type: 'loadStays' }).then(() => {
       this.topStays = this.$store.getters.staysToShow;
     });
   },
   methods: {
     // loadTopRated() {
-    //   console.log('loadTopRated');
     //   this.topStays = this.$store.getters.staysToShow;
     // },
     setFilter(filterBy) {
-      console.log('setting filter from homepage', filterBy);
       this.$store.dispatch({ type: 'setFilter', filterBy });
-      // .then(this.loadTopRated());
+      this.$store.dispatch({ type: 'loadStays' });
+      this.$router.push('/explore');
+
+      // .then((this.topStays = this.$store.getters.staysToShow));
     },
   },
-  computed: {
-    // topStays() {
-    //   return this.$store.getters.stays;
-    // },
-  },
+  // computed: {
+  //   topStays() {
+  //     return this.$store.getters.stays;
+  //   },
+  // },
   components: {
     stayFilter,
+    stayList,
   },
 };
 </script>

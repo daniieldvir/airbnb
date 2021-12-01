@@ -4,14 +4,14 @@
 // // const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 // // var gWatchedUser = null;
 
-import { utilService } from "./util.service.js";
-import { storageService } from "./async-storage.service.js";
+import { utilService } from './util.service.js';
+import { storageService } from './async-storage.service.js';
 
-const USERS_KEY = "users";
+const USERS_KEY = 'users';
 let gUsers;
 _createUsers();
 
-console.log("gUsers", gUsers);
+// console.log("gUsers", gUsers);
 
 // export const userService = {
 //   login,
@@ -130,94 +130,94 @@ console.log("gUsers", gUsers);
 function _createUsers() {
   const users = [
     {
-      _id: "kj900",
-      fullname: "Marlon Bordo",
+      _id: 'kj900',
+      fullname: 'Marlon Bordo',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638300062/our_kind_of_people_lance_gross_2x_ssvg9h.jpg",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638300062/our_kind_of_people_lance_gross_2x_ssvg9h.jpg',
       isAdmin: false,
       isHost: true,
-      username: "marlo",
-      password: "123",
+      username: 'marlo',
+      password: '123',
     },
     {
-      _id: "f8989",
-      fullname: "Bonnie Bonno",
+      _id: 'f8989',
+      fullname: 'Bonnie Bonno',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638299789/host_qszv7p.jpg",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638299789/host_qszv7p.jpg',
       isAdmin: false,
       isHost: true,
-      username: "bonnie",
-      password: "123",
+      username: 'bonnie',
+      password: '123',
     },
     {
-      _id: "t36367",
-      fullname: "Tee Tyrel",
+      _id: 't36367',
+      fullname: 'Tee Tyrel',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638300901/pexels-photo-1300402_wtxf88.jpg",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638300901/pexels-photo-1300402_wtxf88.jpg',
       isAdmin: false,
       isHost: true,
-      username: "tee",
-      password: "123",
+      username: 'tee',
+      password: '123',
     },
     {
-      _id: "u120",
-      fullname: "Will Smit",
+      _id: 'u120',
+      fullname: 'Will Smit',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638299465/tel-aviv/apr1/wouter-aghina_fc-mask_profile_1536x1152_wmamov.webp",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638299465/tel-aviv/apr1/wouter-aghina_fc-mask_profile_1536x1152_wmamov.webp',
       isAdmin: false,
       isHost: true,
-      username: "WillS",
-      password: "",
+      username: 'WillS',
+      password: '',
     },
     {
-      _id: "u121",
-      fullname: "Limor Ronen",
+      _id: 'u121',
+      fullname: 'Limor Ronen',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638299259/tel-aviv/apr2/host_csyws6.jpg",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638299259/tel-aviv/apr2/host_csyws6.jpg',
       isAdmin: false,
       isHost: true,
-      username: "LimRon",
-      password: "",
+      username: 'LimRon',
+      password: '',
     },
     {
-      _id: "u122",
-      fullname: "Tom Dvir",
+      _id: 'u122',
+      fullname: 'Tom Dvir',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638300900/depositphotos_11412590-stock-photo-handsome-young-man_f1iwbg.jpg",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638300900/depositphotos_11412590-stock-photo-handsome-young-man_f1iwbg.jpg',
       isAdmin: false,
       isHost: true,
-      username: "tom123",
-      password: "",
+      username: 'tom123',
+      password: '',
     },
     {
-      _id: "u123",
-      fullname: "Tamar Choen",
+      _id: 'u123',
+      fullname: 'Tamar Choen',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638300901/istockphoto-969233490-612x612_pls00z.jpg",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638300901/istockphoto-969233490-612x612_pls00z.jpg',
       isAdmin: false,
       isHost: true,
-      username: "tamar909",
-      password: "",
+      username: 'tamar909',
+      password: '',
     },
     {
       _id: 3463463462244,
-      fullname: "Emma Wilson",
+      fullname: 'Emma Wilson',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638299902/photo-1438761681033-6461ffad8d80_bhahe9.jpg",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638299902/photo-1438761681033-6461ffad8d80_bhahe9.jpg',
       isAdmin: false,
       isHost: true,
-      username: "EmmaW89",
-      password: "",
+      username: 'EmmaW89',
+      password: '',
     },
     {
       _id: 807807856456,
-      fullname: "Christopher Louise",
+      fullname: 'Christopher Louise',
       imgUrl:
-        "https://res.cloudinary.com/disku3v4j/image/upload/v1638299987/images_gj0cfe.jpg",
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638299987/images_gj0cfe.jpg',
       isAdmin: false,
       isHost: true,
-      username: "Chris6",
-      password: "",
+      username: 'Chris6',
+      password: '',
     },
   ];
   gUsers = users;
