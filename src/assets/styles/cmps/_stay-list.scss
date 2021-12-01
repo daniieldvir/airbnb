@@ -1,5 +1,14 @@
 .stay-list {
   display: grid;
-  grid-template-columns: repeat(4, minmax(250px, 1fr));
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 25px;
+
+  .preview_img {
+    width: 300.8px;
+    height: 300.8px;
+    border-radius: 30px;
+    object-fit: cover;
+    border: 1px solid $clr4;
+  }
 }

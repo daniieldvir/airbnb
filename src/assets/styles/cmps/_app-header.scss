@@ -1,33 +1,26 @@
 header {
-    background-color: $clr5;
-    padding: 10px;
+  padding: 10px;
+
+  .nav-bar {
     display: flex;
     justify-content: space-between;
 
-    .loggedin-user {
-        background-color: $clr1;
-        padding: 2px 8px;
-        border-radius: 1em;
-        align-self: flex-end;
-        color: whitesmoke;
-        span{
-            background-color: $clr2;
-            padding: 4px;
-            margin: 10px;
-            border-radius: 50%;
-        }
+    .main-router-link {
+      margin-right: 30px;
+
+      text-decoration: none;
+      color: black;
+
+      .logo {
+        color: #ff5a5f;
+        size: rem(18px);
+      }
     }
-    nav {
-        background-color: $clr4;
-        padding: 5px 0;
+
+    .main-router-link:hover,
+    .main-router-link:active,
+    .main-router-link:visited {
+      text-decoration: none;
     }
-    nav a:not(:first-child) {
-        border-top: 1px solid $clr1;
-        padding: 0 5px;
-        margin: 10px;
-    }
-    nav .active {
-        color: $clr1;
-    }
-    
+  }
 }

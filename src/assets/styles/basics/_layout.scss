@@ -1,7 +1,7 @@
-.container {
-  max-width: 1500px;
-  padding: 10px;
-}
+// .container {
+//   max-width: 1500px;
+//   padding: 10px;
+// }
 
 .main-container {
   display: grid;
@@ -31,6 +31,13 @@
     grid-template-columns:
       minmax(20px, 1fr)
       minmax(auto, $normal-breakpoint)
+      minmax(20px, 1fr);
+  }
+
+  @include for-wide-layout {
+    grid-template-columns:
+      minmax(20px, 1fr)
+      minmax(auto, $wide-breakpoint)
       minmax(20px, 1fr);
   }
 }

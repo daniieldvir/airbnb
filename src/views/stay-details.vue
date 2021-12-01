@@ -1,5 +1,5 @@
 <template>
-  <section v-if="stay" class="stay-details">
+  <section v-if="stay" class="stay-details main-container">
     <h2>{{ stay.name }}</h2>
     <a href=""> {{ stay.loc.address }}</a>
     <div class="imgs-display-container" v-for="(img, idx) in imgs" :key="idx">
