@@ -1,7 +1,7 @@
 <template>
   <section v-if="stay" class="stay-preview">
     <div class="block">
-      <el-carousel trigger="click" height="200px" :autoplay="false">
+      <el-carousel trigger="click" arrow="always" height="200px" :autoplay="false">
         <el-carousel-item v-for="(img, idx) in stay.imgUrls" :key="idx">
           <router-link class="router-link" :to="'/stay/' + stay._id">
             <img class="preview_img" :src="stay.imgUrls[idx]" alt="" />
