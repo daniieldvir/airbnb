@@ -10,40 +10,54 @@
       </select>
     </label>
     <date-picker @filtered="setDates" />
+    <button @click="toggleGuests">Guests</button>
+    <guest-filter
+      :currFilterBy="filterBy"
+      v-if="guestShouldShow"
+      @addedGuests="addGuests"
+      @blur="toggleGuests"
+    />
+
     <button @click="filter">Search</button>
   </section>
 </template>
 
 <script>
 import datePicker from '../cmps/date-picker.vue';
+import guestFilter from '../cmps/guest-filter.vue';
 export default {
   name: 'stay-filter',
+
   data() {
     return {
-      filterBy: {
-        city: '',
-        guests: '',
-        dates: [],
-      },
+      filterBy: null,
+      guestShouldShow: false,
     };
   },
-  created() {},
+  created() {
+    this.loadFilter();
+  },
   methods: {
+    loadFilter() {
+      const filterBy = this.$store.getters.filterBy;
+      this.filterBy = JSON.parse(JSON.stringify(filterBy));
+    },
     setDates(selectedDates) {
       this.filterBy.dates = selectedDates;
     },
+    addGuests(filterBy) {
+      this.filterBy = filterBy;
+    },
     filter() {
-      console.log(this.filterBy);
       this.$emit('filtered', this.filterBy);
-      // this.filterBy = {
-      //   city: '',
-      //   guests: '',
-      //   dates: '',
-      // };
+    },
+    toggleGuests() {
+      this.guestShouldShow = !this.guestShouldShow;
     },
   },
   components: {
     datePicker,
+    guestFilter,
   },
 };
 </script>

@@ -41,6 +41,9 @@
   &.align-center {
     align-items: center;
   }
+  &.space-between {
+    justify-content: space-between;
+  }
 }
 
 .ratio-16-9 {
@@ -79,4 +82,8 @@
 .router-link:active,
 .router-link:visited {
   text-decoration: none;
+}
+
+.pointer {
+  cursor: pointer;
 }
