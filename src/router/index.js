@@ -2,22 +2,26 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/home-page";
 import stayDetails from "@views/stay-details.vue";
+import Explore from '../views/stay-app';
+import BecomeHost from '../views/stay-edit';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
+    path: '/',
+    name: 'Home',
     component: Home,
   },
   {
-    path: "/explore",
-    name: "Explore",
+    path: '/explore',
+    name: 'Explore',
+    component: Explore,
   },
   {
-    path: "/become-host",
-    name: "BecomeHost",
+    path: '/become-host',
+    name: 'BecomeHost',
+    component: BecomeHost,
   },
   // {
   //   path: '/stay-app',
@@ -37,7 +41,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
   routes,
 });

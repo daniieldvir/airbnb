@@ -14,9 +14,5 @@
 <script>
 export default {
   components: {},
-  created() {
-    this.$store.dispatch({ type: 'loadStays' });
-    console.log('created app!');
-  },
 };
 </script>

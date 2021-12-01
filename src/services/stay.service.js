@@ -16,7 +16,13 @@ export const stayService = {
   getById,
 };
 
-function query() {
+function query(filterBy) {
+  // console.log(filterBy);
+  // let stays = storageService.query(STAYS_KEY) || gStays;
+  // if (filterBy && filterBy.city) {
+  //   stays = stays.filter((stay) => stay.loc.country === filterBy.city);
+  // }
+  // return stays;
   return storageService.query(STAYS_KEY) || gStays;
 }
 
@@ -161,7 +167,14 @@ function _createStays() {
       _id: utilService.makeId(),
       name: 'Whole Apartment, Huge Rooftop - Ferry Pier 2min',
       type: 'Entire rental unit',
-      imgUrls: [],
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301206/hong-kong/app1/app1_5_gtzqo4.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301205/hong-kong/app1/app1_6_fwda8m.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301204/hong-kong/app1/app1_2_iu2vhb.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301203/hong-kong/app1/app1_4_l2vktl.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301203/hong-kong/app1/app1_1_ptbog0.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301203/hong-kong/app1/app1_3_mqt1pw.jpg',
+      ],
       price: 118.0,
       summary:
         "Very close to the ferry terminal, with a huge rooftop (BBQ set available), our spacious home is perfect for enjoying the ultimate Cheung Chau experience. With a perfect view of the sunset, close to all shops & seafood restaurants, you couldn't stay in a better location. Beach is also a short walk away.",
@@ -214,7 +227,13 @@ function _createStays() {
       _id: utilService.makeId(),
       name: '2BR Garden Terrace near Mongkok',
       type: 'Entire rental unit',
-      imgUrls: [],
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301204/hong-kong/app2/app2_1_evmekt.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301205/hong-kong/app2/app2_5_xyunh5.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301206/hong-kong/app2/app2_3_aijgmy.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301204/hong-kong/app2/app2_2_rn2ljr.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301206/hong-kong/app2/app2_4_nu56tp.jpg',
+      ],
       price: 81.0,
       summary: `Difficult to find in Hong Kong, my place has two large balconies connected to the living room and bedroom allowing you a Garden terrace feel during your stay.It is located 3min walk from Prince Edward MTR & only 7-10 min walk to Mongkok main centre for shopping .3min walk from my place, there are over 8-10 local and Asian cuisines for you to sample. Via MTR, you may go to places like Disney or Ocean Park.
             It is on the 1st Floor with no elevator so you need to use the stairs for one level.`,
@@ -267,7 +286,14 @@ function _createStays() {
       _id: utilService.makeId(),
       name: 'Brand New Studio Apartment in North Point - D2',
       type: 'Entire condo',
-      imgUrls: [],
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301205/hong-kong/app3/app3_1_s9r0be.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301207/hong-kong/app3/app3_2_k3smty.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301208/hong-kong/app3/app3_3_yvnlz1.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301210/hong-kong/app3/app3_4_jr4hgt.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301207/hong-kong/app3/app3_5_akkimm.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301206/hong-kong/app3/app3_6_qub3xc.jpg',
+      ],
       price: 90.0,
       summary: `Brand-new and luxurious Studio apartment with balcony right in the heart of North Point, a quintessential part of Hong Kong. Surrounded by renowned eateries and a wealth of culture, the property is conveniently located only 6 minutes away from the nearest MTR station and the tram terminus is just a 4-minute walk in the other direction.
             Whether you're in Hong Kong for business or pleasure, we've got you covered by taking care of your travel needs, so you can spend your time doing what matters.`,

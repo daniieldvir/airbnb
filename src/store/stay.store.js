@@ -3,33 +3,42 @@ import { stayService } from '../services/stay.service.js';
 export const stayStore = {
   strict: true,
   state: {
-    stays: null,
+    stays: [],
     filterBy: { city: '', guests: '' },
     currStay: null
   },
-  //   getters: {
-  //     filterBy(state) {
-  //       return state.filterBy;
-  //     },
-  // staysToShow(state){
-
-  // }
-  //   },
+  getters: {
+    filterBy(state) {
+      return state.filterBy;
+    },
+    staysToShow(state) {
+      console.log(state.stays);
+      return state.stays;
+    },
+  },
   mutations: {
     setFilter(state, { filterBy }) {
       state.filterBy = filterBy;
     },
     setStays(state, { stays }) {
       state.stays = stays;
-      console.log('stays', state.stays);
+      //   if (state.stays.length) {
+      //     state.stays = [];
+      //   }
+      //   state.stays.push(...stays);
     },
     setStay(state, { stay }) {
       state.currStay = stay
     },
   },
   actions: {
-    loadStays({ commit }) {
-      stayService.query().then((stays) => commit({ type: 'setStays', stays }));
+    loadStays({ commit, state }) {
+      stayService.query(state.filterBy).then((stays) => {
+        commit({ type: 'setStays', stays });
+      });
+    },
+    setFilter({ commit, dispatch }, { filterBy }) {
+      commit({ type: 'setFilter', filterBy });
     },
     // loadStays({ commit, state }) {
     //   var filterBy = state.filterBy ? state.filterBy : ''

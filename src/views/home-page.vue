@@ -2,33 +2,41 @@
   <section class="home-page">
     <h1 class="main-header">Find a place to stay anywhere, anytime.</h1>
     <stayFilter @filtered="setFilter" />
-    {{ topStays }}
+    <section class="topRated">ffff{{ topStays }}</section>
   </section>
 </template>
 
 <script>
 import stayFilter from '../cmps/stay-filter.vue';
-// TODO REMOVE SERV
-import stayService from '../services/stay.service.js';
-import userService from '../services/user.service.js';
 
 export default {
   name: 'home-page',
   data() {
     return {
-      stays: null,
+      topStays: null,
     };
   },
-  created() {},
+  created() {
+    // this.$store.dispatch({ type: 'loadStays' }).then(this.loadTopRated());
+    this.$store.dispatch({ type: 'loadStays' }).then((stays) => {
+      this.topStays = this.$store.getters.staysToShow;
+    });
+  },
   methods: {
+    // loadTopRated() {
+    //   console.log('loadTopRated');
+    //   this.topStays = this.$store.getters.staysToShow;
+    // },
     setFilter(filterBy) {
-      this.$store.commit({ type: 'loadStays', filterBy });
+      console.log('setting filter from homepage', filterBy);
+      this.$store.dispatch({ type: 'setFilter', filterBy });
+      // .then(this.loadTopRated());
     },
   },
   computed: {
-    topStays() {
-      return this.$store.getters.stays;
-    },
+    // topStays() {
+    //   return this.$store.getters.stays;
+    // },
   },
   components: {
     stayFilter,
