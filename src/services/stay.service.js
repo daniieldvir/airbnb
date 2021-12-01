@@ -17,13 +17,14 @@ export const stayService = {
 };
 
 function query(filterBy) {
-  // console.log(filterBy);
-  // let stays = storageService.query(STAYS_KEY) || gStays;
-  // if (filterBy && filterBy.city) {
-  //   stays = stays.filter((stay) => stay.loc.country === filterBy.city);
-  // }
-  // return stays;
-  return storageService.query(STAYS_KEY) || gStays;
+  console.log('service filterby', filterBy);
+  let stays = storageService.query(STAYS_KEY) || gStays;
+  if (filterBy && filterBy.city) {
+    console.log('service', filterBy);
+    stays = stays.filter((stay) => stay.loc.country === filterBy.city);
+  }
+  return stays;
+  // return storageService.query(STAYS_KEY) || gStays;
 }
 
 function getById(id) {
