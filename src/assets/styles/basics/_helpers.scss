@@ -70,6 +70,8 @@
   color: $clr4;
   text-decoration: none;
 }
-.router-link p :hover {
+.router-link:hover,
+.router-link:active,
+.router-link:visited {
   text-decoration: none;
 }

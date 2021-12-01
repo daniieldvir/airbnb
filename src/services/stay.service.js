@@ -470,11 +470,11 @@ function _createStays() {
       name: 'cozy studio at the most beautiful building',
       type: 'Entire loft hosted',
       imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301095/tel-aviv/apr3/a84ceba0-a748-4a23-81af-afd4d3be0b2d_cla4zw.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301095/tel-aviv/apr3/4f46b7fb-d5e8-47cb-93c8-6e548038ad12_ckwaze.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301096/tel-aviv/apr3/cf53a349-09b5-4c82-9091-e6eab8b9a618_rkeayh.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301096/tel-aviv/apr3/bbbfeb50-a244-4342-83cd-05a9bd7c7437_ihfuje.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301095/tel-aviv/apr3/2144057a-56ff-4007-b7a2-5b469e0711ce_addgpv.jpg',
-        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301095/tel-aviv/apr3/a84ceba0-a748-4a23-81af-afd4d3be0b2d_cla4zw.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301095/tel-aviv/apr3/4729c8d2-899c-4691-851a-ea84f67ee7ca_cbmika.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301095/tel-aviv/apr3/8ca43c36-dc24-4b05-9c08-d0900c3c9c44_f2fhak.jpg',
       ],
@@ -532,13 +532,13 @@ function _createStays() {
       name: 'amazing urban lost at the most perfect building ',
       type: 'Entire loft hosted',
       imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301907/tel-aviv/aprt4/65a84d1d-d73b-47ca-8a11-7a2013c579b9_sqibud.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301907/tel-aviv/aprt4/7067d4be-0892-4660-a6fb-2ae72b0212de_qqlrud.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301907/tel-aviv/aprt4/82703825-396d-42a5-a2a4-e7ae0a4b67db_gzf7lu.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301907/tel-aviv/aprt4/fcbfee99-0eb4-4163-b09d-c374ed8dec38_hizhvx.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301907/tel-aviv/aprt4/64f1b457-c7fc-4ef2-94ed-506abbba410a_tqhceb.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301907/tel-aviv/aprt4/29b1dd72-d86b-4812-b259-881e4513c60b_t3ebte.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301907/tel-aviv/aprt4/901fcdcd-2481-40ea-9373-7e7f6e6e3974_hv0yno.jpg',
-        'https://res.cloudinary.com/disku3v4j/image/upload/v1638301907/tel-aviv/aprt4/65a84d1d-d73b-47ca-8a11-7a2013c579b9_sqibud.jpg',
       ],
       price: 80,
       summary:
