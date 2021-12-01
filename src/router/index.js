@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/home-page';
-import stayDetails from '../views/stay-details.vue';
 import Explore from '../views/stay-app';
 import BecomeHost from '../views/stay-edit';
 
@@ -33,11 +32,6 @@ const routes = [
   //   name: 'stayEdit',
   //   component: stayEdit,
   // },
-  {
-    path: '/stay-app/:stayId',
-    name: 'stayDetails',
-    component: stayDetails,
-  },
 ];
 
 const router = new VueRouter({
