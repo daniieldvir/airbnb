@@ -36,6 +36,7 @@ export const stayStore = {
     loadStays({ commit, state }) {
       stayService.query(state.filterBy).then((stays) => {
         commit({ type: 'setStays', stays });
+        console.log('stay', stays);
       });
     },
     setFilter({ commit, dispatch }, { filterBy }) {

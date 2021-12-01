@@ -15,7 +15,6 @@ export default {
   props: ['stays'],
   created() {
     this.$store.dispatch({ type: 'loadStays' });
-    console.log('created app!');
   },
 
   components: {
