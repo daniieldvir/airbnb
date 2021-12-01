@@ -1,6 +1,7 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Home from '../views/home-page';
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/home-page";
+import stayDetails from "@views/stay-details.vue";
 import Explore from '../views/stay-app';
 import BecomeHost from '../views/stay-edit';
 
@@ -22,9 +23,20 @@ const routes = [
     name: 'BecomeHost',
     component: BecomeHost,
   },
+  // {
+  //   path: '/stay-app',
+  //   name: 'stayApp',
+  //   component: stayApp,
+  // },
+  // {
+  //   path: '/stay-app/edit/',
+  //   name: 'stayEdit',
+  //   component: stayEdit,
+  // },
   {
-    path: '/about',
-    name: 'About',
+    path: '/stay-app/:stayId',
+    name: 'stayDetails',
+    component: stayDetails,
   },
 ];
 
