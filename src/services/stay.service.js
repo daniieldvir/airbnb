@@ -21,7 +21,7 @@ function query(filterBy) {
   return storageService.query(STAYS_KEY).then((allStays) => {
     stays = allStays;
     if (filterBy.city) {
-      stays = stays.filter((stay) => stay.loc.country === filterBy.city);
+      stays = stays.filter((stay) => stay.loc.countryCode === filterBy.city);
       return stays;
     }
     return stays;
