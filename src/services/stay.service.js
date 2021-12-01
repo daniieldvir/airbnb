@@ -16,7 +16,10 @@ export const stayService = {
   getById,
 };
 
-function query() {
+function query(filterBy) {
+  // console.log(filterBy);
+  // const stays = storageService.query(STAYS_KEY) || gStays;
+  // if (filterBy.city) return stays.filter((stay) => stay.location);
   return storageService.query(STAYS_KEY) || gStays;
 }
 
