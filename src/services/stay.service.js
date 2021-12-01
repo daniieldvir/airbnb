@@ -6,7 +6,7 @@ let gStays;
 
 _createStays();
 
-console.log('gStays', gStays);
+// console.log('gStays', gStays);
 
 export const stayService = {
   query,
@@ -17,13 +17,15 @@ export const stayService = {
 };
 
 function query(filterBy) {
-  // console.log(filterBy);
-  // let stays = storageService.query(STAYS_KEY) || gStays;
-  // if (filterBy && filterBy.city) {
-  //   stays = stays.filter((stay) => stay.loc.country === filterBy.city);
-  // }
-  // return stays;
-  return storageService.query(STAYS_KEY) || gStays;
+  let stays;
+  return storageService.query(STAYS_KEY).then((allStays) => {
+    stays = allStays;
+    if (filterBy.city) {
+      stays = stays.filter((stay) => stay.loc.country === filterBy.city);
+      return stays;
+    }
+    return stays;
+  });
 }
 
 function getById(id) {

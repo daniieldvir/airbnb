@@ -5,15 +5,20 @@ export const stayStore = {
   state: {
     stays: [],
     filterBy: { city: '', guests: '' },
-    currStay: null
+    currStay: null,
   },
   getters: {
     filterBy(state) {
       return state.filterBy;
     },
     staysToShow(state) {
-      console.log(state.stays);
       return state.stays;
+    },
+    // currStay(state) {
+    //   return state.currStay;
+    // },
+    imgsToShow(state) {
+      return state.currStay.imgUrls.slice(0, 5);
     },
   },
   mutations: {
@@ -22,13 +27,9 @@ export const stayStore = {
     },
     setStays(state, { stays }) {
       state.stays = stays;
-      //   if (state.stays.length) {
-      //     state.stays = [];
-      //   }
-      //   state.stays.push(...stays);
     },
     setStay(state, { stay }) {
-      state.currStay = stay
+      state.currStay = stay;
     },
   },
   actions: {
@@ -39,6 +40,7 @@ export const stayStore = {
     },
     setFilter({ commit, dispatch }, { filterBy }) {
       commit({ type: 'setFilter', filterBy });
+      dispatch({ type: 'loadStays' });
     },
     // loadStays({ commit, state }) {
     //   var filterBy = state.filterBy ? state.filterBy : ''
@@ -54,9 +56,10 @@ export const stayStore = {
     // },
     getStayById({ commit }, { stayId }) {
       return stayService.getById(stayId).then((stay) => {
-        commit({ type: 'setStay', stay })
-        return stay
-      })
+        commit({ type: 'setStay', stay });
+        console.log('stay', stay);
+        return stay;
+      });
     },
   },
   modules: {},

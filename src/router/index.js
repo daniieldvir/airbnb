@@ -34,7 +34,7 @@ const routes = [
   //   component: stayEdit,
   // },
   {
-    path: '/stay-app/:stayId',
+    path: '/stay/:stayId',
     name: 'stayDetails',
     component: stayDetails,
   },
