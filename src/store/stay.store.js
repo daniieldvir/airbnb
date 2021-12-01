@@ -1,10 +1,10 @@
-import { stayService } from "../services/stay.service.js";
+import { stayService } from '../services/stay.service.js';
 
 export const stayStore = {
   strict: true,
   state: {
     stays: null,
-    filterBy: { city: "", guests: "" },
+    filterBy: { city: '', guests: '' },
   },
   //   getters: {
   //     filterBy(state) {
@@ -20,12 +20,12 @@ export const stayStore = {
     },
     setStays(state, { stays }) {
       state.stays = stays;
-      console.log("stays", state.stays);
+      console.log('stays', state.stays);
     },
   },
   actions: {
     loadStays({ commit }) {
-      stayService.query().then((stays) => commit({ type: "setStays", stays }));
+      stayService.query().then((stays) => commit({ type: 'setStays', stays }));
     },
     // async loadStays(context, { filterBy }) {
     //     try {
