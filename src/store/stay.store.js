@@ -1,7 +1,7 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-import { stayService } from "../services/stay.service.js";
+import { stayService } from '../services/stay.service.js';
 
 Vue.use(Vuex);
 
@@ -9,11 +9,11 @@ export const store = new Vuex.Store({
   strict: true,
   state: {
     stays: null,
-    filterBy: { city: "", guests: "" },
+    filterBy: { city: '', guests: '' },
   },
   getters: {
     filterBy(state) {
-      console.log("store", state.filterBy);
+      console.log('store', state.filterBy);
       return state.filterBy;
     },
     // staysToShow(state){
@@ -22,20 +22,24 @@ export const store = new Vuex.Store({
   },
   mutations: {
     setFilter(state, { filterBy }) {
-      console.log("store", filterBy);
+      console.log('store', filterBy);
       state.filterBy = filterBy;
       //   state.stays=
     },
     setStay(state, { stays }) {
       state.stays = stays;
-      console.log("stays", stays);
+      console.log('stays', stays);
     },
   },
   actions: {
-    loadStays({ commit }, { filterBy }) {
-      stayService.query().then((stays) => {
-        commit({ type: "setStay", stays });
-      });
+    loadStays(context, { filterBy }) {
+      try {
+        const stays = await stayService.query();
+        context.commit({ type: 'setStay', stays });
+      } catch (err) {
+        console.log('stayService: Error in loading stays', err);
+        throw err;
+      }
     },
   },
   modules: {},
