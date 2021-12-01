@@ -1,31 +1,35 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/home-page";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from '../views/home-page';
+import Explore from '../views/stay-app';
+import BecomeHost from '../views/stay-edit';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
+    path: '/',
+    name: 'Home',
     component: Home,
   },
   {
-    path: "/explore",
-    name: "Explore",
+    path: '/explore',
+    name: 'Explore',
+    component: Explore,
   },
   {
-    path: "/become-host",
-    name: "BecomeHost",
+    path: '/become-host',
+    name: 'BecomeHost',
+    component: BecomeHost,
   },
   {
-    path: "/about",
-    name: "About",
+    path: '/about',
+    name: 'About',
   },
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
   routes,
 });

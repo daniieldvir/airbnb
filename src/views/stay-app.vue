@@ -1,9 +1,18 @@
 <template>
-  <div></div>
+  <section>
+    <stay-list :stays="stays"> </stay-list>
+  </section>
 </template>
 
 <script>
+import stayList from '../cmps/stay-list.vue';
 export default {
-  name: "stay-app",
+  components: { stayList },
+  name: 'stay-app',
+  computed: {
+    stays() {
+      return this.$store.getters.loadStays;
+    },
+  },
 };
 </script>

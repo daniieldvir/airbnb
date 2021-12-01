@@ -9,8 +9,8 @@
 <script>
 import stayPreview from './stay-preview.vue';
 export default {
-  name: 'trip-list',
-  prop: ['stays'],
+  name: 'stay-list',
+  props: ['stays'],
   created() {
     this.$store.dispatch({ type: 'loadStays' });
     console.log('created app!');
