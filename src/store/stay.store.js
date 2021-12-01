@@ -6,14 +6,14 @@ export const stayStore = {
     stays: null,
     filterBy: { city: '', guests: '' },
   },
-  //   getters: {
-  //     filterBy(state) {
-  //       return state.filterBy;
-  //     },
-  // staysToShow(state){
-
-  // }
-  //   },
+  getters: {
+    filterBy(state) {
+      return state.filterBy;
+    },
+    staysToShow(state) {
+      return state.stays;
+    },
+  },
   mutations: {
     setFilter(state, { filterBy }) {
       state.filterBy = filterBy;

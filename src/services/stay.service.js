@@ -17,9 +17,9 @@ export const stayService = {
 };
 
 function query(filterBy) {
-  console.log(filterBy);
-  const stays = storageService.query(STAYS_KEY) || gStays;
-  if (filterBy.city) return stays.filter((stay) => stay.location);
+  // console.log(filterBy);
+  // const stays = storageService.query(STAYS_KEY) || gStays;
+  // if (filterBy.city) return stays.filter((stay) => stay.location);
   return storageService.query(STAYS_KEY) || gStays;
 }
 
