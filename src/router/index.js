@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/home-page";
-import stayDetails from "@views/stay-details.vue";
+import stayDetails from "@/views/stay-details.vue";
 import Explore from '../views/stay-app';
 import BecomeHost from '../views/stay-edit';
 
