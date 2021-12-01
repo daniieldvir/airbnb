@@ -4,7 +4,13 @@ export const stayStore = {
   strict: true,
   state: {
     stays: [],
-    filterBy: { city: '', guests: '' },
+    filterBy: {
+      city: '',
+      guests: '',
+      dates: [],
+      guests: { adults: 0, children: 0, infants: 0, pets: 0 },
+      totalGuests: 0,
+    },
     currStay: null,
   },
   getters: {
@@ -24,6 +30,7 @@ export const stayStore = {
   mutations: {
     setFilter(state, { filterBy }) {
       state.filterBy = filterBy;
+      console.log(state.filterBy);
     },
     setStays(state, { stays }) {
       state.stays = stays;

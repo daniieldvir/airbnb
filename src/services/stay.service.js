@@ -19,11 +19,17 @@ export const stayService = {
 function query(filterBy) {
   let stays;
   return storageService.query(STAYS_KEY).then((allStays) => {
-    stays = allStays;
+    stays = allStays.filter((stay) => stay.capacity >= filterBy.totalGuests);
+
     if (filterBy.city) {
       stays = stays.filter((stay) => stay.loc.countryCode === filterBy.city);
       return stays;
     }
+    // if (filterBy.totalGuests) {
+    //   stays = stays.filter((stay) => stay.capacity >= filterBy.totalGuests);
+    //   return stays;
+    // }
+
     return stays;
   });
 }
