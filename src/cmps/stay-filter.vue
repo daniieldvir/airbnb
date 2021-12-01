@@ -9,7 +9,7 @@
         <option value="HK">Hong Kong</option>
       </select>
     </label>
-
+    <date-picker @filtered="setDates" />
     <button @click="filter">Search</button>
   </section>
 </template>
@@ -23,18 +23,23 @@ export default {
       filterBy: {
         city: '',
         guests: '',
+        dates: [],
       },
     };
   },
   created() {},
   methods: {
+    setDates(selectedDates) {
+      this.filterBy.dates = selectedDates;
+    },
     filter() {
-      // location names in data in UPPERCASE
+      console.log(this.filterBy);
       this.$emit('filtered', this.filterBy);
-      this.filterBy = {
-        city: '',
-        guests: '',
-      };
+      // this.filterBy = {
+      //   city: '',
+      //   guests: '',
+      //   dates: '',
+      // };
     },
   },
   components: {
