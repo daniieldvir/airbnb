@@ -3,7 +3,7 @@ import { stayService } from '../services/stay.service.js';
 export const stayStore = {
   strict: true,
   state: {
-    stays: null,
+    stays: [],
     filterBy: { city: '', guests: '' },
   },
   getters: {
@@ -11,6 +11,7 @@ export const stayStore = {
       return state.filterBy;
     },
     staysToShow(state) {
+      console.log(state.stays);
       return state.stays;
     },
   },
@@ -20,12 +21,20 @@ export const stayStore = {
     },
     setStays(state, { stays }) {
       state.stays = stays;
-      console.log('stays', state.stays);
+      //   if (state.stays.length) {
+      //     state.stays = [];
+      //   }
+      //   state.stays.push(...stays);
     },
   },
   actions: {
-    loadStays({ commit }) {
-      stayService.query().then((stays) => commit({ type: 'setStays', stays }));
+    loadStays({ commit, state }) {
+      stayService.query(state.filterBy).then((stays) => {
+        commit({ type: 'setStays', stays });
+      });
+    },
+    setFilter({ commit, dispatch }, { filterBy }) {
+      commit({ type: 'setFilter', filterBy });
     },
     // async loadStays(context, { filterBy }) {
     //     try {

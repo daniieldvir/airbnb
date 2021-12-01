@@ -30,6 +30,10 @@ export default {
     filter() {
       // location names in data in UPPERCASE
       this.$emit('filtered', this.filterBy);
+      this.filterBy = {
+        city: '',
+        guests: '',
+      };
     },
   },
 };
