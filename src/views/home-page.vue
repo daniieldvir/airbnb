@@ -19,7 +19,9 @@ export default {
       stays: null,
     };
   },
-  created() {},
+  created() {
+    this.$store.dispatch({ type: 'loadStays' });
+  },
   methods: {
     setFilter(filterBy) {
       this.$store.commit({ type: 'loadStays', filterBy });
