@@ -15,6 +15,12 @@ export const stayStore = {
       console.log(state.stays);
       return state.stays;
     },
+    // currStay(state) {
+    //   return state.currStay;
+    // },
+    imgsToShow(state) {
+      return state.currStay.imgUrls.slice(0, 5);
+    }
   },
   mutations: {
     setFilter(state, { filterBy }) {
@@ -55,7 +61,8 @@ export const stayStore = {
     getStayById({ commit }, { stayId }) {
       return stayService.getById(stayId).then((stay) => {
         commit({ type: 'setStay', stay })
-        return stay
+        console.log('stay', stay);
+        return stay;
       })
     },
   },
