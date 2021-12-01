@@ -1,9 +1,11 @@
 <template>
-  <ul>
-    <li class="clear-list stay-list" v-for="stay in stays" :key="stay._id">
-      <stay-preview :stay="stay"> </stay-preview>
-    </li>
-  </ul>
+  <section>
+    <ul class="stay-list">
+      <li class="clear-list stay-list" v-for="stay in stays" :key="stay._id">
+        <stay-preview :stay="stay"> </stay-preview>
+      </li>
+    </ul>
+  </section>
 </template>
 
 <script>
