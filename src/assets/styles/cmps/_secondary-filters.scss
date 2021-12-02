@@ -1,0 +1,92 @@
+.el-slider__bar {
+  background-color: rgba(170, 143, 148, 0);
+  border: 1px solid crimson;
+
+  //   height: 4px;
+}
+.el-slider__button {
+  width: 30px;
+  height: 30px;
+  //   background-color: crimson;
+  //   color: crimson;
+  border: 1px solid $clr1;
+}
+.el-slider__runway {
+  background-color: $clr1;
+}
+
+.secondary-filters button {
+  background-color: rgba(128, 128, 128, 0);
+  padding: 5px 12px;
+  border-radius: 30em;
+  outline: 1px solid grey;
+  &.active {
+    outline: 2px solid rgb(43, 42, 42);
+    &:hover {
+      outline: 2px solid rgb(43, 42, 42);
+    }
+  }
+  &:hover {
+    outline: 1px solid rgb(43, 42, 42);
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  // width: 200px;
+  min-height: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(223, 223, 222);
+  border-radius: 15px;
+  z-index: 9999;
+  flex-direction: column;
+  // padding: 10px;
+  padding-left: 30px;
+  // width: 200px;
+  font-size: rem(14px);
+  & .price-slider {
+    width: 400px;
+  }
+}
+
+.show {
+  display: block;
+  display: flex;
+}
+
+.dropdown-list {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: white;
+  border: 1px solid rgb(223, 223, 222);
+  border-radius: 30px;
+
+  font-size: rem(14px);
+  width: 350px;
+  z-index: 9999;
+
+  transform: translate(-10%, 20%);
+
+  max-width: 500px;
+  & li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+}
+
+// .show.secondary-filters button {
+//   border: 2px solid rgb(43, 42, 42);
+//   background-color: hotpink;
+// }

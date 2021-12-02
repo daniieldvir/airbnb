@@ -1,8 +1,13 @@
 <template>
-  <section class="side-filters">
+  <section class="secondary-filters">
     <!-- PRICE RANGE -->
     <div class="dropdown">
-      <button @click="toggleModal('price')">Price</button>
+      <button
+        @click="toggleModal('price')"
+        v-bind:class="{ active: price.shouldShow }"
+      >
+        Price
+      </button>
       <div v-bind:class="{ show: price.shouldShow }" class="dropdown-content">
         <el-slider v-model="price.priceRange" range :min="15" :max="850">
         </el-slider>
@@ -10,25 +15,35 @@
     </div>
     <!-- Property Type -->
     <div class="dropdown">
-      <button @click="toggleModal('typePlace')">Property Type</button>
+      <button
+        @click="toggleModal('typePlace')"
+        v-bind:class="{ active: typePlace.shouldShow }"
+      >
+        Property Type
+      </button>
       <div
         v-bind:class="{ show: typePlace.shouldShow }"
         class="dropdown-content"
       >
         <div v-for="type in typePlace.types" :key="type">
-          <span>{{ type }}</span>
+          <p>{{ type }}</p>
         </div>
       </div>
     </div>
     <!-- Amenities -->
     <div class="dropdown">
-      <button @click="toggleModal('amenities')">Amenities</button>
+      <button
+        @click="toggleModal('amenities')"
+        v-bind:class="{ active: amenities.shouldShow }"
+      >
+        Amenities
+      </button>
       <div
         v-bind:class="{ show: amenities.shouldShow }"
         class="dropdown-content"
       >
         <div v-for="(type, idx) in amenities.types" :key="idx">
-          <span>{{ type }}</span>
+          <p>{{ type }}</p>
         </div>
       </div>
     </div>
@@ -37,16 +52,22 @@
 
 <script>
 export default {
-  name: 'side-filter',
+  name: 'secondary-filter',
   data() {
     return {
+      activeBtn: '',
       shouldShow: false,
       price: {
         priceRange: [15, 850],
         shouldShow: false,
       },
       typePlace: {
-        types: ['Entire home', 'Entire condo', 'Entire rental unit'],
+        types: [
+          'Entire home',
+          'Entire condo',
+          'Entire rental unit',
+          'Entire loft hosted',
+        ],
         selectedType: '',
         shouldShow: false,
       },
@@ -71,15 +92,11 @@ export default {
       },
     };
   },
-  created() {
-    // this.loadFilter();
-  },
+  created() {},
   methods: {
     toggleModal(name) {
-      console.log(name);
       this[name].shouldShow = !this[name].shouldShow;
     },
-    toggletypePlace() {},
   },
   components: {},
 };
