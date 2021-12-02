@@ -1,4 +1,12 @@
 .stay-preview {
+  .block {
+    .el-carousel__button {
+      height: 8px;
+      width: 7px;
+      border-radius: 50%;
+      z-index: 5;
+    }
+  }
   p {
     color: $clr4;
 

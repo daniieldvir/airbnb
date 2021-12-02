@@ -1,9 +1,12 @@
+import { faUtensilSpoon } from "@fortawesome/free-solid-svg-icons";
+
 export const utilService = {
   delay,
   getRandomInt,
   makeId,
   saveToStorage,
   loadFromStorage,
+  getIcon
 };
 function saveToStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value) || null);
@@ -34,4 +37,62 @@ function makeId(length = 5) {
     txt += possible.charAt(Math.floor(Math.random() * possible.length));
   }
   return txt;
+}
+// 'Kitchen',
+//   'Wifi',
+//   'TV',
+//   'Washer',
+//   'Dryer',
+//   'Crib',
+//   'Smoking allowed',
+//   'Pets allowed',
+//   'Cooking basics',
+//   'Air conditioning',
+//   'Heating',
+//   'Essentials',
+//   'Hair dryer',
+
+// function getIcon(amenity) {
+//   return 'utensils';
+// }
+function getIcon(amenity) {
+  switch (amenity) {
+    case 'Kitchen':
+      return 'utensils'
+    case 'Wifi':
+      return 'wifi'
+    case 'TV':
+      return 'tv';
+    // case 'Washer':
+    // return ''
+    // case 'Dryer':
+    // return ''
+    case 'Crib':
+      return 'baby-carriage'
+    case 'Smoking allowed':
+      return 'smoking'
+    case 'No smoking':
+      return ''
+    case 'Pets allowed':
+      return 'paw'
+    // case 'Cooking basics':
+    // return ''
+    case 'Air conditioning':
+      return 'fan'
+    case 'Refrigerator':
+      return 'refrigerator'
+    // case 'Dishwasher':
+    // return ''
+    // case 'Free parking':
+    // return 'parking'
+    // case 'Bathub':
+    // return 'bathub'
+    // case 'Balcony':
+    // return 'balcony'
+    // case 'Iron':
+    // return 'iron'
+    default:
+      return '';
+      break;
+  }
 }
