@@ -2,7 +2,9 @@
   <section class="city-filter">
     <label>Location</label>
     <!-- <button @click="toggleLocations">Where are you going?</button> -->
-    <div class="toggel-btn" @click="toggleLocations">Where are you going?</div>
+    <div class="location-btn toggel-btn" @click="toggleLocations">
+      Where are you going?
+    </div>
 
     <ul class="location" v-if="shouldShow" @blur="toggleLocations">
       <p>{{ city[0] }}</p>

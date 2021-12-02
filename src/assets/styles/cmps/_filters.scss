@@ -1,9 +1,9 @@
 .main-filters {
   margin: 0 auto 30px auto;
-  padding: 15px;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  justify-content: space-evenly;
+  align-items: baseline;
+  align-content: stretch;
 
   background-color: white;
   border: 1px solid rgb(223, 223, 222);
@@ -14,30 +14,105 @@
 
   .search {
     background-color: $clr1;
+    border: 0;
     border-radius: 50%;
     width: 50px;
     height: 50px;
+    cursor: pointer;
+    align-self: center;
+
+    .svg-inline--fa {
+      color: white;
+    }
   }
 
   .city-filter,
   .guestsFilter,
   .date-picker {
     label {
-      font-size: rem(12px);
+      font-size: rem(14px);
       letter-spacing: 0.04em;
       font-weight: 800;
       color: black;
     }
-    input,
-    select {
-      border: 1px solid $clr6;
-      border-radius: 7px;
-      height: 25px;
-      max-width: 250px;
-      padding: 0 10px;
-      outline: none;
-      font-size: rem(12px);
-      // background-color: $clr4;
+  }
+  .main-filters:hover,
+  .city-filter:hover,
+  .guestsFilter:hover,
+  .date-picker:hover,
+  .location-btn:hover {
+    background-color: #ebebeb;
+    border-radius: 50px;
+  }
+
+  .guestsFilter,
+  .city-filter,
+  .date-picker {
+    .toggel-btn,
+    .el-range-input {
+      font-size: rem(18px);
+      color: #717171;
+      font-weight: 400;
+    }
+
+    .add-guests {
+      position: absolute;
+
+      display: flex;
+      flex-direction: column;
+
+      background-color: white;
+      border: 1px solid rgb(223, 223, 222);
+      border-radius: 30px;
+
+      font-size: rem(14px);
+      width: 350px;
+      z-index: 9999;
+
+      transform: translate(-43%, 15%);
+
+      max-width: 500px;
+      & li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .reduce-btn {
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid rgb(241, 241, 241);
+        color: rgb(202, 200, 200);
+        padding: 5px 8px;
+        margin: 5px;
+        cursor: pointer;
+      }
+
+      .add-btn {
+        background-color: rgba(255, 255, 255, 0);
+        color: rgb(139, 138, 138);
+        border: 1px solid rgb(139, 138, 138);
+        padding: 5px 8px;
+        margin: 5px;
+        cursor: pointer;
+      }
+    }
+
+    .selection,
+    .multi-choice {
+      h2,
+      h3 {
+        margin-top: 10px;
+        font-size: rem(16px);
+        // align-self: end;
+      }
+      h4 {
+        font-size: rem(12px);
+      }
+      button {
+        border: 1px solid rgb(223, 223, 222);
+        border-radius: 50%;
+      }
     }
   }
   .city-filter {
@@ -70,84 +145,16 @@
       }
     }
   }
-  .guestsFilter,
-  .city-filter {
-    .toggel-btn {
-      font-size: rem(18px);
-      color: #717171;
-      font-weight: 400;
-
-      white-space: nowrap;
-      // width: 70%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    // .toggel-btn:active {
-    //   white-space: nowrap;
-    //   width: 200px;
-    //   overflow: hidden;
-    //   text-overflow: ellipsis;
-    // }
-
-    .add-guests {
-      position: absolute;
-
+  .date-picker {
+    .date-picker-label {
       display: flex;
-      flex-direction: column;
-
-      background-color: white;
-      border: 1px solid rgb(223, 223, 222);
-      border-radius: 30px;
-
-      font-size: rem(14px);
-      width: 350px;
-      z-index: 9999;
-
-      transform: translate(-43%, 15%);
-
-      max-width: 500px;
-      & li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-      }
-
-      .reduce-btn {
-        background-color: rgba(255, 255, 255, 0);
-        border: 1px solid rgb(241, 241, 241);
-        color: rgb(202, 200, 200);
-      }
-
-      .add-btn {
-        background-color: rgba(255, 255, 255, 0);
-        color: rgb(139, 138, 138);
-        border: 1px solid rgb(139, 138, 138);
-      }
+      justify-content: space-around;
     }
-
-    .selection,
-    .multi-choice {
-      h2,
-      h3 {
-        margin-top: 10px;
-        font-size: rem(16px);
-        // align-self: end;
-      }
-      h4 {
-        font-size: rem(12px);
-      }
-      button {
-        border: 1px solid rgb(223, 223, 222);
-        border-radius: 50%;
-      }
+    .el-input__inner {
+      border: none;
+    }
+    .el-range__icon {
+      color: rgba(255, 255, 255, 0);
     }
   }
-  // .main-filters:hover,
-  // .city-filter:hover,
-  // .guestsFilter:hover,
-  // .date-picker:hover {
-  //   background-color: #ebebeb;
-  //   border-radius: 50px;
-  // }
 }
