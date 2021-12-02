@@ -12,7 +12,7 @@
               <div>
                 <h2>{{ stay.type }} hosted by {{ stay.host.fullname }}</h2>
                 <span
-                  >{{ stay.capacity }} guests &middot; {{ stay.type }} &middot;
+                  >{{ stay.capacity }} guests &#183; {{ stay.type }} &#183;;
                   {{ beds }}
                 </span>
               </div>
