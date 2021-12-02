@@ -1,9 +1,13 @@
 <template>
   <section class="home-page main-container">
-    <section class="top-fold">
-      <h1 class="main-header">Find a place to stay anywhere, anytime.</h1>
-      <stayFilter @filtered="setFilter" />
-    </section>
+    <div class="pic full">
+      <section class="main-header">
+        <h1 class="main-txt">Find a place to stay anywhere, anytime.</h1>
+        <section class="top-fold">
+          <stayFilter @filtered="setFilter" />
+        </section>
+      </section>
+    </div>
     <section class="top-rated">
       <stay-list :stays="topStays" />
     </section>

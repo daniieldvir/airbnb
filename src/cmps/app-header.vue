@@ -2,9 +2,7 @@
   <header class="main-container">
     <nav class="nav-bar">
       <router-link class="main-router-link" to="/">
-        <div class="logo">
-          Rent<span>Me<i class="fab fa-airbnb"></i></span>
-        </div>
+        <div class="logo">RentMe <font-awesome-icon icon="airbnb" /></div>
       </router-link>
 
       <div class="navigation-routs">

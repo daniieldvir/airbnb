@@ -5,14 +5,16 @@
     <!-- <button @click="toggleGuests">Guests</button> -->
     <guest-filter :currFilterBy="filterBy" @addedGuests="addGuests" />
 
-    <button @click="filter">Search</button>
+    <button class="search" @click="filter">
+      <font-awesome-icon icon="search" />
+    </button>
   </section>
 </template>
 
 <script>
 import datePicker from '../cmps/date-picker.vue';
 import guestFilter from '../cmps/guest-filter.vue';
-import cityFilter from '../cmps/city-filter.vue';
+import cityFilter from '../cmps/city-filter-copy.vue';
 export default {
   name: 'stay-filter',
 
