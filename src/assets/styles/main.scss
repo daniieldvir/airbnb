@@ -17,9 +17,11 @@
 @import 'cmps/stay-preview';
 @import 'cmps/stay-list';
 @import url('//unpkg.com/element-ui@2.15.7/lib/theme-chalk/index.css');
-@import 'cmps/guests-filter';
+// @import 'cmps/guests-filter';
+@import 'cmps/filters';
 
 // Views
+@import 'views/home-page';
 @import 'views/stay-details';
 @import 'views/stay-app';
 @import 'views/app';

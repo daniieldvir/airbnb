@@ -1,6 +1,7 @@
 <template>
   <section class="guestsFilter">
-    <ul class="clear-list">
+    <button @click="toggleGuests">Guests</button>
+    <ul v-if="shouldShow" @blur="toggleGuests" class="clear-list">
       <li v-for="(value, name, idx) in filterBy.guests" :key="idx">
         <div class="flex column">
           <h3>{{ name[0].toUpperCase() + name.substring(1) }}</h3>
@@ -26,20 +27,16 @@ export default {
     return {
       filterBy: this.currFilterBy,
       msgs: ['Ages 13 or above', 'Ages 2-12', 'Under 2', ''],
+      shouldShow: false,
     };
   },
   created() {
     // this.loadFilter();
   },
   methods: {
-    // filter() {
-    //   console.log(this.filterBy);
-    //   this.$emit('filtered', this.filterBy);
-    // },
-    // loadFilter() {
-    //   const filterBy = this.$store.getters.filterBy;
-    //   this.filterBy = JSON.parse(JSON.stringify(filterBy));
-    // },
+    toggleGuests() {
+      this.shouldShow = !this.shouldShow;
+    },
     add(val, name) {
       if (!this.filterBy.guests.adults && val === -1) return;
       this.filterBy.guests[name] += val;
@@ -47,25 +44,8 @@ export default {
         this.filterBy.totalGuests += val;
       this.$emit('addedGuests', this.filterBy);
     },
-    // toggleGuests() {
-    //   this.$emit('toggleGuests');
-    // },
   },
-  computed: {
-    // guestTypes() {
-    //   const keys = this.filterBy.guests.keys();
-    //   return keys;
-    // },
-    // guests() {
-    //   return this.filterBy.guests;
-    // },
-    // upperCase(str) {
-    //   return str.toUpperCase();
-    // },
-    // currFilterBy() {
-    //   return this.$store.getters.filterBy.guests;
-    // },
-  },
+  computed: {},
   components: {},
 };
 </script>
