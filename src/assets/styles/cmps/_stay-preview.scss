@@ -7,11 +7,17 @@
       z-index: 5;
     }
   }
-  p {
-    color: $clr4;
 
+  p {
+    size: rem(40px);
+    color: $clr4;
+    line-height: 0.5rem;
     span {
       color: black;
     }
+  }
+
+  .stay-type {
+    font-size: rem(14px);
   }
 }
