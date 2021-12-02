@@ -1,20 +1,18 @@
 <template>
   <section class="guestsFilter">
-    <button @click="toggleGuests">Guests</button>
-    <ul
-      v-if="shouldShow"
-      @blur="toggleGuests"
-      class="clear-list dropdown-content"
-    >
+    <label>Guests</label>
+    <!-- <button @click="toggleGuests">Add Guests</button> -->
+    <div class="toggel-btn" @click="toggleGuests">Add Guests</div>
+    <ul v-if="shouldShow" @blur="toggleGuests" class="clear-list add-guests">
       <li v-for="(value, name, idx) in filterBy.guests" :key="idx">
-        <div class="flex column">
+        <div class="selection">
           <h3>{{ name[0].toUpperCase() + name.substring(1) }}</h3>
           <h4>{{ msgs[idx] }}</h4>
         </div>
-        <div class="flex">
-          <button @click="add(-1, name)">-</button>
+        <div class="flex multi-choice">
+          <button class="reduce-btn" @click="add(-1, name)">-</button>
           <h2>{{ value }}</h2>
-          <button @click="add(1, name)">+</button>
+          <button class="add-btn" @click="add(1, name)">+</button>
         </div>
       </li>
     </ul>

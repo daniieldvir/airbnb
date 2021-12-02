@@ -1,3 +1,31 @@
 .top-fold {
   height: 80vh;
 }
+.pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  left: 0;
+  background-image: url(https://res.cloudinary.com/disku3v4j/image/upload/v1638460744/1_imjbnk.webp);
+  height: 95vh;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  box-shadow: inset 0 1px 20px 0 #5a5a5a;
+
+  .main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 600px;
+
+    .main-txt {
+      font-family: manrope;
+      font-size: rem(30px);
+      color: black;
+    }
+  }
+}

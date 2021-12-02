@@ -1,14 +1,17 @@
 <template>
   <div class="date-picker block">
-    <el-date-picker
-      @blur="filtered"
-      v-model="dates"
-      type="daterange"
-      range-separator=""
-      start-placeholder="Check in"
-      end-placeholder="Check out"
-    >
-    </el-date-picker>
+    <label>Check in </label>
+    <div>
+      <el-date-picker
+        @blur="filtered"
+        v-model="dates"
+        type="daterange"
+        range-separator=""
+        start-placeholder="Check in"
+        end-placeholder="Check out"
+      >
+      </el-date-picker>
+    </div>
   </div>
 </template>
 

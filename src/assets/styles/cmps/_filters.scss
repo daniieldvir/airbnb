@@ -1,24 +1,153 @@
 .main-filters {
-  background-color: cadetblue;
-  max-width: 66.5vw;
-  display: grid;
-  grid-template-columns: 25.5% 34% 18.75% 8.1%;
-  grid-auto-rows: auto;
+  margin: 0 auto 30px auto;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
 
+  background-color: white;
+  border: 1px solid rgb(223, 223, 222);
+  border-radius: 200px;
+  max-width: 900px;
+  // width: auto;
+  cursor: pointer;
+
+  .search {
+    background-color: $clr1;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+
+  .city-filter,
+  .guestsFilter,
   .date-picker {
-    // grid-column: 2;
+    label {
+      font-size: rem(12px);
+      letter-spacing: 0.04em;
+      font-weight: 800;
+      color: black;
+    }
+    input,
+    select {
+      border: 1px solid $clr6;
+      border-radius: 7px;
+      height: 25px;
+      max-width: 250px;
+      padding: 0 10px;
+      outline: none;
+      font-size: rem(12px);
+      // background-color: $clr4;
+    }
   }
-}
+  .city-filter {
+    select {
+      border: 1px solid rgb(223, 223, 222);
+      height: 40px;
+    }
+    .location {
+      position: absolute;
 
-.guestsFilter {
-  //   display: none;
-  background-color: bisque;
-  max-width: 500px;
-  & li {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+
+      background-color: white;
+      border: 1px solid rgb(223, 223, 222);
+      border-radius: 30px;
+
+      font-size: rem(14px);
+      width: 350px;
+      z-index: 9999;
+
+      transform: translate(-10%, 20%);
+
+      max-width: 500px;
+      & li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+    }
   }
+  .guestsFilter,
+  .city-filter {
+    .toggel-btn {
+      font-size: rem(18px);
+      color: #717171;
+      font-weight: 400;
+
+      white-space: nowrap;
+      // width: 70%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    // .toggel-btn:active {
+    //   white-space: nowrap;
+    //   width: 200px;
+    //   overflow: hidden;
+    //   text-overflow: ellipsis;
+    // }
+
+    .add-guests {
+      position: absolute;
+
+      display: flex;
+      flex-direction: column;
+
+      background-color: white;
+      border: 1px solid rgb(223, 223, 222);
+      border-radius: 30px;
+
+      font-size: rem(14px);
+      width: 350px;
+      z-index: 9999;
+
+      transform: translate(-43%, 15%);
+
+      max-width: 500px;
+      & li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .reduce-btn {
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid rgb(241, 241, 241);
+        color: rgb(202, 200, 200);
+      }
+
+      .add-btn {
+        background-color: rgba(255, 255, 255, 0);
+        color: rgb(139, 138, 138);
+        border: 1px solid rgb(139, 138, 138);
+      }
+    }
+
+    .selection,
+    .multi-choice {
+      h2,
+      h3 {
+        margin-top: 10px;
+        font-size: rem(16px);
+        // align-self: end;
+      }
+      h4 {
+        font-size: rem(12px);
+      }
+      button {
+        border: 1px solid rgb(223, 223, 222);
+        border-radius: 50%;
+      }
+    }
+  }
+  // .main-filters:hover,
+  // .city-filter:hover,
+  // .guestsFilter:hover,
+  // .date-picker:hover {
+  //   background-color: #ebebeb;
+  //   border-radius: 50px;
+  // }
 }
