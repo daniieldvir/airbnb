@@ -22,9 +22,10 @@ export default {
     };
   },
   created() {
-    // this.$store.dispatch({ type: 'loadStays' }).then(this.loadTopRated());
     this.$store.dispatch({ type: 'loadStays' }).then(() => {
       this.topStays = this.$store.getters.staysToShow;
+
+      this.topStays = this.topStays.slice(0, 4);
     });
   },
   methods: {

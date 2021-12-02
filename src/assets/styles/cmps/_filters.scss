@@ -2,20 +2,20 @@
   background-color: cadetblue;
   max-width: 66.5vw;
   display: grid;
-  //   grid-template-columns: 25.5%, 17%, 17% 18.75%, 8.1%;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 25.5% 34% 18.75% 8.1%;
   grid-auto-rows: auto;
-  //   grid-auto-flow: dense;
 
-  //     .date-picker {
-  //     grid-column: 2 / 3;
-  //   }
+  .date-picker {
+    // grid-column: 2;
+  }
 }
 
 .guestsFilter {
+  //   display: none;
   background-color: bisque;
   max-width: 500px;
   & li {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;

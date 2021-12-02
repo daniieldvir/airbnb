@@ -1,7 +1,11 @@
 <template>
   <section class="guestsFilter">
     <button @click="toggleGuests">Guests</button>
-    <ul v-if="shouldShow" @blur="toggleGuests" class="clear-list">
+    <ul
+      v-if="shouldShow"
+      @blur="toggleGuests"
+      class="clear-list dropdown-content"
+    >
       <li v-for="(value, name, idx) in filterBy.guests" :key="idx">
         <div class="flex column">
           <h3>{{ name[0].toUpperCase() + name.substring(1) }}</h3>

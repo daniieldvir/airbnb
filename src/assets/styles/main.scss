@@ -25,3 +25,47 @@
 @import 'views/stay-details';
 @import 'views/stay-app';
 @import 'views/app';
+
+.el-slider__bar {
+  background-color: rgba(170, 143, 148, 0);
+  border: 1px solid crimson;
+
+  //   height: 4px;
+}
+.el-slider__button {
+  width: 30px;
+  height: 30px;
+  //   background-color: crimson;
+  //   color: crimson;
+  border: 1px solid crimson;
+}
+.el-slider__runway {
+  background-color: rgba(39, 61, 189, 0.253);
+}
+
+.side-filters button {
+  // padding-left: 10px;
+  // padding-right: 10px;
+  // width: 90px;
+  padding: 5px 12px;
+  border-radius: 30em;
+  border: 1px solid grey;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.show {
+  display: block;
+}
