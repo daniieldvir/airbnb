@@ -1,22 +1,9 @@
 <template>
   <section class="main-filters">
-    <label for="city-filter"
-      >Where are you going?
-      <select v-model="filterBy.city" name="city-filter">
-        <!-- <option disabled value="">Where are you going?</option> -->
-        <option value="GB">London</option>
-        <option value="IS">Tel Aviv</option>
-        <option value="HK">Hong Kong</option>
-      </select>
-    </label>
+    <city-filter :currFilterBy="filterBy" @filteredCity="filterCity" />
     <date-picker @filtered="setDates" />
-    <button @click="toggleGuests">Guests</button>
-    <guest-filter
-      :currFilterBy="filterBy"
-      v-if="guestShouldShow"
-      @addedGuests="addGuests"
-      @blur="toggleGuests"
-    />
+    <!-- <button @click="toggleGuests">Guests</button> -->
+    <guest-filter :currFilterBy="filterBy" @addedGuests="addGuests" />
 
     <button @click="filter">Search</button>
   </section>
@@ -25,13 +12,14 @@
 <script>
 import datePicker from '../cmps/date-picker.vue';
 import guestFilter from '../cmps/guest-filter.vue';
+import cityFilter from '../cmps/city-filter.vue';
 export default {
   name: 'stay-filter',
 
   data() {
     return {
       filterBy: null,
-      guestShouldShow: false,
+      // guestShouldShow: false,
     };
   },
   created() {
@@ -48,16 +36,20 @@ export default {
     addGuests(filterBy) {
       this.filterBy = filterBy;
     },
+    filterCity(filterBy) {
+      this.filterBy.city = filterBy.city;
+    },
     filter() {
       this.$emit('filtered', this.filterBy);
     },
-    toggleGuests() {
-      this.guestShouldShow = !this.guestShouldShow;
-    },
+    // toggleGuests() {
+    //   this.guestShouldShow = !this.guestShouldShow;
+    // },
   },
   components: {
     datePicker,
     guestFilter,
+    cityFilter,
   },
 };
 </script>

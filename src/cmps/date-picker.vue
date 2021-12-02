@@ -1,5 +1,5 @@
 <template>
-  <div class="block">
+  <div class="date-picker block">
     <el-date-picker
       @blur="filtered"
       v-model="dates"

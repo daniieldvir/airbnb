@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // button {
 //     border:0;
 //     background-color: $clr1;
@@ -11,3 +12,19 @@
 //   width: 200px;
 //   margin: 10px 0px;
 // }
+=======
+button {
+  border: 0;
+  background-color: $clr1;
+  color: whitesmoke;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+form > * {
+  display: block;
+  width: 200px;
+  margin: 10px 0px;
+}
+>>>>>>> b3d15ebeea5951a02a9a9b2c65501aab5eba45cb
