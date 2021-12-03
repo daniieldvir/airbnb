@@ -20,7 +20,7 @@
                             range-separator="" start-placeholder="CHECK-IN" end-placeholder="CHECKOUT"
                             ref="myDatePicker"></el-date-picker>
                         </div>
-                        <checkout-guest-modal class="select-guests-container flex space-between" @setGuests="setGuests" />
+                        <!-- <checkout-guest-modal class="select-guests-container flex space-between" @setGuests="setGuests" /> -->
 
                         <!-- <div class="select-guests-container flex space-between"> -->
                             <!-- <guest-filter/> -->
