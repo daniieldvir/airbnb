@@ -61,6 +61,10 @@
         v-bind:class="{ show: amenities.shouldShow }"
         class="dropdown-content amenities"
       >
+        <button v-if="amenities.shouldShow" @click="dispatchToStore">
+          Show results
+          <!-- <font-awesome-icon icon="search" /> -->
+        </button>
         <div v-for="(type, idx) in amenities.types" :key="idx">
           <input
             type="checkbox"
@@ -74,10 +78,6 @@
         </div>
       </div>
     </div>
-
-    <span v-if="amenities.shouldShow" @click="dispatchToStore">
-      <font-awesome-icon icon="search" />
-    </span>
 
     <button @click="clearSearch">Clear search</button>
   </section>

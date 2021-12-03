@@ -24,9 +24,7 @@ export const stayStore = {
     staysToShow(state) {
       return state.stays;
     },
-    // currStay(state) {
-    //   return state.currStay;
-    // },
+
     imgsToShow(state) {
       return state.currStay.imgUrls.slice(0, 5);
     },
@@ -34,7 +32,6 @@ export const stayStore = {
   mutations: {
     setFilter(state, { filterBy }) {
       state.filterBy = filterBy;
-      // console.log(state.filterBy);
     },
     setStays(state, { stays }) {
       state.stays = stays;
