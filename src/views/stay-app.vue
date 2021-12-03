@@ -12,7 +12,7 @@ import secondaryFilters from '../cmps/filters/secondary-filters.vue';
 import guestsFilter from '../cmps/guest-filter.vue';
 
 export default {
-  components: { stayList, appHeader, secondaryFilters, guestsFilter },
+  components: { stayList, secondaryFilters, guestsFilter },
   name: 'stay-app',
   computed: {
     stays() {
