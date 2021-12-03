@@ -14,8 +14,8 @@
       >
         <p>The average nightly price is ₪519</p>
         <el-slider
-          @change="setPriceRange"
-          v-model="price.priceRange"
+          @change="dispatchToStore"
+          v-model="filterBy.priceRange"
           range
           :min="15"
           :max="850"
@@ -23,11 +23,11 @@
         </el-slider>
         <div class="flex">
           <p>
-            min price <br /><span>${{ price.priceRange[0] }}</span>
+            min price <br /><span>${{ filterBy.priceRange[0] }}</span>
           </p>
           -
           <p>
-            max price <br /><span>${{ price.priceRange[1] }}</span>
+            max price <br /><span>${{ filterBy.priceRange[1] }}</span>
           </p>
         </div>
       </div>
@@ -35,16 +35,16 @@
     <!-- Property Type -->
     <div class="dropdown">
       <button
-        @click="toggleModal('typePlace')"
-        v-bind:class="{ active: typePlace.shouldShow }"
+        @click="toggleModal('propertyType')"
+        v-bind:class="{ active: propertyType.shouldShow }"
       >
         Property Type
       </button>
       <div
-        v-bind:class="{ show: typePlace.shouldShow }"
+        v-bind:class="{ show: propertyType.shouldShow }"
         class="dropdown-content"
       >
-        <div v-for="type in typePlace.types" :key="type">
+        <div v-for="type in propertyType.types" :key="type">
           <p @click="setPropertyType(type)" class="pointer">{{ type }}</p>
         </div>
       </div>
@@ -59,15 +59,18 @@
       </button>
       <div
         v-bind:class="{ show: amenities.shouldShow }"
-        class="dropdown-content"
+        class="dropdown-content amenities"
       >
+        <button v-if="amenities.shouldShow" @click="dispatchToStore">
+          Show results
+          <!-- <font-awesome-icon icon="search" /> -->
+        </button>
         <div v-for="(type, idx) in amenities.types" :key="idx">
-          <!-- <p>{{ type }}</p> -->
           <input
             type="checkbox"
             :id="type"
             :value="type"
-            v-model="amenities.selectedTypes"
+            v-model="filterBy.amenities"
           />
           <label :for="type"
             ><p>{{ type }}</p>
@@ -75,6 +78,8 @@
         </div>
       </div>
     </div>
+
+    <button @click="clearSearch">Clear search</button>
   </section>
 </template>
 
@@ -86,17 +91,15 @@ export default {
       filterBy: null,
       previousBtn: '',
       price: {
-        priceRange: [15, 850],
         shouldShow: false,
       },
-      typePlace: {
+      propertyType: {
         types: [
           'Entire home',
           'Entire condo',
           'Entire rental unit',
           'Entire loft hosted',
         ],
-        selectedType: '',
         shouldShow: false,
       },
       amenities: {
@@ -115,7 +118,6 @@ export default {
           'Essentials',
           'Hair dryer',
         ],
-        selectedTypes: [],
         shouldShow: false,
       },
     };
@@ -141,16 +143,19 @@ export default {
       const filterBy = this.$store.getters.filterBy;
       this.filterBy = JSON.parse(JSON.stringify(filterBy));
     },
-    setPriceRange() {
-      this.filterBy.priceRange = this.price.priceRange;
+    dispatchToStore() {
       this.$store.dispatch({ type: 'setFilter', filterBy: this.filterBy });
       this.loadFilter();
     },
     setPropertyType(type) {
       this.filterBy.propertyType = type;
-      console.log(this.filterBy);
-      this.$store.dispatch({ type: 'setFilter', filterBy: this.filterBy });
-      this.loadFilter();
+      this.dispatchToStore();
+    },
+    clearSearch() {
+      this.filterBy.priceRange = [15, 850];
+      this.filterBy.amenities = [];
+      this.filterBy.propertyType = '';
+      this.dispatchToStore();
     },
   },
   components: {},

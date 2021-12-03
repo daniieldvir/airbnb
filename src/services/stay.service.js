@@ -31,11 +31,10 @@ function query(filterBy) {
     stays = allStays.filter((stay) => {
       const { totalGuests, priceRange, propertyType, amenities } = filterBy;
       if (propertyType) {
-        console.log(stay.propertyType);
         return stay.type === propertyType;
       }
       if (amenities.length) {
-        return stay.amenities.includes(amenities);
+        return amenities.every((type) => stay.amenities.includes(type));
       }
 
       return (
@@ -46,7 +45,7 @@ function query(filterBy) {
     });
 
     if (filterBy.city) {
-      stays = stays.filter((stay) => stay.loc.countryCode === filterBy.city);
+      stays = stays.filter((stay) => stay.loc.country === filterBy.city);
       return stays;
     }
     return stays;
@@ -89,7 +88,7 @@ function _createStays() {
         'Additional service charges may have to be paid locally on-site, see house rules and house manual for details. Please dont hesitate to contact us should you have any questions. Thank you. Knightsbridge Small, comfortable terraced house Cheval Place, renovated in 2012. In the centre of London, in a quiet position, in the heart of the city. Single garage. Shop, grocery, shopping centre, restaurant 150 m, bus stop Brompton Square 150 m, underground station Knightsbridge 400 m. Nearby attractions: Harrods 200m, Hyde Park 250m, South Kensington Museums 300m. Please note, Garage is suitable for small cars only.',
       capacity: 3,
       amenities: [
-        'Kitchen',
+        // 'Kitchen',
         'Wifi',
         'TV',
         'Crib',
@@ -158,7 +157,7 @@ function _createStays() {
         'We’ve everything that you need for your stay in London! Our penthouse is very spacious and has a private terrace. Its located on the top floor of the building - the 4th floor, making it a perfect place for those who are sunset lovers and enjoys city views!',
       capacity: 6,
       amenities: [
-        'Kitchen',
+        // 'Kitchen',
         'Wifi',
         'TV',
         'Crib',
@@ -437,7 +436,7 @@ function _createStays() {
         "This modern apartment is situated in a vibrant part of Tel Aviv, just 1 minutes' walk from the beach. The famous Hakarmel Market and the buzzing nightlife of Allenby Street are within a 5-minute walk.",
       capacity: 1,
       amenities: [
-        'Kitchen',
+        // 'Kitchen',
         'Wifi',
         'TV',
         'Elevator',
@@ -496,7 +495,7 @@ function _createStays() {
         'Stunning studio apartment in a new hotel opening in the Montefiore neighborhood. The studio has been renovated to a high standard and is housed in a new building with a lobby, elevator, study rooms, and a young and pleasant atmosphere.',
       capacity: 2,
       amenities: [
-        'Kitchen',
+        // 'Kitchen',
         'Wifi',
         'TV',
         'Elevator',
@@ -554,7 +553,7 @@ function _createStays() {
         'Enjoy a stylish experience at this centrally located place.A new and amazing business hotel in the center of Tel Aviv. The hotel has about 30 studios equipped and decorated to the highest standard. Each studio is completely private but in addition there is a laundry room, a lobby for work, a courtyard and a young and pleasant energyEnjoy a stylish experience at this centrally located place.',
       capacity: 2,
       amenities: [
-        'Kitchen',
+        // 'Kitchen',
         'Wifi',
         'TV',
         'Elevator',
