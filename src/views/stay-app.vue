@@ -1,7 +1,7 @@
 <template>
   <section class="stay-app main-container">
     <secondary-filters />
-    <guests-filter />
+    <!-- <guests-filter /> -->
     <stay-list :stays="stays"> </stay-list>
   </section>
 </template>

@@ -54,16 +54,17 @@
   border-radius: 15px;
   z-index: 9999;
   flex-direction: column;
-  padding-left: 20px;
-  margin-top: 30px;
+  padding: 15px;
+  margin-top: 10px;
   // font-size: rem(14px);
   font-size: 1em;
-
+  & p {
+    margin: 0px;
+  }
   & div {
     display: flex;
-    align-content: center;
-    flex-direction: row;
     align-items: center;
+    margin-bottom: 10px;
     & label {
       margin-left: 10px;
     }
@@ -95,12 +96,16 @@
   }
 }
 
+.dropdown-content.amenities {
+  overflow-y: scroll;
+  height: 300px;
+  & button {
+    margin-bottom: 10px;
+    // position: absolute;
+  }
+}
+
 .show {
   display: block;
   display: flex;
 }
-
-// .show.secondary-filters button {
-//   border: 2px solid rgb(43, 42, 42);
-//   background-color: hotpink;
-// }

@@ -3,13 +3,13 @@
     <label>Location</label>
     <!-- <button @click="toggleLocations">Where are you going?</button> -->
     <div class="location-btn toggel-btn" @click="toggleLocations">
-      Where are you going?
+      {{ filterBy.city || 'Where are you going?' }}
     </div>
 
     <ul class="dropdown-list" v-if="shouldShow" @blur="toggleLocations">
-      <p>{{ city[0] }}</p>
-      <p>{{ city[1] }}</p>
-      <p>{{ city[2] }}</p>
+      <p @click="filterCity('London')">London</p>
+      <p @click="filterCity('Tel Aviv')">Tel Aviv</p>
+      <p @click="filterCity('Hong Kong')">Hong Kong</p>
     </ul>
   </section>
 </template>
@@ -23,7 +23,7 @@ export default {
   data() {
     return {
       filterBy: this.currFilterBy,
-      city: ['London', 'Tel Aviv', 'Hong Kong'],
+      // city: ['London', 'Tel Aviv', 'Hong Kong'],
       shouldShow: false,
     };
   },
@@ -31,8 +31,10 @@ export default {
     // this.loadFilter();
   },
   methods: {
-    filteredCity() {
+    filterCity(city) {
+      this.filterBy.city = city;
       this.$emit('filteredCity', this.filterBy);
+      this.toggleLocations();
     },
     toggleLocations() {
       this.shouldShow = !this.shouldShow;
