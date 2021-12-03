@@ -20,11 +20,13 @@
                             range-separator="" start-placeholder="CHECK-IN" end-placeholder="CHECKOUT"
                             ref="myDatePicker"></el-date-picker>
                         </div>
-                        <div class="select-guests-container flex space-between">
+                        <checkout-guest-modal class="select-guests-container flex space-between" @setGuests="setGuests" />
+
+                        <!-- <div class="select-guests-container flex space-between"> -->
                             <!-- <guest-filter/> -->
-                            <guest-filter :currFilterBy="filterBy" @addedGuests="addGuests" />
+                            <!-- <guest-filter :currFilterBy="filterBy" @addedGuests="addGuests" /> -->
                            
-                        </div>
+                        <!-- </div> -->
                         <!-- <div class="btn-checkout-container">
                             <button class="btn-checkout">Check availability
                             </button>
@@ -41,7 +43,7 @@
 </template>
 
 <script>
-import guestFilter from './guest-filter.vue'
+import checkoutGuestModal from './checkout-guest-modal.vue'
 export default {
   props: { 
      stay: Object, 
@@ -79,7 +81,7 @@ export default {
     addGuests(filterBy) {
       this.filterBy.guests = filterBy.guests;
       this.filterBy.totalGuests = filterBy.totalGuests;
-      
+
     },
     filter() {
       this.$emit('filtered', this.filterBy);
@@ -88,7 +90,7 @@ export default {
 
     }
   },
-    components: { guestFilter },
+    components: { checkoutGuestModal },
 
 }
 </script>
