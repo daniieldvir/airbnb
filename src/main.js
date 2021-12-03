@@ -11,13 +11,13 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
+import { faFontAwesome } from '@fortawesome/free-brands-svg-icons';
+library.add(faFontAwesome);
 library.add(fas);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 // import { library } from '@fortawesome/fontawesome-svg-core'
-// import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
-
 // library.add(faFontAwesome)
 
 import './assets/styles/main.scss';

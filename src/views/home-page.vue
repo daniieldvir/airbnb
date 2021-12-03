@@ -1,9 +1,16 @@
 <template>
   <section class="home-page main-container">
-    <section class="top-fold">
-      <h1 class="main-header">Find a place to stay anywhere, anytime.</h1>
-      <stayFilter @filtered="setFilter" />
-    </section>
+    <div class="pic full">
+      <app-header />
+      <div class="main-header">
+        <section>
+          <section class="top-fold">
+            <stayFilter @filtered="setFilter" />
+          </section>
+          <h1 class="main-txt">Find a place to stay anywhere, anytime.</h1>
+        </section>
+      </div>
+    </div>
     <section class="top-rated">
       <stay-list :stays="topStays" />
     </section>
@@ -13,6 +20,7 @@
 <script>
 import stayFilter from '../cmps/stay-filter.vue';
 import stayList from '../cmps/stay-list.vue';
+import appHeader from '../cmps/app-header.vue';
 
 export default {
   name: 'home-page',
@@ -47,6 +55,7 @@ export default {
   components: {
     stayFilter,
     stayList,
+    appHeader,
   },
 };
 </script>

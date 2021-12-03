@@ -16,6 +16,7 @@
     </div>
 
     <router-link class="router-link" :to="'/stay/' + stay._id">
+      <font-awesome-icon icon="star" />
       <p class="stay-type">{{ stay.type }}</p>
       <p>{{ sortTxt }} · {{ stay.loc.country }}</p>
 

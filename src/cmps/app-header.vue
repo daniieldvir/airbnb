@@ -3,7 +3,7 @@
     <nav class="nav-bar">
       <router-link class="main-router-link" to="/">
         <div class="logo">
-          Rent<span>Me<i class="fab fa-airbnb"></i></span>
+          RentMe <font-awesome-icon :icon="['fas', 'airbnb']" />
         </div>
       </router-link>
 
