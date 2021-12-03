@@ -22,11 +22,11 @@
                         </div>
                         <!-- <checkout-guest-modal class="select-guests-container flex space-between" @setGuests="setGuests" /> -->
 
-                        <!-- <div class="select-guests-container flex space-between"> -->
+                        <div class="select-guests-container flex space-between">
                             <!-- <guest-filter/> -->
-                            <!-- <guest-filter :currFilterBy="filterBy" @addedGuests="addGuests" /> -->
+                            <guest-filter @addedGuests="addGuests" />
                            
-                        <!-- </div> -->
+                        </div>
                         <!-- <div class="btn-checkout-container">
                             <button class="btn-checkout">Check availability
                             </button>
@@ -44,6 +44,7 @@
 
 <script>
 import checkoutGuestModal from './checkout-guest-modal.vue'
+import guestFilter from './guest-filter.vue';
 export default {
   props: { 
      stay: Object, 
@@ -90,7 +91,7 @@ export default {
 
     }
   },
-    components: { checkoutGuestModal },
+    components: { checkoutGuestModal, guestFilter },
 
 }
 </script>
