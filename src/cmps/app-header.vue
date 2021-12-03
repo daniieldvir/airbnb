@@ -1,10 +1,8 @@
 <template>
   <header class="main-container">
-    <nav class="nav-bar main-container">
+    <nav class="main-nav main-container">
       <router-link class="main-router-link" to="/">
-        <div class="logo">
-          RentMe <font-awesome-icon :icon="['fas', 'airbnb']" />
-        </div>
+        <div class="logo">RentMe</div>
       </router-link>
 
       <div class="navigation-routs">

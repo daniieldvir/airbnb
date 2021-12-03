@@ -20,16 +20,20 @@
                             range-separator="" start-placeholder="CHECK-IN" end-placeholder="CHECKOUT"
                             ref="myDatePicker"></el-date-picker>
                         </div>
-                        <div class="select-guests-container flex space-between">
+                        <!-- <checkout-guest-modal class="select-guests-container flex space-between" @setGuests="setGuests" /> -->
+
+                        <!-- <div class="select-guests-container flex space-between"> -->
                             <!-- <guest-filter/> -->
-                        </div>
+                            <!-- <guest-filter :currFilterBy="filterBy" @addedGuests="addGuests" /> -->
+                           
+                        <!-- </div> -->
                         <!-- <div class="btn-checkout-container">
                             <button class="btn-checkout">Check availability
                             </button>
                         </div> -->
                     </div>
                     <div class="btn-checkout-container">
-                        <button class="btn-checkout">Check availability
+                        <button class="btn-checkout" @click="checkout">Check availability
                         </button>
                     </div>
                 </div>
@@ -39,13 +43,24 @@
 </template>
 
 <script>
-import guestFilter from './guest-filter.vue'
+import checkoutGuestModal from './checkout-guest-modal.vue'
 export default {
   props: { 
      stay: Object, 
      dates: Array,
   },
+  
+  data() {
+    return {
+      filterBy: null,
+      // guestShouldShow: false,
+    };
+  },
 
+
+  created() {
+    this.loadFilter();
+  },
   computed:{
     formattedReviews(){
          //maybe 0 reviews
@@ -54,7 +69,28 @@ export default {
         else if(this.stay.reviews.length > 1) return `(${this.stay.reviews.length} reviews)` ;
     }
   },
-  components: { guestFilter },
+
+  methods: {
+    loadFilter() {
+      const filterBy = this.$store.getters.filterBy;
+      this.filterBy = JSON.parse(JSON.stringify(filterBy));
+    },
+    // setDates(selectedDates) {
+    //   this.filterBy.dates = selectedDates;
+    // },
+    addGuests(filterBy) {
+      this.filterBy.guests = filterBy.guests;
+      this.filterBy.totalGuests = filterBy.totalGuests;
+
+    },
+    filter() {
+      this.$emit('filtered', this.filterBy);
+    },
+    checkout(){
+
+    }
+  },
+    components: { checkoutGuestModal },
 
 }
 </script>

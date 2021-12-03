@@ -52,9 +52,9 @@
             font-size: 16px;
             line-height: 20px;
             height: 3em;
-            background-image: linear-gradient(to right, #e61e4d 0%, #e31c5f 51%, #d70466 100%);
+            // background-image: linear-gradient(to right, #d70466 0%, #e31c5f 51%, #d70466 100%);
 
-            //   background-image: linear-gradient(to right, #ff512f 0%, #dd2476 51%, #ff512f 100%);
+            background-image: linear-gradient(to right, #ff512f 0%, #dd2476 51%, #ff512f 100%);
 
             // margin: 10px;
             // padding: 15px 45px;
@@ -70,6 +70,7 @@
             &:hover {
               background-position: right center; /* change the direction of the change here */
               color: #fff;
+              background-color: #ff385c;
               text-decoration: none;
             }
             &::selection {

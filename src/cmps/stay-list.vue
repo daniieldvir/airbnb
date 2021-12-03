@@ -18,7 +18,6 @@ export default {
   created() {
     this.$store.dispatch({ type: 'loadStays' });
   },
-
   components: {
     stayPreview,
     secondaryFilters,

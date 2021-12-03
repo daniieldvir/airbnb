@@ -1,6 +1,6 @@
 <template>
   <section v-if="stay" class="stay-details main-container">
-    <app-header />
+    <!-- <app-header /> -->
 
     <h2>{{ stay.name }}</h2>
     <div>
@@ -15,10 +15,9 @@
       <a href=""> {{ stay.loc.address }}</a>
     </div>
     <div class="images-display-container">
-      <div class="imgs-content" v-for="(img, idx) in imgs" :key="idx">
-        <img :src="img" alt="" />
-      </div>
+      <img v-for="(img, idx) in imgs" :key="idx" :src="img" alt="" />
     </div>
+
     <div class="details-main-container flex">
       <div class="stay-details-left-container">
         <div class="info-header flex align-center space-between">
@@ -93,7 +92,7 @@
     <hr />
     <div className="reviews-section-container">fdfd</div>
     <div class="about">
-      <!-- <GmapMap
+      <GmapMap
         class="map"
         :stay="stay"
         :options="{
@@ -104,7 +103,8 @@
           rotateControl: false,
           fullscreenControl: true,
           disableDefaultUi: false,
-        }"/> -->
+        }"
+      />
     </div>
   </section>
 </template>
