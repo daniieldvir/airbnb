@@ -40,7 +40,6 @@
                            
                         </div>
                         <!-- <div class="btn-checkout-container">
-            <!-- <div class="btn-checkout-container">
                             <button class="btn-checkout">Check availability
                             </button>
                         </div> -->
