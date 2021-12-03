@@ -6,7 +6,7 @@
       Where are you going?
     </div>
 
-    <ul class="location" v-if="shouldShow" @blur="toggleLocations">
+    <ul class="dropdown-list" v-if="shouldShow" @blur="toggleLocations">
       <p>{{ city[0] }}</p>
       <p>{{ city[1] }}</p>
       <p>{{ city[2] }}</p>

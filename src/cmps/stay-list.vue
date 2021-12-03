@@ -1,5 +1,6 @@
 <template>
   <section>
+    <secondary-filters />
     <ul class="stay-list">
       <li class="clear-list stay-list" v-for="stay in stays" :key="stay._id">
         <stay-preview :stay="stay"> </stay-preview>
@@ -10,6 +11,7 @@
 
 <script>
 import stayPreview from './stay-preview.vue';
+import secondaryFilters from './filters/secondary-filters.vue';
 export default {
   name: 'stay-list',
   props: ['stays'],
@@ -18,6 +20,7 @@ export default {
   },
   components: {
     stayPreview,
+    secondaryFilters,
   },
 };
 </script>

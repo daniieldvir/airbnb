@@ -36,7 +36,8 @@ export default {
       this.filterBy.dates = selectedDates;
     },
     addGuests(filterBy) {
-      this.filterBy = filterBy;
+      this.filterBy.guests = filterBy.guests;
+      this.filterBy.totalGuests = filterBy.totalGuests;
     },
     filterCity(filterBy) {
       this.filterBy.city = filterBy.city;

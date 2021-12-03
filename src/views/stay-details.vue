@@ -165,6 +165,6 @@ export default {
       // return 'wifi';
     },
   },
-  components: { GmapMap, stayCheckout, appHeader },
+  components: { GmapMap, stayCheckout },
 };
 </script>
