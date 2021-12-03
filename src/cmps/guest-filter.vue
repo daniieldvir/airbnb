@@ -1,5 +1,5 @@
 <template>
-  <section class="guestsFilter">
+  <section class="guest-filter">
     <label>Guests</label>
     <!-- <button @click="toggleGuests">Add Guests</button> -->
     <div class="toggel-btn" @click="toggleGuests">Add Guests</div>
