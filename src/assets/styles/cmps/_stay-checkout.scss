@@ -54,35 +54,33 @@
 
           background-image: linear-gradient(
             75deg,
-            #9c1ee6,
+            #b80c57,
             #f52060,
-            #c752cf,
+            #d33797,
             #f52060
           );
 
           background-size: 300%;
           background-position: -100%;
 
-          animation: animatedBackground 3s infinite alternate-reverse;
+          // animation: animatedBackground 3s infinite alternate-reverse;
 
           // transition: 100ms background-position ease-in-out;
         }
         // .btn-checkout:hover {
         //   background-position: right;
+      }
+      .btn-checkout:hover,
+      .btn-checkout:focus {
+        animation: animatedBackground 3s infinite alternate-reverse;
+      }
 
-        // }
-        // .btn-checkout:hover,
-        // .btn-checkout:focus {
-        //   background-position: right;
-        // }
-
-        @keyframes animatedBackground {
-          from {
-            background-position: 0%;
-          }
-          to {
-            background-position: 100%;
-          }
+      @keyframes animatedBackground {
+        from {
+          background-position: 0%;
+        }
+        to {
+          background-position: 100%;
         }
       }
     }
