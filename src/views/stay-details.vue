@@ -113,6 +113,7 @@
 import { utilService } from '@/services/util.service';
 import GmapMap from '@/cmps/map.vue';
 import stayCheckout from '@/cmps/stay-checkout.vue';
+import appHeader from '../cmps/app-header.vue';
 
 // import '@fortawesome/fontawesome-free/js/all.js';
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -145,14 +146,18 @@ export default {
     //   return this.$store.getters.currStay;
     // },
     beds() {
-      return this.stay.capacity === 1 ? this.stay.capacity + ' bed' : this.stay.capacity + ' beds'
+      return this.stay.capacity === 1
+        ? this.stay.capacity + ' bed'
+        : this.stay.capacity + ' beds';
     },
     bath() {},
-    formattedReviews(){
+    formattedReviews() {
       //maybe 0 reviews
-       if(this.stay.reviews.length === 1) return `(${this.stay.reviews.length} review)`
-       if(this.stay.reviews.length > 1) return `(${this.stay.reviews.length} reviews)`
-    }
+      if (this.stay.reviews.length === 1)
+        return `(${this.stay.reviews.length} review)`;
+      if (this.stay.reviews.length > 1)
+        return `(${this.stay.reviews.length} reviews)`;
+    },
   },
   methods: {
     iconToShow(amenity) {
@@ -160,10 +165,6 @@ export default {
       // return 'wifi';
     },
   },
-<<<<<<< HEAD
-  components: { GmapMap, appHeader },
-=======
-  components: { GmapMap, stayCheckout },
->>>>>>> ee60893668c8bab102611ce9384bc1cc29d5a7af
+  components: { GmapMap, stayCheckout, appHeader },
 };
 </script>
