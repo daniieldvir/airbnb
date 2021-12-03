@@ -109,6 +109,18 @@ function _createStays() {
               'https://res.cloudinary.com/disku3v4j/image/upload/v1638300062/our_kind_of_people_lance_gross_2x_ssvg9h.jpg',
           },
         },
+        {
+          id: utilService.makeId(),
+          createdAt: 'October 2021',
+          txt: 'A great host, she responded to our every need instantly. The flat was very clean. I definitely recommend :)',
+          rate: 4.3,
+          by: {
+            _id: '',
+            fullname: 'Guest',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638300062/ed76f14d3021840aba9d329ee037d23637896277_drm40f.jpg',
+          },
+        },
       ],
       likedByUsers: [],
     },
@@ -155,20 +167,7 @@ function _createStays() {
         lat: 51.532005,
         lng: -0.177331,
       },
-      reviews: [
-        {
-          id: utilService.makeId(),
-          createdAt: 'October 2021',
-          txt: 'A great host, she responded to our every need instantly. The flat was very clean. I definitely recommend :)',
-          rate: 4.3,
-          by: {
-            _id: '',
-            fullname: 'Guest',
-            imgUrl:
-              'https://res.cloudinary.com/disku3v4j/image/upload/v1638300062/ed76f14d3021840aba9d329ee037d23637896277_drm40f.jpg',
-          },
-        },
-      ],
+      reviews: [],
       likedByUsers: [],
     },
     {

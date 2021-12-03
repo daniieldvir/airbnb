@@ -36,14 +36,14 @@
       color: black;
     }
   }
-  .main-filters:hover,
-  .city-filter:hover,
-  .guestsFilter:hover,
-  .date-picker:hover,
-  .location-btn:hover {
-    background-color: #ebebeb;
-    border-radius: 50px;
-  }
+  // .main-filters:hover,
+  // .city-filter:hover,
+  // .guestsFilter:hover,
+  // .date-picker:hover,
+  // .location-btn:hover {
+  //   background-color: #ebebeb;
+  //   border-radius: 50px;
+  // }
 
   .guestsFilter,
   .city-filter,
@@ -69,7 +69,7 @@
       width: 350px;
       z-index: 9999;
 
-      transform: translate(-43%, 15%);
+      transform: translate(-43%, 5%);
 
       max-width: 500px;
       & li {
@@ -134,7 +134,7 @@
       width: 350px;
       z-index: 9999;
 
-      transform: translate(-10%, 20%);
+      transform: translate(-10%, 9%);
 
       max-width: 500px;
       & li {

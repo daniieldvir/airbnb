@@ -47,12 +47,12 @@ export default {
     reviewCount() {
       var stay = this.stay.reviews;
 
-      if (stay.length) return stay.length + ' Reviews';
+      if (stay.length) return stay.length + ' reviews';
       if (!stay.length) return 'New';
     },
     sortTxt() {
       var txt = this.stay.name;
-      if (txt.length > 15) return txt.slice(0, 15) + '...';
+      if (txt.length > 25 < 50) return txt.slice(0, 22) + '...';
     },
   },
   components: {
