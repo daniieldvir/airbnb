@@ -1,18 +1,38 @@
 .stay-details {
   .stay-details-left-container {
     width: 60%;
+    min-height: 850px;
+    max-height: 1000px;
+    padding: 20px 0 0;
+
+    .stay-details-amenities {
+      .amenities-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+
+        .font-amenity-icon {
+          min-width: 24px;
+          margin-inline-end: 20px;
+        }
+      }
+    }
   }
   .stay-details-right-container {
     width: 40%;
+    min-height: 850px;
+    max-height: 1000px;
+    padding: 0;
   }
+}
 
-  .info-header {
-    margin-block-end: 1rem;
-    img {
-      width: 55px;
-      height: 55px;
-      border-radius: 30px;
-    }
+.info-header {
+  margin-block-end: 1rem;
+  img {
+    width: 55px;
+    height: 55px;
+    border-radius: 30px;
+    object-fit: cover;
   }
 }
 

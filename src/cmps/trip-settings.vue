@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  name: "app-filter",
+  name: "trip-settings",
 };
 </script>
