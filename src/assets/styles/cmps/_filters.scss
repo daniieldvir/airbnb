@@ -27,7 +27,7 @@
   }
 
   .city-filter,
-  .guestsFilter,
+  .guest-filter,
   .date-picker {
     label {
       font-size: rem(14px);
@@ -38,14 +38,14 @@
   }
   // .main-filters:hover,
   // .city-filter:hover,
-  // .guestsFilter:hover,
+  // .guest-filter:hover,
   // .date-picker:hover,
   // .location-btn:hover {
   //   background-color: #ebebeb;
   //   border-radius: 50px;
   // }
 
-  .guestsFilter,
+  .guest-filter,
   .city-filter,
   .date-picker {
     .toggel-btn,
@@ -120,7 +120,7 @@
       border: 1px solid rgb(223, 223, 222);
       height: 40px;
     }
-    .location {
+    .dropdown-list {
       position: absolute;
 
       display: flex;
