@@ -45,7 +45,7 @@ function query(filterBy) {
     });
 
     if (filterBy.city) {
-      stays = stays.filter((stay) => stay.loc.countryCode === filterBy.city);
+      stays = stays.filter((stay) => stay.loc.country === filterBy.city);
       return stays;
     }
     return stays;
