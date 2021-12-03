@@ -49,7 +49,7 @@ function save(stay) {
   return savedStay;
 }
 
-function getEmpty() {}
+function getEmpty() { }
 
 function _createStays() {
   const stays = [
@@ -65,6 +65,7 @@ function _createStays() {
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638299910/london/apr1/5_zu0lqe.jpg',
       ],
       price: 90,
+      avgRate: 4.5,
       summary:
         'Additional service charges may have to be paid locally on-site, see house rules and house manual for details. Please dont hesitate to contact us should you have any questions. Thank you. Knightsbridge Small, comfortable terraced house Cheval Place, renovated in 2012. In the centre of London, in a quiet position, in the heart of the city. Single garage. Shop, grocery, shopping centre, restaurant 150 m, bus stop Brompton Square 150 m, underground station Knightsbridge 400 m. Nearby attractions: Harrods 200m, Hyde Park 250m, South Kensington Museums 300m. Please note, Garage is suitable for small cars only.',
       capacity: 3,
@@ -72,16 +73,13 @@ function _createStays() {
         'Kitchen',
         'Wifi',
         'TV',
-        'Washer',
-        'Dryer',
         'Crib',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
         'Heating',
-        'Essentials',
-        'Hair dryer',
+        'Bathub'
       ],
       host: {
         _id: 3463463462244,
@@ -124,6 +122,7 @@ function _createStays() {
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638299922/london/apr2/5_kqkrv8.jpg',
       ],
       price: 312,
+      avgRate: 4.5,
       summary:
         'We’ve everything that you need for your stay in London! Our penthouse is very spacious and has a private terrace. Its located on the top floor of the building - the 4th floor, making it a perfect place for those who are sunset lovers and enjoys city views!',
       capacity: 6,
@@ -131,16 +130,12 @@ function _createStays() {
         'Kitchen',
         'Wifi',
         'TV',
-        'Washer',
-        'Dryer',
         'Crib',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
         'Heating',
-        'Essentials',
-        'Hair dryer',
       ],
       host: {
         _id: 807807856456,
@@ -184,6 +179,7 @@ function _createStays() {
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301203/hong-kong/app1/app1_3_mqt1pw.jpg',
       ],
       price: 118.0,
+      avgRate: 4.5,
       summary:
         "Very close to the ferry terminal, with a huge rooftop (BBQ set available), our spacious home is perfect for enjoying the ultimate Cheung Chau experience. With a perfect view of the sunset, close to all shops & seafood restaurants, you couldn't stay in a better location. Beach is also a short walk away.",
       capacity: 3,
@@ -191,16 +187,12 @@ function _createStays() {
         'Kitchen',
         'Wifi',
         'TV',
-        'Washer',
-        'Dryer',
         'Crib',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
         'Heating',
-        'Essentials',
-        'Hair dryer',
       ],
       host: {
         _id: 'kj900',
@@ -243,6 +235,7 @@ function _createStays() {
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301206/hong-kong/app2/app2_4_nu56tp.jpg',
       ],
       price: 81.0,
+      avgRate: 4.5,
       summary: `Difficult to find in Hong Kong, my place has two large balconies connected to the living room and bedroom allowing you a Garden terrace feel during your stay.It is located 3min walk from Prince Edward MTR & only 7-10 min walk to Mongkok main centre for shopping .3min walk from my place, there are over 8-10 local and Asian cuisines for you to sample. Via MTR, you may go to places like Disney or Ocean Park.
             It is on the 1st Floor with no elevator so you need to use the stairs for one level.`,
       capacity: 8,
@@ -250,16 +243,12 @@ function _createStays() {
         'Kitchen',
         'Wifi',
         'TV',
-        'Washer',
-        'Dryer',
         'Crib',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
         'Heating',
-        'Essentials',
-        'Hair dryer',
       ],
       host: {
         _id: 'f8989',
@@ -303,6 +292,7 @@ function _createStays() {
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301206/hong-kong/app3/app3_6_qub3xc.jpg',
       ],
       price: 90.0,
+      avgRate: 4.5,
       summary: `Brand-new and luxurious Studio apartment with balcony right in the heart of North Point, a quintessential part of Hong Kong. Surrounded by renowned eateries and a wealth of culture, the property is conveniently located only 6 minutes away from the nearest MTR station and the tram terminus is just a 4-minute walk in the other direction.
             Whether you're in Hong Kong for business or pleasure, we've got you covered by taking care of your travel needs, so you can spend your time doing what matters.`,
       capacity: 2,
@@ -318,8 +308,6 @@ function _createStays() {
         'Cooking basics',
         'Air conditioning',
         'Heating',
-        'Essentials',
-        'Hair dryer',
       ],
       host: {
         _id: 't36367',
@@ -363,6 +351,7 @@ function _createStays() {
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638299229/tel-aviv/apr1/2_y7jlvj.jpg',
       ],
       price: 29,
+      avgRate: 4.5,
       summary:
         'Authentic Studio with a balcony, in an original Bauhaus building, with traditional floor. You have fully equipped kitchen, hot water boiler, stove, and a microwave. Seat out at the balcony and observe the Tel Aviv vibe. The location is in the heart of Florentine. A very nice upcoming area, with lots of coffeshops, cafees, streetart, galleries and cool shops. It is close to Rothschild Boulevard, where u can find a lot of nightlife. 10min bike ride to the beach and old Jaffa. See you soon! :-)',
       capacity: 3,
@@ -425,6 +414,7 @@ function _createStays() {
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638299258/tel-aviv/apr2/1_kejiq6.jpg',
       ],
       price: 65,
+      avgRate: 4.5,
       summary:
         "This modern apartment is situated in a vibrant part of Tel Aviv, just 1 minutes' walk from the beach. The famous Hakarmel Market and the buzzing nightlife of Allenby Street are within a 5-minute walk.",
       capacity: 1,
@@ -432,17 +422,13 @@ function _createStays() {
         'Kitchen',
         'Wifi',
         'TV',
-        'Washer',
         'Elevator',
-        'Dryer',
         'Crib',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
         'Heating',
-        'Essentials',
-        'Hair dryer',
       ],
       host: {
         _id: 'u121',
@@ -487,6 +473,7 @@ function _createStays() {
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301095/tel-aviv/apr3/8ca43c36-dc24-4b05-9c08-d0900c3c9c44_f2fhak.jpg',
       ],
       price: 83,
+      avgRate: 4.5,
       summary:
         'Stunning studio apartment in a new hotel opening in the Montefiore neighborhood. The studio has been renovated to a high standard and is housed in a new building with a lobby, elevator, study rooms, and a young and pleasant atmosphere.',
       capacity: 2,
@@ -494,17 +481,13 @@ function _createStays() {
         'Kitchen',
         'Wifi',
         'TV',
-        'Washer',
         'Elevator',
-        'Dryer',
         'Crib',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
         'Heating',
-        'Essentials',
-        'Hair dryer',
       ],
       host: {
         _id: 'u121',
@@ -549,6 +532,7 @@ function _createStays() {
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301907/tel-aviv/aprt4/901fcdcd-2481-40ea-9373-7e7f6e6e3974_hv0yno.jpg',
       ],
       price: 80,
+      avgRate: 4.5,
       summary:
         'Enjoy a stylish experience at this centrally located place.A new and amazing business hotel in the center of Tel Aviv. The hotel has about 30 studios equipped and decorated to the highest standard. Each studio is completely private but in addition there is a laundry room, a lobby for work, a courtyard and a young and pleasant energyEnjoy a stylish experience at this centrally located place.',
       capacity: 2,
@@ -556,17 +540,13 @@ function _createStays() {
         'Kitchen',
         'Wifi',
         'TV',
-        'Washer',
         'Elevator',
-        'Dryer',
         'Crib',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
         'Heating',
-        'Essentials',
-        'Hair dryer',
       ],
       host: {
         _id: 'u121',
