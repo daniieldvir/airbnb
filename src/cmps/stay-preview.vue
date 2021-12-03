@@ -16,10 +16,16 @@
     </div>
 
     <router-link class="router-link" :to="'/stay/' + stay._id">
-      <font-awesome-icon icon="star" />
+      <p>
+        <font-awesome-icon icon="star" />
+        <span class="review-rate"> ( {{ reviewCount }} ) </span>
+      </p>
+
+      <p></p>
       <p class="stay-type">{{ stay.type }}</p>
       <p>{{ sortTxt }} · {{ stay.loc.country }}</p>
 
+      <p></p>
       <p>
         <span>${{ stay.price }}</span> / night
       </p>
@@ -38,8 +44,11 @@ export default {
     return {};
   },
   computed: {
-    rate() {
-      const rate = foundRate.map();
+    reviewCount() {
+      var stay = this.stay.reviews;
+
+      if (stay.length) return stay.length + ' Reviews';
+      if (!stay.length) return 'New';
     },
     sortTxt() {
       var txt = this.stay.name;

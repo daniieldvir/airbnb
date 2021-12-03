@@ -1,5 +1,7 @@
 <template>
   <section v-if="stay" class="stay-details main-container">
+    <app-header />
+
     <h2>{{ stay.name }}</h2>
     <a href=""> {{ stay.loc.address }}</a>
     <div class="images-display-container">
@@ -90,6 +92,7 @@
 
 <script>
 import { utilService } from '../services/util.service';
+import appHeader from '../cmps/app-header.vue';
 import GmapMap from '../cmps/map.vue';
 
 // import '@fortawesome/fontawesome-free/js/all.js';
@@ -132,6 +135,6 @@ export default {
       // return 'wifi';
     },
   },
-  components: { GmapMap },
+  components: { GmapMap, appHeader },
 };
 </script>

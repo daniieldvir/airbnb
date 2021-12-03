@@ -9,11 +9,18 @@
   }
 
   p {
-    size: rem(40px);
     color: $clr4;
     line-height: 0.5rem;
     span {
       color: black;
+    }
+    .svg-inline--fa {
+      color: $clr1;
+      font-size: rem(14px);
+    }
+    .review-rate {
+      color: $clr4;
+      font-size: rem(14px);
     }
   }
 

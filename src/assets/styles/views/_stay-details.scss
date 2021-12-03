@@ -70,6 +70,7 @@
   grid-template-columns: repeat(5, 220px);
   grid-template-rows: repeat(2, 250px);
   gap: 10px;
+  justify-content: space-evenly;
 
   > * {
     @include aspect-ratio(1, 1);
