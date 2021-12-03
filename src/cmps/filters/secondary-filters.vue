@@ -8,9 +8,22 @@
       >
         Price
       </button>
-      <div v-bind:class="{ show: price.shouldShow }" class="dropdown-content">
+      <div
+        v-bind:class="{ show: price.shouldShow }"
+        class="dropdown-content price"
+      >
+        <p>The average nightly price is ₪519</p>
         <el-slider v-model="price.priceRange" range :min="15" :max="850">
         </el-slider>
+        <div class="flex">
+          <p>
+            min price <br /><span>${{ price.priceRange[0] }}</span>
+          </p>
+          -
+          <p>
+            max price <br /><span>${{ price.priceRange[1] }}</span>
+          </p>
+        </div>
       </div>
     </div>
     <!-- Property Type -->
@@ -43,7 +56,16 @@
         class="dropdown-content"
       >
         <div v-for="(type, idx) in amenities.types" :key="idx">
-          <p>{{ type }}</p>
+          <!-- <p>{{ type }}</p> -->
+          <input
+            type="checkbox"
+            :id="type"
+            :value="type"
+            v-model="amenities.selectedTypes"
+          />
+          <label :for="type"
+            ><p>{{ type }}</p>
+          </label>
         </div>
       </div>
     </div>
@@ -55,8 +77,7 @@ export default {
   name: 'secondary-filter',
   data() {
     return {
-      activeBtn: '',
-      shouldShow: false,
+      previousBtn: '',
       price: {
         priceRange: [15, 850],
         shouldShow: false,
@@ -87,15 +108,25 @@ export default {
           'Essentials',
           'Hair dryer',
         ],
-        selectedType: '',
+        selectedTypes: [],
         shouldShow: false,
       },
     };
   },
   created() {},
   methods: {
-    toggleModal(name) {
-      this[name].shouldShow = !this[name].shouldShow;
+    toggleModal(currBtn) {
+      if (this.previousBtn && this.previousBtn !== currBtn) {
+        this[this.previousBtn].shouldShow = false;
+        this[currBtn].shouldShow = true;
+        this.previousBtn = currBtn;
+      } else if (this.previousBtn === currBtn) {
+        this[currBtn].shouldShow = false;
+        this.previousBtn = '';
+      } else {
+        this[currBtn].shouldShow = true;
+        this.previousBtn = currBtn;
+      }
     },
   },
   components: {},
