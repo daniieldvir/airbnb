@@ -49,7 +49,7 @@ export default {
   computed:{
     formattedReviews(){
          //maybe 0 reviews
-        if(!this.stay.reviews.length) return `new`;
+        if(!this.stay.reviews.length) return `(new)`;
         if(this.stay.reviews.length === 1) return `(${this.stay.reviews.length} review)`;
         else if(this.stay.reviews.length > 1) return `(${this.stay.reviews.length} reviews)` ;
     }

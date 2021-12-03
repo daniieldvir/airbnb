@@ -72,6 +72,10 @@
               color: #fff;
               text-decoration: none;
             }
+            &::selection {
+              background-color: #ff385c;
+              color: #fff;
+            }
           }
         }
       }
