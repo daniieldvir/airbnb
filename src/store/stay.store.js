@@ -51,7 +51,7 @@ export const stayStore = {
       });
     },
     setFilter({ commit, dispatch }, { filterBy }) {
-      // console.log('store set filter', filterBy);
+      console.log('store set filter', filterBy);
       commit({ type: 'setFilter', filterBy });
       dispatch({ type: 'loadStays' });
     },
