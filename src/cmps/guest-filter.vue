@@ -23,7 +23,7 @@
 export default {
   name: 'guest-filter',
   props: {
-    currFilterBy: Object,
+    // currFilterBy: Object,
   },
   data() {
     return {
@@ -33,9 +33,13 @@ export default {
     };
   },
   created() {
-    // this.loadFilter();
+    this.loadFilter();
   },
   methods: {
+    loadFilter() {
+      const filterBy = this.$store.getters.filterBy;
+      this.filterBy = JSON.parse(JSON.stringify(filterBy));
+    },
     toggleGuests() {
       this.shouldShow = !this.shouldShow;
     },
