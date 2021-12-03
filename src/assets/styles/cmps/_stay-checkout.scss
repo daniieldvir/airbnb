@@ -63,7 +63,43 @@
           background-size: 300%;
           background-position: -100%;
 
+<<<<<<< HEAD
           // animation: animatedBackground 3s infinite alternate-reverse;
+=======
+<<<<<<< HEAD
+            &:hover {
+              // animation: animate 10s linear infinite;
+              background-position: right center; /* change the direction of the change here */
+              color: #fff;
+              // background-color: #ff385c, rgb(230, 30, 77), rgb(189, 30, 89);
+              // background-image: linear-gradient(
+              //   to right,
+              //   rgb(255, 56, 92) 0%,
+              //   rgb(230, 30, 77) 27.5%,
+              //   rgb(227, 28, 95) 40%,
+              //   rgb(215, 4, 102) 57.5%,
+              //   rgb(189, 30, 89) 75%,
+              //   rgb(189, 30, 89) 100%
+              // );
+              // background-image: linear-gradient(
+              //   to right,
+              //   rgb(189, 30, 89) 0%,
+              //   rgb(189, 30, 89) 27.5%,
+              //   rgb(215, 4, 102) 40%,
+              //   rgb(227, 28, 95) 57.5%,
+              //   rgb(230, 30, 77) 75%,
+              //   rgb(255, 56, 92) 100%
+              // );
+              text-decoration: none;
+              // opacity: 1;
+            }
+            &::selection {
+              background-color: #ff385c;
+              color: #fff;
+            }
+=======
+          animation: animatedBackground 3s infinite alternate-reverse;
+>>>>>>> 57598fbf01783462b9fe9cf9196e02ff4cd7f2e9
 
           // transition: 100ms background-position ease-in-out;
         }
@@ -75,12 +111,29 @@
         animation: animatedBackground 3s infinite alternate-reverse;
       }
 
+<<<<<<< HEAD
       @keyframes animatedBackground {
         from {
           background-position: 0%;
         }
         to {
           background-position: 100%;
+=======
+        // }
+        // .btn-checkout:hover,
+        // .btn-checkout:focus {
+        //   background-position: right;
+        // }
+
+        @keyframes animatedBackground {
+          from {
+            background-position: 0%;
+          }
+          to {
+            background-position: 100%;
+>>>>>>> 9485223b9b0e1b5f40de0fdde3a824a3e5f21bff
+          }
+>>>>>>> 57598fbf01783462b9fe9cf9196e02ff4cd7f2e9
         }
       }
     }

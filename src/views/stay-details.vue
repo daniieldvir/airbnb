@@ -87,9 +87,9 @@
         <stay-checkout :stay="stay"></stay-checkout>
       </div>
     </div>
-    <hr />
+    <hr/>
     <h1>hhh</h1>
-    <hr />
+    <hr/>
     <div className="reviews-section-container">fdfd</div>
     <div class="about">
       <GmapMap
