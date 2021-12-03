@@ -9,15 +9,28 @@
   }
 
   p {
-    size: rem(40px);
     color: $clr4;
     line-height: 0.5rem;
     span {
       color: black;
     }
+    .svg-inline--fa {
+      color: $clr1;
+      font-size: rem(14px);
+    }
+    .review-rate {
+      color: $clr4;
+      font-size: rem(14px);
+    }
   }
 
   .stay-type {
     font-size: rem(14px);
+  }
+
+  .el-carousel__arrow,
+  .el-carousel__arrow--left {
+    color: black;
+    background-color: rgba(245, 245, 245, 0.692);
   }
 }

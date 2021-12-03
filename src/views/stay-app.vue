@@ -1,15 +1,16 @@
 <template>
   <section class="stay-app main-container">
-    <secondary-filters />
+    <app-header />
     <stay-list :stays="stays"> </stay-list>
   </section>
 </template>
 
 <script>
 import stayList from '../cmps/stay-list.vue';
-import secondaryFilters from '../cmps/filters/secondary-filters.vue';
+import appHeader from '../cmps/app-header.vue';
+
 export default {
-  components: { stayList, secondaryFilters },
+  components: { stayList, appHeader },
   name: 'stay-app',
   computed: {
     stays() {

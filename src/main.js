@@ -10,15 +10,13 @@ import * as VueGoogleMaps from 'vue2-google-maps';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+// import { faFontAwesome } from '@fortawesome/free-brands-svg-icons';
+import { faJs, faVuejs } from '@fortawesome/free-brands-svg-icons';
 
-import { faFontAwesome } from '@fortawesome/free-brands-svg-icons';
-library.add(faFontAwesome);
-library.add(fas);
+// library.add(faFontAwesome);
+library.add(fas, faJs, faVuejs);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
-
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// library.add(faFontAwesome)
 
 import './assets/styles/main.scss';
 

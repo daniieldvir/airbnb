@@ -1,77 +1,99 @@
 <template>
   <section v-if="stay" class="stay-details main-container">
+    <app-header />
+
     <h2>{{ stay.name }}</h2>
-    <a href=""> {{ stay.loc.address }}</a>
+    <div>
+      <p>
+        <span v-if="stay.reviews.length">
+          <font-awesome-icon icon="star" />{{ stay.avgRate }}
+          <span class="details-reviews">{{ formattedReviews }}</span
+          >&middot;
+        </span>
+        <span class="details-location">{{ stay.loc.address }}</span>
+      </p>
+      <a href=""> {{ stay.loc.address }}</a>
+    </div>
     <div class="images-display-container">
       <div class="imgs-content" v-for="(img, idx) in imgs" :key="idx">
         <img :src="img" alt="" />
       </div>
     </div>
-    <div class="stay-details-left-container">
-      <div class="info-header flex align-center space-between">
-        <div>
-          <h2>{{ stay.type }} hosted by {{ stay.host.fullname }}</h2>
-          <span
-            >{{ stay.capacity }} guests &#183; {{ stay.type }} &#183;
-            {{ beds }}
-          </span>
+    <div class="details-main-container flex">
+      <div class="stay-details-left-container">
+        <div class="info-header flex align-center space-between">
+          <div>
+            <h2>{{ stay.type }} hosted by {{ stay.host.fullname }}</h2>
+            <span
+              >{{ stay.capacity }} guests &#183; {{ stay.type }} &#183;
+              {{ beds }}
+            </span>
+          </div>
+          <img :src="stay.host.imgUrl" alt="" />
         </div>
-        <img :src="stay.host.imgUrl" alt="" />
+        <hr />
+        <!-- <font-awesome-icon :icon="['fas', 'home']" /> -->
+        <div class="assets-container">
+          <div class="assets-content">
+            <div class="icon"><font-awesome-icon icon="home" /></div>
+            <div class="asset-details">
+              <h4>Entire home</h4>
+              <p>You’ll have the loft to yourself.</p>
+            </div>
+          </div>
+          <div class="assets-content">
+            <div class="icon"><font-awesome-icon icon="broom" /></div>
+            <div class="asset-details">
+              <h4>Enhanced Clean</h4>
+              <p>
+                This Host committed to Airbnb's 5-step enhanced cleaning
+                process. Show more
+              </p>
+            </div>
+          </div>
+          <div class="assets-content">
+            <div class="icon"><font-awesome-icon icon="door-closed" /></div>
+            <div class="asset-details">
+              <h4>Self check-in</h4>
+              <p>Check yourself in with the lockbox.</p>
+            </div>
+          </div>
+          <div class="assets-content">
+            <div class="icon"><font-awesome-icon icon="map-marker-alt" /></div>
+            <div class="asset-details">
+              <h4>Great location</h4>
+              <p>100% of recent guests gave the location a 5-star rating.</p>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="details-summary-container">
+          <p>{{ stay.summary }}</p>
+        </div>
+        <hr />
+        <div class="stay-details-amenities">
+          <h2>What this place offers</h2>
+          <div class="amenities-content">
+            <div v-for="(amenity, idx) in stay.amenities" :key="idx">
+              <font-awesome-icon
+                class="font-amenity-icon"
+                :icon="iconToShow(amenity)"
+              />
+              {{ amenity }}
+            </div>
+          </div>
+        </div>
       </div>
-      <hr />
-      <!-- <font-awesome-icon :icon="['fas', 'home']" /> -->
-      <div class="assets-container">
-        <div class="assets-content">
-          <div class="icon"><font-awesome-icon icon="home" /></div>
-          <div class="asset-details">
-            <h4>Entire home</h4>
-            <p>You’ll have the loft to yourself.</p>
-          </div>
-        </div>
-        <div class="assets-content">
-          <div class="icon"><font-awesome-icon icon="broom" /></div>
-          <div class="asset-details">
-            <h4>Enhanced Clean</h4>
-            <p>
-              This Host committed to Airbnb's 5-step enhanced cleaning process.
-              Show more
-            </p>
-          </div>
-        </div>
-        <div class="assets-content">
-          <div class="icon"><font-awesome-icon icon="door-closed" /></div>
-          <div class="asset-details">
-            <h4>Self check-in</h4>
-            <p>Check yourself in with the lockbox.</p>
-          </div>
-        </div>
-        <div class="assets-content">
-          <div class="icon"><font-awesome-icon icon="map-marker-alt" /></div>
-          <div class="asset-details">
-            <h4>Great location</h4>
-            <p>100% of recent guests gave the location a 5-star rating.</p>
-          </div>
-        </div>
-      </div>
-      <hr />
-      <div class="details-summary-container">
-        <p>{{ stay.summary }}</p>
-      </div>
-      <hr />
-      <div class="stay-details-amenities">
-        <h2>What this place offers</h2>
-        <div>
-          <div v-for="(amenity, idx) in stay.amenities" :key="idx">
-            <font-awesome-icon :icon="iconToShow(amenity)" />
-            {{ amenity }}
-          </div>
-        </div>
+      <div class="stay-details-right-container">
+        <stay-checkout :stay="stay"></stay-checkout>
       </div>
     </div>
-    <div class="stay-details-right-container"></div>
-
-    <div class="about app-main">
-      <GmapMap
+    <hr />
+    <h1>hhh</h1>
+    <hr />
+    <div className="reviews-section-container">fdfd</div>
+    <div class="about">
+      <!-- <GmapMap
         class="map"
         :stay="stay"
         :options="{
@@ -82,15 +104,15 @@
           rotateControl: false,
           fullscreenControl: true,
           disableDefaultUi: false,
-        }"
-      />
+        }"/> -->
     </div>
   </section>
 </template>
 
 <script>
-import { utilService } from '../services/util.service';
-import GmapMap from '../cmps/map.vue';
+import { utilService } from '@/services/util.service';
+import GmapMap from '@/cmps/map.vue';
+import stayCheckout from '@/cmps/stay-checkout.vue';
 
 // import '@fortawesome/fontawesome-free/js/all.js';
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -102,7 +124,8 @@ export default {
       isLoading: true,
       stay: null,
       imgs: null,
-      // iconToShow:''
+      // iconToShow:'',
+      // reviews:[]
     };
   },
   created() {
@@ -122,9 +145,14 @@ export default {
     //   return this.$store.getters.currStay;
     // },
     beds() {
-      return this.stay.capacity + ' ' + 'beds';
+      return this.stay.capacity === 1 ? this.stay.capacity + ' bed' : this.stay.capacity + ' beds'
     },
     bath() {},
+    formattedReviews(){
+      //maybe 0 reviews
+       if(this.stay.reviews.length === 1) return `(${this.stay.reviews.length} review)`
+       if(this.stay.reviews.length > 1) return `(${this.stay.reviews.length} reviews)`
+    }
   },
   methods: {
     iconToShow(amenity) {
@@ -132,6 +160,10 @@ export default {
       // return 'wifi';
     },
   },
-  components: { GmapMap },
+<<<<<<< HEAD
+  components: { GmapMap, appHeader },
+=======
+  components: { GmapMap, stayCheckout },
+>>>>>>> ee60893668c8bab102611ce9384bc1cc29d5a7af
 };
 </script>

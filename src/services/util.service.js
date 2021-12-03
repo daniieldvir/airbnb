@@ -72,25 +72,28 @@ function getIcon(amenity) {
     case 'Smoking allowed':
       return 'smoking'
     case 'No smoking':
-      return ''
+      return 'smoking-ban'
     case 'Pets allowed':
       return 'paw'
-    // case 'Cooking basics':
-    // return ''
+    case 'Cooking basics':
+      return 'blender'
     case 'Air conditioning':
-      return 'fan'
+      // return 'fan'
+      return 'snowflake'
     case 'Refrigerator':
       return 'refrigerator'
     // case 'Dishwasher':
     // return ''
-    // case 'Free parking':
-    // return 'parking'
-    // case 'Bathub':
-    // return 'bathub'
+    case 'Free parking':
+      return 'parking'
+    case 'Bathub':
+      return 'hot-bath'
     // case 'Balcony':
     // return 'balcony'
-    // case 'Iron':
-    // return 'iron'
+    case 'Iron':
+      return 'iron'
+    case 'Heating':
+      return 'temperature-high'
     default:
       return '';
       break;

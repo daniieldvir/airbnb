@@ -1,6 +1,6 @@
 <template>
   <header class="main-container">
-    <nav class="nav-bar">
+    <nav class="nav-bar main-container">
       <router-link class="main-router-link" to="/">
         <div class="logo">
           RentMe <font-awesome-icon :icon="['fas', 'airbnb']" />
