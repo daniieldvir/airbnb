@@ -2,7 +2,9 @@
   <section class="guest-filter">
     <label>Guests</label>
     <!-- <button @click="toggleGuests">Add Guests</button> -->
-    <div class="toggel-btn" @click="toggleGuests">Add Guests</div>
+    <div class="toggel-btn" @click="toggleGuests">
+      {{ filterBy.totalGuests || 'Add guests' }}
+    </div>
     <ul v-if="shouldShow" @blur="toggleGuests" class="clear-list add-guests">
       <li v-for="(value, name, idx) in filterBy.guests" :key="idx">
         <div class="selection">
@@ -23,19 +25,23 @@
 export default {
   name: 'guest-filter',
   props: {
-    currFilterBy: Object,
+    // currFilterBy: Object,
   },
   data() {
     return {
-      filterBy: this.currFilterBy,
+      filterBy: null,
       msgs: ['Ages 13 or above', 'Ages 2-12', 'Under 2', ''],
       shouldShow: false,
     };
   },
   created() {
-    // this.loadFilter();
+    this.loadFilter();
   },
   methods: {
+    loadFilter() {
+      const filterBy = this.$store.getters.filterBy;
+      this.filterBy = JSON.parse(JSON.stringify(filterBy));
+    },
     toggleGuests() {
       this.shouldShow = !this.shouldShow;
     },

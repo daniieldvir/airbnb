@@ -13,7 +13,13 @@
         class="dropdown-content price"
       >
         <p>The average nightly price is ₪519</p>
-        <el-slider v-model="price.priceRange" range :min="15" :max="850">
+        <el-slider
+          @change="setPriceRange"
+          v-model="price.priceRange"
+          range
+          :min="15"
+          :max="850"
+        >
         </el-slider>
         <div class="flex">
           <p>
@@ -39,7 +45,7 @@
         class="dropdown-content"
       >
         <div v-for="type in typePlace.types" :key="type">
-          <p>{{ type }}</p>
+          <p @click="setPropertyType(type)" class="pointer">{{ type }}</p>
         </div>
       </div>
     </div>
@@ -77,6 +83,7 @@ export default {
   name: 'secondary-filter',
   data() {
     return {
+      filterBy: null,
       previousBtn: '',
       price: {
         priceRange: [15, 850],
@@ -113,7 +120,9 @@ export default {
       },
     };
   },
-  created() {},
+  created() {
+    this.loadFilter();
+  },
   methods: {
     toggleModal(currBtn) {
       if (this.previousBtn && this.previousBtn !== currBtn) {
@@ -127,6 +136,21 @@ export default {
         this[currBtn].shouldShow = true;
         this.previousBtn = currBtn;
       }
+    },
+    loadFilter() {
+      const filterBy = this.$store.getters.filterBy;
+      this.filterBy = JSON.parse(JSON.stringify(filterBy));
+    },
+    setPriceRange() {
+      this.filterBy.priceRange = this.price.priceRange;
+      this.$store.dispatch({ type: 'setFilter', filterBy: this.filterBy });
+      this.loadFilter();
+    },
+    setPropertyType(type) {
+      this.filterBy.propertyType = type;
+      console.log(this.filterBy);
+      this.$store.dispatch({ type: 'setFilter', filterBy: this.filterBy });
+      this.loadFilter();
     },
   },
   components: {},

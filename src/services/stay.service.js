@@ -18,18 +18,37 @@ export const stayService = {
 
 function query(filterBy) {
   let stays;
+  // return storageService.query(STAYS_KEY).then((allStays) => {
+  //   stays = allStays.filter((stay) => stay.capacity >= filterBy.totalGuests);
+  //   if (filterBy.city) {
+  //     stays = stays.filter((stay) => stay.loc.countryCode === filterBy.city);
+  //     return stays;
+  //   }
+  //   return stays;
+  // });
+
   return storageService.query(STAYS_KEY).then((allStays) => {
-    stays = allStays.filter((stay) => stay.capacity >= filterBy.totalGuests);
+    stays = allStays.filter((stay) => {
+      const { totalGuests, priceRange, propertyType, amenities } = filterBy;
+      if (propertyType) {
+        console.log(stay.propertyType);
+        return stay.type === propertyType;
+      }
+      if (amenities.length) {
+        return stay.amenities.includes(amenities);
+      }
+
+      return (
+        stay.capacity >= totalGuests &&
+        stay.price >= priceRange[0] &&
+        stay.price <= priceRange[1]
+      );
+    });
 
     if (filterBy.city) {
       stays = stays.filter((stay) => stay.loc.countryCode === filterBy.city);
       return stays;
     }
-    // if (filterBy.totalGuests) {
-    //   stays = stays.filter((stay) => stay.capacity >= filterBy.totalGuests);
-    //   return stays;
-    // }
-
     return stays;
   });
 }
@@ -49,7 +68,7 @@ function save(stay) {
   return savedStay;
 }
 
-function getEmpty() { }
+function getEmpty() {}
 
 function _createStays() {
   const stays = [
@@ -79,7 +98,7 @@ function _createStays() {
         'Cooking basics',
         'Air conditioning',
         'Heating',
-        'Bathub'
+        'Bathub',
       ],
       host: {
         _id: 3463463462244,
@@ -481,7 +500,6 @@ function _createStays() {
         'Wifi',
         'TV',
         'Elevator',
-        'Crib',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
