@@ -1,13 +1,27 @@
 header {
-  padding: 10px;
+  --text: #f4f4f4;
+  --text-inverse: #333;
+  --background: transparent;
 
-  .nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+  transition: background 300ms ease-in;
+  background: var(--background);
+  color: var(--text);
+
+  .main-nav {
     display: flex;
     justify-content: space-between;
 
     .main-router-link {
       margin-right: 30px;
-
       text-decoration: none;
       color: black;
 
@@ -23,4 +37,11 @@ header {
       text-decoration: none;
     }
   }
+}
+.nav-scrolled {
+  --text: #f4f4f4;
+  --text-inverse: #333;
+  --background: white;
+
+  box-shadow: 0 3px 20px rgba($color: black, $alpha: 0.2);
 }

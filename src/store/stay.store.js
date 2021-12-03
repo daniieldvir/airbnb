@@ -30,7 +30,7 @@ export const stayStore = {
   mutations: {
     setFilter(state, { filterBy }) {
       state.filterBy = filterBy;
-      console.log(state.filterBy);
+      // console.log(state.filterBy);
     },
     setStays(state, { stays }) {
       state.stays = stays;

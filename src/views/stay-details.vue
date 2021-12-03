@@ -1,7 +1,5 @@
 <template>
   <section v-if="stay" class="stay-details main-container">
-    <app-header />
-
     <h2>{{ stay.name }}</h2>
     <div>
       <p>
@@ -15,10 +13,9 @@
       <a href=""> {{ stay.loc.address }}</a>
     </div>
     <div class="images-display-container">
-      <div class="imgs-content" v-for="(img, idx) in imgs" :key="idx">
-        <img :src="img" alt="" />
-      </div>
+      <img v-for="(img, idx) in imgs" :key="idx" :src="img" alt="" />
     </div>
+
     <div class="details-main-container flex">
       <div class="stay-details-left-container">
         <div class="info-header flex align-center space-between">
@@ -93,7 +90,7 @@
     <hr />
     <div className="reviews-section-container">fdfd</div>
     <div class="about">
-      <!-- <GmapMap
+      <GmapMap
         class="map"
         :stay="stay"
         :options="{
@@ -104,7 +101,8 @@
           rotateControl: false,
           fullscreenControl: true,
           disableDefaultUi: false,
-        }"/> -->
+        }"
+      />
     </div>
   </section>
 </template>
@@ -113,7 +111,6 @@
 import { utilService } from '@/services/util.service';
 import GmapMap from '@/cmps/map.vue';
 import stayCheckout from '@/cmps/stay-checkout.vue';
-import appHeader from '../cmps/app-header.vue';
 
 // import '@fortawesome/fontawesome-free/js/all.js';
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
