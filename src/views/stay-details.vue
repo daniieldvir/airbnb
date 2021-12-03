@@ -1,5 +1,7 @@
 <template>
   <section v-if="stay" class="stay-details main-container">
+    <!-- <app-header /> -->
+
     <h2>{{ stay.name }}</h2>
     <div>
       <p>

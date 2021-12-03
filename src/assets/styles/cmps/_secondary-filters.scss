@@ -1,6 +1,6 @@
 .el-slider__bar {
-  background-color: rgba(170, 143, 148, 0);
-  border: 1px solid crimson;
+  background-color: $clr1;
+  border: 1px solid $clr1;
 }
 .el-slider__button {
   width: 30px;
@@ -8,7 +8,7 @@
   border: 1px solid $clr1;
 }
 .el-slider__runway {
-  background-color: $clr1;
+  background-color: $clr7;
 }
 
 .secondary-filters {
@@ -55,6 +55,7 @@
   z-index: 9999;
   flex-direction: column;
   padding-left: 20px;
+  margin-top: 30px;
   // font-size: rem(14px);
   font-size: 1em;
 
@@ -71,8 +72,8 @@
   &.price {
     justify-content: space-evenly;
     width: 30em;
-    padding-right: 30px;
-    padding-left: 30px;
+    padding-right: 32px;
+    padding-left: 32px;
 
     & :last-child {
       justify-content: space-between;

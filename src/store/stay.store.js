@@ -10,11 +10,15 @@ export const stayStore = {
       dates: [],
       guests: { adults: 0, children: 0, infants: 0, pets: 0 },
       totalGuests: 0,
+      priceRange: [15, 850],
+      amenities: [],
+      propertyType: '',
     },
     currStay: null,
   },
   getters: {
     filterBy(state) {
+      // console.log('store filter', state.filterBy);
       return state.filterBy;
     },
     staysToShow(state) {
@@ -43,10 +47,11 @@ export const stayStore = {
     loadStays({ commit, state }) {
       stayService.query(state.filterBy).then((stays) => {
         commit({ type: 'setStays', stays });
-        console.log('stay', stays);
+        // console.log('stay', stays);
       });
     },
     setFilter({ commit, dispatch }, { filterBy }) {
+      // console.log('store set filter', filterBy);
       commit({ type: 'setFilter', filterBy });
       dispatch({ type: 'loadStays' });
     },
