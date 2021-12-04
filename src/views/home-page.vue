@@ -6,7 +6,7 @@
           <stayFilter @filtered="setFilter" />
           <!-- <section class="top-fold">
           </section> -->
-          <h1 class="main-txt">Find a place to stay anywhere, anytime.</h1>
+          <h1 class="main-txt">Find a place to stay anywhere. Anytime.</h1>
         </section>
       </div>
     </div>

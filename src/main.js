@@ -45,7 +45,7 @@ Vue.use(VueGoogleMaps, {
 
 /// *** Observer *** ///
 const header = document.querySelector('header');
-const sectionOne = document.querySelector('.pic .main-filters section');
+const sectionOne = document.querySelector('.pic .main-filters');
 // const sectionTwo = document.querySelector('.stay-app');
 
 const sectionOneOptions = {
