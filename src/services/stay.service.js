@@ -583,6 +583,557 @@ function _createStays() {
       ],
       likedByUsers: [],
     },
+    {
+      _id: utilService.makeId(),
+      name: 'Lovely apartment overlooking the Pantheon square',
+      type: 'Entire rental unit hosted',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638624035/roma/ap1/c6735a58-1529-43bb-9bba-541cb4de839d_ub7yhv.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638624035/roma/ap1/c7f56c5f-eb1b-4e18-8764-5912bf4b3505_rsliv5.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638624035/roma/ap1/617a9c60-89f6-4e63-864a-57216aa2cd31_r72wic.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638624035/roma/ap1/061581b3-f19e-4536-820e-9d62e7d5a41f_cuxkho.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638624035/roma/ap1/0233c4a4-79d7-41f4-b4b4-05164027b257_kzqjre.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638624035/roma/ap1/2d78dde9-64bc-41c1-a4d4-3dfa93f5970c_e9m1tr.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638624035/roma/ap1/5d665dfe-00fc-42c5-9691-34feb574985e_inrfzh.jpg',
+      ],
+      price: 62,
+      avgRate: 4.8,
+      summary:
+        'Lovely apartment overlooking the Pantheon Square, located in the very heart of Rome, featuring 1 bedroom with a double bed, smart tv and conditioned air; a second room with a sofà bed for 1 adult or 2 children (width 140 cm.) and kitchen; bathroom with shower. The mattress and the pillows are very confortable. The apartment has WI-FI, washing mashine, clotheshorse, iron, ironing board, hair dryer, fridge with a little freezer, microwave oven.',
+      capacity: 3,
+      amenities: [
+        // 'Kitchen',
+        'Kitchen',
+        'Wifi',
+        'TV',
+        'Washer',
+        'Air conditioning',
+        'Luggage dropoff allowed',
+        'Hair dryer',
+        'Refrigerator',
+      ],
+      host: {
+        _id: 'u128',
+        fullname: 'Max Rotbona',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638624126/roma/ap1/130592146-handsome-young-man-in-pink-shirt-over-isolated-blue-background-keeping-the-arms-crossed-in-frontal-p_vv4rht.webp',
+      },
+      loc: {
+        city: 'Roma',
+        countryCode: 'IT',
+        address: 'Roma, Italy',
+        lat: 41.911922913384416,
+        lng: 12.45137685856766,
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'October 2021',
+          txt: 'Location could not be better. Epic views. Lots of food options. Very central location. I was able to walk everywhere I needed to go. Good late night food options right outside in the square. Waking up and looking outside to the square and the pantheon was amazing every morning. The ceilings are low and the shower is small. So it might not suit someone over 6ft but was not a problem for me at 5’9”. Max was very helpful and attentive. Everything was taken care of. Would definitely recommend and would definitely stay again.',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Matt Blond',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638624208/roma/ap1/you-make-me-a-happy-man-royalty-free-image-883982364-1561128209_trt0d5.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'September 2021',
+          txt: 'This is such an AMAZING location with a view of the Pantheon right out the window. Perfect way to spend a couple days in Rome, right in the heart of it all and walking distance to almost everything. The apartment is very cute and authentic. Host was so amazing and helped carry our heavy bags up so many flights of stairs (no elevator!) and gave so many great recommendations. Also right near a taxi station too. And despite the central location, very quiet at night as well with a comfy bed and A/C! You do need to bring all your own shower items like soap. The bathroom had a slight weird smell but I believe it’s just an old building so it was fine for a couple days. It’s also pretty dark in the apartment so if you want to do your makeup/see yourself in the mirror I recommend bringing a travel mirror. It was our first time in Rome and the best place to kick off our trip.',
+          rate: '4.76',
+          by: {
+            _id: '',
+            fullname: 'Madeline Dola',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638624208/roma/ap1/happy_woman_outdoors_clouds-1200x628-facebook.20180427215822123-1200x628_sm6bwi.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'September 2019',
+          txt: 'The location of this apartment cannot be beat! Great service and a very cute space.          ',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Elisabeth Primo',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638624208/roma/ap1/Mental-Strong-Women-min_jact7u.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
+    {
+      _id: utilService.makeId(),
+      name: 'Quiet and peaceful home in the heart of Rome',
+      type: 'Entire condominium',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638624528/roma/apr2/da186929-5e70-423e-adcc-f5c6b77e6c57_xycyja.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638624528/roma/apr2/fab28e49-af44-4e0d-94a8-ba8a2977f2f0_kmse3i.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638624528/roma/apr2/790b28e8-2981-4ad0-8405-ead0b3b80a5d_pbc8vy.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638624528/roma/apr2/58df32e3-27a6-4b96-bab6-ee6720cca076_j8d07z.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638624528/roma/apr2/77f5b22c-799d-4f9b-9bc8-43ce020c98ab_ilblse.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638624528/roma/apr2/a40119cb-fe18-4412-ad55-39a6944cd7c3_jcvfoy.jpg',
+      ],
+      price: 52,
+      avgRate: 4,
+      summary:
+        'Appartamento ampio, elegante e silenzioso nel pieno centro di Roma recentemente ristrutturato in palazzo del 1880. Posizione strategica per vivere Roma con facilità e ritirarsi per ricaricarsi.',
+      capacity: 4,
+      amenities: ['Kitchen', 'Wifi', ' Free street parking', 'TV', 'Elevator'],
+      host: {
+        _id: 'u129',
+        fullname: 'Antonio Banderas',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638624528/roma/apr2/istockphoto-544358212-612x612_ece1mt.jpg',
+      },
+      loc: {
+        city: 'Roma',
+        countryCode: 'IT',
+        address: 'Roma, Italy',
+        lat: 41.897737534566176,
+        lng: 12.492426635719653,
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'October 2021',
+          txt: 'It’s a nice and safe to stay close to the train and restaurant',
+          rate: '4',
+          by: {
+            _id: '',
+            fullname: 'Nico Kristen',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638624528/roma/apr2/american-crew-homepage-square-skincare-2020_dghdil.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'September 2021',
+          txt: 'Antonio was a very nice and attentive host! In the accommodation you felt at home and could relax perfectly after a long day of sizing.we would come here again :)',
+          rate: '4.76',
+          by: {
+            _id: '',
+            fullname: 'Laura Dola',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638624528/roma/apr2/73872442_li3nnx.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'June 2016',
+          txt: 'Antonio is a great host! He stayed so late in the evening waiting for us since our flight was delayed. Very enjoyed his beautiful furnitured and great located appartement! We recommend this definetely :)',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Sarah Elizabet',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638624529/roma/apr2/istockphoto-1218228957-612x612_qr3xcj.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
+    {
+      _id: utilService.makeId(),
+      name: 'Cameretta per 2 persone con bagno privato esterno',
+      type: 'Private room in rental unit hosted by Lucky',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638625307/roma/apr3/c9521c9d-a5a0-4484-9aca-64e5f9b67e21_xwzoys.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638625308/roma/apr3/ec27e059-b716-46a4-a736-77fea0813812_a69lfk.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638625307/roma/apr3/3d4bba4a-2af6-49d5-a227-d7881142e75f_rpuhua.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638625307/roma/apr3/cfa341b3-bf23-4ea1-ae22-7de60e5275fb_w6ia2s.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638625307/roma/apr3/3349c69a-18e2-4030-9ea4-71eb4ec70d95_f9nx0c.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638625307/roma/apr3/6a6d6678-bbb8-469a-8b61-0db84c28f8d9_lyyrxv.jpg',
+      ],
+      price: 31,
+      avgRate: 4.66,
+      summary:
+        'Camera doppia accogliente e silenziosa, con divano letto (1 o 2 piazze), bagno privato esterno, tavolino con due sedie (adatto per lavorare con un laptop) aria condizionata, tv, Wi-Fi, asciugacapelli. Tra un soggiorno e il successivo tutti gli ambienti vengono arieggiati, puliti e igienizzati secondo le linee guida dei CDC',
+      capacity: 2,
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        ' Free street parking',
+        'TV',
+        'Elevator',
+        'Air conditioning',
+        'Long term stays allowed',
+      ],
+      host: {
+        _id: 'u130',
+        fullname: 'Lucky nono',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638625308/roma/apr3/1199118_xrxysk.jpg',
+      },
+      loc: {
+        country: 'Roma',
+        countryCode: 'IT',
+        address: 'Roma, Italy',
+        lat: 41.92117600703659,
+        lng: 12.421235257024922,
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'August 2021',
+          txt: 'Great location would definitely recommend staying here. Clean and affordable.',
+          rate: '4.2',
+          by: {
+            _id: '',
+            fullname: 'Sandra Wladimirov',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638625308/roma/apr3/portrait-of-beautiful-italian-woman-leaning-against-brick-wall-milan-italy-CUF20852_xhlsgy.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'March 2015',
+          txt: 'We really enjoyed our time at luckys Home. The staff(Phillipe) was really polite and showed us a few options for our stay in Rome which helped us a lot to plan our time in Rome better.Our room was very clean and well decorated.We could cook in the kitchen easily and had our own private bathroom.I would definitely book the room again and highly recommend the apartment/room.',
+          rate: '4.1',
+          by: {
+            _id: '',
+            fullname: 'Sebastian Max',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638625308/roma/apr3/photo-1615851947829-3641ababa187_uvp0up.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'June 2016',
+          txt: 'Philippe is great, he gave me a map with a nice plan of what to visit in Rome which was very helpful',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Adelina Osama',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638625308/roma/apr3/istockphoto-1139999076-612x612_jpcpmt.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
+    {
+      _id: utilService.makeId(),
+      name: 'Historic center Campo ',
+      type: 'Entire rental unit hosted',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638626130/roma/aprt4/67baa842-4385-4c85-b5fb-8f941dfa67cd_ob34rq.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638626130/roma/aprt4/c1c5c08c-1433-4c38-a111-0c6f461c98de_lldv8h.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638626129/roma/aprt4/91283c45-a878-4f23-980c-91574e85c49f_nysqsb.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638626129/roma/aprt4/06027a95-2d04-4228-b833-d462d9389536_y7qx6s.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638626129/roma/aprt4/40c9df9a-c68b-4869-9b17-93126e4aebf9_budoxj.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638626129/roma/aprt4/0438a18d-e3bc-4caf-858e-d44c3f4ba104_noxrdz.jpg',
+      ],
+      price: 63,
+      avgRate: 4.76,
+      summary:
+        'Excellent location in the heart of Rome’s historic center, situated between jewish ghetto and Campo dei fiori. It’s located in a historic building of 1700 with vaulted ceilings, ground floor, completely renovated and furnished, sleeping area with a 2 meter mezzanine, living room sofa, independent heating, washing machine, air conditioning, wi-fi.',
+      capacity: 2,
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'Microwave',
+        'Microwave',
+        'Air conditioning',
+      ],
+      host: {
+        _id: 'u130',
+        fullname: 'Maria Rita',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638626130/roma/aprt4/hot-italian-women_jrc7lt.jpg',
+      },
+      loc: {
+        country: 'Italy',
+        countryCode: 'IT',
+        address: 'Roma, Italy',
+        lat: 41.97095418477043,
+        lng: 12.473398525285116,
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'November 2019',
+          txt: 'There is not a better location to stay than Maria’s flat. It’s in a great neighborhood and you can walk to all the major sites easily. It is also super close to great gelato and our favorite pizza place, Emma’s.',
+          rate: '4.2',
+          by: {
+            _id: '',
+            fullname: 'Jesika Manuela ',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638626657/roma/aprt4/743925b2b9353e38e3b66d33fe281599_hizaiz.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'March 2017',
+          txt: 'Great location and Maria Rita is a very accommodating host. Loved my stay here!          ',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Matthew Peri',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638626130/roma/aprt4/Italian-man-smiling_blffre.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'June 2016',
+          txt: 'Excellent location and flat. Close to everything and exactly how advertise. Thank you Maria for a fabulous Roma retreat ❤️',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Robin Lex',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638626130/roma/aprt4/textandimage-1ad2f2ce87-3_ouicee.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
+    {
+      _id: utilService.makeId(),
+      name: 'Charme Navona luxury terrace ',
+      type: 'Entire rental unit hosted',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638627022/roma/aprt5/e7fec6ef-3dd1-4871-89c2-fafb1fd9f7ee_kchmnu.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638627021/roma/aprt5/29651bb7-6572-476d-8a31-01f61288584a_txmi39.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638627021/roma/aprt5/948b91be-6eb6-41b5-a7c4-53c2f8b63f8b_gtzly1.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638627021/roma/aprt5/639e9065-fe16-494d-903f-7a7b69051523_ogniph.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638627021/roma/aprt5/91a57e6f-5151-4edb-8d6c-3ff70ce59a41_p3wofj.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638627021/roma/aprt5/91a57e6f-5151-4edb-8d6c-3ff70ce59a41_p3wofj.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638627021/roma/aprt5/7defb013-7718-4688-b809-f93853a10a0b_shoktj.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638627021/roma/aprt5/6a97c95b-57cc-47d3-82bb-bba830253cbd_g9npwd.jpg',
+      ],
+      price: 301,
+      avgRate: 4.76,
+      summary:
+        'Sperimenta il lusso pregiato e la bellezza di un alloggio délite nel centro di Roma, con Piazza Navona a pochi passi e una vista impagabile dallampia terrazza. Goditi tutto lo charme degli arredamenti di pregio a tua esclusiva disposizione. Appartamento situato su 3 diversi piani (terzo, quarto e quinto piano). I diversi piani dellappartamento sono collegati da una scala a chiocciola interna ripida.Nuovo Internet FIBRA WIFI veloce (con ripetitori su tutti i livelli della casa e in terrazza).',
+      capacity: 6,
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'Microwave',
+        'Microwave',
+        'Air conditioning',
+      ],
+      host: {
+        _id: 'u131',
+        fullname: 'Maria Teresa',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638627117/roma/aprt5/hoset_xe3fea.jpg',
+      },
+      loc: {
+        country: 'Italy',
+        countryCode: 'IT',
+        address: 'Roma, Italy',
+        lat: 41.90232055422534,
+        lng: 12.489985091485417,
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'February 2019',
+          txt: 'We enjoyed our stay very much. It is well located, comfortable and very clean. The neighborhood is great and you easy access to markets, taxis and sites. Carlo was warm and super helpful. We felt welcomed indeed! Definitely will stay here again!',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Christine Tosi ',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638627117/roma/aprt5/rev1_w2wg5h.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'November 2020',
+          txt: 'This was a very fun place to stay. Although the name mentions Navona, it is actually closest to Campo de Fiori. Lots of restaurants near by. Walking distance to many major attractions. There are many local shops for groceries, bread wine and cheese.The home is laid out on three levels with spiral stairs from the street to the door and from the door to each level. Bedrooms are on the entry level. Living room in the middle. Dining, kitchen and terrace on the uppermost level. The terrace was a highlight for both morning coffee and evening wine.The apartment is nicely and comfortably furnished and has hundreds of books. The home is very quiet          ',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Peter Olive',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638627117/roma/aprt5/rev2_luvhf8.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'June 2016',
+          txt: 'Awesome hosts!',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Vignesh Omar',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638627117/roma/aprt5/rev3_qnk3c5.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
+    {
+      _id: utilService.makeId(),
+      name: 'Fontana di Trevi, stunning frontal view',
+      type: 'Entire rental unit hosted',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638627730/roma/apr6/46b623bf-bdbf-4174-9a8f-10df822742e0_lds8ln.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638627731/roma/apr6/e655917f-d8d9-443f-833c-12530497b907_thph2p.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638627730/roma/apr6/8d4140b9-e6da-4b88-a4fb-b967d4a4c6c0_myi2w1.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638627730/roma/apr6/b3b6b9ea-1141-4c49-b7b8-5ac6be5a604b_t1xqge.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638627730/roma/apr6/85ab786e-d90c-4719-b984-88ddb2df5fab_vujccw.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638627730/roma/apr6/5940c0b3-a6b6-48d6-b1c9-be6dc4242eb2_znq6h7.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638627730/roma/apr6/42273f76-e8b6-4ca7-90e6-5da25c7ab1e6_dbfrew.jpg',
+      ],
+      price: 313,
+      avgRate: 4.76,
+      summary:
+        'Sperimenta il lusso pregiato e la bellezza di un alloggio délite nel centro di Roma, con Piazza Navona a pochi passi e una vista impagabile dallampia terrazza. Goditi tutto lo charme degli arredamenti di pregio a tua esclusiva disposizione. Appartamento situato su 3 diversi piani (terzo, quarto e quinto piano). I diversi piani dellappartamento sono collegati da una scala a chiocciola interna ripida.Nuovo Internet FIBRA WIFI veloce (con ripetitori su tutti i livelli della casa e in terrazza).',
+      capacity: 4,
+      amenities: ['Kitchen', 'Wifi', 'Microwave', 'Air conditioning', 'TV'],
+      host: {
+        _id: 'u132',
+        fullname: 'Raffaella Maria',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638627731/roma/apr6/OB-KW652_valore_G_20101115224543_nrjfre.jpg',
+      },
+      loc: {
+        country: 'Italy',
+        countryCode: 'IT',
+        address: 'Roma, Italy',
+        lat: 41.903853714608864,
+        lng: 12.46869908017434,
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'February 2021',
+          txt: 'Raffaella and her husband were absolutely great. Our flight was delayed and we had scheduled transportation, Rafaela was accommodating and had her husband wait for us to help us into the apartment and get us familiarized with the place. The apartment is beautiful, located in front of the trevi (literally in front) there’s a bunch of shops and restaurants nearby. It was a beautiful stay, we loved it. Definitely coming back to stay here.',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Adriana Stev ',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638627731/roma/apr6/rev1_mkcmat.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'November 2020',
+          txt: 'This apartment is just as amazing as the pictures suggest. It is compact, but complete. It is newly redone and comfortable for the two of us. Okay for up to four. But what cannot be beat is the amazing location and view. True five star. Plan your arrival and listen to Raffaella. A taxi is the easiest as they can get within 100ft of the apartment. You really are on the square with a full view of the fountain… which means you cannot drive up to the door. Super easy to get to the rest of Rome’s sights from here.          ',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Timothy Dawn',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638627732/roma/apr6/rev3_qos9xr.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'June 2016',
+          txt: 'Raffaella was a great host - Super easy to communicate with & she even helped book us transport to the airport. Comfortable & clean apartment, and the views of the Trevi Fountain can’t be beat.',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Emily Donald',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638627732/roma/apr6/rev4_vn6ale.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'April 2018',
+          txt: 'Raffaella is a great host who was always there to answer our questions and give us recommendations. The location is perfect, everything within walking distance.',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Anthony Jer',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638627732/roma/apr6/rev2_hmfp8q.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
+    {
+      _id: utilService.makeId(),
+      name: 'Tereva Lodge Bora Bora',
+      type: 'Entire bungalow hosted',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638630174/bora%20bora/aprt2/4cd506bc-1a7a-4327-980e-6ae629fd0128_bqgbno.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638630175/bora%20bora/aprt2/7636bae9-2afc-4933-9f5f-30ad670a4c38_fcnjgi.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638630176/bora%20bora/aprt2/bfaaa538-effc-4ee5-bff2-42299ea96a0e_fgztq4.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638630175/bora%20bora/aprt2/260736d7-029c-4fe9-997c-b868f4e64167_vaaa3l.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638630175/bora%20bora/aprt2/36e9b51b-55c9-41dc-a35b-00c4264f2ae4_ud2wkg.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638630175/bora%20bora/aprt2/933d2585-e270-4ae6-9fab-224ca7babff5_jpqwpl.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638630174/bora%20bora/aprt2/0b844b76-6c62-47d4-b997-950fe72edef2_wwi1dd.jpg',
+      ],
+      price: 81,
+      avgRate: 4.76,
+      summary:
+        'Situé en bord de mer avec sa plage et ponton privés, Tereva Lodge est unique avec sa vue imprenable sur les eaux turquoises et ilots de Borabora de votre deck privatif sur pilotis au dessus du lagon, avec les spots de snorkling a vos pieds! Nous assurons les transferts au check in et out(avec arret supermarché) nous communiquer les horaires darrivée/départ.Velos ,kayaks,paddle sont a disposition gratuitement pour apprécier votre séjour,possibilité de louer nos véhicules.A bientot!',
+      capacity: 2,
+      amenities: [
+        'Kitchen',
+        'Beach access – Beachfront',
+        'Bathtub',
+        'Wifi',
+        'Air conditioning',
+        'TV',
+      ],
+      host: {
+        _id: 'u133',
+        fullname: 'Serge Lionel',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638630376/bora%20bora/aprt2/host_dumocd.jpg',
+      },
+      loc: {
+        country: 'Bora Bora',
+        countryCode: 'BV',
+        address: 'Bora Bora, Island in French Polynesia',
+        lat: -16.49734364645842,
+        lng: -151.74208293097504,
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'October 2021',
+          txt: 'Great location and experience. Loved the deck over the water, kitchen, grill and washer. The host will pick you up from the airport and take you to the grocery store from the water taxi. They also have a moped and car for rent as well as a private boat tour excursion option as well. I highly recommend staying here.',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Kristine Boly ',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638630176/bora%20bora/aprt2/BB-Cover4_yr0w5v.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'November 2020',
+          txt: 'We highly recommend the Tereva Lodge. They went out of their way to make us feel like family and gave us a warm welcome. We also highly recommend taking the lagoon tour with David. He was fantastic. We look forward to coming back.',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Chris Ryan',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638630176/bora%20bora/aprt2/31536000.jpeg_fviont.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'September 2020',
+          txt: 'Serge & his family were incredible - seriously kind, helpful and welcoming.They went out of their way to help in every way - going above and beyond!The closest shop for provisions is a little way away so they very kindly drove Andrew so he could do a shop for the week.The location on the waterfront is stunning & makes it popping out into the lagoon to kayak anywhere in the bay really easy.The apartment was sparkling clean and exactly as shown & described.Thank you so much for all your help & for making Andrews stay so seamless.',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Rachel Bobe',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638630175/bora%20bora/aprt2/a-girl-in-a-hammock-in-bora-bora_uqkcvx.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
   ];
   gStays = stays;
   utilService.saveToStorage(STAYS_KEY, gStays);
