@@ -1,9 +1,190 @@
+// .main-filters {
+//   margin: 0 auto 30px auto;
+//   display: flex;
+//   justify-content: space-evenly;
+//   align-items: baseline;
+//   align-content: stretch;
+
+//   background-color: white;
+//   border: 1px solid rgba(240, 240, 239, 0.749);
+//   border-radius: 200px;
+//   width: 66vw;
+//   // width: auto;
+//   cursor: pointer;
+
+//   .search {
+//     background-color: $clr1;
+//     border: 0;
+//     border-radius: 50%;
+//     width: 50px;
+//     height: 50px;
+//     cursor: pointer;
+//     align-self: center;
+
+//     .svg-inline--fa {
+//       color: white;
+//     }
+//   }
+
+//   .city-filter,
+//   .guest-filter,
+//   .date-picker {
+//     label {
+//       font-size: rem(14px);
+//       letter-spacing: 0.04em;
+//       font-weight: 800;
+//       color: black;
+//     }
+//   }
+//   // .main-filters:hover,
+//   // .city-filter:hover,
+//   // .guest-filter:hover,
+//   // .date-picker:hover,
+//   // .location-btn:hover {
+//   //   background-color: #ebebeb;
+//   //   border-radius: 50px;
+//   // }
+
+//   .guest-filter,
+//   .city-filter,
+//   .date-picker {
+//     .toggel-btn,
+//     .el-range-input {
+//       font-size: rem(18px);
+//       color: #717171;
+//       font-weight: 400;
+//     }
+
+//     .add-guests {
+//       position: absolute;
+
+//       display: flex;
+//       flex-direction: column;
+
+//       background-color: white;
+//       border: 1px solid rgb(223, 223, 222);
+//       border-radius: 30px;
+//       padding: 16px 32px;
+
+//       font-size: rem(14px);
+//       width: 350px;
+//       z-index: 9999;
+
+//       // transform: translate(0%, 5%);
+//       margin-top: 30px;
+//       right: 16.8%;
+
+//       max-width: 500px;
+//       & li {
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         margin-bottom: 10px;
+//         border-bottom: 1px solid rgba(199, 195, 195, 0.774);
+
+//         .selection h4 {
+//           margin-bottom: 16px;
+//         }
+//       }
+
+//       .reduce-btn {
+//         background-color: rgba(255, 255, 255, 0);
+//         border: 1px solid rgb(241, 241, 241);
+//         color: rgb(202, 200, 200);
+//         padding: 5px 8px;
+//         margin: 0 16px 0 16px;
+//         width: 32px;
+//         height: 32px;
+//         cursor: pointer;
+//       }
+
+//       .add-btn {
+//         background-color: rgba(255, 255, 255, 0);
+//         color: rgb(139, 138, 138);
+//         border: 1px solid rgb(139, 138, 138);
+//         padding: 5px 8px;
+//         margin: 0 16px 0 16px;
+//         width: 32px;
+//         height: 32px;
+//         cursor: pointer;
+//       }
+//     }
+
+//     .selection,
+//     .multi-choice {
+//       h2,
+//       h3 {
+//         margin-top: 10px;
+//         font-size: rem(16px);
+//         // align-self: end;
+//       }
+//       h4 {
+//         font-size: rem(12px);
+//       }
+//       button {
+//         border: 1px solid rgb(223, 223, 222);
+//         border-radius: 50%;
+//       }
+//     }
+//   }
+//   .city-filter {
+//     select {
+//       border: 1px solid rgb(223, 223, 222);
+//       height: 40px;
+//     }
+//     .dropdown-list {
+//       position: absolute;
+
+//       display: flex;
+//       flex-direction: column;
+//       font-weight: bold;
+
+//       background-color: white;
+//       border: 1px solid rgb(223, 223, 222);
+//       border-radius: 30px;
+
+//       font-size: rem(14px);
+//       width: 350px;
+//       z-index: 9999;
+
+//       // transform: translate(-20%, 9%);
+//       margin-top: 30px;
+//       padding: 10px 0px;
+//       left: 16.8%;
+
+//       max-width: 500px;
+//       & p:hover {
+//         background-color: $clr7;
+//       }
+//     }
+//   }
+//   .date-picker {
+//     .date-picker-label {
+//       display: flex;
+//       justify-content: space-around;
+//     }
+//     .el-input__inner {
+//       border: none;
+//     }
+//     .el-range__icon {
+//       color: rgba(255, 255, 255, 0);
+//     }
+//   }
+// }
+
 .main-filters {
-  margin: 0 auto 30px auto;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: baseline;
-  align-content: stretch;
+  --gap: 9px;
+  --num-col: 7;
+  --row-height: 60px;
+  padding: var(--gap);
+  position: relative;
+  margin-bottom: 150px;
+
+  display: grid;
+  grid-template-columns: repeat(var(--num-col), 1fr);
+  grid-auto-rows: var(--row-height);
+  gap: var(--gap);
+  align-items: end;
 
   background-color: white;
   border: 1px solid rgba(240, 240, 239, 0.749);
@@ -12,7 +193,36 @@
   // width: auto;
   cursor: pointer;
 
+  .city-filter {
+    grid-column: 1/3;
+    grid-row: span 1;
+    margin-left: 30px;
+  }
+  .date-picker {
+    grid-column: 3/5;
+    grid-row: span 1;
+
+    .date-picker-label {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .el-input__inner {
+      border: none;
+      height: 35px;
+    }
+    .el-range__icon {
+      color: rgba(255, 255, 255, 0);
+    }
+  }
+  .guest-filter {
+    grid-column: 6 /7;
+    grid-row: span 1;
+  }
   .search {
+    grid-column: 7 / 8;
+    grid-row: span 1;
+
     background-color: $clr1;
     border: 0;
     border-radius: 50%;
@@ -20,12 +230,15 @@
     height: 50px;
     cursor: pointer;
     align-self: center;
+    text-align: center;
+    margin-left: 30px;
 
     .svg-inline--fa {
       color: white;
     }
   }
 
+  /// Label
   .city-filter,
   .guest-filter,
   .date-picker {
@@ -36,15 +249,8 @@
       color: black;
     }
   }
-  // .main-filters:hover,
-  // .city-filter:hover,
-  // .guest-filter:hover,
-  // .date-picker:hover,
-  // .location-btn:hover {
-  //   background-color: #ebebeb;
-  //   border-radius: 50px;
-  // }
 
+  /// BTN + Input
   .guest-filter,
   .city-filter,
   .date-picker {
@@ -53,70 +259,64 @@
       font-size: rem(18px);
       color: #717171;
       font-weight: 400;
+      background-color: none;
     }
+  }
 
-    .add-guests {
-      position: absolute;
+  /// Modal - Add Guests
+  .add-guests {
+    position: absolute;
 
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
+    border: 1px solid rgb(223, 223, 222);
+    border-radius: 25px;
+    padding: 16px 32px;
+
+    font-size: rem(14px);
+    width: 350px;
+    z-index: 9999;
+
+    margin-top: 30px;
+    right: 16.8%;
+
+    max-width: 500px;
+    & li {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(199, 195, 195, 0.774);
 
-      background-color: white;
-      border: 1px solid rgb(223, 223, 222);
-      border-radius: 30px;
-      padding: 16px 32px;
-
-      font-size: rem(14px);
-      width: 350px;
-      z-index: 9999;
-
-      // transform: translate(0%, 5%);
-      margin-top: 30px;
-      right: 16.8%;
-
-      max-width: 500px;
-      & li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 10px;
-        border-bottom: 1px solid rgba(199, 195, 195, 0.774);
-
-        .selection h4 {
-          margin-bottom: 16px;
-        }
-      }
-
-      .reduce-btn {
-        background-color: rgba(255, 255, 255, 0);
-        border: 1px solid rgb(241, 241, 241);
-        color: rgb(202, 200, 200);
-        padding: 5px 8px;
-        margin: 0 16px 0 16px;
-        width: 32px;
-        height: 32px;
-        cursor: pointer;
-      }
-
-      .add-btn {
-        background-color: rgba(255, 255, 255, 0);
-        color: rgb(139, 138, 138);
-        border: 1px solid rgb(139, 138, 138);
-        padding: 5px 8px;
-        margin: 0 16px 0 16px;
-        width: 32px;
-        height: 32px;
-        cursor: pointer;
+      .selection h4 {
+        margin-bottom: 16px;
       }
     }
 
+    .reduce-btn,
+    .add-btn {
+      background-color: rgba(255, 255, 255, 0);
+      border: 1px solid rgb(241, 241, 241);
+      color: rgb(202, 200, 200);
+      padding: 5px 8px;
+      margin: 0 16px 0 16px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+
+    .add-btn {
+      background-color: rgba(255, 255, 255, 0);
+      color: rgb(139, 138, 138);
+    }
     .selection,
     .multi-choice {
       h2,
       h3 {
         margin-top: 10px;
         font-size: rem(16px);
-        // align-self: end;
       }
       h4 {
         font-size: rem(12px);
@@ -127,6 +327,8 @@
       }
     }
   }
+
+  /// Modal - City Filter
   .city-filter {
     select {
       border: 1px solid rgb(223, 223, 222);
@@ -141,29 +343,43 @@
 
       background-color: white;
       border: 1px solid rgb(223, 223, 222);
-      border-radius: 30px;
+      border-radius: 25px;
 
       font-size: rem(14px);
       width: 350px;
       z-index: 9999;
 
-      // transform: translate(-20%, 9%);
       margin-top: 30px;
+      padding: 20px 0px;
       left: 16.8%;
 
       max-width: 500px;
+      & p {
+        margin: 0px;
+        font-size: 1.125rem;
+        font-weight: 400;
+        padding: 20px 30px;
+      }
+      & p:hover {
+        background-color: $clr8;
+      }
     }
   }
-  .date-picker {
-    .date-picker-label {
-      display: flex;
-      justify-content: space-around;
-    }
-    .el-input__inner {
-      border: none;
-    }
-    .el-range__icon {
-      color: rgba(255, 255, 255, 0);
-    }
-  }
+  /// Hover
+
+  // .main-filters:hover,
+  // .city-filter:hover,
+  // .guest-filter:hover,
+  // .date-picker:hover,
+  // .location-btn:hover {
+  //   background-color: #fff;
+  //   box-shadow: 0 0 25px 0 rgb(0 0 0 / 9%);
+  // }
+
+  // .main-filters,
+  // .city-filter:hover {
+  //   background-color: #fff;
+  //   box-shadow: 0 0 25px 0 rgb(0 0 0 / 9%);
+  //   border-start-end-radius: 30px;
+  // }
 }

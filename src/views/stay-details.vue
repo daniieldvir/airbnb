@@ -1,15 +1,13 @@
 <template>
   <section v-if="stay" class="stay-details main-container">
-    <!-- <app-header /> -->
-
     <h2>{{ formattedName }}</h2>
     <div>
       <p>
         <span>
-        <!-- <span v-if="stay.reviews.length"> -->
+          <!-- <span v-if="stay.reviews.length"> -->
           <font-awesome-icon icon="star" />{{ stay.avgRate }}
           <span class="details-reviews">{{ formattedReviews }}</span
-          >&middot;
+          >&#183;
         </span>
         <a class="details-location" href=""> {{ stay.loc.address }}</a>
         <!-- <span class="details-location">{{ stay.loc.address }}</span> -->
@@ -69,7 +67,8 @@
         </div>
         <hr />
         <div class="details-summary-container">
-          <p>{{ stay.summary }}</p>
+          <long-text v-bind:summary="stay.summary"></long-text>
+          <!-- <p>{{ stay.summary }}</p> -->
         </div>
         <hr />
         <div class="stay-details-amenities">
@@ -78,8 +77,7 @@
             <div v-for="(amenity, idx) in stay.amenities" :key="idx">
               <font-awesome-icon
                 class="font-amenity-icon"
-                :icon="iconToShow(amenity)"
-              />
+                :icon="iconToShow(amenity)"/>
               {{ amenity }}
             </div>
           </div>
@@ -89,10 +87,11 @@
         <stay-checkout :stay="stay"></stay-checkout>
       </div>
     </div>
-    <div class="reviews-section-container">
-		  <!-- <el-button v-if="loggedInUser" @click.stop="toggleReview">Add Review</el-button> -->
+    <div v-if="stay.reviews.length" class="reviews-section-container">
+      <stay-rating :reviews="reviews"/>
+		  <!-- <el-button @click.stop="toggleReview">Add Review</el-button> -->
 		  <!-- <review-add @addReview="addReview" @toggleReview="toggleReview" /> -->
-		  <review-list v-if="stay.reviews.length" :reviews="stay.reviews" />
+		  <review-list :reviews="reviews" />
     </div>
 
     <!-- <div class="about">
@@ -118,6 +117,8 @@ import { utilService } from '@/services/util.service';
 import GmapMap from '@/cmps/map.vue';
 import stayCheckout from '@/cmps/stay-checkout.vue';
 import reviewList from '@/cmps/review-list.vue';
+import stayRating from '@/cmps/stay-rating.vue'
+import longText from '@/cmps/long-text.vue';
 // import '@fortawesome/fontawesome-free/js/all.js';
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // import {faHome,faWifi,faPaw,} from '@fortawesome/free-solid-svg-icons'
@@ -129,7 +130,7 @@ export default {
       stay: null,
       imgs: null,
       // iconToShow:'',
-      // reviews:[]
+      reviews:[]
     };
   },
   created() {
@@ -141,6 +142,7 @@ export default {
         const imgs = this.$store.getters.imgsToShow;
         console.log('imgs', imgs);
         this.imgs = imgs;
+        this.reviews = this.stay.reviews;
       });
   },
   // this.$store.dispatch.loadStay();
@@ -156,15 +158,16 @@ export default {
     bath() {},
     formattedReviews() {
       //maybe 0 reviews
-      if(!this.stay.reviews.length) return '(new)';
+      if (!this.stay.reviews.length) return '(new)';
       if (this.stay.reviews.length === 1)
         return `(${this.stay.reviews.length} review)`;
       else if (this.stay.reviews.length > 1)
         return `(${this.stay.reviews.length} reviews)`;
     },
-    formattedName(){
+    formattedName() {
       const txt = this.stay.name;
-      const txtWithCapitalFirstLetter = txt.charAt(0).toUpperCase() + txt.slice(1);
+      const txtWithCapitalFirstLetter =
+        txt.charAt(0).toUpperCase() + txt.slice(1);
       // if (txt.length > 25 < 50) return txt.slice(0, 22) + '...';
       return txtWithCapitalFirstLetter;
     },
@@ -175,6 +178,6 @@ export default {
       // return 'wifi';
     },
   },
-  components: { GmapMap, stayCheckout, reviewList },
+  components: { GmapMap, stayCheckout, reviewList, stayRating, longText },
 };
 </script>

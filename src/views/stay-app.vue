@@ -1,6 +1,6 @@
 <template>
   <section class="stay-app main-container">
-    <secondary-filters />
+    <!-- <secondary-filters /> -->
     <!-- <guests-filter /> -->
     <stay-list :stays="stays"> </stay-list>
   </section>
@@ -16,7 +16,6 @@ export default {
   name: 'stay-app',
   computed: {
     stays() {
-      console.log('from saty app', this.$store.getters.staysToShow);
       return this.$store.getters.staysToShow;
     },
   },

@@ -2,6 +2,7 @@ header {
   --text: #f4f4f4;
   --text-inverse: #333;
   --background: transparent;
+  --logo: #f4f4f4;
 
   position: fixed;
   top: 0;
@@ -23,10 +24,10 @@ header {
     .main-router-link {
       margin-right: 30px;
       text-decoration: none;
-      color: black;
+      color: var(--text);
 
       .logo {
-        color: $clr1;
+        color: var(--logo);
         font-size: rem(25px);
       }
     }
@@ -39,9 +40,28 @@ header {
   }
 }
 .nav-scrolled {
-  --text: #f4f4f4;
+  --text: black;
   --text-inverse: #333;
   --background: white;
+  --logo: #ff385c;
+
+  color: var(--text);
+
+  &.logo {
+    color: var(--logo);
+  }
 
   box-shadow: 0 3px 20px rgba($color: black, $alpha: 0.2);
+}
+.white-header {
+  --background: white;
+  --text: #222222;
+  --logo: #ff385c;
+
+  background: var(--background);
+  color: var(--text);
+
+  &.logo {
+    color: var(--logo);
+  }
 }

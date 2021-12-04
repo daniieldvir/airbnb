@@ -18,15 +18,6 @@ export const stayService = {
 
 function query(filterBy) {
   let stays;
-  // return storageService.query(STAYS_KEY).then((allStays) => {
-  //   stays = allStays.filter((stay) => stay.capacity >= filterBy.totalGuests);
-  //   if (filterBy.city) {
-  //     stays = stays.filter((stay) => stay.loc.countryCode === filterBy.city);
-  //     return stays;
-  //   }
-  //   return stays;
-  // });
-
   return storageService.query(STAYS_KEY).then((allStays) => {
     stays = allStays.filter((stay) => {
       const { totalGuests, priceRange, propertyType, amenities } = filterBy;
@@ -67,7 +58,7 @@ function save(stay) {
   return savedStay;
 }
 
-function getEmpty() { }
+function getEmpty() {}
 
 function _createStays() {
   const stays = [
