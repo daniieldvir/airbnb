@@ -9,7 +9,7 @@
           :key="place.imgUrls[0]"
           @click="cardClicked(place)"
         >
-          <img class="card-img" :src="place.imgUrls[0]" alt="" />
+          <img class="card-img" :src="place.imgUrls[0]" />
           <h4>{{ place.name }}</h4>
         </li>
       </ul>

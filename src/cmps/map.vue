@@ -36,7 +36,7 @@ export default {
     };
   },
   created() {
-    console.log('dis stay', this.stay);
+    // console.log('dis stay', this.stay);
     this.center = this.markers[0].position;
 
     this.markers[0].position.lat = this.stay.loc.lat;

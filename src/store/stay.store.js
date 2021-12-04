@@ -32,9 +32,11 @@ export const stayStore = {
   mutations: {
     setFilter(state, { filterBy }) {
       state.filterBy = filterBy;
+      // console.log('filter state', state.filterBy);
     },
     setStays(state, { stays }) {
       state.stays = stays;
+      // console.log('stays', stays);
     },
     setStay(state, { stay }) {
       state.currStay = stay;
@@ -60,7 +62,7 @@ export const stayStore = {
       });
     },
     setFilter({ commit, dispatch }, { filterBy }) {
-      console.log('store set filter', filterBy);
+      // console.log('store set filter', filterBy);
       commit({ type: 'setFilter', filterBy });
       dispatch({ type: 'loadStays' });
     },
@@ -79,7 +81,7 @@ export const stayStore = {
     getStayById({ commit }, { stayId }) {
       return stayService.getById(stayId).then((stay) => {
         commit({ type: 'setStay', stay });
-        console.log('stay', stay);
+        // console.log('stay', stay);
         return stay;
       });
     },
