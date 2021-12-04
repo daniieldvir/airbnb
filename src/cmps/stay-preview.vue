@@ -23,7 +23,7 @@
       </p>
 
       <p></p>
-      <p class="stay-type">{{ stay.type }} · {{ stay.city }}</p>
+      <p class="stay-type">{{ stay.type }} · {{ stay.loc.city }}</p>
       <p class="stay-name">{{ sortTxt }}</p>
 
       <p></p>
