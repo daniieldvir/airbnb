@@ -10,6 +10,9 @@
       <p @click="filterCity('London')">London</p>
       <p @click="filterCity('Tel Aviv')">Tel Aviv</p>
       <p @click="filterCity('Hong Kong')">Hong Kong</p>
+      <p @click="filterCity('Rome')">Rome</p>
+      <p @click="filterCity('Bora Bora')">Bora Bora</p>
+      <p @click="filterCity('Hong Kong')">Hong Kong</p>
     </ul>
   </section>
 </template>
