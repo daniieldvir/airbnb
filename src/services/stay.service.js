@@ -1205,6 +1205,125 @@ function _createStays() {
       ],
       likedByUsers: [],
     },
+    {
+      _id: utilService.makeId(),
+      name: '1 bed room apartment, in the heart of Sheung Wan',
+      type: 'Entire rental unit hosted',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638639852/hong-kong/apr4/22898840-fbe0-4bd5-904e-5c45dad8053c_tnosb3.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638639852/hong-kong/apr4/812be7ff-05ce-418a-915d-20725a74910c_ia9bto.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638639852/hong-kong/apr4/ff0e2272-70b9-42b5-9a06-86a4b6969be2_fugi3a.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638639852/hong-kong/apr4/9405451a-635b-48c4-8bb6-cef9e166f376_kbcm9c.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638639852/hong-kong/apr4/67a5efbb-d8f5-4978-a989-e1e5ce0dfd2e_iogy29.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638639852/hong-kong/apr4/19838de7-3e34-4742-a221-aa15dbbf65bf_sul4cv.jpg',
+      ],
+      price: 44,
+      avgRate: 4.76,
+      summary:
+        'One bedroom apartment available at the heart of Sheung Wan. Very close proximity from MTR and other transportations. Walking distance to any convenience store and local attractions. Fully equipped. Bright, filled with sunlight. The building is small, with 5 floors, 1 apartment per floor only. It is a walk-up to the 3rd floor.',
+      capacity: 2,
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'Air conditioning',
+        'TV',
+        'Long term stays allowed',
+      ],
+      host: {
+        _id: 'u135',
+        fullname: 'Clément Toto',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638639853/hong-kong/apr4/v1_tsmbwt.jpg',
+      },
+      loc: {
+        country: 'Hong Kong',
+        countryCode: 'HK',
+        address: 'Hong Kong, Kowloon, Hong Kong',
+        lat: 22.319613821878374,
+        lng: 114.16606194181783,
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: '',
+          txt: '',
+          rate: '',
+          by: {
+            _id: '',
+            fullname: ' ',
+            imgUrl: '',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
+    {
+      _id: utilService.makeId(),
+      name: 'MTR AUSTIN ICC &ELEMENTS classy modern studio',
+      type: 'Entire rental unit hosted',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638640902/hong-kong/apt5/c80ad5df-dfd0-40f8-8cc9-8ff36a1abed5_sabnrz.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638640902/hong-kong/apt5/b3fa3edb-1239-4660-8837-d6b708df09b5_wnbpfw.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638640902/hong-kong/apt5/28ffa3d7-6754-4d2f-8132-8a302b9a5bf1_m4awdu.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638640902/hong-kong/apt5/8a78fee1-56d9-4025-9ebc-a64cee18d632_rz4tib.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638640902/hong-kong/apt5/ee680cb7-65bb-4f35-b082-678c26138aea_x8a2nn.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638640902/hong-kong/apt5/b664dec9-3196-4d54-8c9c-12c7c9263d22_vg1u9h.jpg',
+      ],
+      price: 40,
+      avgRate: 4.76,
+      summary:
+        'The building is 24/7 secured by the guards. However, you can still enjoy the 24HOURS SELF CHECK IN service! Our studio is perfect for solo travellers, couples or business travellers as the location is the best in town.',
+      capacity: 2,
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'Air conditioning',
+        'Elevator',
+        'Hair dryer',
+        'TV',
+        'Long term stays allowed',
+      ],
+      host: {
+        _id: 'u136',
+        fullname: 'Yuen Tirosho',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638640903/hong-kong/apt5/host_j1o2gu.jpg',
+      },
+      loc: {
+        country: 'Hong Kong',
+        countryCode: 'HK',
+        address: 'Hong Kong, Kowloon, Hong Kong',
+        lat: 22.32465589234941,
+        lng: 114.17076566101818,
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'July 2021',
+          txt: 'Great stylish place! Exactly as shown in picture. Great location but not in the middle of all the craziness which is nice. Probably one of the best value for money places I have stayed in for an Airbnb',
+          rate: '4.5',
+          by: {
+            _id: '',
+            fullname: 'Curtis Meng',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638640903/hong-kong/apt5/v2_pl84vp.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'January 2020',
+          txt: 'Clean and tidy, great location, walking distance to Element and MTR',
+          rate: '4.5',
+          by: {
+            _id: '',
+            fullname: 'Carmen Elextra',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638640903/hong-kong/apt5/v3_wxcgmf.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
   ];
   gStays = stays;
   utilService.saveToStorage(STAYS_KEY, gStays);
