@@ -1,0 +1,17 @@
+.long-text-container{
+    .long-text-btn {
+        background-color: #6c757d;
+        color: white;
+        display: inline-block;
+        padding: 0.25em 0.4em;
+        font-size: 0.65rem;
+        font-weight: 700;
+        border-radius: 0.25rem;
+        margin: 2.5px;
+        margin-top: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+        text-transform: capitalize;
+        border: none;
+      }
+}
