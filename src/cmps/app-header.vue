@@ -1,5 +1,5 @@
 <template>
-  <header v-bind:class="{ onExplore: onExplorePage }" class="main-container">
+  <header v-bind:class="{ 'white-header': !onHomePage }" class="main-container">
     <nav class="main-nav main-container">
       <router-link class="main-router-link" to="/">
         <!-- <div class="logo">RentMe<font-awesome-icon class="icon" icon="airbnb" /></div> -->
@@ -33,15 +33,22 @@ import secondaryFilters from '../cmps/filters/secondary-filters.vue';
 export default {
   data() {
     return {
+      onHomePage: false,
       onExplorePage: false,
     };
   },
   watch: {
     $route: {
       handler() {
-        this.onExplorePage = this.$route.path === '/explore' ? true : false;
+        // this.onHomePage =
+        //   this.$route.path === '/explore' || this.$route.path.includes('/stay')
+        //     ? true
+        //     : false;
+        this.onHomePage = this.$route.name !== 'Home' ? false : true;
+        this.onExplorePage = this.$route.name === 'Explore' ? true : false;
+        console.log(this.$route);
+        console.log(this.onHomePage);
       },
-      // deep: true,
       immediate: true,
     },
   },
