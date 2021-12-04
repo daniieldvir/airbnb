@@ -1,5 +1,6 @@
 .stay-list {
   display: grid;
+  padding: 0px;
 
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 20px;
@@ -9,6 +10,6 @@
     height: 100%;
     border-radius: 15px;
     object-fit: cover;
-    border: 1px solid $clr5;
+    border: 1px solid $clr7;
   }
 }

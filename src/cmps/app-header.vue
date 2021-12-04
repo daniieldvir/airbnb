@@ -1,14 +1,16 @@
 <template>
   <header v-bind:class="{ 'white-header': !onHomePage }" class="main-container">
     <nav class="main-nav main-container">
-      <router-link class="main-router-link" to="/">
-        <!-- <div class="logo">RentMe<font-awesome-icon class="icon" icon="airbnb" /></div> -->
-        <div class="logo">
-          RentMe<font-awesome-icon :icon="['fab', 'airbnb']" />
-        </div>
-      </router-link>
-      <!-- FILTERS -->
-      <secondary-filters v-if="onExplorePage" />
+      <div class="flex column">
+        <router-link class="main-router-link" to="/">
+          <!-- <div class="logo">RentMe<font-awesome-icon class="icon" icon="airbnb" /></div> -->
+          <div class="logo">
+            RentMe<font-awesome-icon :icon="['fab', 'airbnb']" />
+          </div>
+        </router-link>
+        <!-- FILTERS -->
+        <secondary-filters v-if="onExplorePage" />
+      </div>
 
       <div class="navigation-routs">
         <router-link class="main-router-link" to="/explore"

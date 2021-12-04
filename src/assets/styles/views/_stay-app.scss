@@ -1,1 +1,15 @@
+.stay-app {
+  margin-top: 150px;
 
+  & .sub-header {
+    line-height: 2.1em;
+    font-size: 0.9em;
+  }
+  & hr {
+    background-color: $clr8;
+    border: none;
+    margin: 0px;
+    height: 0.5px;
+    width: 100%;
+  }
+}
