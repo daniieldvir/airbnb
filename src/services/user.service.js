@@ -130,6 +130,56 @@ _createUsers();
 function _createUsers() {
   const users = [
     {
+      _id: 'lo107',
+      fullname: 'Chrissie Morales',
+      imgUrl:
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638638346/london/apt7/GC-GettyImages-623463222-613x920_ucthfw.jpg',
+      isAdmin: false,
+      isHost: true,
+      username: 'Chrissie',
+      password: '1234',
+    },
+    {
+      _id: '23423423rg35gvs',
+      fullname: 'Team At The London Agent',
+      imgUrl:
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638632306/london/apt3/user_zzrpya.jpg',
+      isAdmin: false,
+      isHost: true,
+      username: 'London Agent',
+      password: '',
+    },
+    {
+      _id: 'lo104',
+      fullname: 'Beatrix Lor',
+      imgUrl:
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638633185/london/apt4/rev_cb3daw.jpg',
+      isAdmin: false,
+      isHost: true,
+      username: 'Betty',
+      password: '346346',
+    },
+    {
+      _id: 'lo105',
+      fullname: 'Supercity Aparthotels',
+      imgUrl:
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638634569/london/apt5/sddf_jfuxei.jpg',
+      isAdmin: false,
+      isHost: true,
+      username: 'Supercity Aparthotels',
+      password: '1234',
+    },
+    {
+      _id: 'lo106',
+      fullname: 'Marcus Adams',
+      imgUrl:
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638635579/london/apt6/portrait-confident-man-looking-camera-260nw-1591189321_tzqlm3.jpg',
+      isAdmin: false,
+      isHost: true,
+      username: 'Mark',
+      password: '1234',
+    },
+    {
       _id: 'kj900',
       fullname: 'Marlon Bordo',
       imgUrl:

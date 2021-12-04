@@ -64,6 +64,293 @@ function _createStays() {
   const stays = [
     {
       _id: utilService.makeId(),
+      name: "Minimal Former Picture Framer's Warehouse in Central London",
+      type: 'Entire loft',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638638346/london/apt7/1_ukls24.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638638345/london/apt7/2_iz8zyn.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638638346/london/apt7/3_oqn5dg.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638638346/london/apt7/4_b5ezku.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638638346/london/apt7/5_flt8tz.jpg',
+      ],
+      price: '421',
+      avgRate: '5',
+      summary:
+        'Sink into the enormous quilted corner sofa at this monochrome pad in a quiet cobbled mews in Bethnal Green. Walls of glass create a sense of space and light throughout, while the collection of contemporary art and design maintains the modern feel.',
+      capacity: '2',
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'TV',
+        'No smoking',
+        'Cooking basics',
+        'Air conditioning',
+        'Refrigerator',
+        'Free parking',
+        'Elevator',
+        'Heating',
+        'Bath',
+      ],
+      host: {
+        _id: 'lo107',
+        fullname: 'Chrissie Morales',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638638346/london/apt7/GC-GettyImages-623463222-613x920_ucthfw.jpg',
+      },
+      loc: {
+        country: 'London',
+        countryCode: 'GB',
+        address: 'Oxford Street, London ',
+        lat: '51.515900',
+        lng: '-0.136046',
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'August 2021',
+          txt: '5 star stay! Amazing host. The most beautiful place we have stayed to date. Top shelf! Highly recommended!',
+          rate: '5',
+          by: {
+            _id: 'us666',
+            fullname: 'Eric Miller',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638638346/london/apt7/photo-1499996860823-5214fcc65f8f_vqi3nh.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
+    {
+      _id: utilService.makeId(),
+      name: 'Spacious Soho | Patio | Office | Cobble St',
+      type: 'Entire rental unit ',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638632379/london/apt3/1_giqi42.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638632306/london/apt3/2_tb0rhd.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638632406/london/apt3/3_spc3ez.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638632306/london/apt3/4_vfxidf.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638632306/london/apt3/5_bz6icg.jpg',
+      ],
+      price: 318,
+      avgRate: 4.3,
+      summary:
+        'This stylish home is on the ground floor of an historic Georgian building. Unusually large for a central London home, the flat is arranged over two floors. It is fully equipped with a high-end kitchen, squishy sofas and even your own private patio.',
+      capacity: 4,
+      amenities: [
+        'Kitchen',
+        'Beach access – Beachfront',
+        'Bathtub',
+        'Wifi',
+        'Air conditioning',
+        'TV',
+      ],
+      host: {
+        _id: '23423423rg35gvs',
+        fullname: 'Team At The London Agent',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638632306/london/apt3/user_zzrpya.jpg',
+      },
+      loc: {
+        country: 'London',
+        countryCode: 'GB',
+        address: 'Savile Row, London',
+        lat: 51.51032,
+        lng: -0.1398,
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'November 2021',
+          txt: 'Great spot in the heart of Soho! In the middle of it but on a relatively quiet side street. Plenty of space for a small group and a lovely private garden to enjoy in the morning.',
+          rate: '4.5',
+          by: {
+            _id: '',
+            fullname: 'Emmanuelle Andrews ',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638633102/london/apt3/rev_nxu3ot.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
+    {
+      _id: utilService.makeId(),
+      name: 'Impressive loft in the heart of Kensington Zone 1',
+      type: 'Entire loft ',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638633062/london/apt4/1_lq7i3v.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638633061/london/apt4/2_os1sot.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638633062/london/apt4/3_zej5at.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638633061/london/apt4/4_en6wvt.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638633061/london/apt4/5_bxnprv.jpg',
+      ],
+      price: 219,
+      avgRate: 5,
+      summary:
+        'Impressive loft apartment with super high ceiling, located in the famous Kensington area in London, Zone 1 Walk distance from top museums, shops, restaurants and groceries.',
+      capacity: 4,
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'TV',
+        'Crib',
+        'No smoking',
+        'Cooking basics',
+        'Refrigerator',
+        'Bathub',
+        'Iron',
+        'Heating',
+        'Bath',
+        'Accessible',
+      ],
+      host: {
+        _id: 'lo104',
+        fullname: 'Beatrix Lor',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638633185/london/apt4/rev_cb3daw.jpg',
+      },
+      loc: {
+        country: 'London',
+        countryCode: 'GB',
+        address: 'Kensington, London',
+        lat: 51.498995,
+        lng: -0.199123,
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'August 2021',
+          txt: 'Perfect location and beautiful home.',
+          rate: '4.7',
+          by: {
+            _id: '',
+            fullname: 'Alec zye ',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638633062/london/apt4/user_twgmi9.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
+    {
+      _id: utilService.makeId(),
+      name: 'Room in aparthotel hosted by Supercity Aparthotels',
+      type: 'Room in aparthotel ',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638634569/london/apt5/1_opada4.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638634568/london/apt5/2_mdrqn4.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638634569/london/apt5/3_hfveqc.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638634569/london/apt5/4_t6ng94.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638634568/london/apt5/5_qo3yzu.jpg',
+      ],
+      price: '328',
+      avgRate: '4.6',
+      summary:
+        'The Rosebery aparthotel is a beautifully restored Victorian red brick building with 58 luxurious suites, with Farringdon and Chancery Lane tube stations only a five minute walk away.',
+      capacity: '2',
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'TV',
+        'No smoking',
+        'Cooking basics',
+        'Air conditioning',
+        'Refrigerator',
+        'Elevator',
+        'Iron',
+        'Heating',
+        'Bath',
+      ],
+      host: {
+        _id: 'lo105',
+        fullname: 'Supercity Aparthotels',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638634569/london/apt5/sddf_jfuxei.jpg',
+      },
+      loc: {
+        country: 'London',
+        countryCode: 'GB',
+        address: 'Carnaby Street, London',
+        lat: '51.513109',
+        lng: '-0.138775',
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: ' 2021',
+          txt: 'Better than, expected, nice cute space however light in the bedroom was not working and management could not fix it but offered me a lamp.',
+          rate: '',
+          by: {
+            _id: 'us101',
+            fullname: 'George W',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638634568/london/apt5/sd_qor3su.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
+    {
+      _id: utilService.makeId(),
+      name: '22nd Fl interior designed flat overlooking London',
+      type: 'Entire condo',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638635301/london/apt6/1_aylhnm.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638635300/london/apt6/2_npr96h.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638635300/london/apt6/3_ajvkrg.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638635300/london/apt6/4_h1l4da.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638635300/london/apt6/5_mblmbl.jpg',
+      ],
+      price: '297',
+      avgRate: '4.8',
+      summary:
+        '22nd floor Interior designed, stunning views of the City and Tower of London. Most of the London landmarks can be seen from the flat with no obstruction.',
+      capacity: '4',
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'TV',
+        'Smoking allowed',
+        'Pets allowed',
+        'Cooking basics',
+        'Air conditioning',
+        'Refrigerator',
+        'Bathub',
+        'Elevator',
+        'Iron',
+        'Heating',
+      ],
+      host: {
+        _id: 'lo106',
+        fullname: 'Marcus Adams',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638635579/london/apt6/portrait-confident-man-looking-camera-260nw-1591189321_tzqlm3.jpg',
+      },
+      loc: {
+        country: 'London',
+        countryCode: 'GB',
+        address: 'Regent Street, London',
+        lat: '51.509906',
+        lng: '-0.136521',
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'March 2021',
+          txt: 'An an excellent apartment in a great area of the city, the host is super helpful and very kind. Only minor observation is the couch is not ideal, if you want to watch TV in the evening. I will say the electrics were excellent! PS, the view is fantastic!!!',
+          rate: '4.8',
+          by: {
+            _id: 'us105',
+            fullname: 'Katia Crysann',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638635302/london/apt6/sdf_ulxf6r.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
+    {
+      _id: utilService.makeId(),
       name: 'Cheval Place for 3 persons',
       type: 'Entire home',
       imgUrls: [
