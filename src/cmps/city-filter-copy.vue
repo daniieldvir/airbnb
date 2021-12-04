@@ -7,9 +7,15 @@
     </div>
 
     <ul class="dropdown-list" v-if="shouldShow" @blur="toggleLocations">
-      <p @click="filterCity('London')">London</p>
-      <p @click="filterCity('Tel Aviv')">Tel Aviv</p>
-      <p @click="filterCity('Hong Kong')">Hong Kong</p>
+      <div>
+        <p @click="filterCity('London')">London</p>
+      </div>
+      <div>
+        <p @click="filterCity('Tel Aviv')">Tel Aviv</p>
+      </div>
+      <div>
+        <p @click="filterCity('Hong Kong')">Hong Kong</p>
+      </div>
     </ul>
   </section>
 </template>
