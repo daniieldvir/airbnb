@@ -21,6 +21,17 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faJs, faVuejs, fab } from '@fortawesome/free-brands-svg-icons';
+// ES6 Modules or TypeScript
+// import Swal from 'sweetalert2'
+
+// CommonJS
+// const Swal = require('sweetalert2')
+// Vue.use(VueSweetalert2);
+import swal from 'sweetalert2';
+window.Swal = swal;
+// import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+// import 'sweetalert2/src/sweetalert2.scss'
 
 library.add(fas, faJs, faVuejs, fab);
 
