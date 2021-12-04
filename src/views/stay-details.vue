@@ -89,11 +89,9 @@
         <stay-checkout :stay="stay"></stay-checkout>
       </div>
     </div>
-    <div className="reviews-section-container">
-
-      <!-- <review-ratings :reviews="stay.reviews" /> -->
+    <div class="reviews-section-container">
 		  <!-- <el-button v-if="loggedInUser" @click.stop="toggleReview">Add Review</el-button> -->
-		  <!-- <review-add v-if="isScreenOpen" @addReview="addReview" @toggleReview="toggleReview" /> -->
+		  <!-- <review-add @addReview="addReview" @toggleReview="toggleReview" /> -->
 		  <review-list v-if="stay.reviews.length" :reviews="stay.reviews" />
     </div>
 
