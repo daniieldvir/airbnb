@@ -12,7 +12,6 @@
       <p @click="filterCity('Hong Kong')">Hong Kong</p>
       <p @click="filterCity('Rome')">Rome</p>
       <p @click="filterCity('Bora Bora')">Bora Bora</p>
-      <p @click="filterCity('Hong Kong')">Hong Kong</p>
     </ul>
   </section>
 </template>
