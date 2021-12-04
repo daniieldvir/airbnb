@@ -1,0 +1,32 @@
+.list-container {
+  margin-top: 40px;
+  text-align: center;
+  & .home-list {
+    // justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 400px;
+    // flex-wrap: wrap;
+    gap: 30px;
+    & .img-container {
+      max-width: 300px;
+      height: 300px;
+    }
+    & img {
+      max-width: 100%;
+      //   height: 500px;
+      border-radius: 15px;
+      //   object-position: center;
+      //   object-fit: contain;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .list-container {
+    text-align: left;
+    & .home-list {
+      //   justify-content: left;
+    }
+  }
+}

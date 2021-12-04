@@ -272,7 +272,7 @@
 
     background-color: white;
     border: 1px solid rgb(223, 223, 222);
-    border-radius: 30px;
+    border-radius: 25px;
     padding: 16px 32px;
 
     font-size: rem(14px);
@@ -343,19 +343,25 @@
 
       background-color: white;
       border: 1px solid rgb(223, 223, 222);
-      border-radius: 30px;
+      border-radius: 25px;
 
       font-size: rem(14px);
       width: 350px;
       z-index: 9999;
 
       margin-top: 30px;
-      padding: 10px 0px;
+      padding: 20px 0px;
       left: 16.8%;
 
-      p {
-        font-size: rem(16px);
-        margin-left: 10px;
+      max-width: 500px;
+      & p {
+        margin: 0px;
+        font-size: 1.125rem;
+        font-weight: 400;
+        padding: 20px 30px;
+      }
+      & p:hover {
+        background-color: $clr8;
       }
     }
   }

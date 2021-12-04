@@ -44,9 +44,16 @@
         v-bind:class="{ show: propertyType.shouldShow }"
         class="dropdown-content"
       >
-        <div v-for="type in propertyType.types" :key="type">
-          <p @click="setPropertyType(type)" class="pointer">{{ type }}</p>
-        </div>
+        <!-- <div v-for="type in propertyType.types" :key="type"> -->
+        <p
+          v-for="type in propertyType.types"
+          :key="type"
+          @click="setPropertyType(type)"
+          class="pointer"
+        >
+          {{ type }}
+        </p>
+        <!-- </div> -->
       </div>
     </div>
     <!-- Amenities -->
