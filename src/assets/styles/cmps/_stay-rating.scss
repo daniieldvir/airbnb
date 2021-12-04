@@ -1,0 +1,20 @@
+.reviews-ratings-container {
+  .review-header {
+    display: flex;
+    align-items: center;
+  }
+  .review-ratings {
+    align-items: center;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-bottom: 20px;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+    .progress-bar {
+      .el-progress-bar__inner {
+        background-color: #222222;
+      }
+    }
+  }
+}

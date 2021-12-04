@@ -90,10 +90,20 @@ function getIcon(amenity) {
       return 'hot-tub'
     // case 'Balcony':
     // return 'balcony'
+    case 'Elevator':
+      return 'fa-duotone fa-elevator'
     case 'Iron':
       return 'iron'
     case 'Heating':
       return 'temperature-high'
+    case 'Pool':
+      return 'swimming-pool'
+    case 'Spa':
+      return 'spa'
+    case 'Bath':
+      return 'bath'
+    case 'Accessible':
+      return 'wheelchair'
     default:
       return '';
       break;

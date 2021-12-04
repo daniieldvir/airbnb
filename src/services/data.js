@@ -1,2 +1,22 @@
 'Entire rental unit',
     'Entire condo'
+
+       'Kitchen',
+       'Wifi',
+       'TV',
+       'Crib',
+       'Smoking allowed',
+       'No smoking',
+       'Pets allowed',
+       'Cooking basics',
+        'Air conditioning',
+       'Refrigerator',
+       'Free parking',
+       'Bathub',
+       'Elevator',
+       'Iron',
+       'Heating',
+       'Pool',
+       'Spa',
+       'Bath',
+       'Accessible'

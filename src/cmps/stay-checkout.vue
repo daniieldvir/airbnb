@@ -100,7 +100,15 @@ export default {
     filter() {
       this.$emit('filtered', this.filterBy);
     },
-    checkout() {},
+    checkout() {
+        Swal.fire({
+            title: 'Thank you for booking!',
+            text: 'Press done',
+            icon: 'success',
+            confirmButtonText: 'Done'
+        })
+        // this.$router.push('/');
+    },
   },
     components: { checkoutGuestModal, guestFilter },
 
