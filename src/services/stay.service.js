@@ -1134,6 +1134,77 @@ function _createStays() {
       ],
       likedByUsers: [],
     },
+    {
+      _id: utilService.makeId(),
+      name: 'Bora Bora bungalow N421 DTO-MT',
+      type: 'Entire bungalow hosted',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638628651/bora%20bora/apr1/f0cf9de1-8660-49b1-8fba-78e62cdd55fc_swifyt.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638628651/bora%20bora/apr1/38a0abd9-6873-4012-9c32-d00e64616b88_squsjw.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638628651/bora%20bora/apr1/6a1cb2fe-bb3e-42e9-9e59-c7478517c6e7_rcdggq.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638628651/bora%20bora/apr1/bd315da5-820c-4c8f-9739-e58b2622778f_zz5zt1.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638628651/bora%20bora/apr1/0d5f564e-3fa1-447b-aa72-982294e6e051_fxczra.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638628651/bora%20bora/apr1/cc2c7041-dade-4934-b011-62a143cb474c_r859gj.jpg',
+      ],
+      price: 183,
+      avgRate: 4.76,
+      summary:
+        'Bungalow avec vue sur lagon et accès direct à la mer. Idéal pour couple souhaitant visiter notre belle île tout en se sentant comme chez eux.',
+      capacity: 2,
+      amenities: ['Kitchen', 'Wifi', 'Air conditioning', 'TV'],
+      host: {
+        _id: 'u134',
+        fullname: 'Hitiura & Lionel Lolo',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638628652/bora%20bora/apr1/host_gjojez.jpg',
+      },
+      loc: {
+        country: 'Bora Bora',
+        countryCode: 'BV',
+        address: 'Bora Bora, Island in French Polynesia',
+        lat: -16.49734364645842,
+        lng: -151.74208293097504,
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'September 2021',
+          txt: 'The bungalow is beautiful right over the water but we have a few suggestions for future stays they only provide one roll of bathroom tissue and 2 coffee filters, with no fresh towels for a 6 day stay it is NOT comforting especially when you are visiting from another country. The electric car charger located in FRONT of the bungalow we were told that we can’t use it because it belongs to the neighbor across the other side of the road. Avis explain to us that all Airbnb have electric car chargers. The shower has extremely cold water or extremely hot water. The bathtub water was comfortable temperature. We were traveling from out of the country and instructions explained that the door will be open and key inside we did not have phone service there and instructions changed the day we arrive PLEASE GIVE PEOPLE INSTRUCTIONS IN ADVANCE Your location is beautiful but if this is a dream vacation for many people traveling outside the country please make their stay comfortable',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Delilah Loni ',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638628652/bora%20bora/apr1/rev3_yh3d6t.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'November 2020',
+          txt: 'The bungalow is cute, coat and a great location. You can snorkel right outside. This is a great value for your money. All the locals are very helpful and kind. It was very clean and ready when we got there. We definitely would recommend it for couples who would like to spend a romantic weekend in bora bora and have a good time. The view for the sunrise and sunset is great. And sitting on the deck under the stars was amazing.',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Byron Ryan',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638628651/bora%20bora/apr1/rev1_ayqti5.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'September 2020',
+          txt: 'Bora Bora Bungalow was perfect. The setting and location could not be better. The hosts were helpful setting up our lagoon tour and answered questions quickly. Highly recommend this place.',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Marlene lily',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638628652/bora%20bora/apr1/rev2_vtmugu.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
   ];
   gStays = stays;
   utilService.saveToStorage(STAYS_KEY, gStays);
