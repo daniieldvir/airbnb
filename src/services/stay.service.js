@@ -757,7 +757,7 @@ function _createStays() {
     {
       _id: utilService.makeId(),
       name: 'cozy studio at the most beautiful building',
-      type: 'Entire loft hosted',
+      type: 'Entire loft',
       imgUrls: [
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301095/tel-aviv/apr3/a84ceba0-a748-4a23-81af-afd4d3be0b2d_cla4zw.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301095/tel-aviv/apr3/4f46b7fb-d5e8-47cb-93c8-6e548038ad12_ckwaze.jpg',
@@ -815,7 +815,7 @@ function _createStays() {
     {
       _id: utilService.makeId(),
       name: 'amazing urban lost at the most perfect building ',
-      type: 'Entire loft hosted',
+      type: 'Entire loft',
       imgUrls: [
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301907/tel-aviv/aprt4/65a84d1d-d73b-47ca-8a11-7a2013c579b9_sqibud.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638301907/tel-aviv/aprt4/7067d4be-0892-4660-a6fb-2ae72b0212de_qqlrud.jpg',
@@ -873,7 +873,7 @@ function _createStays() {
     {
       _id: utilService.makeId(),
       name: 'Lovely apartment overlooking the Pantheon square',
-      type: 'Entire rental unit hosted',
+      type: 'Entire rental unit',
       imgUrls: [
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638624035/roma/ap1/c6735a58-1529-43bb-9bba-541cb4de839d_ub7yhv.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638624035/roma/ap1/c7f56c5f-eb1b-4e18-8764-5912bf4b3505_rsliv5.jpg',
@@ -955,7 +955,7 @@ function _createStays() {
     {
       _id: utilService.makeId(),
       name: 'Quiet and peaceful home in the heart of Rome',
-      type: 'Entire condominium',
+      type: 'Entire condo',
       imgUrls: [
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638624528/roma/apr2/da186929-5e70-423e-adcc-f5c6b77e6c57_xycyja.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638624528/roma/apr2/fab28e49-af44-4e0d-94a8-ba8a2977f2f0_kmse3i.jpg',
@@ -1026,7 +1026,7 @@ function _createStays() {
     {
       _id: utilService.makeId(),
       name: 'Cameretta per 2 persone con bagno privato esterno',
-      type: 'Private room in rental unit hosted by Lucky',
+      type: 'Private room in rental unit',
       imgUrls: [
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638625307/roma/apr3/c9521c9d-a5a0-4484-9aca-64e5f9b67e21_xwzoys.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638625308/roma/apr3/ec27e059-b716-46a4-a736-77fea0813812_a69lfk.jpg',
@@ -1105,7 +1105,7 @@ function _createStays() {
     {
       _id: utilService.makeId(),
       name: 'Historic center Campo ',
-      type: 'Entire rental unit hosted',
+      type: 'Entire rental unit',
       imgUrls: [
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638626130/roma/aprt4/67baa842-4385-4c85-b5fb-8f941dfa67cd_ob34rq.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638626130/roma/aprt4/c1c5c08c-1433-4c38-a111-0c6f461c98de_lldv8h.jpg',
@@ -1182,7 +1182,7 @@ function _createStays() {
     {
       _id: utilService.makeId(),
       name: 'Charme Navona luxury terrace ',
-      type: 'Entire rental unit hosted',
+      type: 'Entire rental unit',
       imgUrls: [
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638627022/roma/aprt5/e7fec6ef-3dd1-4871-89c2-fafb1fd9f7ee_kchmnu.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638627021/roma/aprt5/29651bb7-6572-476d-8a31-01f61288584a_txmi39.jpg',
@@ -1261,7 +1261,7 @@ function _createStays() {
     {
       _id: utilService.makeId(),
       name: 'Fontana di Trevi, stunning frontal view',
-      type: 'Entire rental unit hosted',
+      type: 'Entire rental unit',
       imgUrls: [
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638627730/roma/apr6/46b623bf-bdbf-4174-9a8f-10df822742e0_lds8ln.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638627731/roma/apr6/e655917f-d8d9-443f-833c-12530497b907_thph2p.jpg',
@@ -1345,7 +1345,7 @@ function _createStays() {
     {
       _id: utilService.makeId(),
       name: 'Tereva Lodge Bora Bora',
-      type: 'Entire bungalow hosted',
+      type: 'Entire bungalow',
       imgUrls: [
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638630174/bora%20bora/aprt2/4cd506bc-1a7a-4327-980e-6ae629fd0128_bqgbno.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638630175/bora%20bora/aprt2/7636bae9-2afc-4933-9f5f-30ad670a4c38_fcnjgi.jpg',
@@ -1424,7 +1424,7 @@ function _createStays() {
     {
       _id: utilService.makeId(),
       name: 'Bora Bora bungalow N421 DTO-MT',
-      type: 'Entire bungalow hosted',
+      type: 'Entire bungalow',
       imgUrls: [
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638628651/bora%20bora/apr1/f0cf9de1-8660-49b1-8fba-78e62cdd55fc_swifyt.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638628651/bora%20bora/apr1/38a0abd9-6873-4012-9c32-d00e64616b88_squsjw.jpg',
@@ -1495,7 +1495,7 @@ function _createStays() {
     {
       _id: utilService.makeId(),
       name: '1 bed room apartment, in the heart of Sheung Wan',
-      type: 'Entire rental unit hosted',
+      type: 'Entire rental unit',
       imgUrls: [
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638639852/hong-kong/apr4/22898840-fbe0-4bd5-904e-5c45dad8053c_tnosb3.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638639852/hong-kong/apr4/812be7ff-05ce-418a-915d-20725a74910c_ia9bto.jpg',
@@ -1547,7 +1547,7 @@ function _createStays() {
     {
       _id: utilService.makeId(),
       name: 'MTR AUSTIN ICC &ELEMENTS classy modern studio',
-      type: 'Entire rental unit hosted',
+      type: 'Entire rental unit',
       imgUrls: [
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638640902/hong-kong/apt5/c80ad5df-dfd0-40f8-8cc9-8ff36a1abed5_sabnrz.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638640902/hong-kong/apt5/b3fa3edb-1239-4660-8837-d6b708df09b5_wnbpfw.jpg',
@@ -1606,6 +1606,250 @@ function _createStays() {
             fullname: 'Carmen Elextra',
             imgUrl:
               'https://res.cloudinary.com/disku3v4j/image/upload/v1638640903/hong-kong/apt5/v3_wxcgmf.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
+
+    {
+      _id: utilService.makeId(),
+      name: 'Centro - Vaticano - San Pietro  ',
+      type: 'Entire rental unit',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638648869/roma/apr7/d1f081ff-f198-4ef2-bba6-d2749b5fdabc_d27rti.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638648869/roma/apr7/799bd34c-0ebd-4962-ad29-caabfdcf106f_vlyfia.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638648869/roma/apr7/627cc613-5226-4d6c-8569-82bfef8f5f41_tifmrz.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638648869/roma/apr7/5ef1a8d6-eba5-4236-ac6d-856f5d229d59_jk5nj1.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638648869/roma/apr7/9a23ca19-9a7b-494c-99bd-0f9f3d581149_musurr.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638648869/roma/apr7/9aca11f7-74ca-4984-a258-84636984ba07_qky3zv.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638648869/roma/apr7/5f19017d-d266-495a-99d8-53efe20cfa8e_x7k89a.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638648869/roma/apr7/1c4cbdde-3676-4120-81f3-eee349717b36_di7lcv.jpg',
+      ],
+      price: 254,
+      avgRate: 4.76,
+      summary:
+        'A pochi passi dalla Basilica di San Pietro e Musei Vaticani, spettacolare attico arredato di circa 95 mq, adatto per 6 persone. Troverete pulizia, cortesia e attenzione verso il cliente.',
+      capacity: 6,
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'Pets allowed',
+        'Hot tub',
+        'Elevator',
+        'TV',
+        'Air conditioning',
+      ],
+      host: {
+        _id: 'u136',
+        fullname: 'Stefano Bolony',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638648869/roma/apr7/host_f7vfxo.jpg',
+      },
+      loc: {
+        city: 'Rome',
+        countryCode: 'IT',
+        address: 'Rome, Italy',
+        lat: 41.903853714608864,
+        lng: 12.46869908017434,
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'September 2019',
+          txt: 'Amazing air bnb. The pictures don’t do it Justice. Great location, top floor, the views are incredible, the hot tub is great. So clean and spacious it was by far one of my favorite air bnbs I’ve stayed in. So many cute food spots nearby and shopping. 10/10 recommend.',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Andrea Bolsmi',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638648870/roma/apr7/v_k6m9rj.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'January 1018',
+          txt: 'Justin’s place is gorgeous. We had a great stay and would definitely stay there again.',
+          rate: '4.3',
+          by: {
+            _id: '',
+            fullname: 'Renee Chen',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638648870/roma/apr7/v3_gvki5b.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'April 2010',
+          txt: 'Great host very attentive and Timely',
+          rate: '4.5',
+          by: {
+            _id: '',
+            fullname: 'Radion Non',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638648870/roma/apr7/v2_zb5zmo.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
+    {
+      _id: utilService.makeId(),
+      name: 'Little Venice Garden Flat',
+      type: 'Entire rental unit',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638647763/london/apr8/de06d7eb-4ccc-4be2-8490-e6a07fbfd543_srfr2a.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638647763/london/apr8/e92d86b3-d5f0-4466-b502-1351704a5c7e_iteg69.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638647763/london/apr8/f506682d-d30d-4f84-961d-646197b23ab4_khaaec.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638647762/london/apr8/74da8b35-2427-4b17-b01e-ece4582681f7_jq4l8x.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638647762/london/apr8/848e5c3d-0aec-4aac-a0e5-60121244cbde_l3buqh.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638647762/london/apr8/02c83734-ea90-4406-94b1-a388d17fc6a9_muyxgp.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638647762/london/apr8/9a0a7bfb-5a4d-4f40-816a-65b54fb79afb_hh1oap.jpg',
+      ],
+      price: 355,
+      avgRate: 4.76,
+      summary:
+        'A cool, beautifully designed, spacious , contemporary garden flat. Three double bedrooms, two bathrooms. Stylish with very modern upto date fittings including air conditioning, under floor heating, Home Cinema and multi room audio. Little Venice in Central London is a hidden gem famed for its canals and attractive, stucco-fronted houses. Nearby Maida Vale offers wide tree-lined streets and handsome redbrick mansion blocks. Located a pleasant an 11 minute walk to Hyde Park',
+      capacity: 8,
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'Pets allowed',
+        'Washer',
+        'Hair dryer',
+        'TV',
+        'Air conditioning',
+      ],
+      host: {
+        _id: 'u136',
+        fullname: 'Justin Timnerlek',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638647763/london/apr8/photo-1506794778202-cad84cf45f1d_ahygok.jpg',
+      },
+      loc: {
+        city: 'London',
+        countryCode: 'GB',
+        address: 'Oxford Street, London ',
+        lat: 51.515427871471154,
+        lng: -0.14194294201317234,
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'July 2021',
+          txt: 'Fabulous mid century lush home! Walked the canal each day and easy access from Paddington Station to Central London for all the sites. There was 5 of us and plenty of private space',
+          rate: '4.5',
+          by: {
+            _id: '',
+            fullname: 'Teri Bradsho',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638647763/london/apr8/v1_ck4vmo.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'January 2020',
+          txt: 'Justin’s place is gorgeous. We had a great stay and would definitely stay there again.',
+          rate: '4.5',
+          by: {
+            _id: '',
+            fullname: 'Jon Carmel',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638647763/london/apr8/v_jwbmjc.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'April 2020',
+          txt: 'Justin home is really amazing and Justin is a first class host. We will be back! Thank you for your responsiveness to our requests. Fantastic apartment in a great location.',
+          rate: '4.5',
+          by: {
+            _id: '',
+            fullname: 'Philip Longo',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638647763/london/apr8/v3_bhkcdz.jpg',
+          },
+        },
+      ],
+      likedByUsers: [],
+    },
+
+    {
+      _id: utilService.makeId(),
+      name: 'Penthouse Rome Capitol',
+      type: 'Entire rental unit',
+      imgUrls: [
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638650077/roma/8/e3b41f2a-09b5-4c6a-877b-bb97dbd07851_ykgilh.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638650077/roma/8/f7598ab0-9c14-44c5-9b86-4235321ec3c4_i4owmm.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638650076/roma/8/36453ea9-3725-485a-b4f0-81dc92f743b2_ktjain.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638650076/roma/8/9683c086-e7ea-47e6-afeb-528af6fc94b1_obxklu.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638650076/roma/8/84e7b53c-003e-48d0-8b94-eeba5363b272_curd9j.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638650076/roma/8/141aa177-6e6d-425b-ae76-74ba14c61b67_nundi5.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638650076/roma/8/6f6d6be3-faf1-49bf-936b-481120355b46_tcm678.jpg',
+      ],
+      price: 344,
+      avgRate: 4.76,
+      summary:
+        'Unique apartment in the heart of ancient Rome, with a spacious terrace overlooking the "Chiesa del Gesù"; here you can experience your moments of relax with the incomparable feeling of having the Eternal City at your feet. In an elegant and comfortable environment thought out in every detail, you can enjoy your stay looking at Rome from an unparalleled perspective. You will stay a few steps from Piazza Venezia, Piazza Navona and the major attractions of Rome.',
+      capacity: 6,
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'Pets allowed',
+        'Hot tub',
+        'Elevator',
+        'TV',
+        'Air conditioning',
+        'Elevator',
+      ],
+      host: {
+        _id: 'u137',
+        fullname: 'Rachel Grin',
+        imgUrl:
+          'https://res.cloudinary.com/disku3v4j/image/upload/v1638650077/roma/8/host_egsuai.jpg',
+      },
+      loc: {
+        city: 'Rome',
+        countryCode: 'IT',
+        address: 'Rome, Italy',
+        lat: 41.903853714608864,
+        lng: 12.46869908017434,
+      },
+      reviews: [
+        {
+          id: utilService.makeId(),
+          createdAt: 'September 2019',
+          txt: 'Such a beautiful place, especially the patio! It’s in a great location, not far from some awesome landmarks. The area is pretty busy with several places to eat or visit, so you can walk or scooter around. The agency was great to work with as well. They helped set up transport from the airport which was helpful.',
+          rate: '4.9',
+          by: {
+            _id: '',
+            fullname: 'Dalia Nul',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638650077/roma/8/v_ufndod.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'January 1018',
+          txt: 'it was an amazing company to work with. The check-in process was smooth, and our contact person helped organized transportation to and from the Airbnb. The patio really took the experience to the next level. Highly recommended.',
+          rate: '4.3',
+          by: {
+            _id: '',
+            fullname: 'KyQuan Shot',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638650076/roma/8/afbb3846a69217b88aa2781297971f43_ds91vs.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'April 2006',
+          txt: 'This view is unparalleled! Honestly, you almost won’t want to go around Rome because of this terrace. It’s worth every penny. They were very communicative upon arrival, and really made our stay seamless and wonderful. We had an issue with the shower, but they sent help immediately and worked diligently to fix any problems. You can’t beat that kind service, and certainly can’t beat that view!',
+          rate: '4.5',
+          by: {
+            _id: '',
+            fullname: 'Radion Non',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638648870/roma/apr7/v2_zb5zmo.jpg',
           },
         },
       ],
