@@ -87,7 +87,7 @@ function getIcon(amenity) {
     case 'Free parking':
       return 'parking'
     case 'Bathub':
-      return 'hot-bath'
+      return 'hot-tub'
     // case 'Balcony':
     // return 'balcony'
     case 'Iron':

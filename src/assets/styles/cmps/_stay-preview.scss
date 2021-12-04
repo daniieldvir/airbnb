@@ -28,6 +28,13 @@
     }
   }
 
+  .stay-name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 1.45rem;
+    margin: 0;
+  }
   .stay-type {
     font-size: rem(14px);
   }

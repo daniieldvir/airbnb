@@ -23,8 +23,8 @@
       </p>
 
       <p></p>
-      <p class="stay-type">{{ stay.type }}</p>
-      <p>{{ sortTxt }} · {{ stay.loc.country }}</p>
+      <p class="stay-type">{{ stay.type }} · {{ stay.loc.country }}</p>
+      <p class="stay-name">{{ sortTxt }} </p>
 
       <p></p>
       <p>
@@ -46,14 +46,21 @@ export default {
   },
   computed: {
     reviewCount() {
-      var stay = this.stay.reviews;
-
-      if (stay.length) return stay.length + ' reviews';
-      if (!stay.length) return 'New';
+      const reviews = this.stay.reviews;
+      if(!reviews.length) return 'new';
+      if (reviews.length === 1)
+        return `${reviews.length} review`;
+      else if (reviews.length > 1)
+        return `${reviews.length} reviews`;
     },
+      // if (stay.length) return stay.length + ' reviews';
+      // if (!stay.length) return 'New';
+    
     sortTxt() {
-      var txt = this.stay.name;
-      if (txt.length > 25 < 50) return txt.slice(0, 22) + '...';
+      const txt = this.stay.name;
+      const txtWithCapitalFirstLetter = txt.charAt(0).toUpperCase() + txt.slice(1);
+      // if (txt.length > 25 < 50) return txt.slice(0, 22) + '...';
+      return txtWithCapitalFirstLetter;
     },
   },
   components: {

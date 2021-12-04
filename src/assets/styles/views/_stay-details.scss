@@ -1,3 +1,8 @@
+.details-main-container {
+  border-bottom: 1px solid #b0b0b0;
+  margin-block-end: 20px;
+  padding-block-end: 20px;
+}
 .stay-details {
   margin-top: 150px;
 
@@ -60,7 +65,8 @@
 }
 
 .images-display-container {
-  --gap: 16px;
+  --gap: 9px;
+  // --gap: 16px;
   --num-col: 4;
   --row-height: 300px;
 
@@ -93,6 +99,9 @@
   }
 }
 
+.reviews-section-container {
+  border-top: 1px solid #b0b0b0;
+}
 @media screen and (max-width: 1024px) {
   .images-display-container {
     --num-col: 2;

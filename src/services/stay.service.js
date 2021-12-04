@@ -67,7 +67,7 @@ function save(stay) {
   return savedStay;
 }
 
-function getEmpty() {}
+function getEmpty() { }
 
 function _createStays() {
   const stays = [
@@ -221,8 +221,8 @@ function _createStays() {
         country: 'Hong Kong',
         countryCode: 'HK',
         address: 'Hong Kong, New Territories, Hong Kong',
-        lat: 22.403165563636975,
-        lng: 114.1285844603382,
+        lat: 22.203015870571996,
+        lng: 114.02630528582661,
       },
       reviews: [
         {

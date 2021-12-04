@@ -1,9 +1,14 @@
 <template>
-  <header class="main-container">
+  <header v-bind:class="{ onExplore: onExplorePage }" class="main-container">
     <nav class="main-nav main-container">
       <router-link class="main-router-link" to="/">
-        <div class="logo">RentMe</div>
+        <!-- <div class="logo">RentMe<font-awesome-icon class="icon" icon="airbnb" /></div> -->
+        <div class="logo">
+          RentMe<font-awesome-icon :icon="['fab', 'airbnb']" />
+        </div>
       </router-link>
+      <!-- FILTERS -->
+      <secondary-filters v-if="onExplorePage" />
 
       <div class="navigation-routs">
         <router-link class="main-router-link" to="/explore"
@@ -24,11 +29,24 @@
   </header>
 </template>
 <script>
+import secondaryFilters from '../cmps/filters/secondary-filters.vue';
 export default {
-  computed: {
-    // loggedInUser() {
-    //   return this.$store.getters.loggedinUser;
-    // },
+  data() {
+    return {
+      onExplorePage: false,
+    };
+  },
+  watch: {
+    $route: {
+      handler() {
+        this.onExplorePage = this.$route.path === '/explore' ? true : false;
+      },
+      // deep: true,
+      immediate: true,
+    },
+  },
+  components: {
+    secondaryFilters,
   },
 };
 </script>

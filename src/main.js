@@ -20,9 +20,9 @@ import * as VueGoogleMaps from 'vue2-google-maps';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faJs, faVuejs } from '@fortawesome/free-brands-svg-icons';
+import { faJs, faVuejs, fab } from '@fortawesome/free-brands-svg-icons';
 
-library.add(fas, faJs, faVuejs);
+library.add(fas, faJs, faVuejs, fab);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;
