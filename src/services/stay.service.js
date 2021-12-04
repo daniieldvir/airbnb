@@ -908,7 +908,7 @@ function _createStays() {
       loc: {
         city: 'Rome',
         countryCode: 'IT',
-        address: 'Roma, Italy',
+        address: 'Rome, Italy',
         lat: 41.911922913384416,
         lng: 12.45137685856766,
       },
@@ -979,7 +979,7 @@ function _createStays() {
       loc: {
         city: 'Rome',
         countryCode: 'IT',
-        address: 'Roma, Italy',
+        address: 'Rome, Italy',
         lat: 41.897737534566176,
         lng: 12.492426635719653,
       },
@@ -1058,7 +1058,7 @@ function _createStays() {
       loc: {
         city: 'Rome',
         countryCode: 'IT',
-        address: 'Roma, Italy',
+        address: 'Rome, Italy',
         lat: 41.92117600703659,
         lng: 12.421235257024922,
       },
@@ -1135,7 +1135,7 @@ function _createStays() {
       loc: {
         city: 'Rome',
         countryCode: 'IT',
-        address: 'Roma, Italy',
+        address: 'Rome, Italy',
         lat: 41.97095418477043,
         lng: 12.473398525285116,
       },
@@ -1214,7 +1214,7 @@ function _createStays() {
       loc: {
         city: 'Rome',
         countryCode: 'IT',
-        address: 'Roma, Italy',
+        address: 'Rome, Italy',
         lat: 41.90232055422534,
         lng: 12.489985091485417,
       },
@@ -1286,7 +1286,7 @@ function _createStays() {
       loc: {
         city: 'Rome',
         countryCode: 'IT',
-        address: 'Roma, Italy',
+        address: 'Rome, Italy',
         lat: 41.903853714608864,
         lng: 12.46869908017434,
       },
