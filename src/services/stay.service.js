@@ -906,7 +906,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638624126/roma/ap1/130592146-handsome-young-man-in-pink-shirt-over-isolated-blue-background-keeping-the-arms-crossed-in-frontal-p_vv4rht.webp',
       },
       loc: {
-        city: 'Roma',
+        city: 'Rome',
         countryCode: 'IT',
         address: 'Roma, Italy',
         lat: 41.911922913384416,
@@ -977,7 +977,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638624528/roma/apr2/istockphoto-544358212-612x612_ece1mt.jpg',
       },
       loc: {
-        city: 'Roma',
+        city: 'Rome',
         countryCode: 'IT',
         address: 'Roma, Italy',
         lat: 41.897737534566176,
@@ -1056,7 +1056,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638625308/roma/apr3/1199118_xrxysk.jpg',
       },
       loc: {
-        city: 'Roma',
+        city: 'Rome',
         countryCode: 'IT',
         address: 'Roma, Italy',
         lat: 41.92117600703659,
@@ -1133,7 +1133,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638626130/roma/aprt4/hot-italian-women_jrc7lt.jpg',
       },
       loc: {
-        city: 'Roma',
+        city: 'Rome',
         countryCode: 'IT',
         address: 'Roma, Italy',
         lat: 41.97095418477043,
@@ -1212,7 +1212,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638627117/roma/aprt5/hoset_xe3fea.jpg',
       },
       loc: {
-        city: 'Roma',
+        city: 'Rome',
         countryCode: 'IT',
         address: 'Roma, Italy',
         lat: 41.90232055422534,
@@ -1284,7 +1284,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638627731/roma/apr6/OB-KW652_valore_G_20101115224543_nrjfre.jpg',
       },
       loc: {
-        city: 'Roma',
+        city: 'Rome',
         countryCode: 'IT',
         address: 'Roma, Italy',
         lat: 41.903853714608864,
