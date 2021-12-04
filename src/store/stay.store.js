@@ -32,9 +32,11 @@ export const stayStore = {
   mutations: {
     setFilter(state, { filterBy }) {
       state.filterBy = filterBy;
+      console.log('filter state', state.filterBy);
     },
     setStays(state, { stays }) {
       state.stays = stays;
+      console.log('stays', stays);
     },
     setStay(state, { stay }) {
       state.currStay = stay;

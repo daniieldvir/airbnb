@@ -72,6 +72,7 @@ export default {
   },
   methods: {
     setFilter(filterBy) {
+      console.log('setfilter home', filterBy);
       this.$store.dispatch({ type: 'setFilter', filterBy });
       this.$router.push('/explore');
     },
@@ -81,7 +82,7 @@ export default {
         this.$router.push('/stay/' + cardObject._id);
       } else {
         // const filterBy = { city: cardObject.name };
-        // this.setFilter(filterBy);
+        // this.setFilter({ ...filterBy });
         this.setFilter(this.filterBy);
       }
     },
