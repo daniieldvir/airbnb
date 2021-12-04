@@ -1,5 +1,5 @@
 <template>
-  <section class="map">
+  <section class="myMap">
     <GmapMap
       ref="mapRef"
       :center="center"
@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'map',
+  name: 'myMap',
   props: ['stay'],
   data() {
     return {

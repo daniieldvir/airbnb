@@ -2,7 +2,10 @@
   <header v-bind:class="{ onExplore: isOnExplorePage }" class="main-container">
     <nav class="main-nav main-container">
       <router-link class="main-router-link" to="/">
-        <div class="logo">RentMe</div>
+        <!-- <div class="logo">RentMe<font-awesome-icon class="icon" icon="airbnb" /></div> -->
+        <div class="logo">
+          RentMe<font-awesome-icon :icon="['fab', 'airbnb']" />
+        </div>
       </router-link>
       <!-- FILTERS -->
       <secondary-filters v-if="isOnExplorePage" />
