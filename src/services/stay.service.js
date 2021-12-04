@@ -44,7 +44,7 @@ function query(filterBy) {
             stay.loc.city === 'France'
           );
         } else {
-          stay.loc.city === filterBy.city;
+          return stay.loc.city === filterBy.city;
         }
       });
       return stays;
