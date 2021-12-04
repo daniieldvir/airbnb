@@ -12,4 +12,11 @@
     object-fit: cover;
     border: 1px solid $clr7;
   }
+  .overlay {
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+    transition: 0.3s ease;
+    background-color: transparent;
+  }
 }
