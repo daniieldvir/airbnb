@@ -36,7 +36,7 @@ function query(filterBy) {
     });
 
     if (filterBy.city) {
-      stays = stays.filter((stay) => stay.loc.country === filterBy.city);
+      stays = stays.filter((stay) => stay.loc.city === filterBy.city);
       return stays;
     }
     return stays;
@@ -98,7 +98,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638638346/london/apt7/GC-GettyImages-623463222-613x920_ucthfw.jpg',
       },
       loc: {
-        country: 'London',
+        city: 'London',
         countryCode: 'GB',
         address: 'Oxford Street, London ',
         lat: '51.515900',
@@ -151,7 +151,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638632306/london/apt3/user_zzrpya.jpg',
       },
       loc: {
-        country: 'London',
+        city: 'London',
         countryCode: 'GB',
         address: 'Savile Row, London',
         lat: 51.51032,
@@ -210,7 +210,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638633185/london/apt4/rev_cb3daw.jpg',
       },
       loc: {
-        country: 'London',
+        city: 'London',
         countryCode: 'GB',
         address: 'Kensington, London',
         lat: 51.498995,
@@ -268,7 +268,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638634569/london/apt5/sddf_jfuxei.jpg',
       },
       loc: {
-        country: 'London',
+        city: 'London',
         countryCode: 'GB',
         address: 'Carnaby Street, London',
         lat: '51.513109',
@@ -327,7 +327,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638635579/london/apt6/portrait-confident-man-looking-camera-260nw-1591189321_tzqlm3.jpg',
       },
       loc: {
-        country: 'London',
+        city: 'London',
         countryCode: 'GB',
         address: 'Regent Street, London',
         lat: '51.509906',
@@ -384,7 +384,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638299902/photo-1438761681033-6461ffad8d80_bhahe9.jpg',
       },
       loc: {
-        country: 'London',
+        city: 'London',
         countryCode: 'GB',
         address: 'Bond Street, London',
         lat: 51.515419,
@@ -452,7 +452,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638299987/images_gj0cfe.jpg',
       },
       loc: {
-        country: 'London',
+        city: 'London',
         countryCode: 'GB',
         address: 'Abbey Road, London',
         lat: 51.532005,
@@ -496,7 +496,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638300062/our_kind_of_people_lance_gross_2x_ssvg9h.jpg',
       },
       loc: {
-        country: 'Hong Kong',
+        city: 'Hong Kong',
         countryCode: 'HK',
         address: 'Hong Kong, New Territories, Hong Kong',
         lat: 22.203015870571996,
@@ -552,7 +552,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638299789/host_qszv7p.jpg',
       },
       loc: {
-        country: 'Hong Kong',
+        city: 'Hong Kong',
         countryCode: 'HK',
         address: 'Hong Kong, Kowloon, Hong Kong',
         lat: 22.32765605023636,
@@ -611,7 +611,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638300901/pexels-photo-1300402_wtxf88.jpg',
       },
       loc: {
-        country: 'Hong Kong',
+        city: 'Hong Kong',
         countryCode: 'HK',
         address: 'North Point, Hong Kong',
         lat: 22.292752869816333,
@@ -673,7 +673,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638299465/tel-aviv/apr1/wouter-aghina_fc-mask_profile_1536x1152_wmamov.webp',
       },
       loc: {
-        country: 'Tel Aviv',
+        city: 'Tel Aviv',
         countryCode: 'IS',
         address: 'Tel Aviv, Israel',
         lat: 32.07887336917053,
@@ -732,7 +732,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638299259/tel-aviv/apr2/host_csyws6.jpg',
       },
       loc: {
-        country: 'Tel Aviv',
+        city: 'Tel Aviv',
         countryCode: 'IS',
         address: 'Tel Aviv, Israel',
         lat: 32.077953188721075,
@@ -790,7 +790,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638300900/depositphotos_11412590-stock-photo-handsome-young-man_f1iwbg.jpg',
       },
       loc: {
-        country: 'Tel Aviv',
+        city: 'Tel Aviv',
         countryCode: 'IS',
         address: 'Tel Aviv, Israel',
         lat: 32.0656318607977,
@@ -849,7 +849,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638300901/istockphoto-969233490-612x612_pls00z.jpg',
       },
       loc: {
-        country: 'Tel Aviv',
+        city: 'Tel Aviv',
         countryCode: 'IS',
         address: 'Tel Aviv, Israel',
         lat: 32.06210484605474,
@@ -906,7 +906,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638624126/roma/ap1/130592146-handsome-young-man-in-pink-shirt-over-isolated-blue-background-keeping-the-arms-crossed-in-frontal-p_vv4rht.webp',
       },
       loc: {
-        city: 'Roma',
+        city: 'Rome',
         countryCode: 'IT',
         address: 'Roma, Italy',
         lat: 41.911922913384416,
@@ -977,7 +977,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638624528/roma/apr2/istockphoto-544358212-612x612_ece1mt.jpg',
       },
       loc: {
-        city: 'Roma',
+        city: 'Rome',
         countryCode: 'IT',
         address: 'Roma, Italy',
         lat: 41.897737534566176,
@@ -1056,7 +1056,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638625308/roma/apr3/1199118_xrxysk.jpg',
       },
       loc: {
-        country: 'Roma',
+        city: 'Rome',
         countryCode: 'IT',
         address: 'Roma, Italy',
         lat: 41.92117600703659,
@@ -1133,7 +1133,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638626130/roma/aprt4/hot-italian-women_jrc7lt.jpg',
       },
       loc: {
-        country: 'Italy',
+        city: 'Rome',
         countryCode: 'IT',
         address: 'Roma, Italy',
         lat: 41.97095418477043,
@@ -1212,7 +1212,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638627117/roma/aprt5/hoset_xe3fea.jpg',
       },
       loc: {
-        country: 'Italy',
+        city: 'Rome',
         countryCode: 'IT',
         address: 'Roma, Italy',
         lat: 41.90232055422534,
@@ -1284,7 +1284,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638627731/roma/apr6/OB-KW652_valore_G_20101115224543_nrjfre.jpg',
       },
       loc: {
-        country: 'Italy',
+        city: 'Rome',
         countryCode: 'IT',
         address: 'Roma, Italy',
         lat: 41.903853714608864,
@@ -1375,7 +1375,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638630376/bora%20bora/aprt2/host_dumocd.jpg',
       },
       loc: {
-        country: 'Bora Bora',
+        city: 'Bora Bora',
         countryCode: 'BV',
         address: 'Bora Bora, Island in French Polynesia',
         lat: -16.49734364645842,
@@ -1446,7 +1446,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638628652/bora%20bora/apr1/host_gjojez.jpg',
       },
       loc: {
-        country: 'Bora Bora',
+        city: 'Bora Bora',
         countryCode: 'BV',
         address: 'Bora Bora, Island in French Polynesia',
         lat: -16.49734364645842,
@@ -1523,7 +1523,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638639853/hong-kong/apr4/v1_tsmbwt.jpg',
       },
       loc: {
-        country: 'Hong Kong',
+        city: 'Hong Kong',
         countryCode: 'HK',
         address: 'Hong Kong, Kowloon, Hong Kong',
         lat: 22.319613821878374,
@@ -1577,7 +1577,7 @@ function _createStays() {
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638640903/hong-kong/apt5/host_j1o2gu.jpg',
       },
       loc: {
-        country: 'Hong Kong',
+        city: 'Hong Kong',
         countryCode: 'HK',
         address: 'Hong Kong, Kowloon, Hong Kong',
         lat: 22.32465589234941,
