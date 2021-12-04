@@ -60,7 +60,7 @@
           border-radius: 0.25em;
 
           background-image: linear-gradient(
-            75deg,
+            to right,
             #9c1ee6,
             #f52060,
             #c752cf,
@@ -69,25 +69,12 @@
 
           background-size: 300%;
           background-position: -100%;
-
-          animation: animatedBackground 3s infinite alternate-reverse;
-
-          // transition: 100ms background-position ease-in-out;
         }
-        // .btn-checkout:hover {
-        //   background-position: right;
       }
       .btn-checkout:hover,
       .btn-checkout:focus {
         animation: animatedBackground 3s infinite alternate-reverse;
       }
-
-      // }
-      // .btn-checkout:hover,
-      // .btn-checkout:focus {
-      //   background-position: right;
-      // }
-
       @keyframes animatedBackground {
         from {
           background-position: 0%;

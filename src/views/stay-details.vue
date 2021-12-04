@@ -1,12 +1,10 @@
 <template>
   <section v-if="stay" class="stay-details main-container">
-    <!-- <app-header /> -->
-
     <h2>{{ formattedName }}</h2>
     <div>
       <p>
         <span>
-        <!-- <span v-if="stay.reviews.length"> -->
+          <!-- <span v-if="stay.reviews.length"> -->
           <font-awesome-icon icon="star" />{{ stay.avgRate }}
           <span class="details-reviews">{{ formattedReviews }}</span
           >&middot;
@@ -90,11 +88,10 @@
       </div>
     </div>
     <div className="reviews-section-container">
-
       <!-- <review-ratings :reviews="stay.reviews" /> -->
-		  <!-- <el-button v-if="loggedInUser" @click.stop="toggleReview">Add Review</el-button> -->
-		  <!-- <review-add v-if="isScreenOpen" @addReview="addReview" @toggleReview="toggleReview" /> -->
-		  <review-list v-if="stay.reviews.length" :reviews="stay.reviews" />
+      <!-- <el-button v-if="loggedInUser" @click.stop="toggleReview">Add Review</el-button> -->
+      <!-- <review-add v-if="isScreenOpen" @addReview="addReview" @toggleReview="toggleReview" /> -->
+      <review-list v-if="stay.reviews.length" :reviews="stay.reviews" />
     </div>
 
     <!-- <div class="about">
@@ -158,15 +155,16 @@ export default {
     bath() {},
     formattedReviews() {
       //maybe 0 reviews
-      if(!this.stay.reviews.length) return '(new)';
+      if (!this.stay.reviews.length) return '(new)';
       if (this.stay.reviews.length === 1)
         return `(${this.stay.reviews.length} review)`;
       else if (this.stay.reviews.length > 1)
         return `(${this.stay.reviews.length} reviews)`;
     },
-    formattedName(){
+    formattedName() {
       const txt = this.stay.name;
-      const txtWithCapitalFirstLetter = txt.charAt(0).toUpperCase() + txt.slice(1);
+      const txtWithCapitalFirstLetter =
+        txt.charAt(0).toUpperCase() + txt.slice(1);
       // if (txt.length > 25 < 50) return txt.slice(0, 22) + '...';
       return txtWithCapitalFirstLetter;
     },
