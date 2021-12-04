@@ -1,28 +1,29 @@
 <template>
-  <section class="guest-filter">
-    <label>Guests</label>
+  <section class="checkout-guest-modal">
+    <label class="toggle-btn" @click="toggleGuests">Guests
+    <span class="add-guests-input">Add Guests</span>
+    </label>
     <!-- <button @click="toggleGuests">Add Guests</button> -->
-    <div class="toggle-btn" @click="toggleGuests">Add Guests
     <div v-if="shouldShow" @blur="toggleGuests" class="add-guests">
-      <div v-for="(value, name, idx) in filterBy.guests" :key="idx">
-        <div class="selection">
+      <div class="guest-item flex space-between align-center" v-for="(value, name, idx) in filterBy.guests" :key="idx">
+        <div >
           <h3>{{ name[0].toUpperCase() + name.substring(1) }}</h3>
           <h4>{{ msgs[idx] }}</h4>
         </div>
-        <div class="flex multi-choice">
-          <button class="reduce-btn" @click="addGuest(-1, name)">-</button>
-          <h2 class="counter">{{ value }}</h2>
+        <div class="action-btns flex align-center justify-center">
+          <button class="reduce-btn" @click="addGuest(-1, name)">&ndash;</button>
+          <div class="counter">{{ value }}</div>
           <button class="add-btn" @click="addGuest(1, name)">+</button>
         </div>
       </div>
     </div>
-    </div>
+    <!-- </div> -->
   </section>
 </template>
 
 <script>
 export default {
-  name: 'guest-filter',
+  name: 'checkout-guest-modal',
   props: {  },
   data() {
     return {
@@ -32,9 +33,13 @@ export default {
     };
   },
   created() {
-    // this.loadFilter();
+    this.loadFilter();
   },
   methods: {
+    loadFilter() {
+      const filterBy = this.$store.getters.filterBy;
+      this.filterBy = JSON.parse(JSON.stringify(filterBy));
+    },
     toggleGuests() {
       this.shouldShow = !this.shouldShow;
     },
@@ -53,15 +58,3 @@ export default {
 
 
 
-
-    // position: absolute;
-    // display: flex;
-    // flex-direction: column;
-    // background-color: white;
-    // border: 1px solid #dfdfde;
-    // border-radius: 30px;
-    // font-size: 0.875rem;
-    // width: 300px;
-    // z-index: 9999;
-    // transform: translate(-2%, 15%);
-    // max-width: 500px;

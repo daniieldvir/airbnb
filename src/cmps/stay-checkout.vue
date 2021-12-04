@@ -28,17 +28,17 @@
                 ref="myDatePicker"
               ></el-date-picker>
             </div>
-            <!-- <checkout-guest-modal class="select-guests-container flex space-between" @setGuests="setGuests" /> -->
+            <checkout-guest-modal class="select-guests-container flex space-between" @setGuests="setGuests" />
 
             <!-- <div class="select-guests-container flex space-between"> -->
             <!-- <guest-filter/> -->
             <!-- <guest-filter :currFilterBy="filterBy" @addedGuests="addGuests" /> -->
 
-                        <div class="select-guests-container flex space-between">
+                        <!-- <div class="select-guests-container flex space-between"> -->
                             <!-- <guest-filter/> -->
-                            <guest-filter @addedGuests="addGuests" />
+                            <!-- <guest-filter @addedGuests="addGuests" /> -->
                            
-                        </div>
+                        <!-- </div> -->
                         <!-- <div class="btn-checkout-container">
                             <button class="btn-checkout">Check availability
                             </button>
@@ -93,7 +93,7 @@ export default {
     // setDates(selectedDates) {
     //   this.filterBy.dates = selectedDates;
     // },
-    addGuests(filterBy) {
+    setGuests(filterBy) {
       this.filterBy.guests = filterBy.guests;
       this.filterBy.totalGuests = filterBy.totalGuests;
     },

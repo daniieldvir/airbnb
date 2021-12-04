@@ -1,5 +1,6 @@
 .stay-checkout {
-  width: 100%;
+  // width: 100%;
+  width: 450px;
   position: sticky;
   top: 120px;
   bottom: 20px;
@@ -14,9 +15,15 @@
     border-radius: 13px;
     box-shadow: 0 6px 16px -2px #d8d8d8;
 
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 12px;
+    // padding: 24px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+
     .checkout-form-container {
       width: 100%;
-      padding: 20px 25px 15px;
+      // padding: 20px 25px 15px;
+      padding: 0 25px 15px;
 
       .form-container {
         position: relative;
@@ -52,62 +59,11 @@
           color: white;
           border-radius: 0.25em;
 
-<<<<<<< HEAD
-            // background-image: linear-gradient(to right, #ff512f 0%, #dd2476 51%, #ff512f 100%);
-            // background-image: linear-gradient(to right, rgb(226, 158, 215) 0%, #dd2476 51%, rgb(226, 158, 215) 100%);
-
-            background-image: linear-gradient(
-              90deg,
-              rgb(255, 56, 92) 0%,
-              rgb(227, 28, 95) 40%,
-              rgb(215, 4, 102) 70%,
-              rgb(189, 30, 89) 100%
-            );
-=======
-          background-image: linear-gradient(
-            75deg,
-            #9c1ee6,
-            #f52060,
-            #c752cf,
-            #f52060
-          );
->>>>>>> 9485223b9b0e1b5f40de0fdde3a824a3e5f21bff
+          background-image: linear-gradient(75deg, #9c1ee6, #f52060, #c752cf, #f52060);
 
           background-size: 300%;
           background-position: -100%;
 
-<<<<<<< HEAD
-            &:hover {
-              // animation: animate 10s linear infinite;
-              background-position: right center; /* change the direction of the change here */
-              color: #fff;
-              // background-color: #ff385c, rgb(230, 30, 77), rgb(189, 30, 89);
-              // background-image: linear-gradient(
-              //   to right,
-              //   rgb(255, 56, 92) 0%,
-              //   rgb(230, 30, 77) 27.5%,
-              //   rgb(227, 28, 95) 40%,
-              //   rgb(215, 4, 102) 57.5%,
-              //   rgb(189, 30, 89) 75%,
-              //   rgb(189, 30, 89) 100%
-              // );
-              // background-image: linear-gradient(
-              //   to right,
-              //   rgb(189, 30, 89) 0%,
-              //   rgb(189, 30, 89) 27.5%,
-              //   rgb(215, 4, 102) 40%,
-              //   rgb(227, 28, 95) 57.5%,
-              //   rgb(230, 30, 77) 75%,
-              //   rgb(255, 56, 92) 100%
-              // );
-              text-decoration: none;
-              // opacity: 1;
-            }
-            &::selection {
-              background-color: #ff385c;
-              color: #fff;
-            }
-=======
           animation: animatedBackground 3s infinite alternate-reverse;
 
           // transition: 100ms background-position ease-in-out;
@@ -127,7 +83,6 @@
           }
           to {
             background-position: 100%;
->>>>>>> 9485223b9b0e1b5f40de0fdde3a824a3e5f21bff
           }
         }
       }

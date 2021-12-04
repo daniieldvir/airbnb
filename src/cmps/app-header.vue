@@ -2,7 +2,8 @@
   <header class="main-container">
     <nav class="main-nav main-container">
       <router-link class="main-router-link" to="/">
-        <div class="logo">RentMe</div>
+        <!-- <div class="logo">RentMe<font-awesome-icon class="icon" icon="airbnb" /></div> -->
+        <div class="logo">RentMe<font-awesome-icon :icon="[ 'fab', 'airbnb' ]" /></div>
       </router-link>
 
       <div class="navigation-routs">
@@ -24,7 +25,14 @@
   </header>
 </template>
 <script>
+
+// import { faAirbnb } from '@fortawesome/free-brands-svg-icons'
 export default {
+  data(){
+    return{
+      // airbnb:faAirbnb
+    }
+  },
   computed: {
     // loggedInUser() {
     //   return this.$store.getters.loggedinUser;
