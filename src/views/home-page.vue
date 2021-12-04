@@ -4,7 +4,7 @@
       <div class="main-header">
         <section>
           <stayFilter @filtered="setFilter" />
-          <h1 class="main-txt">Find a place to stay anywhere, anytime.</h1>
+          <h1 class="main-txt">Find a place to stay anywhere. Anytime.</h1>
         </section>
       </div>
     </div>
@@ -13,6 +13,11 @@
         @cardClicked="cardClicked"
         :places="citiesForList"
         :listTitle="'Popular destinations'"
+      />
+      <home-list
+        @cardClicked="cardClicked"
+        :places="topStays"
+        :listTitle="'Top Rated'"
       />
     </section>
   </section>
@@ -41,7 +46,12 @@ export default {
             'https://res.cloudinary.com/disku3v4j/image/upload/v1638609796/travel%20posters/itl.cat_paris-wallpaper_114472_no385z.jpg',
           ],
         },
-        // { name: 'Hong Kong', imgUrls:[''] },
+        {
+          name: 'Hong Kong',
+          imgUrls: [
+            'https://res.cloudinary.com/disku3v4j/image/upload/v1638618156/travel%20posters/mark-billante-vtuVWgtSYzo-unsplash_noeiqn.jpg',
+          ],
+        },
         {
           name: 'Bora Bora',
           imgUrls: [
@@ -59,9 +69,10 @@ export default {
   },
   created() {
     this.$store.dispatch({ type: 'loadStays' }).then(() => {
-      this.topStays = this.$store.getters.staysToShow;
+      const stays = this.$store.getters.staysToShow;
+      this.topStays = stays.filter((stay) => stay.avgRate >= 4.5).slice(0, 4);
 
-      this.topStays = this.topStays.slice(0, 4);
+      // this.topStays = this.topStays.slice(0, 4);
     });
   },
   methods: {
