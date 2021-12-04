@@ -36,7 +36,17 @@ function query(filterBy) {
     });
 
     if (filterBy.city) {
-      stays = stays.filter((stay) => stay.loc.city === filterBy.city);
+      stays = stays.filter((stay) => {
+        if (filterBy.city === 'flexible') {
+          return (
+            stay.loc.city === 'Bora Bora' ||
+            stay.loc.city === 'Hawaii' ||
+            stay.loc.city === 'France'
+          );
+        } else {
+          stay.loc.city === filterBy.city;
+        }
+      });
       return stays;
     }
     return stays;
