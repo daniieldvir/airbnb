@@ -5,9 +5,9 @@
         <stay-preview :stay="stay"> </stay-preview>
       </li>
     </ul>
-    <div class="overlay">
+    <!-- <div class="overlay">
       <font-awesome-icon icon="heart" />
-    </div>
+    </div> -->
   </section>
 </template>
 
