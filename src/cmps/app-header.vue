@@ -40,14 +40,8 @@ export default {
   watch: {
     $route: {
       handler() {
-        // this.onHomePage =
-        //   this.$route.path === '/explore' || this.$route.path.includes('/stay')
-        //     ? true
-        //     : false;
         this.onHomePage = this.$route.name !== 'Home' ? false : true;
         this.onExplorePage = this.$route.name === 'Explore' ? true : false;
-        console.log(this.$route);
-        console.log(this.onHomePage);
       },
       immediate: true,
     },

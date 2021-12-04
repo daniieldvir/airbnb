@@ -32,18 +32,13 @@ export default {
   name: 'home-page',
   data() {
     return {
+      filterBy: null,
       topStays: null,
       citiesForList: [
         {
           name: 'London',
           imgUrls: [
             'https://res.cloudinary.com/disku3v4j/image/upload/v1638609791/travel%20posters/itl.cat_london-iphone-wallpaper_248104_tueo1k.jpg',
-          ],
-        },
-        {
-          name: 'Paris',
-          imgUrls: [
-            'https://res.cloudinary.com/disku3v4j/image/upload/v1638609796/travel%20posters/itl.cat_paris-wallpaper_114472_no385z.jpg',
           ],
         },
         {
@@ -68,31 +63,36 @@ export default {
     };
   },
   created() {
+    this.clearAllFilters();
+    this.loadFilter();
     this.$store.dispatch({ type: 'loadStays' }).then(() => {
       const stays = this.$store.getters.staysToShow;
       this.topStays = stays.filter((stay) => stay.avgRate >= 4.5).slice(0, 4);
-
-      // this.topStays = this.topStays.slice(0, 4);
     });
   },
   methods: {
     setFilter(filterBy) {
       this.$store.dispatch({ type: 'setFilter', filterBy });
-      this.$store.dispatch({ type: 'loadStays' });
       this.$router.push('/explore');
-
-      // .then((this.topStays = this.$store.getters.staysToShow));
     },
     cardClicked(cardObject) {
-      const filterBy = { city: cardObject.name };
-      this.setFilter(filterBy);
+      this.filterBy.city = cardObject.name;
+      if (cardObject._id) {
+        this.$router.push('/stay/' + cardObject._id);
+      } else {
+        // const filterBy = { city: cardObject.name };
+        // this.setFilter(filterBy);
+        this.setFilter(this.filterBy);
+      }
+    },
+    loadFilter() {
+      const filterBy = this.$store.getters.filterBy;
+      this.filterBy = JSON.parse(JSON.stringify(filterBy));
+    },
+    clearAllFilters() {
+      this.$store.commit({ type: 'clearAllFilters' });
     },
   },
-  // computed: {
-  //   topStays() {
-  //     return this.$store.getters.stays;
-  //   },
-  // },
   components: {
     stayFilter,
     stayList,

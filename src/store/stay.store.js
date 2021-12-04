@@ -39,6 +39,18 @@ export const stayStore = {
     setStay(state, { stay }) {
       state.currStay = stay;
     },
+    clearAllFilters(state) {
+      state.filterBy = {
+        city: '',
+        guests: '',
+        dates: [],
+        guests: { adults: 0, children: 0, infants: 0, pets: 0 },
+        totalGuests: 0,
+        priceRange: [15, 850],
+        amenities: [],
+        propertyType: '',
+      };
+    },
   },
   actions: {
     loadStays({ commit, state }) {
