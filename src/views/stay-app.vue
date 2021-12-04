@@ -1,6 +1,6 @@
 <template>
   <section class="stay-app main-container">
-    <secondary-filters />
+    <!-- <secondary-filters /> -->
     <!-- <guests-filter /> -->
     <stay-list :stays="stays"> </stay-list>
   </section>
@@ -14,10 +14,16 @@ import guestsFilter from '../cmps/guest-filter.vue';
 export default {
   components: { stayList, secondaryFilters, guestsFilter },
   name: 'stay-app',
+  created() {
+    this.$store.commit('onExplorePage', true);
+  },
   computed: {
     stays() {
-      console.log('from saty app', this.$store.getters.staysToShow);
       return this.$store.getters.staysToShow;
+    },
+    destroyed() {
+      console.log('destroyed explore');
+      this.$store.commit('onExplorePage', false);
     },
   },
 };

@@ -9,6 +9,19 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   strict: true,
+  state: {
+    onExplorePage: false,
+  },
+  getters: {
+    isOnExplorePage(state) {
+      return state.onExplorePage;
+    },
+  },
+  mutations: {
+    onExplorePage(state, boolean) {
+      state.onExplorePage = boolean;
+    },
+  },
   modules: {
     userStore,
     reviewStore,

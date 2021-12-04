@@ -1,9 +1,11 @@
 <template>
-  <header class="main-container">
+  <header v-bind:class="{ onExplore: isOnExplorePage }" class="main-container">
     <nav class="main-nav main-container">
       <router-link class="main-router-link" to="/">
         <div class="logo">RentMe</div>
       </router-link>
+      <!-- FILTERS -->
+      <secondary-filters v-if="isOnExplorePage" />
 
       <div class="navigation-routs">
         <router-link class="main-router-link" to="/explore"
@@ -24,11 +26,24 @@
   </header>
 </template>
 <script>
+import secondaryFilters from '../cmps/filters/secondary-filters.vue';
 export default {
+  data() {
+    return {
+      onExplorePage: false,
+    };
+  },
+  methods: {
+    // this.onExplorePage=this.$store.getters.isOnExplorePage
+  },
   computed: {
-    // loggedInUser() {
-    //   return this.$store.getters.loggedinUser;
-    // },
+    isOnExplorePage() {
+      console.log('isOnExplorePage?', this.$store.getters.isOnExplorePage);
+      return this.$store.getters.isOnExplorePage;
+    },
+  },
+  components: {
+    secondaryFilters,
   },
 };
 </script>
