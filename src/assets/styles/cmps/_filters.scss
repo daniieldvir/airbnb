@@ -149,9 +149,13 @@
 
       // transform: translate(-20%, 9%);
       margin-top: 30px;
+      padding: 10px 0px;
       left: 16.8%;
 
       max-width: 500px;
+      & p:hover {
+        background-color: $clr7;
+      }
     }
   }
   .date-picker {
