@@ -2,8 +2,11 @@
   margin-top: 150px;
 
   & .sub-header {
-    line-height: 2.1em;
     font-size: 0.9em;
+
+    & p {
+      line-height: 2.1em;
+    }
   }
   // & hr {
   //   background-color: $clr8;

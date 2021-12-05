@@ -10,9 +10,9 @@
 
     <guest-filter @addedGuests="addGuests" @filterClicked="enlargeSearchBtn" />
 
-    <button class="search" @click="filter">
+    <button class="flex search-btn" @click="filter">
       <font-awesome-icon icon="search" />
-      <span v-if="largeSearchBtn">Search</span>
+      <span class="search" v-if="largeSearchBtn">Search</span>
     </button>
   </section>
 </template>

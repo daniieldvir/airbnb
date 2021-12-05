@@ -27,12 +27,24 @@
         overflow: hidden;
         line-height: 1.45rem;
         margin: 0;
+      }
+      & div {
+        gap: 5px;
+        align-items: center;
 
-        // position: absolute;
-        // top: 8px;
-        // left: 16px;
-        // font-size: rem(18px);
-        // color: $clr6;
+        .svg-inline--fa {
+          color: #ff385c;
+          font-size: rem(14px);
+          font-size: 0.9rem;
+        }
+        .review-rate {
+          color: #717171;
+          font-size: rem(14px);
+        }
+        .avgRate {
+          // margin-left: 5px;
+          font-size: 0.9rem;
+        }
       }
     }
   }

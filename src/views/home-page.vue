@@ -48,9 +48,9 @@ export default {
           ],
         },
         {
-          name: 'Bora Bora',
+          name: 'Tel Aviv',
           imgUrls: [
-            'https://res.cloudinary.com/disku3v4j/image/upload/v1638609789/travel%20posters/itl.cat_bora-bora-wallpaper_3109400_v7auuh.jpg',
+            'https://res.cloudinary.com/disku3v4j/image/upload/v1638700827/tel-aviv/wp6537669_pa56s3.jpg',
           ],
         },
         {

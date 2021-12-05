@@ -1,6 +1,11 @@
 <template>
   <section v-if="stay" class="stay-preview">
+ 
     <div class="block">
+      <span class="liked-stay-content" v-if="!likedStay" @click.stop="toggleLikedStay(stay._id)">
+        <font-awesome-icon :icon="['far', 'heart']" /></span>
+      <span class="liked-stay-content" v-else @click.stop="toggleLikedStay(stay._id)"><font-awesome-icon :icon="['fas', 'heart']" /></span>
+      <!-- <el-alert title="Added to wishlist" type="success"></el-alert> -->
       <el-carousel
         trigger="click"
         arrow="always"
@@ -35,12 +40,15 @@
 <script>
 import priceRangeFilter from './price-range-filter.vue';
 import priceRange from './price-range-filter.vue';
+// import { faHeart } from '@fortawesome/free-regular-svg-icons'
 export default {
   components: { priceRangeFilter },
   name: 'stay-preview',
   props: ['stay'],
   data() {
-    return {};
+    return {
+      likedStay: false
+    };
   },
   computed: {
     reviewCount() {
@@ -59,6 +67,16 @@ export default {
       // if (txt.length > 25 < 50) return txt.slice(0, 22) + '...';
       return txtWithCapitalFirstLetter;
     },
+  },
+  methods:{
+    toggleLikedStay(){
+      this.likedStay = !this.likedStay;
+      // if (this.likedStay) {
+      //   showMsg('Added to wishlist')
+      // } else {
+      //   showMsg('Removed from wishlist')
+      // }
+    }
   },
   components: {
     priceRange,
