@@ -84,6 +84,7 @@
           </div>
         </div>
       </div>
+      
       <div class="stay-details-right-container">
         <stay-checkout :stay="stay"></stay-checkout>
       </div>

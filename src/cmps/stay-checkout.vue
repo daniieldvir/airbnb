@@ -16,15 +16,24 @@
         <div class="form-container">
           <div class="select-form">
             <div class="select-dates-container">
+              <label for="check-in"><span>Check-in</span>
               <el-date-picker
                 style="width: 100%"
                 v-model="dates"
                 type="daterange"
                 range-separator=""
-                start-placeholder="CHECK-IN"
-                end-placeholder="CHECKOUT"
+                start-placeholder="Add date"
                 ref="myDatePicker"
-              ></el-date-picker>
+              ></el-date-picker></label>
+                <label for="check-out"><span>Check-out</span>
+              <el-date-picker
+                style="width: 100%"
+                v-model="dates"
+                type="daterange"
+                range-separator=""
+                start-placeholder="Add date"
+                ref="myDatePicker"
+              ></el-date-picker></label>
             </div>
             <checkout-guest-modal
               class="select-guests-container flex space-between"
@@ -68,6 +77,7 @@ export default {
   data() {
     return {
       filterBy: null,
+      open: false
       // guestShouldShow: false,
     };
   },
@@ -108,8 +118,12 @@ export default {
         icon: 'success',
         confirmButtonText: 'Done',
       });
-      // this.$router.push('/');
     },
+    openDate(){
+      this.open = !this.open;
+    },
+      // this.$router.push('/');
+  
   },
   components: { checkoutGuestModal, guestFilter },
 };
