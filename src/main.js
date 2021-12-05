@@ -17,10 +17,10 @@ import ElementUI from 'element-ui';
 import * as VueGoogleMaps from 'vue2-google-maps';
 
 ///font awesome
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faJs, faVuejs, fab } from '@fortawesome/free-brands-svg-icons';
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { fas } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+// import { faJs, faVuejs, fab, far } from '@fortawesome/free-brands-svg-icons';
 // ES6 Modules or TypeScript
 // import Swal from 'sweetalert2'
 
@@ -33,9 +33,22 @@ window.Swal = swal;
 
 // import 'sweetalert2/src/sweetalert2.scss'
 
-library.add(fas, faJs, faVuejs, fab);
+// library.add(fas, faJs, faVuejs, fab, far);
+
+// Vue.component('font-awesome-icon', FontAwesomeIcon);
+/////
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+library.add(fab, fas, far);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
+
+
+
+///
 Vue.config.productionTip = false;
 Vue.use(ElementUI, { locale });
 Vue.use(VueGoogleMaps, {
@@ -77,6 +90,6 @@ const sectionOneObserver = new IntersectionObserver(function (
     }
   });
 },
-sectionOneOptions);
+  sectionOneOptions);
 
 sectionOneObserver.observe(sectionOne);
