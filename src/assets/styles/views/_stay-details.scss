@@ -45,7 +45,6 @@
       grid-row: span 1/2;
 
       .info-header {
-        // margin-bottom: 15px;
         p {
           font-size: rem(16px);
           color: $clr2;
@@ -60,6 +59,7 @@
           height: 55px;
           border-radius: 30px;
           object-fit: cover;
+          border: 1px solid $clr8;
         }
       }
       .assets-container {
