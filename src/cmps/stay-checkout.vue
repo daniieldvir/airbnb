@@ -58,12 +58,19 @@
         </div>
       </div>
     </section>
+    <checkout-modal
+      class="checkout-modal"
+      v-if="isModalOpen"
+      @closeModal="closeModal"
+    ></checkout-modal>
   </section>
 </template>
 
 <script>
 import checkoutGuestModal from './checkout-guest-modal.vue';
 import guestFilter from './guest-filter.vue';
+import checkoutModal from './checkout-modal.vue';
+
 export default {
   props: {
     stay: Object,
@@ -73,6 +80,7 @@ export default {
   data() {
     return {
       filterBy: null,
+      isModalOpen: false,
       // guestShouldShow: false,
     };
   },
@@ -107,15 +115,19 @@ export default {
       this.$emit('filtered', this.filterBy);
     },
     checkout() {
-      Swal.fire({
-        title: 'Thank you for booking!',
-        text: 'Press done',
-        icon: 'success',
-        confirmButtonText: 'Done',
-      });
+      this.isModalOpen = true;
+      // Swal.fire({
+      //   title: 'Thank you for booking!',
+      //   text: 'Press done',
+      //   icon: 'success',
+      //   confirmButtonText: 'Done',
+      // });
       // this.$router.push('/');
     },
+    closeModal() {
+      this.isModalOpen = false;
+    },
   },
-  components: { checkoutGuestModal, guestFilter },
+  components: { checkoutGuestModal, guestFilter, checkoutModal },
 };
 </script>
