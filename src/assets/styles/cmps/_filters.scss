@@ -10,7 +10,7 @@
   display: grid;
   // grid-template-columns: repeat(var(--num-col), 1fr);
   // grid-template-columns: 32% 40% 1fr 8.1%;
-  grid-template-columns: 32% 40% 1fr 8.1%;
+  grid-template-columns: 1.5fr 2fr 1fr 60px;
   // grid-template-columns: 242px 359px 157px 65px;
   // grid-auto-rows: var(--row-height);
   // justify-content: center;
@@ -38,6 +38,9 @@
     // justify-content: center;
     // margin-left: 30px;
     border-right: 1px solid rgb(196, 196, 196);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
   .date-picker {
     grid-column: 2;
