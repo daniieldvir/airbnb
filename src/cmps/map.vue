@@ -16,12 +16,6 @@
         @click="center = m.position"
       />
     </GmapMap>
-    <el-button
-      v-for="(marker, idx) in markers"
-      :key="idx"
-      @click="moveTo(marker.position)"
-      >{{ marker.city }}</el-button
-    >
   </section>
 </template>
 
