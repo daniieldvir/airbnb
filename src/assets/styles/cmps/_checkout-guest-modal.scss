@@ -28,6 +28,12 @@
     flex-direction: column;
     font-size: 0.8rem;
     cursor: pointer;
+    margin-left: 10px;
+    font-family: manrope-bold;
+
+    span {
+      font-family: manrope;
+    }
   }
 
   .guest-item {

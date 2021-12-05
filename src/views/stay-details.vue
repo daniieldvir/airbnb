@@ -77,7 +77,8 @@
             <div v-for="(amenity, idx) in stay.amenities" :key="idx">
               <font-awesome-icon
                 class="font-amenity-icon"
-                :icon="iconToShow(amenity)"/>
+                :icon="iconToShow(amenity)"
+              />
               {{ amenity }}
             </div>
           </div>
@@ -88,27 +89,31 @@
       </div>
     </div>
     <div v-if="stay.reviews.length" class="reviews-section-container">
-      <stay-rating :reviews="reviews"/>
-		  <!-- <el-button @click.stop="toggleReview">Add Review</el-button> -->
-		  <!-- <review-add @addReview="addReview" @toggleReview="toggleReview" /> -->
-		  <review-list :reviews="reviews" />
+      <stay-rating :reviews="reviews" />
+      <!-- <el-button @click.stop="toggleReview">Add Review</el-button> -->
+      <!-- <review-add @addReview="addReview" @toggleReview="toggleReview" /> -->
+      <review-list :reviews="reviews" />
     </div>
 
-    <!-- <div class="about">
-      <GmapMap
-        class="map"
-        :stay="stay"
-        :options="{
-          zoomControl: true,
-          mapTypeControl: true,
-          scaleControl: true,
-          streetViewControl: true,
-          rotateControl: false,
-          fullscreenControl: true,
-          disableDefaultUi: false,
-        }"
-      />
-    </div> -->
+    <div>
+      <hr />
+      <h2>Where you’ll be</h2>
+      <div class="about">
+        <GmapMap
+          class="map"
+          :stay="stay"
+          :options="{
+            zoomControl: true,
+            mapTypeControl: true,
+            scaleControl: true,
+            streetViewControl: true,
+            rotateControl: false,
+            fullscreenControl: true,
+            disableDefaultUi: false,
+          }"
+        />
+      </div>
+    </div>
   </section>
 </template>
 
@@ -117,7 +122,7 @@ import { utilService } from '@/services/util.service';
 import GmapMap from '@/cmps/map.vue';
 import stayCheckout from '@/cmps/stay-checkout.vue';
 import reviewList from '@/cmps/review-list.vue';
-import stayRating from '@/cmps/stay-rating.vue'
+import stayRating from '@/cmps/stay-rating.vue';
 import longText from '@/cmps/long-text.vue';
 // import '@fortawesome/fontawesome-free/js/all.js';
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -130,7 +135,7 @@ export default {
       stay: null,
       imgs: null,
       // iconToShow:'',
-      reviews:[]
+      reviews: [],
     };
   },
   created() {
