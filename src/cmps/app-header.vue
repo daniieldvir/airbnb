@@ -19,12 +19,27 @@
         <router-link class="main-router-link" to="/become-host"
           >Become A Host</router-link
         >
-        <!-- <router-link class="main-router-link" to="/login"> -->
-        <button class="flex align-center user-btn">
-          <font-awesome-icon icon="bars" class="bars" />
-          <font-awesome-icon icon="user-circle" />
-        </button>
-        <!-- </router-link> -->
+
+        <!-- <router-link class="main-router-link" to="/login"></router-link> -->
+        <div class="dropdown">
+          <button
+            @click="toggleUserModal"
+            class="flex align-center user-btn dropbtn"
+          >
+            <font-awesome-icon icon="bars" class="bars" />
+            <font-awesome-icon icon="user-circle" />
+          </button>
+          <div
+            id="myDropdown"
+            v-bind:class="{ show: showUserModal }"
+            class="dropdown-content"
+          >
+            <a href="#">Sign up</a>
+            <a href="#">Log in</a>
+            <hr />
+            <a href="#">Host your home</a>
+          </div>
+        </div>
       </div>
     </nav>
     <!-- <section class="loggedin-user" v-if="loggedInUser">
@@ -40,6 +55,7 @@ export default {
     return {
       onHomePage: false,
       onExplorePage: false,
+      showUserModal: false,
     };
   },
   watch: {
@@ -49,6 +65,11 @@ export default {
         this.onExplorePage = this.$route.name === 'Explore' ? true : false;
       },
       immediate: true,
+    },
+  },
+  methods: {
+    toggleUserModal() {
+      this.showUserModal = !this.showUserModal;
     },
   },
   components: {

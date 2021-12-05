@@ -85,3 +85,17 @@ header {
     border: 1px solid $clr7;
   }
 }
+
+.nav-content .dropdown-content {
+  right: 0;
+
+  & a:first-of-type {
+    font-weight: bold;
+  }
+  & a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: $clr2;
+    padding: 15px;
+  }
+}
