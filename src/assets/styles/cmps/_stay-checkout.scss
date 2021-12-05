@@ -6,8 +6,9 @@
   .order-price-container {
     color: $clr2;
     font-family: manrope-bold;
-    p {
-      font-size: rem(18px);
+    .price {
+      font-size: rem(22px);
+      color: $clr2;
 
       span {
         font-family: manrope;
@@ -25,6 +26,7 @@
       font-size: rem(14px);
       font-family: manrope-bold;
       margin-right: 5px;
+      color: $clr2;
     }
     span {
       font-size: rem(14px);
@@ -58,8 +60,17 @@
           margin-block-end: 15px;
 
           .select-dates-container {
-            height: 56px;
+            height: 58px;
+
+            .label {
+              display: flex;
+              justify-content: space-around;
+              font-size: rem(14px);
+              margin-top: 5px;
+            }
             .el-date-editor {
+              display: flex;
+              justify-content: space-around;
               .el-range-input {
                 color: $clr2;
                 display: flex;

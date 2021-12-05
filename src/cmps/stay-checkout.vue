@@ -4,7 +4,7 @@
       <div class="checkout-form-container">
         <div class="checkout-form-header flex space-between align-center">
           <div class="order-price-container">
-            <p class="price">${{ stay.price }}<span>/night</span></p>
+            <p class="price">${{ stay.price }}<span> / night</span></p>
           </div>
           <div class="check-rating-container flex align-center">
             <font-awesome-icon icon="star" />
@@ -16,13 +16,18 @@
         <div class="form-container">
           <div class="select-form">
             <div class="select-dates-container">
+              <div class="label">
+                <label>CHECK-IN </label>
+                <label>CHECKOUT </label>
+              </div>
+
               <el-date-picker
                 style="width: 100%"
                 v-model="dates"
                 type="daterange"
                 range-separator=""
-                start-placeholder="CHECK-IN"
-                end-placeholder="CHECKOUT"
+                start-placeholder="Add date "
+                end-placeholder="Add date"
                 ref="myDatePicker"
               ></el-date-picker>
             </div>

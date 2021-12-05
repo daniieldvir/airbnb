@@ -45,7 +45,7 @@
       grid-row: span 1/2;
 
       .info-header {
-        margin-bottom: 15px;
+        // margin-bottom: 15px;
         p {
           font-size: rem(16px);
           color: $clr2;
@@ -70,6 +70,12 @@
           margin-block-end: 1rem;
           margin-top: 20px;
 
+          &:last-child {
+            .asset-details {
+              margin-left: 10px;
+            }
+          }
+
           .icon {
             align-self: baseline;
           }
@@ -84,6 +90,7 @@
             line-height: 2.8em;
           }
         }
+
         .asset-details {
           h4 {
             margin: 0;
@@ -101,7 +108,7 @@
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 16px;
-          margin-bottom: 20px;
+          // margin-bottom: 20px;
 
           .font-amenity-icon {
             min-width: 24px;
@@ -152,8 +159,8 @@
   }
 
   .stay-details-left-container {
-    min-height: 850px;
-    max-height: 1000px;
+    min-height: 100%;
+    margin-bottom: 30px;
 
     .stay-details-amenities {
       .amenities-content {
