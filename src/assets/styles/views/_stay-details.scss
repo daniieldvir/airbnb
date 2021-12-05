@@ -115,6 +115,8 @@
     .stay-details-right-container {
       grid-column: 3/4;
       grid-row: span 1;
+      position: sticky;
+      top: 120px;
     }
   }
 
