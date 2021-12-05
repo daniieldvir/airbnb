@@ -81,7 +81,8 @@ function getIcon(amenity) {
       // return 'fan'
       return 'snowflake'
     case 'Refrigerator':
-      return 'refrigerator'
+      // return 'refrigerator'
+      return 'fa-regular fa-refrigerator'
     // case 'Dishwasher':
     // return ''
     case 'Free parking':
