@@ -1,16 +1,35 @@
 .reviews-ratings-container {
+  .svg-inline--fa {
+    color: $clr1;
+    margin-right: 5px;
+  }
+  p {
+    font-family: manrope-bold;
+  }
+
   .review-header {
     display: flex;
     align-items: center;
   }
   .review-ratings {
-    align-items: center;
-    text-align: left;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    p {
+      font-family: manrope;
+    }
+
+    --gap: 10px;
+    --num-col: 4;
+    --row-height: 30px;
+    padding: var(--gap);
+    position: relative;
     margin-bottom: 20px;
-    -moz-column-gap: 10px;
-    column-gap: 10px;
+    align-items: baseline;
+
+    display: grid;
+    grid-template-columns: repeat(var(--num-col), 1fr);
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
+    align-items: center;
+
     .progress-bar {
       .el-progress-bar__inner {
         background-color: #222222;

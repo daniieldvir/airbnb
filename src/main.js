@@ -31,7 +31,7 @@ import swal from 'sweetalert2';
 window.Swal = swal;
 // import Swal from 'sweetalert2/dist/sweetalert2.js'
 
-// import 'sweetalert2/src/sweetalert2.scss'
+import 'sweetalert2/src/sweetalert2.scss';
 
 // library.add(fas, faJs, faVuejs, fab, far);
 
