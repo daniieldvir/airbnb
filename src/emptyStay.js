@@ -1,11 +1,12 @@
-var stay=
+var stay =
 {
-    _id: '',
-    fullname: '',
-    imgUrl:
-      '',
-    isAdmin: false,
-    isHost: true,
-    username: '',
-    password: '',
-  },
+  _id: '',
+  fullname: '',
+  imgUrl:
+    '',
+  isAdmin: false,
+  isHost: true,
+  username: '',
+  password: '',
+},
+

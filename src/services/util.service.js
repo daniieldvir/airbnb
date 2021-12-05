@@ -86,7 +86,7 @@ function getIcon(amenity) {
     // return ''
     case 'Free parking':
       return 'parking'
-    case 'Bathub':
+    case 'Hottub':
       return 'hot-tub'
     // case 'Balcony':
     // return 'balcony'
@@ -100,10 +100,14 @@ function getIcon(amenity) {
       return 'swimming-pool'
     case 'Spa':
       return 'spa'
-    case 'Bath':
+    case 'Bathtub':
       return 'bath'
     case 'Accessible':
       return 'wheelchair'
+    case 'Beach access – Beachfront':
+      return 'umbrella-beach';
+    case 'Long term stays allowed':
+      return 'calendar-alt';
     default:
       return '';
       break;
