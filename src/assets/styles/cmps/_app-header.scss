@@ -40,6 +40,20 @@ header {
     .main-router-link:visited {
       text-decoration: none;
     }
+    .user-btn {
+      height: 35px;
+      background-color: #fff;
+      border-radius: 30px;
+      padding-left: 15px;
+      gap: 10px;
+      font-size: 1.5em;
+      color: $clr4;
+      // border: 1px solid $clr7;
+      .bars {
+        font-size: 0.5em;
+        color: $clr2;
+      }
+    }
   }
 }
 .nav-scrolled {
@@ -66,5 +80,8 @@ header {
 
   &.logo {
     color: var(--logo);
+  }
+  & .user-btn {
+    border: 1px solid $clr7;
   }
 }

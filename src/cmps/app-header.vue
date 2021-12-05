@@ -12,16 +12,19 @@
         <secondary-filters v-if="onExplorePage" />
       </div>
 
-      <div class="navigation-routs">
+      <div class="flex nav-content">
         <router-link class="main-router-link" to="/explore"
           >Explore</router-link
         >
         <router-link class="main-router-link" to="/become-host"
           >Become A Host</router-link
         >
-        <router-link class="main-router-link" to="/login"
-          >Login / Signup</router-link
-        >
+        <!-- <router-link class="main-router-link" to="/login"> -->
+        <button class="flex align-center user-btn">
+          <font-awesome-icon icon="bars" class="bars" />
+          <font-awesome-icon icon="user-circle" />
+        </button>
+        <!-- </router-link> -->
       </div>
     </nav>
     <!-- <section class="loggedin-user" v-if="loggedInUser">
