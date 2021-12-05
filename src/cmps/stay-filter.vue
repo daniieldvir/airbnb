@@ -9,11 +9,12 @@
     <date-picker @filtered="setDates" @filterClicked="enlargeSearchBtn" />
 
     <guest-filter @addedGuests="addGuests" @filterClicked="enlargeSearchBtn" />
-
-    <button class="flex search-btn" @click="filter">
-      <font-awesome-icon icon="search" />
-      <span class="search" v-if="largeSearchBtn">Search</span>
-    </button>
+    <div class="search-btn-container flex">
+      <button class="flex search-btn" @click="filter">
+        <font-awesome-icon icon="search" />
+        <span class="search" v-if="largeSearchBtn">Search</span>
+      </button>
+    </div>
   </section>
 </template>
 

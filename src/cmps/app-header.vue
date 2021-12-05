@@ -5,7 +5,8 @@
         <router-link class="main-router-link" to="/">
           <!-- <div class="logo">RentMe<font-awesome-icon class="icon" icon="airbnb" /></div> -->
           <div class="logo">
-            <font-awesome-icon :icon="['fab', 'airbnb']" />Rentme
+            <font-awesome-icon :icon="['fab', 'airbnb']" />
+            <span>rentme</span>
           </div>
         </router-link>
         <!-- FILTERS -->

@@ -1,8 +1,8 @@
 <template>
-  <section class="city-filter">
-    <label>Location</label>
+  <section class="city-filter flex">
     <!-- <button @click="toggleLocations">Where are you going?</button> -->
-    <div class="location-btn toggel-btn" @click="toggleLocations">
+    <div class="toggel-btn" @click="toggleLocations">
+      <label>Location</label>
       {{ filterBy.city || 'Where are you going?' }}
     </div>
 

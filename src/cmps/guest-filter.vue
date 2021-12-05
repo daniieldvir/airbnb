@@ -1,8 +1,8 @@
 <template>
-  <section class="guest-filter">
-    <label>Guests</label>
+  <section class="guest-filter flex">
     <!-- <button @click="toggleGuests">Add Guests</button> -->
     <div class="toggel-btn" @click="toggleGuests">
+      <label>Guests</label>
       {{ guestsAdded }}
     </div>
     <ul
