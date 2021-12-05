@@ -173,8 +173,10 @@ export default {
       this.dispatchToStore();
     },
     onClickOutside() {
-      this[this.previousBtn].shouldShow = false;
-      this.previousBtn = '';
+      if (this[this.previousBtn]) {
+        this[this.previousBtn].shouldShow = false;
+        this.previousBtn = '';
+      }
     },
   },
   computed: {
