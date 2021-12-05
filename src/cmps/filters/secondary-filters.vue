@@ -12,7 +12,7 @@
         v-bind:class="{ show: price.shouldShow }"
         class="dropdown-content price"
       >
-        <p>The average nightly price is ₪519</p>
+        <p>The average nightly price is $ 220</p>
         <el-slider
           @change="dispatchToStore"
           v-model="filterBy.priceRange"
@@ -107,9 +107,7 @@ export default {
           'Entire rental unit',
           'Entire loft',
           'Entire bungalow',
-          'Room in aparthotel',
           'Private room in rental unit',
-          'Treehouse',
         ],
         shouldShow: false,
       },
@@ -128,7 +126,6 @@ export default {
           'Free parking',
           'Bathub',
           'Elevator',
-          'Iron',
           'Heating',
           'Pool',
           'Spa',
@@ -143,6 +140,7 @@ export default {
   },
   created() {
     this.loadFilter();
+    // this.showedStays = this.$store.getters.staysToShow;
   },
   methods: {
     toggleModal(currBtn) {
@@ -177,6 +175,18 @@ export default {
       this.dispatchToStore();
     },
   },
-  components: {},
+  computed: {
+    // avgPrice() {
+    //   const stays = this.$store.getters.staysToShow;
+    //   console.log('stays from reduce', stays);
+    //   if (stays.length) {
+    //     return stays.reduce((acc, stay) => {
+    //       (acc + stay.price) / stays.length;
+    //     });
+    //   } else {
+    //     return 220;
+    //   }
+    // },
+  },
 };
 </script>

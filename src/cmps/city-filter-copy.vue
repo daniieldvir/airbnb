@@ -39,6 +39,7 @@ export default {
       this.toggleLocations();
     },
     toggleLocations() {
+      this.$emit('filterClicked');
       this.shouldShow = !this.shouldShow;
     },
   },
