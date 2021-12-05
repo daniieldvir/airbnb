@@ -5,7 +5,7 @@
 
       <label>Check out </label>
     </div>
-    <div>
+    <div class="date-picker-table">
       <el-date-picker
         @blur="filtered"
         v-model="dates"

@@ -4,7 +4,7 @@
       <img :src="review.by.imgUrl" />
       <div>
         <h4 class="review-user-name">{{ review.by.fullname }}</h4>
-        <h4>{{ review.createdAt }}</h4>
+        <h4 class="review-user-data">{{ review.createdAt }}</h4>
       </div>
     </div>
     <p class="txt">{{ review.txt }}</p>
@@ -16,5 +16,5 @@ export default {
   props: {
     review: Object,
   },
-}
+};
 </script>
