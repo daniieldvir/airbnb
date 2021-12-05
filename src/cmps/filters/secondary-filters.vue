@@ -128,7 +128,6 @@ export default {
           'Free parking',
           'Bathub',
           'Elevator',
-          'Iron',
           'Heating',
           'Pool',
           'Spa',
