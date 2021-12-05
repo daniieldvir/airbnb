@@ -21,7 +21,7 @@
         >
 
         <!-- <router-link class="main-router-link" to="/login"></router-link> -->
-        <div class="dropdown">
+        <div class="dropdown" v-click-outside="onClickOutside">
           <button
             @click="toggleUserModal"
             class="flex align-center user-btn dropbtn"
@@ -70,6 +70,9 @@ export default {
   methods: {
     toggleUserModal() {
       this.showUserModal = !this.showUserModal;
+    },
+    onClickOutside() {
+      this.showUserModal = false;
     },
   },
   components: {

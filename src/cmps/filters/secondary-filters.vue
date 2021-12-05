@@ -1,5 +1,5 @@
 <template>
-  <section class="secondary-filters">
+  <section v-click-outside="onClickOutside" class="secondary-filters">
     <!-- PRICE RANGE -->
     <div class="dropdown">
       <button
@@ -171,6 +171,10 @@ export default {
       this.filterBy.amenities = [];
       this.filterBy.propertyType = '';
       this.dispatchToStore();
+    },
+    onClickOutside() {
+      this[this.previousBtn].shouldShow = false;
+      this.previousBtn = '';
     },
   },
   computed: {

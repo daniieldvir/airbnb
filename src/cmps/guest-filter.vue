@@ -5,7 +5,12 @@
     <div class="toggel-btn" @click="toggleGuests">
       {{ filterBy.totalGuests || 'Add guests' }}
     </div>
-    <ul v-if="shouldShow" @blur="toggleGuests" class="clear-list add-guests">
+    <ul
+      v-click-outside="onClickOutside"
+      v-if="shouldShow"
+      @blur="toggleGuests"
+      class="clear-list add-guests"
+    >
       <li v-for="(value, name, idx) in filterBy.guests" :key="idx">
         <div class="selection">
           <h3>{{ name[0].toUpperCase() + name.substring(1) }}</h3>
@@ -52,6 +57,9 @@ export default {
       if (name === 'adults' || name === 'children')
         this.filterBy.totalGuests += val;
       this.$emit('addedGuests', this.filterBy);
+    },
+    onClickOutside() {
+      this.shouldShow = false;
     },
   },
   computed: {},
