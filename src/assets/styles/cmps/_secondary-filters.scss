@@ -77,25 +77,26 @@
 
   &.price {
     justify-content: space-evenly;
-    width: 30em;
+    width: 25em;
     padding: 32px 30px;
     gap: 20px;
 
     & :last-child {
-      // margin-top: 10px;
       justify-content: space-between;
       align-items: center;
 
       & p {
         color: $clr4;
-        font-size: 0.8em;
+        font-size: 0.7em;
         width: 45%;
         border-radius: 10px;
         padding: 10px;
+        line-height: 2em;
         border: 1px solid $clr7;
       }
 
       & span {
+        // margin-top: 10px;
         color: $clr2;
         font-size: 1.4em;
       }

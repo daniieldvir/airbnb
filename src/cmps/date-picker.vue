@@ -1,9 +1,12 @@
 <template>
   <div class="date-picker block">
     <div class="date-picker-label">
-      <label>Check in </label>
-
-      <label>Check out </label>
+      <div class="toggle-btn">
+        <label>Check in </label>
+      </div>
+      <div class="toggle-btn">
+        <label>Check out </label>
+      </div>
     </div>
     <div class="date-picker-table">
       <el-date-picker
@@ -11,7 +14,7 @@
         v-model="dates"
         type="daterange"
         range-separator=""
-        start-placeholder="Add dates"
+        start-placeholder="Add dates "
         end-placeholder="Add dates"
       >
       </el-date-picker>

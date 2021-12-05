@@ -1,11 +1,16 @@
 <template>
-  <section class="guest-filter">
-    <label>Guests</label>
+  <section class="guest-filter flex">
     <!-- <button @click="toggleGuests">Add Guests</button> -->
     <div class="toggel-btn" @click="toggleGuests">
-      {{ filterBy.totalGuests || 'Add guests' }}
+      <label>Guests</label>
+      {{ guestsAdded }}
     </div>
-    <ul v-if="shouldShow" @blur="toggleGuests" class="clear-list add-guests">
+    <ul
+      v-click-outside="onClickOutside"
+      v-if="shouldShow"
+      @blur="toggleGuests"
+      class="clear-list add-guests"
+    >
       <li v-for="(value, name, idx) in filterBy.guests" :key="idx">
         <div class="selection">
           <h3>{{ name[0].toUpperCase() + name.substring(1) }}</h3>
@@ -53,8 +58,23 @@ export default {
         this.filterBy.totalGuests += val;
       this.$emit('addedGuests', this.filterBy);
     },
+    onClickOutside() {
+      this.shouldShow = false;
+    },
   },
-  computed: {},
+  computed: {
+    guestsAdded() {
+      const totalGuests = this.filterBy.totalGuests;
+      let res;
+      if (totalGuests) {
+        const str = totalGuests > 1 ? 'Guests' : 'Guest';
+        res = `${totalGuests} ${str} `;
+      } else {
+        res = 'Add guests';
+      }
+      return res;
+    },
+  },
   components: {},
 };
 </script>

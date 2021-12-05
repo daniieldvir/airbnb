@@ -25,13 +25,23 @@ header {
     justify-content: space-between;
 
     .main-router-link {
+      width: max-content;
+      height: max-content;
       margin-right: 30px;
       text-decoration: none;
       color: var(--text);
 
       .logo {
+        width: max-content;
         color: var(--logo);
         font-size: rem(25px);
+        font-weight: bold;
+        & .svg-inline--fa {
+          font-size: 2rem;
+        }
+        & span {
+          margin-left: 5px;
+        }
       }
     }
 
