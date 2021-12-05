@@ -10,7 +10,13 @@
         @click="cardClicked(place)"
       >
         <img class="card-img" :src="place.imgUrls[0]" />
-        <h4>{{ place.name }}</h4>
+        <div class="flex">
+          <template v-if="place.avgRate">
+            <font-awesome-icon icon="star" />
+            <span class="avgRate">{{ place.avgRate || '' }} </span>
+          </template>
+          <h4>{{ place.name }}</h4>
+        </div>
       </li>
     </ul>
     <!-- </div> -->
@@ -30,6 +36,7 @@ export default {
       this.$emit('cardClicked', place);
     },
   },
+
   components: {},
 };
 </script>
