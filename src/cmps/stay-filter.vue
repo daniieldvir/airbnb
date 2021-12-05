@@ -1,12 +1,18 @@
 <template>
   <section class="main-filters">
-    <city-filter :currFilterBy="filterBy" @filteredCity="filterCity" />
-    <date-picker @filtered="setDates" />
-    <!-- <button @click="toggleGuests">Guests</button> -->
-    <guest-filter @addedGuests="addGuests" />
+    <city-filter
+      :currFilterBy="filterBy"
+      @filteredCity="filterCity"
+      @filterClicked="enlargeSearchBtn"
+    />
+
+    <date-picker @filtered="setDates" @filterClicked="enlargeSearchBtn" />
+
+    <guest-filter @addedGuests="addGuests" @filterClicked="enlargeSearchBtn" />
 
     <button class="search" @click="filter">
       <font-awesome-icon icon="search" />
+      <span v-if="largeSearchBtn">Search</span>
     </button>
   </section>
 </template>
@@ -21,6 +27,7 @@ export default {
   data() {
     return {
       filterBy: null,
+      largeSearchBtn: false,
       // guestShouldShow: false,
     };
   },
@@ -48,6 +55,9 @@ export default {
     // toggleGuests() {
     //   this.guestShouldShow = !this.guestShouldShow;
     // },
+    enlargeSearchBtn() {
+      this.largeSearchBtn = true;
+    },
   },
   components: {
     datePicker,

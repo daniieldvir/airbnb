@@ -43,6 +43,7 @@ export default {
       this.filterBy = JSON.parse(JSON.stringify(filterBy));
     },
     toggleGuests() {
+      this.$emit('filterClicked');
       this.shouldShow = !this.shouldShow;
     },
     addGuest(val, name) {

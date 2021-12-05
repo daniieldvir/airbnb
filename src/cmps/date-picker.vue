@@ -60,6 +60,7 @@ export default {
   },
   methods: {
     filtered() {
+      this.$emit('filterClicked');
       this.$emit('filtered', this.dates);
     },
   },
