@@ -1,4 +1,5 @@
 .review-preview-container {
+  color: $clr2;
   .review-user-info {
     img {
       width: 56px;
@@ -8,8 +9,9 @@
       margin-inline-end: 1rem;
     }
   }
+
   .review-user-data {
     font-size: rem(16px);
-    color: $clr4;
+    color: $clr2;
   }
 }

@@ -10,10 +10,15 @@
   .review-header {
     display: flex;
     align-items: center;
+
+    .avg-rating {
+      color: $clr2;
+    }
   }
   .review-ratings {
     p {
       font-family: manrope;
+      color: $clr2;
     }
 
     --gap: 10px;

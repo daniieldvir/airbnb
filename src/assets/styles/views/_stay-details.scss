@@ -129,8 +129,15 @@
   .reviews {
     font-family: manrope;
     margin: 5px;
-    color: $clr4;
-    text-decoration-line: underline;
+    color: $clr2;
+    // text-decoration-line: underline;
+
+    .review-user-info {
+      text-decoration-line: none;
+    }
+    .txt {
+      line-height: 2.5em;
+    }
   }
 
   .details-location {
@@ -195,6 +202,19 @@
 
   img:nth-child(5) {
     border-bottom-right-radius: 13px;
+  }
+}
+.review-preview-container {
+  .review-user-info {
+    .review-user {
+      .name {
+        color: $clr2;
+      }
+      .data {
+        color: $clr4;
+        font-size: rem(16px);
+      }
+    }
   }
 }
 
