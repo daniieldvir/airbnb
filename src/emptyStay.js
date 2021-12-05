@@ -1,12 +1,70 @@
 var stay =
 {
-  _id: '',
-  fullname: '',
-  imgUrl:
+  _id: utilService.makeId(),
+  name: '',
+  type: '',
+  imgUrls: [
     '',
-  isAdmin: false,
-  isHost: true,
-  username: '',
-  password: '',
-},
+    '',
+    '',
+    '',
+    '',
+  ],
+  price: '',
+  avgRate: '',
+  summary:
+    '',
+  capacity: '',
+  amenities: [
+    'Kitchen',
+    'Wifi',
+    'TV',
+    'Crib',
+    'Smoking allowed',
+    'No smoking',
+    'Pets allowed',
+    'Cooking basics',
+    'Air conditioning',
+    'Refrigerator',
+    'Free parking',
+    'Bathub',
+    'Elevator',
+    'Iron',
+    'Heating',
+    'Pool',
+    'Spa',
+    'Bath',
+    'Accessible',
+    'Beach',
+    'Long term stays allowed',
+  ],
+  host: {
+    _id: '',
+    fullname: '',
+    imgUrl:
+      '',
+  },
+  loc: {
+    city: '',
+    countryCode: '',
+    address: '',
+    lat: 0,
+    lng: 0,
+  },
+  reviews: [
+    {
+      id: utilService.makeId(),
+      createdAt: '2021',
+      txt: '',
+      rate: 0,
+      by: {
+        _id: '',
+        fullname: '',
+        imgUrl:
+          '',
+      },
+    },
 
+  ],
+  likedByUsers: [],
+},

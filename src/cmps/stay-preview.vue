@@ -22,7 +22,7 @@
         <span class="review-rate"> ( {{ reviewCount }} ) </span>
       </p>
 
-      <p class="stay-type">{{ stay.type }} · {{ stay.loc.country }}</p>
+      <p class="stay-type">{{ stay.type }} · {{ stay.loc.city }}</p>
       <p class="stay-name">{{ sortTxt }}</p>
 
       <p>
