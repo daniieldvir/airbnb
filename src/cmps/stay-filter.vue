@@ -3,6 +3,7 @@
     <city-filter :currFilterBy="filterBy" @filteredCity="filterCity" />
     <date-picker @filtered="setDates" />
     <!-- <button @click="toggleGuests">Guests</button> -->
+
     <guest-filter @addedGuests="addGuests" />
 
     <button class="search" @click="filter">
