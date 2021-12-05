@@ -4,13 +4,11 @@
       <div class="checkout-form-container">
         <div class="checkout-form-header flex space-between align-center">
           <div class="order-price-container">
-            <p class="price">
-              <span>${{ stay.price }}</span
-              >/night
-            </p>
+            <p class="price">${{ stay.price }}<span>/night</span></p>
           </div>
           <div class="check-rating-container flex align-center">
-            <font-awesome-icon icon="star" />{{ stay.avgRate }}
+            <font-awesome-icon icon="star" />
+            <p>{{ stay.avgRate }}</p>
             <span> {{ formattedReviews }}</span>
           </div>
         </div>
@@ -28,18 +26,21 @@
                 ref="myDatePicker"
               ></el-date-picker>
             </div>
-            <checkout-guest-modal class="select-guests-container flex space-between" @setGuests="setGuests" />
+            <checkout-guest-modal
+              class="select-guests-container flex space-between"
+              @setGuests="setGuests"
+            />
 
             <!-- <div class="select-guests-container flex space-between"> -->
             <!-- <guest-filter/> -->
             <!-- <guest-filter :currFilterBy="filterBy" @addedGuests="addGuests" /> -->
 
-                        <!-- <div class="select-guests-container flex space-between"> -->
-                            <!-- <guest-filter/> -->
-                            <!-- <guest-filter @addedGuests="addGuests" /> -->
-                           
-                        <!-- </div> -->
-                        <!-- <div class="btn-checkout-container">
+            <!-- <div class="select-guests-container flex space-between"> -->
+            <!-- <guest-filter/> -->
+            <!-- <guest-filter @addedGuests="addGuests" /> -->
+
+            <!-- </div> -->
+            <!-- <div class="btn-checkout-container">
                             <button class="btn-checkout">Check availability
                             </button>
                         </div> -->
@@ -56,7 +57,7 @@
 </template>
 
 <script>
-import checkoutGuestModal from './checkout-guest-modal.vue'
+import checkoutGuestModal from './checkout-guest-modal.vue';
 import guestFilter from './guest-filter.vue';
 export default {
   props: {
@@ -101,16 +102,15 @@ export default {
       this.$emit('filtered', this.filterBy);
     },
     checkout() {
-        Swal.fire({
-            title: 'Thank you for booking!',
-            text: 'Press done',
-            icon: 'success',
-            confirmButtonText: 'Done'
-        })
-        // this.$router.push('/');
+      Swal.fire({
+        title: 'Thank you for booking!',
+        text: 'Press done',
+        icon: 'success',
+        confirmButtonText: 'Done',
+      });
+      // this.$router.push('/');
     },
   },
-    components: { checkoutGuestModal, guestFilter },
-
-}
+  components: { checkoutGuestModal, guestFilter },
+};
 </script>

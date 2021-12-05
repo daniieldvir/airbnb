@@ -1,17 +1,16 @@
 <template>
   <section v-if="stay" class="stay-details main-container">
     <h2>{{ formattedName }}</h2>
-    <div>
-      <p>
-        <span>
-          <!-- <span v-if="stay.reviews.length"> -->
-          <font-awesome-icon icon="star" />{{ stay.avgRate }}
-          <span class="details-reviews">{{ formattedReviews }}</span
-          >&#183;
-        </span>
-        <a class="details-location" href=""> {{ stay.loc.address }}</a>
-        <!-- <span class="details-location">{{ stay.loc.address }}</span> -->
-      </p>
+    <div class="review-details">
+      <template>
+        <font-awesome-icon icon="star" />
+        <span>{{ stay.avgRate }}</span>
+        <span class="reviews">{{ formattedReviews }}</span
+        >&#183;
+      </template>
+      <a class="details-location" href=""> {{ stay.loc.address }}</a>
+      <!-- <span class="details-location">{{ stay.loc.address }}</span> -->
+
       <!-- <a href=""> {{ stay.loc.address }}</a> -->
     </div>
     <div class="images-display-container">
@@ -23,10 +22,11 @@
         <div class="info-header flex align-center space-between">
           <div>
             <h2>{{ stay.type }} hosted by {{ stay.host.fullname }}</h2>
-            <span
-              >{{ stay.capacity }} guests &#183; {{ stay.type }} &#183;
+            <p>
+              {{ stay.capacity }} guests <span> &#183; </span> {{ stay.type }}
+              <span> &#183;</span>
               {{ beds }}
-            </span>
+            </p>
           </div>
           <img :src="stay.host.imgUrl" alt="" />
         </div>
@@ -95,7 +95,7 @@
       <review-list :reviews="reviews" />
     </div>
 
-    <div>
+    <div class="map-section">
       <hr />
       <h2>Where you’ll be</h2>
       <div class="about">
