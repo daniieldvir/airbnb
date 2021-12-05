@@ -91,7 +91,7 @@ function getIcon(amenity) {
     // case 'Balcony':
     // return 'balcony'
     case 'Elevator':
-      return 'fa-duotone fa-elevator'
+      return 'fa-solid fa-elevator'
     case 'Iron':
       return 'iron'
     case 'Heating':
@@ -108,8 +108,12 @@ function getIcon(amenity) {
       return 'umbrella-beach';
     case 'Long term stays allowed':
       return 'calendar-alt';
+    case 'Coffee':
+      return 'coffee'
+    case 'Private gym in building':
+      return 'dumbbell'
     default:
-      return '';
+      // return '';
       break;
   }
 }
