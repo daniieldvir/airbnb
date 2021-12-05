@@ -12,7 +12,7 @@
         v-bind:class="{ show: price.shouldShow }"
         class="dropdown-content price"
       >
-        <p>The average nightly price is $ 220</p>
+        <p>The average nightly price is $220</p>
         <el-slider
           @change="dispatchToStore"
           v-model="filterBy.priceRange"
@@ -116,6 +116,7 @@ export default {
           'Kitchen',
           'Wifi',
           'TV',
+          'Coffee',
           'Crib',
           'Smoking allowed',
           'No smoking',
@@ -125,13 +126,9 @@ export default {
           'Refrigerator',
           'Free parking',
           'Bathub',
-          'Elevator',
           'Heating',
           'Pool',
-          'Spa',
-          'Bath',
           'Accessible',
-          'Beach',
           'Long term stays allowed',
         ],
         shouldShow: false,
@@ -140,6 +137,7 @@ export default {
   },
   created() {
     this.loadFilter();
+    // this.$store.dispatch({ type: 'loadStays' });
     // this.showedStays = this.$store.getters.staysToShow;
   },
   methods: {
@@ -177,15 +175,7 @@ export default {
   },
   computed: {
     // avgPrice() {
-    //   const stays = this.$store.getters.staysToShow;
-    //   console.log('stays from reduce', stays);
-    //   if (stays.length) {
-    //     return stays.reduce((acc, stay) => {
-    //       (acc + stay.price) / stays.length;
-    //     });
-    //   } else {
-    //     return 220;
-    //   }
+    //   return this.$store.getters.avgPrice;
     // },
   },
 };

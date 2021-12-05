@@ -24,6 +24,11 @@ export const stayStore = {
     staysToShow(state) {
       return state.stays;
     },
+    avgPrice(state) {
+      return state.stays.reduce((acc, stay) => {
+        (acc + stay.price) / state.stays.length;
+      });
+    },
 
     imgsToShow(state) {
       return state.currStay.imgUrls.slice(0, 5);

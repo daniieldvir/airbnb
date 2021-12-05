@@ -68,7 +68,7 @@ function save(stay) {
   return savedStay;
 }
 
-function getEmpty() { }
+function getEmpty() {}
 
 function _createStays() {
   const stays = [
@@ -83,23 +83,22 @@ function _createStays() {
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638638346/london/apt7/4_b5ezku.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638638346/london/apt7/5_flt8tz.jpg',
       ],
-      price: '421',
-      avgRate: '5',
+      price: 421,
+      avgRate: 5,
       summary:
         'Sink into the enormous quilted corner sofa at this monochrome pad in a quiet cobbled mews in Bethnal Green. Walls of glass create a sense of space and light throughout, while the collection of contemporary art and design maintains the modern feel.',
-      capacity: '2',
+      capacity: 2,
       amenities: [
         'Kitchen',
         'Wifi',
         'TV',
+        'Coffee',
         'No smoking',
         'Cooking basics',
         'Air conditioning',
-        'Refrigerator',
         'Free parking',
-        'Elevator',
         'Heating',
-        'Bath',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'lo107',
@@ -111,15 +110,15 @@ function _createStays() {
         city: 'London',
         countryCode: 'GB',
         address: 'Oxford Street, London ',
-        lat: '51.515900',
-        lng: '-0.136046',
+        lat: 51.5159,
+        lng: -0.136046,
       },
       reviews: [
         {
           id: utilService.makeId(),
           createdAt: 'August 2021',
           txt: '5 star stay! Amazing host. The most beautiful place we have stayed to date. Top shelf! Highly recommended!',
-          rate: '5',
+          rate: 5,
           by: {
             _id: 'us666',
             fullname: 'Eric Miller',
@@ -148,11 +147,12 @@ function _createStays() {
       capacity: 4,
       amenities: [
         'Kitchen',
-        'Beach access – Beachfront',
-        'Bathtub',
         'Wifi',
-        'Air conditioning',
         'TV',
+        'Coffee',
+        'Bathtub',
+        'Air conditioning',
+        'Long term stays allowed',
       ],
       host: {
         _id: '23423423rg35gvs',
@@ -172,7 +172,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'November 2021',
           txt: 'Great spot in the heart of Soho! In the middle of it but on a relatively quiet side street. Plenty of space for a small group and a lovely private garden to enjoy in the morning.',
-          rate: '4.5',
+          rate: 4.5,
           by: {
             _id: '',
             fullname: 'Emmanuelle Andrews ',
@@ -203,15 +203,13 @@ function _createStays() {
         'Kitchen',
         'Wifi',
         'TV',
+        'Coffee',
         'Crib',
         'No smoking',
         'Cooking basics',
-        'Refrigerator',
-        'Bathub',
-        'Iron',
         'Heating',
-        'Bath',
         'Accessible',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'lo104',
@@ -231,7 +229,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'August 2021',
           txt: 'Perfect location and beautiful home.',
-          rate: '4.7',
+          rate: 4.7,
           by: {
             _id: '',
             fullname: 'Alec zye ',
@@ -245,7 +243,7 @@ function _createStays() {
     {
       _id: utilService.makeId(),
       name: 'Room in aparthotel hosted by Supercity Aparthotels',
-      type: 'Room in aparthotel ',
+      type: 'Private room in rental unit',
       imgUrls: [
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638634569/london/apt5/1_opada4.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638634568/london/apt5/2_mdrqn4.jpg',
@@ -253,23 +251,21 @@ function _createStays() {
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638634569/london/apt5/4_t6ng94.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638634568/london/apt5/5_qo3yzu.jpg',
       ],
-      price: '328',
-      avgRate: '4.6',
+      price: 328,
+      avgRate: 4.6,
       summary:
         'The Rosebery aparthotel is a beautifully restored Victorian red brick building with 58 luxurious suites, with Farringdon and Chancery Lane tube stations only a five minute walk away.',
-      capacity: '2',
+      capacity: 2,
       amenities: [
         'Kitchen',
         'Wifi',
         'TV',
+        'Coffee',
         'No smoking',
         'Cooking basics',
         'Air conditioning',
-        'Refrigerator',
-        'Elevator',
-        'Iron',
         'Heating',
-        'Bath',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'lo105',
@@ -281,15 +277,15 @@ function _createStays() {
         city: 'London',
         countryCode: 'GB',
         address: 'Carnaby Street, London',
-        lat: '51.513109',
-        lng: '-0.138775',
+        lat: 51.513109,
+        lng: -0.138775,
       },
       reviews: [
         {
           id: utilService.makeId(),
-          createdAt: ' 2021',
+          createdAt: 'October 2021',
           txt: 'Better than, expected, nice cute space however light in the bedroom was not working and management could not fix it but offered me a lamp.',
-          rate: '',
+          rate: 4.7,
           by: {
             _id: 'us101',
             fullname: 'George W',
@@ -311,24 +307,22 @@ function _createStays() {
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638635300/london/apt6/4_h1l4da.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638635300/london/apt6/5_mblmbl.jpg',
       ],
-      price: '297',
-      avgRate: '4.8',
+      price: 297,
+      avgRate: 4.8,
       summary:
         '22nd floor Interior designed, stunning views of the City and Tower of London. Most of the London landmarks can be seen from the flat with no obstruction.',
-      capacity: '4',
+      capacity: 4,
       amenities: [
         'Kitchen',
         'Wifi',
         'TV',
+        'Coffee',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
-        'Refrigerator',
-        'Bathub',
-        'Elevator',
-        'Iron',
         'Heating',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'lo106',
@@ -340,15 +334,15 @@ function _createStays() {
         city: 'London',
         countryCode: 'GB',
         address: 'Regent Street, London',
-        lat: '51.509906',
-        lng: '-0.136521',
+        lat: 51.509906,
+        lng: -0.136521,
       },
       reviews: [
         {
           id: utilService.makeId(),
           createdAt: 'March 2021',
           txt: 'An an excellent apartment in a great area of the city, the host is super helpful and very kind. Only minor observation is the couch is not ideal, if you want to watch TV in the evening. I will say the electrics were excellent! PS, the view is fantastic!!!',
-          rate: '4.8',
+          rate: 4.8,
           by: {
             _id: 'us105',
             fullname: 'Katia Crysann',
@@ -376,16 +370,17 @@ function _createStays() {
         'Additional service charges may have to be paid locally on-site, see house rules and house manual for details. Please dont hesitate to contact us should you have any questions. Thank you. Knightsbridge Small, comfortable terraced house Cheval Place, renovated in 2012. In the centre of London, in a quiet position, in the heart of the city. Single garage. Shop, grocery, shopping centre, restaurant 150 m, bus stop Brompton Square 150 m, underground station Knightsbridge 400 m. Nearby attractions: Harrods 200m, Hyde Park 250m, South Kensington Museums 300m. Please note, Garage is suitable for small cars only.',
       capacity: 3,
       amenities: [
-        // 'Kitchen',
+        'Kitchen',
         'Wifi',
         'TV',
+        'Coffee',
         'Crib',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
         'Heating',
-        'Bathub',
+        'Long term stays allowed',
       ],
       host: {
         _id: 3463463462244,
@@ -445,15 +440,17 @@ function _createStays() {
         'We’ve everything that you need for your stay in London! Our penthouse is very spacious and has a private terrace. Its located on the top floor of the building - the 4th floor, making it a perfect place for those who are sunset lovers and enjoys city views!',
       capacity: 6,
       amenities: [
-        // 'Kitchen',
+        'Kitchen',
         'Wifi',
         'TV',
+        'Coffee',
         'Crib',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
         'Heating',
+        'Long term stays allowed',
       ],
       host: {
         _id: 807807856456,
@@ -492,12 +489,14 @@ function _createStays() {
         'Kitchen',
         'Wifi',
         'TV',
+        'Coffee',
         'Crib',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
         'Heating',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'kj900',
@@ -548,12 +547,14 @@ function _createStays() {
         'Kitchen',
         'Wifi',
         'TV',
+        'Coffee',
         'Crib',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
         'Heating',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'f8989',
@@ -605,14 +606,14 @@ function _createStays() {
         'Kitchen',
         'Wifi',
         'TV',
-        'Washer',
-        'Dryer',
+        'Coffee',
         'Crib',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
         'Heating',
+        'Long term stays allowed',
       ],
       host: {
         _id: 't36367',
@@ -664,9 +665,7 @@ function _createStays() {
         'Kitchen',
         'Wifi',
         'TV',
-        'Washer',
-        'Elevator',
-        'Dryer',
+        'Coffee',
         'Crib',
         'Smoking allowed',
         'Pets allowed',
@@ -674,7 +673,7 @@ function _createStays() {
         'Air conditioning',
         'Heating',
         'Essentials',
-        'Hair dryer',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'u120',
@@ -724,16 +723,17 @@ function _createStays() {
         "This modern apartment is situated in a vibrant part of Tel Aviv, just 1 minutes' walk from the beach. The famous Hakarmel Market and the buzzing nightlife of Allenby Street are within a 5-minute walk.",
       capacity: 1,
       amenities: [
-        // 'Kitchen',
+        'Kitchen',
         'Wifi',
         'TV',
-        'Elevator',
+        'Coffee',
         'Crib',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
         'Heating',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'u121',
@@ -783,15 +783,16 @@ function _createStays() {
         'Stunning studio apartment in a new hotel opening in the Montefiore neighborhood. The studio has been renovated to a high standard and is housed in a new building with a lobby, elevator, study rooms, and a young and pleasant atmosphere.',
       capacity: 2,
       amenities: [
-        // 'Kitchen',
+        'Kitchen',
         'Wifi',
         'TV',
-        'Elevator',
+        'Coffee',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
         'Heating',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'u121',
@@ -841,16 +842,17 @@ function _createStays() {
         'Enjoy a stylish experience at this centrally located place.A new and amazing business hotel in the center of Tel Aviv. The hotel has about 30 studios equipped and decorated to the highest standard. Each studio is completely private but in addition there is a laundry room, a lobby for work, a courtyard and a young and pleasant energyEnjoy a stylish experience at this centrally located place.',
       capacity: 2,
       amenities: [
-        // 'Kitchen',
+        'Kitchen',
         'Wifi',
         'TV',
-        'Elevator',
+        'Coffee',
         'Crib',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
         'Heating',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'u121',
@@ -865,19 +867,7 @@ function _createStays() {
         lat: 32.06210484605474,
         lng: 34.780698842146606,
       },
-      reviews: [
-        {
-          id: utilService.makeId(),
-          createdAt: '',
-          txt: '',
-          rate: '',
-          by: {
-            _id: '',
-            fullname: '',
-            imgUrl: '',
-          },
-        },
-      ],
+      reviews: [],
       likedByUsers: [],
     },
     {
@@ -898,17 +888,7 @@ function _createStays() {
       summary:
         'Lovely apartment overlooking the Pantheon Square, located in the very heart of Rome, featuring 1 bedroom with a double bed, smart tv and conditioned air; a second room with a sofà bed for 1 adult or 2 children (width 140 cm.) and kitchen; bathroom with shower. The mattress and the pillows are very confortable. The apartment has WI-FI, washing mashine, clotheshorse, iron, ironing board, hair dryer, fridge with a little freezer, microwave oven.',
       capacity: 3,
-      amenities: [
-        // 'Kitchen',
-        'Kitchen',
-        'Wifi',
-        'TV',
-        'Washer',
-        'Air conditioning',
-        'Luggage dropoff allowed',
-        'Hair dryer',
-        'Refrigerator',
-      ],
+      amenities: ['Kitchen', 'Wifi', 'TV', 'Coffee', 'Air conditioning'],
       host: {
         _id: 'u128',
         fullname: 'Max Rotbona',
@@ -927,7 +907,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'October 2021',
           txt: 'Location could not be better. Epic views. Lots of food options. Very central location. I was able to walk everywhere I needed to go. Good late night food options right outside in the square. Waking up and looking outside to the square and the pantheon was amazing every morning. The ceilings are low and the shower is small. So it might not suit someone over 6ft but was not a problem for me at 5’9”. Max was very helpful and attentive. Everything was taken care of. Would definitely recommend and would definitely stay again.',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Matt Blond',
@@ -939,7 +919,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'September 2021',
           txt: 'This is such an AMAZING location with a view of the Pantheon right out the window. Perfect way to spend a couple days in Rome, right in the heart of it all and walking distance to almost everything. The apartment is very cute and authentic. Host was so amazing and helped carry our heavy bags up so many flights of stairs (no elevator!) and gave so many great recommendations. Also right near a taxi station too. And despite the central location, very quiet at night as well with a comfy bed and A/C! You do need to bring all your own shower items like soap. The bathroom had a slight weird smell but I believe it’s just an old building so it was fine for a couple days. It’s also pretty dark in the apartment so if you want to do your makeup/see yourself in the mirror I recommend bringing a travel mirror. It was our first time in Rome and the best place to kick off our trip.',
-          rate: '4.76',
+          rate: 4.76,
           by: {
             _id: '',
             fullname: 'Madeline Dola',
@@ -951,7 +931,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'September 2019',
           txt: 'The location of this apartment cannot be beat! Great service and a very cute space.          ',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Elisabeth Primo',
@@ -979,7 +959,7 @@ function _createStays() {
       summary:
         'Appartamento ampio, elegante e silenzioso nel pieno centro di Roma recentemente ristrutturato in palazzo del 1880. Posizione strategica per vivere Roma con facilità e ritirarsi per ricaricarsi.',
       capacity: 4,
-      amenities: ['Kitchen', 'Wifi', ' Free street parking', 'TV', 'Elevator'],
+      amenities: ['Kitchen', 'Wifi', 'Coffee', 'TV'],
       host: {
         _id: 'u129',
         fullname: 'Antonio Banderas',
@@ -998,7 +978,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'October 2021',
           txt: 'It’s a nice and safe to stay close to the train and restaurant',
-          rate: '4',
+          rate: 4,
           by: {
             _id: '',
             fullname: 'Nico Kristen',
@@ -1010,7 +990,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'September 2021',
           txt: 'Antonio was a very nice and attentive host! In the accommodation you felt at home and could relax perfectly after a long day of sizing.we would come here again :)',
-          rate: '4.76',
+          rate: 4.76,
           by: {
             _id: '',
             fullname: 'Laura Dola',
@@ -1022,7 +1002,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'June 2016',
           txt: 'Antonio is a great host! He stayed so late in the evening waiting for us since our flight was delayed. Very enjoyed his beautiful furnitured and great located appartement! We recommend this definetely :)',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Sarah Elizabet',
@@ -1053,9 +1033,8 @@ function _createStays() {
       amenities: [
         'Kitchen',
         'Wifi',
-        ' Free street parking',
         'TV',
-        'Elevator',
+        'Coffee',
         'Air conditioning',
         'Long term stays allowed',
       ],
@@ -1077,7 +1056,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'August 2021',
           txt: 'Great location would definitely recommend staying here. Clean and affordable.',
-          rate: '4.2',
+          rate: 4.2,
           by: {
             _id: '',
             fullname: 'Sandra Wladimirov',
@@ -1089,7 +1068,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'March 2015',
           txt: 'We really enjoyed our time at luckys Home. The staff(Phillipe) was really polite and showed us a few options for our stay in Rome which helped us a lot to plan our time in Rome better.Our room was very clean and well decorated.We could cook in the kitchen easily and had our own private bathroom.I would definitely book the room again and highly recommend the apartment/room.',
-          rate: '4.1',
+          rate: 4.1,
           by: {
             _id: '',
             fullname: 'Sebastian Max',
@@ -1101,7 +1080,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'June 2016',
           txt: 'Philippe is great, he gave me a map with a nice plan of what to visit in Rome which was very helpful',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Adelina Osama',
@@ -1132,9 +1111,9 @@ function _createStays() {
       amenities: [
         'Kitchen',
         'Wifi',
-        'Microwave',
-        'Microwave',
+        'Coffee',
         'Air conditioning',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'u130',
@@ -1154,7 +1133,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'November 2019',
           txt: 'There is not a better location to stay than Maria’s flat. It’s in a great neighborhood and you can walk to all the major sites easily. It is also super close to great gelato and our favorite pizza place, Emma’s.',
-          rate: '4.2',
+          rate: 4.2,
           by: {
             _id: '',
             fullname: 'Jesika Manuela ',
@@ -1166,7 +1145,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'March 2017',
           txt: 'Great location and Maria Rita is a very accommodating host. Loved my stay here!          ',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Matthew Peri',
@@ -1178,7 +1157,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'June 2016',
           txt: 'Excellent location and flat. Close to everything and exactly how advertise. Thank you Maria for a fabulous Roma retreat ❤️',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Robin Lex',
@@ -1211,9 +1190,9 @@ function _createStays() {
       amenities: [
         'Kitchen',
         'Wifi',
-        'Microwave',
-        'Microwave',
+        'Coffee',
         'Air conditioning',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'u131',
@@ -1233,7 +1212,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'February 2019',
           txt: 'We enjoyed our stay very much. It is well located, comfortable and very clean. The neighborhood is great and you easy access to markets, taxis and sites. Carlo was warm and super helpful. We felt welcomed indeed! Definitely will stay here again!',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Christine Tosi ',
@@ -1245,7 +1224,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'November 2020',
           txt: 'This was a very fun place to stay. Although the name mentions Navona, it is actually closest to Campo de Fiori. Lots of restaurants near by. Walking distance to many major attractions. There are many local shops for groceries, bread wine and cheese.The home is laid out on three levels with spiral stairs from the street to the door and from the door to each level. Bedrooms are on the entry level. Living room in the middle. Dining, kitchen and terrace on the uppermost level. The terrace was a highlight for both morning coffee and evening wine.The apartment is nicely and comfortably furnished and has hundreds of books. The home is very quiet          ',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Peter Olive',
@@ -1257,7 +1236,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'June 2016',
           txt: 'Awesome hosts!',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Vignesh Omar',
@@ -1286,7 +1265,14 @@ function _createStays() {
       summary:
         'Sperimenta il lusso pregiato e la bellezza di un alloggio délite nel centro di Roma, con Piazza Navona a pochi passi e una vista impagabile dallampia terrazza. Goditi tutto lo charme degli arredamenti di pregio a tua esclusiva disposizione. Appartamento situato su 3 diversi piani (terzo, quarto e quinto piano). I diversi piani dellappartamento sono collegati da una scala a chiocciola interna ripida.Nuovo Internet FIBRA WIFI veloce (con ripetitori su tutti i livelli della casa e in terrazza).',
       capacity: 4,
-      amenities: ['Kitchen', 'Wifi', 'Microwave', 'Air conditioning', 'TV'],
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'Coffee',
+        'Air conditioning',
+        'TV',
+        'Long term stays allowed',
+      ],
       host: {
         _id: 'u132',
         fullname: 'Raffaella Maria',
@@ -1305,7 +1291,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'February 2021',
           txt: 'Raffaella and her husband were absolutely great. Our flight was delayed and we had scheduled transportation, Rafaela was accommodating and had her husband wait for us to help us into the apartment and get us familiarized with the place. The apartment is beautiful, located in front of the trevi (literally in front) there’s a bunch of shops and restaurants nearby. It was a beautiful stay, we loved it. Definitely coming back to stay here.',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Adriana Stev ',
@@ -1317,7 +1303,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'November 2020',
           txt: 'This apartment is just as amazing as the pictures suggest. It is compact, but complete. It is newly redone and comfortable for the two of us. Okay for up to four. But what cannot be beat is the amazing location and view. True five star. Plan your arrival and listen to Raffaella. A taxi is the easiest as they can get within 100ft of the apartment. You really are on the square with a full view of the fountain… which means you cannot drive up to the door. Super easy to get to the rest of Rome’s sights from here.          ',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Timothy Dawn',
@@ -1329,7 +1315,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'June 2016',
           txt: 'Raffaella was a great host - Super easy to communicate with & she even helped book us transport to the airport. Comfortable & clean apartment, and the views of the Trevi Fountain can’t be beat.',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Emily Donald',
@@ -1341,7 +1327,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'April 2018',
           txt: 'Raffaella is a great host who was always there to answer our questions and give us recommendations. The location is perfect, everything within walking distance.',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Anthony Jer',
@@ -1372,11 +1358,12 @@ function _createStays() {
       capacity: 2,
       amenities: [
         'Kitchen',
-        'Beach access – Beachfront',
-        'Bathtub',
         'Wifi',
-        'Air conditioning',
         'TV',
+        'Coffee',
+        'Bathtub',
+        'Air conditioning',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'u133',
@@ -1396,7 +1383,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'October 2021',
           txt: 'Great location and experience. Loved the deck over the water, kitchen, grill and washer. The host will pick you up from the airport and take you to the grocery store from the water taxi. They also have a moped and car for rent as well as a private boat tour excursion option as well. I highly recommend staying here.',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Kristine Boly ',
@@ -1408,7 +1395,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'November 2020',
           txt: 'We highly recommend the Tereva Lodge. They went out of their way to make us feel like family and gave us a warm welcome. We also highly recommend taking the lagoon tour with David. He was fantastic. We look forward to coming back.',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Chris Ryan',
@@ -1420,7 +1407,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'September 2020',
           txt: 'Serge & his family were incredible - seriously kind, helpful and welcoming.They went out of their way to help in every way - going above and beyond!The closest shop for provisions is a little way away so they very kindly drove Andrew so he could do a shop for the week.The location on the waterfront is stunning & makes it popping out into the lagoon to kayak anywhere in the bay really easy.The apartment was sparkling clean and exactly as shown & described.Thank you so much for all your help & for making Andrews stay so seamless.',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Rachel Bobe',
@@ -1448,7 +1435,14 @@ function _createStays() {
       summary:
         'Bungalow avec vue sur lagon et accès direct à la mer. Idéal pour couple souhaitant visiter notre belle île tout en se sentant comme chez eux.',
       capacity: 2,
-      amenities: ['Kitchen', 'Wifi', 'Air conditioning', 'TV'],
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'Coffee',
+        'Air conditioning',
+        'TV',
+        'Long term stays allowed',
+      ],
       host: {
         _id: 'u134',
         fullname: 'Hitiura & Lionel Lolo',
@@ -1467,7 +1461,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'September 2021',
           txt: 'The bungalow is beautiful right over the water but we have a few suggestions for future stays they only provide one roll of bathroom tissue and 2 coffee filters, with no fresh towels for a 6 day stay it is NOT comforting especially when you are visiting from another country. The electric car charger located in FRONT of the bungalow we were told that we can’t use it because it belongs to the neighbor across the other side of the road. Avis explain to us that all Airbnb have electric car chargers. The shower has extremely cold water or extremely hot water. The bathtub water was comfortable temperature. We were traveling from out of the country and instructions explained that the door will be open and key inside we did not have phone service there and instructions changed the day we arrive PLEASE GIVE PEOPLE INSTRUCTIONS IN ADVANCE Your location is beautiful but if this is a dream vacation for many people traveling outside the country please make their stay comfortable',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Delilah Loni ',
@@ -1479,7 +1473,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'November 2020',
           txt: 'The bungalow is cute, coat and a great location. You can snorkel right outside. This is a great value for your money. All the locals are very helpful and kind. It was very clean and ready when we got there. We definitely would recommend it for couples who would like to spend a romantic weekend in bora bora and have a good time. The view for the sunrise and sunset is great. And sitting on the deck under the stars was amazing.',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Byron Ryan',
@@ -1491,7 +1485,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'September 2020',
           txt: 'Bora Bora Bungalow was perfect. The setting and location could not be better. The hosts were helpful setting up our lagoon tour and answered questions quickly. Highly recommend this place.',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Marlene lily',
@@ -1522,8 +1516,9 @@ function _createStays() {
       amenities: [
         'Kitchen',
         'Wifi',
-        'Air conditioning',
         'TV',
+        'Coffee',
+        'Air conditioning',
         'Long term stays allowed',
       ],
       host: {
@@ -1539,19 +1534,7 @@ function _createStays() {
         lat: 22.319613821878374,
         lng: 114.16606194181783,
       },
-      reviews: [
-        {
-          id: utilService.makeId(),
-          createdAt: '',
-          txt: '',
-          rate: '',
-          by: {
-            _id: '',
-            fullname: ' ',
-            imgUrl: '',
-          },
-        },
-      ],
+      reviews: [],
       likedByUsers: [],
     },
     {
@@ -1574,10 +1557,9 @@ function _createStays() {
       amenities: [
         'Kitchen',
         'Wifi',
-        'Air conditioning',
-        'Elevator',
-        'Hair dryer',
         'TV',
+        'Coffee',
+        'Air conditioning',
         'Long term stays allowed',
       ],
       host: {
@@ -1598,7 +1580,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'July 2021',
           txt: 'Great stylish place! Exactly as shown in picture. Great location but not in the middle of all the craziness which is nice. Probably one of the best value for money places I have stayed in for an Airbnb',
-          rate: '4.5',
+          rate: 4.5,
           by: {
             _id: '',
             fullname: 'Curtis Meng',
@@ -1610,7 +1592,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'January 2020',
           txt: 'Clean and tidy, great location, walking distance to Element and MTR',
-          rate: '4.5',
+          rate: 4.5,
           by: {
             _id: '',
             fullname: 'Carmen Elextra',
@@ -1644,11 +1626,12 @@ function _createStays() {
       amenities: [
         'Kitchen',
         'Wifi',
-        'Pets allowed',
-        'Hot tub',
-        'Elevator',
         'TV',
+        'Coffee',
+        'Pets allowed',
+        'Hottub',
         'Air conditioning',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'u136',
@@ -1668,7 +1651,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'September 2019',
           txt: 'Amazing air bnb. The pictures don’t do it Justice. Great location, top floor, the views are incredible, the hot tub is great. So clean and spacious it was by far one of my favorite air bnbs I’ve stayed in. So many cute food spots nearby and shopping. 10/10 recommend.',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Andrea Bolsmi',
@@ -1678,9 +1661,9 @@ function _createStays() {
         },
         {
           id: utilService.makeId(),
-          createdAt: 'January 1018',
+          createdAt: 'January 2018',
           txt: 'Justin’s place is gorgeous. We had a great stay and would definitely stay there again.',
-          rate: '4.3',
+          rate: 4.3,
           by: {
             _id: '',
             fullname: 'Renee Chen',
@@ -1690,9 +1673,9 @@ function _createStays() {
         },
         {
           id: utilService.makeId(),
-          createdAt: 'April 2010',
+          createdAt: 'April 2018',
           txt: 'Great host very attentive and Timely',
-          rate: '4.5',
+          rate: 4.5,
           by: {
             _id: '',
             fullname: 'Radion Non',
@@ -1725,10 +1708,9 @@ function _createStays() {
         'Kitchen',
         'Wifi',
         'Pets allowed',
-        'Washer',
-        'Hair dryer',
         'TV',
         'Air conditioning',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'u136',
@@ -1748,7 +1730,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'July 2021',
           txt: 'Fabulous mid century lush home! Walked the canal each day and easy access from Paddington Station to Central London for all the sites. There was 5 of us and plenty of private space',
-          rate: '4.5',
+          rate: 4.5,
           by: {
             _id: '',
             fullname: 'Teri Bradsho',
@@ -1760,7 +1742,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'January 2020',
           txt: 'Justin’s place is gorgeous. We had a great stay and would definitely stay there again.',
-          rate: '4.5',
+          rate: 4.5,
           by: {
             _id: '',
             fullname: 'Jon Carmel',
@@ -1772,7 +1754,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'April 2020',
           txt: 'Justin home is really amazing and Justin is a first class host. We will be back! Thank you for your responsiveness to our requests. Fantastic apartment in a great location.',
-          rate: '4.5',
+          rate: 4.5,
           by: {
             _id: '',
             fullname: 'Philip Longo',
@@ -1805,12 +1787,11 @@ function _createStays() {
       amenities: [
         'Kitchen',
         'Wifi',
-        'Pets allowed',
-        'Hot tub',
-        'Elevator',
         'TV',
+        'Coffee',
+        'Pets allowed',
+        'Hottub',
         'Air conditioning',
-        'Elevator',
       ],
       host: {
         _id: 'u137',
@@ -1830,7 +1811,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'September 2019',
           txt: 'Such a beautiful place, especially the patio! It’s in a great location, not far from some awesome landmarks. The area is pretty busy with several places to eat or visit, so you can walk or scooter around. The agency was great to work with as well. They helped set up transport from the airport which was helpful.',
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Dalia Nul',
@@ -1842,7 +1823,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'January 1018',
           txt: 'it was an amazing company to work with. The check-in process was smooth, and our contact person helped organized transportation to and from the Airbnb. The patio really took the experience to the next level. Highly recommended.',
-          rate: '4.3',
+          rate: 4.3,
           by: {
             _id: '',
             fullname: 'KyQuan Shot',
@@ -1854,7 +1835,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'April 2006',
           txt: 'This view is unparalleled! Honestly, you almost won’t want to go around Rome because of this terrace. It’s worth every penny. They were very communicative upon arrival, and really made our stay seamless and wonderful. We had an issue with the shower, but they sent help immediately and worked diligently to fix any problems. You can’t beat that kind service, and certainly can’t beat that view!',
-          rate: '4.5',
+          rate: 4.5,
           by: {
             _id: '',
             fullname: 'Radion Non',
@@ -1867,55 +1848,34 @@ function _createStays() {
     },
     {
       _id: utilService.makeId(),
-      name: 'Bora Bora bungalow N421 DTO-MT',
-      type: 'Entire bungalow',
+      name: 'Open sky Pyramid - Unbelievable location to sleep',
+      type: 'Tent',
       imgUrls: [
-        'https://res.cloudinary.com/disku3v4j/image/upload/v1638648400/bora%20bora/apt3/1_gbjhmh.jpg',
-        'https://res.cloudinary.com/disku3v4j/image/upload/v1638648400/bora%20bora/apt3/2_la9os5.jpg',
-        'https://res.cloudinary.com/disku3v4j/image/upload/v1638648399/bora%20bora/apt3/3_ep1qfq.jpg',
-        'https://res.cloudinary.com/disku3v4j/image/upload/v1638648399/bora%20bora/apt3/4_rwlxqp.jpg',
-        'https://res.cloudinary.com/disku3v4j/image/upload/v1638648399/bora%20bora/apt3/5_j9gf2l.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638709396/exotic/apt2/1_b90h7t.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638709395/exotic/apt2/2_jrtghm.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638709395/exotic/apt2/3_glfqde.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638709396/exotic/apt2/4_lpcb6x.jpg',
+        'https://res.cloudinary.com/disku3v4j/image/upload/v1638709396/exotic/apt2/5_tlm18i.jpg',
       ],
-      price: '185',
-      avgRate: '4.8',
+      price: 202,
+      avgRate: 5,
       summary:
         'Bungalow avec vue sur lagon et accès direct à la mer. Idéal pour couple souhaitant visiter notre belle île tout en se sentant comme chez eux.',
       capacity: '2',
-      amenities: [
-        'Kitchen',
-        'Wifi',
-        'TV',
-        'Crib',
-        'Smoking allowed',
-        'No smoking',
-        'Pets allowed',
-        'Cooking basics',
-        'Air conditioning',
-        'Refrigerator',
-        'Free parking',
-        'Bathub',
-        'Elevator',
-        'Iron',
-        'Heating',
-        'Pool',
-        'Spa',
-        'Bath',
-        'Accessible',
-        'Beach',
-        'Long term stays allowed',
-      ],
+      amenities: ['Coffee', 'Free parking'],
       host: {
         _id: 'bor101',
-        fullname: 'Hitiura & Lionel',
+        fullname: 'Stéphanie',
         imgUrl:
           'https://res.cloudinary.com/disku3v4j/image/upload/v1638648400/bora%20bora/apt3/sdv_ffmara.jpg',
       },
       loc: {
-        city: 'Bora Bora',
-        countryCode: 'BV',
-        address: 'Bora Bora, Island in French Polynesia',
-        lat: -16.53331046857574,
-        lng: -151.74018147397715,
+        city: 'France',
+        countryCode: 'FR',
+        address:
+          'Maureillas-las-Illas, Languedoc-Roussillon-Midi-Pyrénées, France',
+        lat: 48.864716,
+        lng: 2.349014,
       },
       reviews: [
         {
@@ -1928,6 +1888,18 @@ function _createStays() {
             fullname: 'Lindsey James',
             imgUrl:
               'https://res.cloudinary.com/disku3v4j/image/upload/v1638648399/bora%20bora/apt3/df_grwuti.jpg',
+          },
+        },
+        {
+          id: utilService.makeId(),
+          createdAt: 'August 2021',
+          txt: 'This is a an adorable home, and looks just like the pictures. There are all very nice neighbors around the home, who brought us candy on Halloween',
+          rate: 4.7,
+          by: {
+            _id: 'us888',
+            fullname: 'Marine Sam',
+            imgUrl:
+              'https://res.cloudinary.com/disku3v4j/image/upload/v1638709396/exotic/apt2/wef_hwnvbb.jpg',
           },
         },
       ],
@@ -1944,28 +1916,25 @@ function _createStays() {
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638649315/bora%20bora/apt4/4_jhcysw.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638649315/bora%20bora/apt4/5_skghzd.jpg',
       ],
-      price: '137',
-      avgRate: '4.9',
+      price: 137,
+      avgRate: 4.9,
       summary:
         "Serene, remote, zen retreat most scenic places, K’au region at Punalu'u Black Sand Beach. Its a short 1/3 mile walk to the beach, crashing waves, palm trees & flowers, amazing mountain and ocean views, in the countryside of macademia nut & coffee farms",
-      capacity: '2',
+      capacity: 2,
       amenities: [
         'Kitchen',
         'Wifi',
         'TV',
+        'Coffee',
         'Smoking allowed',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
-        'Refrigerator',
         'Free parking',
         'Heating',
         'Pool',
         'Spa',
-        'Bath',
         'Accessible',
-        'Beach',
-        'Long term stays allowed',
       ],
       host: {
         _id: 'us110',
@@ -2007,33 +1976,27 @@ function _createStays() {
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638650143/bora%20bora/apt5/4_dkskve.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638650143/bora%20bora/apt5/5_lytyk4.jpg',
       ],
-      price: '380',
-      avgRate: '4.9',
+      price: 380,
+      avgRate: 4.9,
       summary:
         'Set out on an adventure and return to a retreat of peace and relaxation just five minutes from  National Park',
-      capacity: '4',
+      capacity: 4,
       amenities: [
         'Kitchen',
         'Wifi',
         'TV',
+        'Coffee',
         'Crib',
         'Smoking allowed',
         'No smoking',
         'Pets allowed',
         'Cooking basics',
         'Air conditioning',
-        'Refrigerator',
         'Free parking',
-        'Bathub',
-        'Elevator',
-        'Iron',
         'Heating',
         'Pool',
         'Spa',
-        'Bath',
         'Accessible',
-        'Beach',
-        'Long term stays allowed',
       ],
       host: {
         _id: 'us789',
@@ -2051,9 +2014,9 @@ function _createStays() {
       reviews: [
         {
           id: utilService.makeId(),
-          createdAt: '2021',
+          createdAt: 'November 2021',
           txt: 'A delightful cabin - every detail in perfect shape. The Cedar Hot Tub was so relaxing - the bed extremely comfortable',
-          rate: 0,
+          rate: 4.6,
           by: {
             _id: 'us909',
             fullname: 'Hope Malclom',
@@ -2075,18 +2038,19 @@ function _createStays() {
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638651497/exotic/apt1/4_idi3cd.jpg',
         'https://res.cloudinary.com/disku3v4j/image/upload/v1638651497/exotic/apt1/5_ej6xvk.jpg',
       ],
-      price: '72',
-      avgRate: '4.7',
+      price: 72,
+      avgRate: 4.7,
       summary:
         'Discover the magical world of the Drommen hut, unique in France. With 4 levels : the living room, then the toilet, then the bedroom. Guests can dine on the perched terrace.',
-      capacity: '2',
+      capacity: 2,
       amenities: [
         'Kitchen',
         'TV',
+        'Coffee',
         'No smoking',
         'Pets allowed',
         'Cooking basics',
-        'Refrigerator',
+        'Long term stays allowed',
       ],
       host: {
         _id: 'fr666',
@@ -2104,7 +2068,7 @@ function _createStays() {
       reviews: [
         {
           id: utilService.makeId(),
-          createdAt: '2021',
+          createdAt: 'October 2021',
           txt: 'Very friendly and attentive host. Very pleasant cabins and small terrace !!!',
           rate: 4.5,
           by: {
@@ -2128,14 +2092,22 @@ function _createStays() {
         `https://res.cloudinary.com/disku3v4j/image/upload/v1638651965/hong-kong/app6/app6_3_rqqeai.jpg`,
         `https://res.cloudinary.com/disku3v4j/image/upload/v1638651965/hong-kong/app6/app6_4_syy2ql.jpg`,
         `https://res.cloudinary.com/disku3v4j/image/upload/v1638651965/hong-kong/app6/app6_5_fmq2gr.jpg`,
-        `https://res.cloudinary.com/disku3v4j/image/upload/v1638651965/hong-kong/app6/app6_6_algkhj.jpg`
+        `https://res.cloudinary.com/disku3v4j/image/upload/v1638651965/hong-kong/app6/app6_6_algkhj.jpg`,
       ],
       price: 59,
       avgRate: 4.38,
-      summary:
-        `Hotel Madera Hong Kong is in The Michelin Guide 2021. Hotel Madera Hong Kong is the place to truly experience the city. Conveniently located in the heart of Jordan, the hotel is close to a host of tourist attractions and offers boundless shopping, dining, and entertainment. All 87 luxurious hotel rooms have spectacular views of the city and are lavishly appointed with the finest amenities. Here, your body, mind, and soul can be rejuvenated in the caress of nature while you feel a sense of serenity.`,
+      summary: `Hotel Madera Hong Kong is in The Michelin Guide 2021. Hotel Madera Hong Kong is the place to truly experience the city. Conveniently located in the heart of Jordan, the hotel is close to a host of tourist attractions and offers boundless shopping, dining, and entertainment. All 87 luxurious hotel rooms have spectacular views of the city and are lavishly appointed with the finest amenities. Here, your body, mind, and soul can be rejuvenated in the caress of nature while you feel a sense of serenity.`,
       capacity: 2,
-      amenities: ['Kitchen', 'Wifi', 'Air conditioning', 'TV', 'Elevator', 'Bathtub', 'Private gym in building', 'Coffee'],
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'TV',
+        'Coffee',
+        'Air conditioning',
+        'Bathtub',
+        'Private gym in building',
+        'Long term stays allowed',
+      ],
       host: {
         _id: 'h134',
         fullname: 'Madera Hong Kong',
@@ -2154,7 +2126,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'September 2020',
           txt: `Overall, a great experience with a comfortable bed. However, the hygiene and the functionality of the washroom should be better for future guests.`,
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Anthony Bordein ',
@@ -2166,7 +2138,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'July 2019',
           txt: `A fairly good price. Overall nice stay. Came with snacks and drinks. Just some cleanliness problems on bed and tub.`,
-          rate: '4.1',
+          rate: 4.1,
           by: {
             _id: '',
             fullname: 'Cheuk Ho',
@@ -2178,7 +2150,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'November 2020',
           txt: `Very good location and it worths every single dollar you've spent:)`,
-          rate: '4.4',
+          rate: 4.4,
           by: {
             _id: '',
             fullname: 'Terry Wo',
@@ -2186,7 +2158,6 @@ function _createStays() {
               'https://res.cloudinary.com/disku3v4j/image/upload/v1638652478/hong-kong/app6/unnamed_k76hau.jpg',
           },
         },
-
       ],
       likedByUsers: [],
     },
@@ -2203,15 +2174,23 @@ function _createStays() {
         `https://res.cloudinary.com/disku3v4j/image/upload/v1638664387/hong-kong/app7/app7_4_uyunxw.jpg`,
         `https://res.cloudinary.com/disku3v4j/image/upload/v1638664387/hong-kong/app7/app7_5_i8amim.jpg`,
         `https://res.cloudinary.com/disku3v4j/image/upload/v1638664386/hong-kong/app7/app7_6_nm2wge.jpg`,
-        `https://res.cloudinary.com/disku3v4j/image/upload/v1638664387/hong-kong/app7/app7_7_gqcmlo.jpg`
+        `https://res.cloudinary.com/disku3v4j/image/upload/v1638664387/hong-kong/app7/app7_7_gqcmlo.jpg`,
       ],
       price: 91,
       avgRate: 4.56,
-      summary:
-        `Our brand new 7-storey service apartment located in west Hong Kong Island, Kennedy Town, and is conveniently close to the metro station, with just a few minutes walk. Pet-friendly, well furnished bed rooms with full-size kitchens, Wi-fi access and regular housekeeping service.
+      summary: `Our brand new 7-storey service apartment located in west Hong Kong Island, Kennedy Town, and is conveniently close to the metro station, with just a few minutes walk. Pet-friendly, well furnished bed rooms with full-size kitchens, Wi-fi access and regular housekeeping service.
           With our exclusive rooftop BBQ garden, you could enjoy food, fun and the relaxing sea and park view here.`,
       capacity: 6,
-      amenities: ['Kitchen', 'Wifi', 'Air conditioning', 'TV', 'Elevator', 'Bathtub', 'Private gym in building', 'Coffee'],
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'TV',
+        'Coffee',
+        'Air conditioning',
+        'Bathtub',
+        'Private gym in building',
+        'Long term stays allowed',
+      ],
       host: {
         _id: 'h135',
         fullname: 'Yannes Kongi',
@@ -2230,7 +2209,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'September 2020',
           txt: `Great location by the Kennedy Town MTR station. Big rooms!! Lots of great food and stores close by. Yannes was also a great communicator and helped us when needed. At one point, there was a bit of miscommunication, however, it was quickly resolved. Highly recommended.`,
-          rate: '4.7',
+          rate: 4.7,
           by: {
             _id: '',
             fullname: 'Christina Bordein ',
@@ -2242,7 +2221,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'October 2018',
           txt: `I had an awesome stay in this space. Very clean. Very Comfortable. Very Spacious especially for the price! Good location. Will definitely book again!`,
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Lien Lianovitch ',
@@ -2254,7 +2233,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'September 2019',
           txt: `Spacious appartement, very close to metro and tram stops, easy to get to all the neughbourhoods in HK, nice rooftop view.`,
-          rate: '4.9',
+          rate: 4.9,
           by: {
             _id: '',
             fullname: 'Huanita Gonzalles ',
@@ -2285,7 +2264,16 @@ function _createStays() {
       summary: `Located in Hong Kong’s dynamic Sheung Wan District, 99 Bonham provides exceptional access to prestigious business, shopping, dining and entertainment destinations.
       99 Bonham is just a 3-minute walk from MTR Sheung Wan Station, while Central is a 20-minute walk away. Both Lan Kwai Fong and SoHo are 15 minutes' walk away. It takes an hour to reach Hong Kong International Airport from the property by taking Airport Express.`,
       capacity: 2,
-      amenities: ['Kitchen', 'Wifi', 'Air conditioning', 'TV', 'Elevator', 'Bathtub', 'Private gym in building', 'Coffee', 'Refrigerator'],
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'TV',
+        'Coffee',
+        'Air conditioning',
+        'Bathtub',
+        'Private gym in building',
+        'Long term stays allowed',
+      ],
       host: {
         _id: 'h136',
         fullname: 'Nick Carter',
@@ -2297,14 +2285,14 @@ function _createStays() {
         countryCode: 'HK',
         address: 'Sheung Wan, Hong Kong',
         lat: 22.286951799893263,
-        lng: 114.15096739880508
+        lng: 114.15096739880508,
       },
       reviews: [
         {
           id: utilService.makeId(),
           createdAt: 'September 2020',
           txt: `Good and Clean hotel, but looks smaller`,
-          rate: '4.0',
+          rate: 4.0,
           by: {
             _id: '',
             fullname: 'Christina Bordein ',
@@ -2316,7 +2304,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'October 2018',
           txt: `I had an awesome stay in this space. Very clean. Very Comfortable. Very Spacious especially for the price! Good location. Will definitely book again!`,
-          rate: '4.0',
+          rate: 4.0,
           by: {
             _id: '',
             fullname: 'Lien Lianovitch ',
@@ -2328,7 +2316,7 @@ function _createStays() {
           id: utilService.makeId(),
           createdAt: 'September 2019',
           txt: `Good location`,
-          rate: '3.7',
+          rate: 3.7,
           by: {
             _id: '',
             fullname: 'Huanita Gonzalles ',
