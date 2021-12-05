@@ -3,7 +3,7 @@
     <label>Guests</label>
     <!-- <button @click="toggleGuests">Add Guests</button> -->
     <div class="toggel-btn" @click="toggleGuests">
-      {{ filterBy.totalGuests || 'Add guests' }}
+      {{ guestsAdded }}
     </div>
     <ul
       v-click-outside="onClickOutside"
@@ -62,7 +62,19 @@ export default {
       this.shouldShow = false;
     },
   },
-  computed: {},
+  computed: {
+    guestsAdded() {
+      const totalGuests = this.filterBy.totalGuests;
+      let res;
+      if (totalGuests) {
+        const str = totalGuests > 1 ? 'Guests' : 'Guest';
+        res = `${totalGuests} ${str} `;
+      } else {
+        res = 'Add guests';
+      }
+      return res;
+    },
+  },
   components: {},
 };
 </script>
