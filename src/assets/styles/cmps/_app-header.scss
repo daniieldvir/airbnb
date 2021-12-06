@@ -34,16 +34,17 @@ header {
       height: max-content;
       text-decoration: none;
       color: var(--text);
-
-      &:not:first-child {
-        margin-right: 30px;
+      &:not(:first-of-type) {
+        margin: 0px 12.5px;
       }
-
       .logo {
-        width: max-content;
+        // background-color: blue;
+        // width: max-content;
         color: var(--logo);
         font-size: rem(25px);
         font-weight: bold;
+        // align-self:baseline;
+        // align-self: ;
         & .svg-inline--fa {
           font-size: 2rem;
         }
