@@ -3,6 +3,7 @@
     v-bind:class="{ 'white-header': !onHomePage, 'nav-scrolled': !topOfPage }"
     class="main-container"
   >
+    <main-filters v-if="onExplorePage" :onExplorePage="onExplorePage" />
     <nav class="main-nav">
       <!-- <div class="logo-cont flex"> -->
       <router-link class="main-router-link" to="/">
@@ -14,7 +15,6 @@
       </router-link>
       <!-- </div> -->
       <!-- FILTERS -->
-      <main-filters v-if="onExplorePage" :onExplorePage="onExplorePage" />
 
       <div class="flex nav-content">
         <router-link class="main-router-link" to="/explore"

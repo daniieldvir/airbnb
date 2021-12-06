@@ -20,13 +20,20 @@ header {
   background: var(--background);
   color: var(--text);
 
+  .small-filter {
+    position: fixed;
+    left: 50%;
+    top: 1rem;
+    transform: translate(-50%);
+    z-index: 999;
+  }
+
   .main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     .logo-cont {
       width: 0px;
-      background-color: blue;
     }
 
     .main-router-link {
