@@ -268,7 +268,8 @@
   justify-content: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr) auto;
-  width: 90%;
+  // margin-top: 150px;
+  width: 31%;
   font-size: 0.9rem;
   & .search-btn {
     width: 35px;
@@ -280,7 +281,9 @@
   }
   & .guest-filter .toggel-btn {
     // flex-direction: row;
-    padding-left: 20px;
+    // width: max-content;
+    padding-left: 10px;
+    padding-right: 0px;
     border-left: 1px solid $clr8;
     color: $clr7;
     // font-weight: bolder;
@@ -291,8 +294,9 @@
     font-weight: bold;
     color: $clr2;
     // margin-left: 0px;
-
-    padding-left: 30px;
+    // align-self: center;
+    padding-right: 0px;
+    padding-left: 20px;
   }
   & .double-picker-cont {
     // width: 10px;

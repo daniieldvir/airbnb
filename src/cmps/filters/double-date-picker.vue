@@ -48,14 +48,15 @@ export default {
           },
         ],
       },
-      dates: '',
-      //   value2: '',
+      dates: [],
     };
   },
   methods: {
     filtered() {
+      const dates = { checkInDate: this.dates[0], checkOutDate: this.dates[1] };
+      console.log(dates);
       this.$emit('filterClicked');
-      this.$emit('filtered', this.dates);
+      this.$emit('filtered', dates);
     },
   },
 };

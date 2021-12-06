@@ -3,19 +3,18 @@
     v-bind:class="{ 'white-header': !onHomePage, 'nav-scrolled': !topOfPage }"
     class="main-container"
   >
-    <nav class="main-nav main-container">
-      <div class="flex column">
-        <router-link class="main-router-link" to="/">
-          <!-- <div class="logo">RentMe<font-awesome-icon class="icon" icon="airbnb" /></div> -->
-          <div class="logo">
-            <font-awesome-icon :icon="['fab', 'airbnb']" />
-            <span>rentme</span>
-          </div>
-        </router-link>
-        <!-- FILTERS -->
-        <main-filters v-if="onExplorePage" :onExplorePage="onExplorePage" />
-        <secondary-filters v-if="onExplorePage" />
-      </div>
+    <nav class="main-nav">
+      <!-- <div class="logo-cont flex"> -->
+      <router-link class="main-router-link" to="/">
+        <!-- <div class="logo">RentMe<font-awesome-icon class="icon" icon="airbnb" /></div> -->
+        <div class="logo">
+          <font-awesome-icon :icon="['fab', 'airbnb']" />
+          <span>rentme</span>
+        </div>
+      </router-link>
+      <!-- </div> -->
+      <!-- FILTERS -->
+      <main-filters v-if="onExplorePage" :onExplorePage="onExplorePage" />
 
       <div class="flex nav-content">
         <router-link class="main-router-link" to="/explore"
@@ -51,6 +50,9 @@
       <router-link :to="`/user/${loggedInUser._id}`"> {{}} </router-link>
       <span>{{ loggedInUser.score }}</span>
     </section> -->
+    <section>
+      <secondary-filters v-if="onExplorePage" />
+    </section>
   </header>
 </template>
 <script>

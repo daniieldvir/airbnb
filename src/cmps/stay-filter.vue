@@ -67,7 +67,9 @@ export default {
       this.filterBy.city = filterBy.city;
     },
     filter() {
-      this.$emit('filtered', this.filterBy);
+      const filterBy = JSON.parse(JSON.stringify(this.filterBy));
+      this.$store.dispatch({ type: 'setFilter', filterBy });
+      this.$emit('filtered', filterBy);
     },
     // toggleGuests() {
     //   this.guestShouldShow = !this.guestShouldShow;
