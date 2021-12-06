@@ -1,5 +1,5 @@
 .stay-preview {
-  .block {
+  .block-content {
     position: relative;
     .liked-stay-content,
     .liked-full-heart {
@@ -32,7 +32,7 @@
       }
     }
   }
-  .block:hover {
+  .block-content:hover {
     .el-carousel__container {
       .el-carousel__arrow {
         opacity: 1;

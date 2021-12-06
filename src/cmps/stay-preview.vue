@@ -1,6 +1,6 @@
 <template>
   <section v-if="stay" class="stay-preview">
-    <div class="block">
+    <div class="block-content">
       <span
         class="liked-stay-content"
         v-if="!likedStay"
@@ -9,7 +9,7 @@
         <font-awesome-icon :icon="['far', 'heart']"
       /></span>
       <span
-        class="liked-stay-content"
+        class="liked-full-heart"
         v-else
         @click.stop="toggleLikedStay(stay._id)"
         ><font-awesome-icon :icon="['fas', 'heart']"
@@ -18,7 +18,7 @@
       <el-carousel trigger="click" arrow="always" :autoplay="false">
         <el-carousel-item v-for="(img, idx) in stay.imgUrls" :key="idx">
           <router-link class="router-link" :to="'/stay/' + stay._id">
-            <img class="preview_img" :src="stay.imgUrls[idx]" alt="" />
+            <img class="preview_img" :src="stay.imgUrls[idx]" />
           </router-link>
         </el-carousel-item>
       </el-carousel>
