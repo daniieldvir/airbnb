@@ -1,18 +1,20 @@
 <template>
   <section class="date-picker-cont">
-    <div class="block flex column">
+    <div class="block checkIn flex column">
       <label>Check in</label>
       <el-date-picker
-        v-model="dates.checkInDate"
+        @blur="filtered"
+        v-model="filterBy.dates.checkInDate"
         type="date"
         placeholder="Add dates"
       >
       </el-date-picker>
     </div>
-    <div class="block flex column">
+    <div class="block checkOut flex column">
       <label>Check out</label>
       <el-date-picker
-        v-model="dates.checkOutDate"
+        @blur="filtered"
+        v-model="filterBy.dates.checkOutDate"
         type="date"
         placeholder="Add dates"
       >
@@ -23,6 +25,7 @@
 
 <script>
 export default {
+  name: 'datePicker2',
   data() {
     return {
       pickerOptions: {
@@ -54,16 +57,24 @@ export default {
           },
         ],
       },
-      dates: {
-        checkInDate: '',
-        checkOutDate: '',
-      },
+      filterBy: null,
     };
   },
+  created() {
+    this.loadFilter();
+    console.log('creatred date 2', this.filterBy);
+    console.log();
+  },
   methods: {
+    loadFilter() {
+      const filterBy = this.$store.getters.filterBy;
+      this.filterBy = JSON.parse(JSON.stringify(filterBy));
+      console.log(this.filterBy);
+    },
     filtered() {
       this.$emit('filterClicked');
-      this.$emit('filtered', this.dates);
+      console.log('from date picker sending', this.filterBy.dates);
+      this.$emit('filtered', this.filterBy.dates);
     },
   },
 };

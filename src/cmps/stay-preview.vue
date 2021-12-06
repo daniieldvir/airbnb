@@ -28,35 +28,32 @@
         </el-carousel-item>
       </el-carousel>
     </div>
-
     <router-link class="router-link" :to="'/stay/' + stay._id">
       <p>
         <font-awesome-icon icon="star" />
         <span class="avgRate">{{ stay.avgRate }} </span>
         <span class="review-rate"> {{ reviewCount }} </span>
       </p>
-
-      <p></p>
       <p class="stay-type">{{ stay.type }} · {{ stay.loc.city }}</p>
       <p class="stay-name">{{ sortTxt }}</p>
-
-      <p></p>
       <p>
         <span>${{ stay.price }}</span> / night
       </p>
     </router-link>
   </section>
 </template>
-
 <script>
 import priceRangeFilter from './price-range-filter.vue';
 import priceRange from './price-range-filter.vue';
+// import { faHeart } from '@fortawesome/free-regular-svg-icons'
 export default {
   components: { priceRangeFilter },
   name: 'stay-preview',
   props: ['stay'],
   data() {
-    return {};
+    return {
+      likedStay: false,
+    };
   },
   computed: {
     reviewCount() {
@@ -67,13 +64,22 @@ export default {
       if (reviews.length) return `(${reviews.length})`;
       if (!reviews.length) return 'New';
     },
-
     sortTxt() {
       const txt = this.stay.name;
       const txtWithCapitalFirstLetter =
         txt.charAt(0).toUpperCase() + txt.slice(1);
       // if (txt.length > 25 < 50) return txt.slice(0, 22) + '...';
       return txtWithCapitalFirstLetter;
+    },
+  },
+  methods: {
+    toggleLikedStay() {
+      this.likedStay = !this.likedStay;
+      // if (this.likedStay) {
+      //   showMsg('Added to wishlist')
+      // } else {
+      //   showMsg('Removed from wishlist')
+      // }
     },
   },
   components: {

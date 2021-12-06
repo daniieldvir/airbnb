@@ -1,25 +1,37 @@
 .date-picker-cont {
-  display: flex;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
   border-left: 1px solid $clr7;
   border-right: 1px solid $clr7;
   font-size: 1rem;
   line-height: 1.3em;
-  cursor: pointer;
+  justify-content: start;
+  // cursor: pointer;
   // & label {
   //   display: none;
   // }
-
-  & .block:first-of-type {
-    border-right: 1px solid $clr7;
+  // .checkIn {
+  //   grid-column: 1;
+  // }
+  // .checkIn {
+  //   grid-column: 2;
+  // }
+  .block {
+    padding-left: 25px;
+  }
+  & .block:last-of-type {
+    border-left: 1px solid $clr7;
   }
   ::placeholder {
     color: $clr4;
   }
 }
+
 .block {
-  width: max-content;
+  // width: max-content;
+  // align-self: start;
   //   background-color: lightgreen;
-  padding: 0px 80px 0px 23px;
+  // padding: 0px 80px 0px 23px;
 
   & :last-child {
     border-right: none;
@@ -36,7 +48,7 @@
   //   background-color: lightseagreen;
 }
 .el-input__inner {
-  width: 80px;
+  width: 100px;
   //   background-color: lightcoral;
   border: none;
   height: 23px;
