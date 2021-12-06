@@ -9,26 +9,19 @@
         <font-awesome-icon :icon="['far', 'heart']"
       /></span>
       <span
-        class="liked-full-heart"
+        class="liked-stay-content"
         v-else
         @click.stop="toggleLikedStay(stay._id)"
         ><font-awesome-icon :icon="['fas', 'heart']"
       /></span>
       <!-- <el-alert title="Added to wishlist" type="success"></el-alert> -->
-      <section class="section-img">
-        <el-carousel
-          trigger="click"
-          arrow="always"
-          height="250px"
-          :autoplay="false"
-        >
-          <el-carousel-item v-for="(img, idx) in stay.imgUrls" :key="idx">
-            <router-link class="router-link" :to="'/stay/' + stay._id">
-              <img class="preview_img" :src="stay.imgUrls[idx]" />
-            </router-link>
-          </el-carousel-item>
-        </el-carousel>
-      </section>
+      <el-carousel trigger="click" arrow="always" :autoplay="false">
+        <el-carousel-item v-for="(img, idx) in stay.imgUrls" :key="idx">
+          <router-link class="router-link" :to="'/stay/' + stay._id">
+            <img class="preview_img" :src="stay.imgUrls[idx]" alt="" />
+          </router-link>
+        </el-carousel-item>
+      </el-carousel>
     </div>
 
     <router-link class="router-link" :to="'/stay/' + stay._id">
