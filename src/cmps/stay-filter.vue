@@ -45,8 +45,11 @@ export default {
     setDates(selectedDates) {
       if (selectedDates.checkInDate)
         this.filterBy.dates[0] = selectedDates.checkInDate;
-      if (selectedDates.checkInDate && selectedDates.checkOutDate)
+      if (selectedDates.checkInDate && selectedDates.checkOutDate) {
         this.filterBy.dates[1] = selectedDates.checkOutDate;
+      } else {
+        console.log('Enter check in date');
+      }
       // this.filterBy.dates[1]=selectedDates.checkOutDate
       this.filterBy.dates = selectedDates;
     },
