@@ -2,21 +2,19 @@
   display: grid;
   padding: 0px;
 
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  grid-auto-rows: auto;
   grid-gap: 20px;
 
   .preview_img {
+    // max-width: 300px;
+    // min-height: 250px;
     width: 100%;
-    height: 100%;
+    height: 250px;
+
+    // height: 100%;
     border-radius: 15px;
     object-fit: cover;
     border: 1px solid $clr7;
-  }
-  .overlay {
-    height: 100%;
-    width: 100%;
-    opacity: 0.3;
-    transition: 0.3s ease;
-    background-color: transparent;
   }
 }

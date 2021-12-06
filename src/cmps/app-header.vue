@@ -1,5 +1,8 @@
 <template>
-  <header v-bind:class="{ 'white-header': !onHomePage }" class="main-container">
+  <header
+    v-bind:class="{ 'white-header': !onHomePage, 'nav-scrolled': !topOfPage }"
+    class="main-container"
+  >
     <nav class="main-nav main-container">
       <div class="flex column">
         <router-link class="main-router-link" to="/">
@@ -57,7 +60,11 @@ export default {
       onHomePage: false,
       onExplorePage: false,
       showUserModal: false,
+      topOfPage: true,
     };
+  },
+  beforeMount() {
+    window.addEventListener('scroll', this.handelScroll);
   },
   watch: {
     $route: {
@@ -74,6 +81,11 @@ export default {
     },
     onClickOutside() {
       this.showUserModal = false;
+    },
+    handelScroll() {
+      console.log('test');
+      if (window.pageYOffset > 0) this.topOfPage = false;
+      else this.topOfPage = true;
     },
   },
   components: {

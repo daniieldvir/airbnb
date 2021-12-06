@@ -1,13 +1,10 @@
 <template>
   <section>
     <ul class="stay-list">
-      <li class="clear-list stay-list" v-for="stay in stays" :key="stay._id">
+      <li class="clear-list" v-for="stay in stays" :key="stay._id">
         <stay-preview :stay="stay"> </stay-preview>
       </li>
     </ul>
-    <!-- <div class="overlay">
-      <font-awesome-icon icon="heart" />
-    </div> -->
   </section>
 </template>
 
