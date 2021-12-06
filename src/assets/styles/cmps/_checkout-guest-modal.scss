@@ -6,15 +6,15 @@
     border: 1px solid #dfdfde;
     font-size: rem(12px);
     width: 250px;
-    transform: translate(-2%, 15%);
+    // transform: translate(-2%, 15%);
     max-width: 500px;
 
     position: absolute;
     width: 350px;
     height: 245px;
-    border-radius: 32px;
+    border-radius: 13px;
 
-    top: 42%;
+    top: 65%;
 
     padding: 16px 32px;
     border: 1px solid rgba(0, 0, 0, 0.18823529411764706);
@@ -28,6 +28,7 @@
     margin-left: 30px;
     font-family: manrope-bold;
     color: $clr2;
+    height: 57px;
 
     span {
       font-family: manrope;

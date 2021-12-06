@@ -2,14 +2,19 @@
   --gap: 9px;
   --num-col: 7;
   --row-height: 60px;
-  padding: var(--gap);
+  // padding: var(--gap);
   position: relative;
   margin-bottom: 150px;
-  align-items: baseline;
+  // align-items: baseline;
 
   display: grid;
-  grid-template-columns: repeat(var(--num-col), 1fr);
-  grid-auto-rows: var(--row-height);
+  // grid-template-columns: repeat(var(--num-col), 1fr);
+  // grid-template-columns: 32% 40% 1fr 8.1%;
+  grid-template-columns: 32% 40% 1fr 8.1%;
+  // grid-template-columns: 242px 359px 157px 65px;
+  // grid-auto-rows: var(--row-height);
+  // justify-content: center;
+  align-content: center;
   // gap: var(--gap);
   // align-items: end;
 
@@ -17,34 +22,61 @@
   border: 1px solid rgba(240, 240, 239, 0.749);
   border-radius: 200px;
   width: 66vw;
+  height: 70px;
+  // padding: 20px;
   // width: auto;
   cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.3em;
 
   .city-filter {
-    grid-column: 1/3;
-    grid-row: span 1;
-    margin-left: 30px;
+    // grid-column: 1/3;
+    // grid-row: span 1;
+    grid-column: 1;
+    // align-content: center;
+    align-items: center;
+    // justify-content: center;
+    // margin-left: 30px;
     border-right: 1px solid rgb(196, 196, 196);
   }
   .date-picker {
-    grid-column: 3/6;
-    grid-row: span 1;
+    grid-column: 2;
+    // grid-row: span 1;
     border-right: 1px solid rgb(196, 196, 196);
 
     .date-picker-label {
+      // width: max-content;
+      width: 100%;
+      // gap: 20px;
+      align-self: center;
+      // background-color: chartreuse;
       display: flex;
       justify-content: space-evenly;
+      margin: 0px;
     }
 
     .date-picker-table {
-      display: flex;
-      justify-content: center;
+      // display: flex;
+      // justify-content: end;
+      // justify-content: center;
+      // background-color: chocolate;
+      // justify-content: space-evenly;
+      height: 50%;
     }
-
+    .el-range-editor {
+      // width: 0px;
+      display: flex;
+    }
     .el-input__inner {
       border: none;
-      height: 35px;
-      // width: 270px;
+      display: flex;
+      // background-color: burlywood;
+      height: 20px;
+      width: 0px;
+      padding: 0px;
+      // align-self: center;
+      // display: none;
+      // justify-content: space-between;
     }
     .el-range__icon {
       color: rgba(255, 255, 255, 0);
@@ -54,39 +86,33 @@
     }
   }
   .guest-filter {
-    grid-column: 6 /8;
-    grid-row: span 1;
-    margin-left: 30px;
+    // grid-column: 6 /8;
+    // grid-row: span 1;
+    grid-column: 3;
+
+    align-items: center;
+    // margin-left: 30px;
+  }
+  .search-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   .search-btn {
-    grid-column: 8 / 9;
-    grid-row: span 1;
-
+    // grid-column: 8 / 9;
+    // grid-row: span 1;
+    grid-column: 4;
+    height: 45px;
     justify-content: center;
     align-items: center;
-
+    border-radius: 25px;
+    padding: 0px 15px;
+    margin: 0px 10px;
     background-color: $clr1;
     border: 0;
-    padding: 0px 18px;
-    // border-radius: 50%;
-    border-radius: 25px;
-
-    width: max-content;
-    height: 50px;
-
     cursor: pointer;
-    align-self: center;
-    // text-align: center;
-    margin-left: 30px;
     color: #fff;
-
-    // .svg-inline--fa {
-    //   color: white;
-    // }
-    & .search {
-      // display: none;
-    }
   }
 
   /// Label
@@ -105,13 +131,23 @@
   .guest-filter,
   .city-filter,
   .date-picker {
-    .toggel-btn,
-    .el-range-input {
-      font-size: rem(18px);
+    .toggel-btn {
+      display: flex;
+      flex-direction: column;
       color: #717171;
       font-weight: 400;
       background-color: none;
+      margin: 0px 27px;
     }
+  }
+  .el-range-input {
+    // background-color: chartreuse;
+    width: 148px;
+    height: 20px;
+  }
+
+  .date-picker {
+    align-self: center;
   }
 
   /// Modal - Add Guests
@@ -185,6 +221,9 @@
       border: 1px solid rgb(223, 223, 222);
       height: 40px;
     }
+    & .toggel-btn {
+      margin-left: 35px;
+    }
     .dropdown-list {
       position: absolute;
 
@@ -241,12 +280,8 @@
     align-items: center;
     gap: 10px;
     font-size: 1rem;
-
-    padding: 0px 20px;
     border-radius: 25px;
-    width: max-content;
-    height: 50px;
-
+    padding: 0px 15px;
     & .search {
       display: flex;
     }

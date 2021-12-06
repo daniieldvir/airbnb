@@ -15,6 +15,7 @@ import './assets/styles/main.scss';
 import locale from 'element-ui/lib/locale/lang/en';
 import ElementUI from 'element-ui';
 import * as VueGoogleMaps from 'vue2-google-maps';
+import vClickOutside from 'v-click-outside';
 
 ///font awesome
 // import { library } from '@fortawesome/fontawesome-svg-core';
@@ -48,6 +49,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 ///
 Vue.config.productionTip = false;
+Vue.use(vClickOutside);
 Vue.use(ElementUI, { locale });
 Vue.use(VueGoogleMaps, {
   load: {

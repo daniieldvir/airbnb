@@ -27,6 +27,9 @@
         :percentage="100"
         :format="formatRate"
       ></el-progress>
+    </div>
+
+    <div class="review-ratings2">
       <p>Accuracy</p>
       <el-progress
         class="progress-bar"

@@ -1,18 +1,14 @@
 .stay-checkout {
-  // width: 100%;
-  width: 450px;
-  position: sticky;
-  top: 120px;
   bottom: 20px;
-  margin-top: 20px;
-  align-items: center;
+  align-items: end;
   justify-content: flex-end;
 
   .order-price-container {
     color: $clr2;
     font-family: manrope-bold;
-    p {
-      font-size: rem(18px);
+    .price {
+      font-size: rem(22px);
+      color: $clr2;
 
       span {
         font-family: manrope;
@@ -30,6 +26,7 @@
       font-size: rem(14px);
       font-family: manrope-bold;
       margin-right: 5px;
+      color: $clr2;
     }
     span {
       font-size: rem(14px);
@@ -47,12 +44,10 @@
 
     border: 1px solid rgb(221, 221, 221);
     border-radius: 12px;
-    // padding: 24px;
     box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
 
     .checkout-form-container {
       width: 100%;
-      // padding: 20px 25px 15px;
       padding: 0 25px 15px;
 
       .form-container {
@@ -65,8 +60,17 @@
           margin-block-end: 15px;
 
           .select-dates-container {
-            height: 56px;
+            height: 58px;
+
+            .label {
+              display: flex;
+              justify-content: space-around;
+              font-size: rem(14px);
+              margin-top: 5px;
+            }
             .el-date-editor {
+              display: flex;
+              justify-content: space-around;
               .el-range-input {
                 color: $clr2;
                 display: flex;
@@ -124,15 +128,13 @@
   }
 }
 
-.swal2-actions {
-  background-color: black;
-  button {
-    background-color: black;
-  }
-  .swal2-confirm,
-  .swal2-styled {
-    background-color: black;
-  }
-}
-
-$swal2-background: #990000;
+// .swal2-actions {
+//   background-color: black;
+//   button {
+//     background-color: black;
+//   }
+//   .swal2-confirm,
+//   .swal2-styled {
+//     background-color: black;
+//   }
+// }

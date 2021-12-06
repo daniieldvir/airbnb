@@ -25,17 +25,10 @@
 @import 'cmps/stay-rating';
 @import 'cmps/long-text';
 @import url('cmps/_home-page-list.scss');
+@import url('cmps/_checkout-modal.scss');
 
 // Views
 @import 'views/home-page';
 @import 'views/stay-details';
 @import 'views/stay-app';
 @import 'views/app';
-
-// header.white-header {
-//   background-color: #fff;
-//   color: $clr2;
-//   &logo {
-//     color: $clr1;
-//   }
-// }

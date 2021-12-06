@@ -5,7 +5,8 @@
         <router-link class="main-router-link" to="/">
           <!-- <div class="logo">RentMe<font-awesome-icon class="icon" icon="airbnb" /></div> -->
           <div class="logo">
-            <font-awesome-icon :icon="['fab', 'airbnb']" />Rentme
+            <font-awesome-icon :icon="['fab', 'airbnb']" />
+            <span>rentme</span>
           </div>
         </router-link>
         <!-- FILTERS -->
@@ -21,7 +22,7 @@
         >
 
         <!-- <router-link class="main-router-link" to="/login"></router-link> -->
-        <div class="dropdown">
+        <div class="dropdown" v-click-outside="onClickOutside">
           <button
             @click="toggleUserModal"
             class="flex align-center user-btn dropbtn"
@@ -70,6 +71,9 @@ export default {
   methods: {
     toggleUserModal() {
       this.showUserModal = !this.showUserModal;
+    },
+    onClickOutside() {
+      this.showUserModal = false;
     },
   },
   components: {

@@ -4,7 +4,7 @@
       <div class="checkout-form-container">
         <div class="checkout-form-header flex space-between align-center">
           <div class="order-price-container">
-            <p class="price">${{ stay.price }}<span>/night</span></p>
+            <p class="price">${{ stay.price }}<span> / night</span></p>
           </div>
           <div class="check-rating-container flex align-center">
             <font-awesome-icon icon="star" />
@@ -17,6 +17,21 @@
           <div class="select-form">
             <div class="select-dates-container">
               <label for="check-in"><span>Check-in</span>
+              <div class="label">
+                <label>CHECK-IN </label>
+                <label>CHECKOUT </label>
+              </div>
+
+              <el-date-picker
+                style="width: 100%"
+                v-model="dates"
+                type="daterange"
+                range-separator=""
+                start-placeholder="Add date "
+                end-placeholder="Add date"
+                ref="myDatePicker"
+              ></el-date-picker></label>
+                <!-- <label for="check-out"><span>Check-out</span>
               <el-date-picker
                 style="width: 100%"
                 v-model="dates"
@@ -24,16 +39,7 @@
                 range-separator=""
                 start-placeholder="Add date"
                 ref="myDatePicker"
-              ></el-date-picker></label>
-                <label for="check-out"><span>Check-out</span>
-              <el-date-picker
-                style="width: 100%"
-                v-model="dates"
-                type="daterange"
-                range-separator=""
-                start-placeholder="Add date"
-                ref="myDatePicker"
-              ></el-date-picker></label>
+              ></el-date-picker></label> -->
             </div>
             <checkout-guest-modal
               class="select-guests-container flex space-between"
@@ -62,12 +68,19 @@
         </div>
       </div>
     </section>
+    <checkout-modal
+      class="checkout-modal"
+      v-if="isModalOpen"
+      @closeModal="closeModal"
+    ></checkout-modal>
   </section>
 </template>
 
 <script>
 import checkoutGuestModal from './checkout-guest-modal.vue';
 import guestFilter from './guest-filter.vue';
+import checkoutModal from './checkout-modal.vue';
+
 export default {
   props: {
     stay: Object,
@@ -77,7 +90,8 @@ export default {
   data() {
     return {
       filterBy: null,
-      open: false
+      open: false,
+      isModalOpen: false,
       // guestShouldShow: false,
     };
   },
@@ -124,7 +138,19 @@ export default {
     },
       // this.$router.push('/');
   
-  },
-  components: { checkoutGuestModal, guestFilter },
+      // this.isModalOpen = true;
+      // Swal.fire({
+      //   title: 'Thank you for booking!',
+      //   text: 'Press done',
+      //   icon: 'success',
+      //   confirmButtonText: 'Done',
+      // });
+      // this.$router.push('/');
+    },
+    closeModal() {
+      this.isModalOpen = false;
+    },
+  
+  components: { checkoutGuestModal, guestFilter, checkoutModal },
 };
 </script>
