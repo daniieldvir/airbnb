@@ -23,14 +23,6 @@
       border-radius: 50%;
       z-index: 5;
     }
-    .el-carousel__container {
-      .el-carousel__arrow {
-        opacity: 0;
-        color: black;
-        background-color: rgba(245, 245, 245, 0.692);
-        transition: 0.5s;
-      }
-    }
   }
   .block-content:hover {
     .el-carousel__container {

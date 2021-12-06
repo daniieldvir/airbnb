@@ -28,24 +28,20 @@
         </el-carousel-item>
       </el-carousel>
     </div>
-
     <router-link class="router-link" :to="'/stay/' + stay._id">
       <p>
         <font-awesome-icon icon="star" />
         <span class="avgRate">{{ stay.avgRate }} </span>
         <span class="review-rate"> {{ reviewCount }} </span>
       </p>
-
       <p class="stay-type">{{ stay.type }} · {{ stay.loc.city }}</p>
       <p class="stay-name">{{ sortTxt }}</p>
-
       <p>
         <span>${{ stay.price }}</span> / night
       </p>
     </router-link>
   </section>
 </template>
-
 <script>
 import priceRangeFilter from './price-range-filter.vue';
 import priceRange from './price-range-filter.vue';
@@ -68,7 +64,6 @@ export default {
       if (reviews.length) return `(${reviews.length})`;
       if (!reviews.length) return 'New';
     },
-
     sortTxt() {
       const txt = this.stay.name;
       const txtWithCapitalFirstLetter =

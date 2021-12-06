@@ -44,6 +44,7 @@ export default {
     },
     setDates(selectedDates) {
       this.filterBy.dates = selectedDates;
+      console.log('fron stay filter got:', this.filterBy);
     },
     addGuests(filterBy) {
       this.filterBy.guests = filterBy.guests;

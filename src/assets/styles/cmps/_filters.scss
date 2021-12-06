@@ -7,11 +7,12 @@
   margin-bottom: 150px;
   margin-left: auto;
   margin-right: auto;
+  // justify-content: ;
   // align-items: baseline;
 
   display: grid;
   // grid-template-columns: repeat(var(--num-col), 1fr);
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 60px;
+  // grid-template-columns: 1.5fr 2fr 1fr 60px;
   // grid-template-columns: 1fr 60px;
   align-content: center;
   // gap: var(--gap);
@@ -20,7 +21,8 @@
   background-color: white;
   // border: 1px solid rgba(240, 240, 239, 0.749);
   border-radius: 200px;
-  width: 66vw;
+  max-width: 800px;
+  // width: calc(70vw - 140px);
   height: 70px;
   // padding: 20px;
   // width: auto;
@@ -38,14 +40,25 @@
     // justify-content: center;
     // margin-left: 30px;
     // border-right: 1px solid rgb(196, 196, 196);
-    & span {
-      display: none;
-    }
+    // & span {
+    //   display: none;
+    // }
   }
 
+  // .date-picker-cont {
+  // grid-column: 2;
+  // display: none;
   .date-picker-cont {
-    grid-column: 2/4;
-    // display: none;
+    grid-column: 2;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    .checkIn {
+      // grid-column: 1;
+    }
+    .checkIn {
+      // grid-column: 2;
+    }
+    // }
 
     // grid-row: span 2;
   }
@@ -67,7 +80,7 @@
     .search-btn {
       // grid-column: 8 / 9;
       // grid-row: span 1;
-      grid-column: 5;
+      // grid-column: 4;
       height: 45px;
       justify-content: center;
       align-items: center;
@@ -246,7 +259,7 @@
 
 @media screen and (min-width: 1080px) {
   .main-filters {
-    grid-template-columns: 1.5fr 1fr 1fr 1fr 60px;
+    grid-template-columns: 1.5fr 2fr 1fr 60px;
 
     .city-filter {
       grid-column: 1;
@@ -263,16 +276,18 @@
       }
     }
     .date-picker-cont {
-      grid-column: 2/4;
-      display: flex;
+      grid-column: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
     .guest-filter {
-      grid-column: 4;
+      grid-column: 3;
       align-items: center;
       display: block;
     }
   }
   .search-btn {
+    grid-column: 4;
     justify-content: center;
     align-items: center;
     gap: 10px;

@@ -7,7 +7,10 @@ export const stayStore = {
     filterBy: {
       city: '',
       guests: '',
-      dates: [],
+      dates: {
+        checkInDate: '',
+        checkOutDate: '',
+      },
       guests: { adults: 0, children: 0, infants: 0, pets: 0 },
       totalGuests: 0,
       priceRange: [15, 850],
@@ -22,6 +25,7 @@ export const stayStore = {
       return state.filterBy;
     },
     staysToShow(state) {
+      // console.log(state.stays);
       return state.stays;
     },
     avgPrice(state) {
@@ -37,7 +41,7 @@ export const stayStore = {
   mutations: {
     setFilter(state, { filterBy }) {
       state.filterBy = filterBy;
-      // console.log('filter state', state.filterBy);
+      console.log('filter state', state.filterBy);
     },
     setStays(state, { stays }) {
       state.stays = stays;
@@ -50,7 +54,10 @@ export const stayStore = {
       state.filterBy = {
         city: '',
         guests: '',
-        dates: [],
+        dates: {
+          checkInDate: '',
+          checkOutDate: '',
+        },
         guests: { adults: 0, children: 0, infants: 0, pets: 0 },
         totalGuests: 0,
         priceRange: [15, 850],
