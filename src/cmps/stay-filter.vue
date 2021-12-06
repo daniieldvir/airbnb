@@ -43,6 +43,11 @@ export default {
       this.filterBy = JSON.parse(JSON.stringify(filterBy));
     },
     setDates(selectedDates) {
+      if (selectedDates.checkInDate)
+        this.filterBy.dates[0] = selectedDates.checkInDate;
+      if (selectedDates.checkInDate && selectedDates.checkOutDate)
+        this.filterBy.dates[1] = selectedDates.checkOutDate;
+      // this.filterBy.dates[1]=selectedDates.checkOutDate
       this.filterBy.dates = selectedDates;
     },
     addGuests(filterBy) {
