@@ -6,7 +6,7 @@
         v-if="!likedStay"
         @click.stop="toggleLikedStay(stay._id)"
       >
-        <font-awesome-icon :icon="['far', 'heart']"
+        <font-awesome-icon :icon="['fas', 'heart']"
       /></span>
       <span
         class="liked-full-heart"
