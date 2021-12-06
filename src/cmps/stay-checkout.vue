@@ -13,42 +13,31 @@
           </div>
         </div>
 
-        <div class="form-container">
-          <div class="select-form">
-            <div class="select-dates-container">
-              <div class="label">
-                <label>CHECK-IN </label>
-                <label>CHECKOUT </label>
-              </div>
-
-              <el-date-picker
-                style="width: 100%"
-                v-model="dates"
-                type="daterange"
-                range-separator=""
-                start-placeholder="Add date "
-                end-placeholder="Add date"
-                ref="myDatePicker"
-              ></el-date-picker>
-            </div>
-            <checkout-guest-modal
+        <!-- <checkout-guest-modal
               class="select-guests-container flex space-between"
               @setGuests="setGuests"
-            />
+            /> -->
 
-            <!-- <div class="select-guests-container flex space-between"> -->
-            <!-- <guest-filter/> -->
-            <!-- <guest-filter :currFilterBy="filterBy" @addedGuests="addGuests" /> -->
+        <!-- <div class="select-guests-container flex space-between"> -->
+        <!-- <guest-filter/> -->
+        <!-- <guest-filter :currFilterBy="filterBy" @addedGuests="addGuests" /> -->
 
-            <!-- <div class="select-guests-container flex space-between"> -->
-            <!-- <guest-filter/> -->
-            <!-- <guest-filter @addedGuests="addGuests" /> -->
+        <!-- <div class="select-guests-container flex space-between"> -->
+        <!-- <guest-filter/> -->
+        <!-- <guest-filter @addedGuests="addGuests" /> -->
 
-            <!-- </div> -->
-            <!-- <div class="btn-checkout-container">
+        <!-- </div> -->
+        <!-- <div class="btn-checkout-container">
                             <button class="btn-checkout">Check availability
                             </button>
                         </div> -->
+        <div class="form-container">
+          <div class="select-form">
+            <date-picker />
+            <!-- <div class="filter-cont flex"> -->
+            <checkoutGuestModal />
+            <!-- <span><font-awesome-icon icon="chevron-down" /></span> -->
+            <!-- </div> -->
           </div>
           <div class="btn-checkout-container">
             <button class="btn-checkout" @click="checkout">
@@ -68,7 +57,8 @@
 
 <script>
 import checkoutGuestModal from './checkout-guest-modal.vue';
-import guestFilter from './guest-filter.vue';
+import datePicker from './filters/date-picker-2.vue';
+// import guestFilter from './guest-filter.vue';
 import checkoutModal from './checkout-modal.vue';
 
 export default {
@@ -128,6 +118,6 @@ export default {
       this.isModalOpen = false;
     },
   },
-  components: { checkoutGuestModal, guestFilter, checkoutModal },
+  components: { datePicker, checkoutGuestModal, checkoutModal },
 };
 </script>

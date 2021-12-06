@@ -39,7 +39,7 @@
     width: 80%;
     justify-content: flex-end;
     border: 1px solid rgba(0, 0, 0, 0.18823529411764706);
-    border-radius: 13px;
+    border-radius: 10px;
     box-shadow: 0 6px 16px -2px #d8d8d8;
 
     border: 1px solid rgb(221, 221, 221);
@@ -54,42 +54,50 @@
         position: relative;
 
         .select-form {
-          border: 0.5px solid rgba(0, 0, 0, 0.3137254901960784);
-          border-radius: 13px;
+          font-size: 0.75rem;
+          border: 1px solid $clr7;
+          border-radius: 10px;
           overflow: hidden;
           margin-block-end: 15px;
+          display: grid;
+          grid-template-columns: 100%;
+          grid-auto-rows: 57px;
+          & .date-picker-cont {
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
 
-          .select-dates-container {
-            height: 58px;
-
-            .label {
-              display: flex;
-              justify-content: space-around;
-              font-size: rem(14px);
-              margin-top: 5px;
-            }
-            .el-date-editor {
-              display: flex;
-              justify-content: space-around;
-              .el-range-input {
-                color: $clr2;
-                display: flex;
-                justify-content: space-between;
+            & .block {
+              // cursor: pointer;
+              // padding: 10px auto 10px 15px;
+              padding: 8px 15px;
+              // padding-bottom: 10px;
+              // padding-left: 15px;
+              padding-right: auto;
+              border-bottom: 1px solid $clr7;
+              & label,
+              input {
+                font-size: 0.75rem;
+                cursor: pointer;
               }
             }
-            .el-input__inner {
-              border: none;
-            }
-            .el-input__icon {
-              display: none;
-            }
-          }
-          .select-guests-container {
-            border-top: 0.5px solid rgba(0, 0, 0, 0.3137254901960784);
-            height: 56px;
           }
         }
+        &.date-picker-cont.block:last-of-type {
+          border-left: 0px;
+        }
       }
+      .filter-cont {
+        background-color: blueviolet;
+        & label {
+          display: flex;
+          flex-direction: column;
+        }
+        & .svg-inline--fa {
+          font-size: 1rem;
+          z-index: 999;
+        }
+      }
+
       .btn-checkout-container {
         .btn-checkout {
           width: 100%;
