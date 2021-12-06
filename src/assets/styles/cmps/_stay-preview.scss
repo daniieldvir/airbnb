@@ -1,47 +1,75 @@
 .stay-preview {
-  .block {
+  .block-content {
+    position: relative;
+    .liked-stay-content,
+    .liked-full-heart {
+      position: absolute;
+      z-index: 3;
+      top: 10px;
+      right: 14px;
+      // fill: rgba(0, 0, 0, 0.5);
+      stroke: rgb(255, 255, 255);
+      stroke-width: 2;
+      cursor: pointer;
+    }
+    .liked-full-heart {
+      .svg-inline--fa {
+        color: $clr1;
+      }
+    }
     .el-carousel__button {
-      height: 8px;
+      c: 8px;
       width: 7px;
       border-radius: 50%;
       z-index: 5;
     }
   }
-
-  p {
-    color: $clr4;
-    line-height: 0.5rem;
-    span {
-      color: black;
-    }
-    .svg-inline--fa {
-      color: $clr1;
-      font-size: rem(14px);
-    }
-    .review-rate {
-      color: $clr4;
-      font-size: rem(14px);
-    }
-    .avgRate {
-      margin-left: 5px;
-      font-size: rem(14px);
+  .block-content:hover {
+    .el-carousel__container {
+      .el-carousel__arrow {
+        opacity: 1;
+        color: black;
+        background-color: rgba(245, 245, 245, 0.692);
+      }
     }
   }
 
-  .stay-name {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    line-height: 1.45rem;
-    margin: 0;
-  }
-  .stay-type {
-    font-size: rem(14px);
-  }
+  .router-link {
+    color: $clr2;
 
-  .el-carousel__arrow,
-  .el-carousel__arrow--left {
-    color: black;
-    background-color: rgba(245, 245, 245, 0.692);
+    p {
+      color: $clr2;
+      line-height: 0.5rem;
+      span {
+        color: $clr2;
+        font-weight: 900;
+      }
+      .svg-inline--fa {
+        color: $clr1;
+        font-size: rem(14px);
+      }
+      .review-rate {
+        color: $clr4;
+        font-size: rem(14px);
+      }
+      .avgRate {
+        margin-left: 5px;
+        font-size: rem(14px);
+      }
+    }
+
+    .stay-name {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: rem(14px);
+      line-height: 1.0625rem;
+      margin: 0;
+      color: $clr2;
+    }
+    .stay-type {
+      font-size: rem(14px);
+      color: $clr2;
+    }
   }
 }

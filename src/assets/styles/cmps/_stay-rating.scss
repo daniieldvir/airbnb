@@ -7,7 +7,7 @@
 
   display: grid;
   grid-template-columns: repeat(var(--num-col), 1fr);
-  grid-template-columns: repeat(var(--row-col), 1fr);
+  grid-template-rows: repeat(var(--row-col), 1fr);
 
   align-items: center;
 
