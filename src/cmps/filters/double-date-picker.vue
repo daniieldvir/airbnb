@@ -1,18 +1,12 @@
 <template>
-  <div class="date-picker block">
-    <div class="date-picker-label">
-      <label>Check in </label>
-
-      <label>Check out </label>
-    </div>
-    <div class="date-picker-table">
+  <div>
+    <div class="double-picker-cont">
       <el-date-picker
         @blur="filtered"
         v-model="dates"
         type="daterange"
         range-separator=""
         start-placeholder="Add dates"
-        end-placeholder="Add dates"
       >
       </el-date-picker>
     </div>

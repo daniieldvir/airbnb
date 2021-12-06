@@ -116,8 +116,11 @@
       color: #717171;
       font-weight: 400;
       background-color: none;
-      margin: 0px 27px;
+      padding: 0px 1.5em;
     }
+  }
+  .city-filter .toggel-btn {
+    padding: 0px 2.5em;
   }
   // .el-range-input {
   //   // background-color: chartreuse;
@@ -205,7 +208,7 @@
       height: 40px;
     }
     & .toggel-btn {
-      margin-left: 35px;
+      // margin-left: 35px;
     }
     .dropdown-list {
       position: absolute;
@@ -257,9 +260,71 @@
   // }
 }
 
+.main-filters.small-filter {
+  margin-bottom: 10px;
+  height: 45px;
+  border: 1px solid $clr7;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  width: 90%;
+  font-size: 0.9rem;
+  & .search-btn {
+    width: 35px;
+    height: 35px;
+    margin: 0px 5px;
+  }
+  & label {
+    display: none;
+  }
+  & .guest-filter .toggel-btn {
+    // flex-direction: row;
+    padding-left: 20px;
+    border-left: 1px solid $clr8;
+    color: $clr7;
+    // font-weight: bolder;
+    // margin: 0px;
+  }
+  & .city-filter .toggel-btn {
+    border-right: 1px solid $clr8;
+    font-weight: bold;
+    color: $clr2;
+    // margin-left: 0px;
+
+    padding-left: 30px;
+  }
+  & .double-picker-cont {
+    // width: 10px;
+
+    // background-color: chartreuse;
+
+    & .el-date-editor {
+      background-color: rgba(210, 105, 30, 0.836);
+      padding: 0px;
+      width: 0px;
+      // justify-content: center;
+      // align-items: center;
+      & .el-input__inner {
+        width: 80px;
+        // color: $clr4;
+      }
+      & input:first-of-type {
+        background-color: rgba(0, 0, 0, 0);
+        width: 100px;
+        margin-top: 2px;
+        font-size: 0.9rem;
+      }
+      & input:last-of-type {
+        display: none;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 1080px) {
   .main-filters {
-    grid-template-columns: 1.5fr 2fr 1fr 60px;
+    grid-template-columns: 1.5fr 2fr 1fr auto;
 
     .city-filter {
       grid-column: 1;
@@ -269,10 +334,10 @@
       overflow: hidden;
       display: block;
       & span {
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        display: block;
+        // text-overflow: ellipsis;
+        // white-space: nowrap;
+        // overflow: hidden;
+        // display: block;
       }
     }
     .date-picker-cont {
