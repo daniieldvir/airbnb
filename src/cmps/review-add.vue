@@ -50,7 +50,7 @@ export default {
         },
 
         save() {
-            this.$emit('saveReview', this.bookReview)
+            this.$emit('saveReview', this.stayReview)
             this.resetReview()
             this.toggleAddReview();
 
@@ -78,8 +78,8 @@ export default {
             return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
         },
 
-        bookId() {
-            return this.$route.params.bookId
+        stayId() {
+            return this.$route.params.stayId
         },
     },
 
