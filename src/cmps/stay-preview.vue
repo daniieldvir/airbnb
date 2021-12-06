@@ -36,7 +36,7 @@
       </p>
       <p class="stay-type">{{ stay.type }} · {{ stay.loc.city }}</p>
       <p class="stay-name">{{ sortTxt }}</p>
-      <p>
+      <p class="stay-price">
         <span>${{ stay.price }}</span> / night
       </p>
     </router-link>

@@ -42,7 +42,6 @@
       line-height: 0.5rem;
       span {
         color: $clr2;
-        font-weight: 900;
       }
       .svg-inline--fa {
         color: $clr1;
@@ -55,6 +54,7 @@
       .avgRate {
         margin-left: 5px;
         font-size: rem(14px);
+        line-height: 18px;
       }
     }
 
@@ -62,14 +62,21 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
-      font-size: rem(14px);
-      line-height: 1.0625rem;
+
+      font-size: rem(18px);
+      line-height: rem(21px);
       margin: 0;
       color: $clr2;
     }
     .stay-type {
-      font-size: rem(14px);
+      font-size: rem(18px);
+      // line-height: rem(24px);
       color: $clr2;
+    }
+  }
+  .stay-price {
+    span {
+      font-family: airbnb-medium, sans-serif;
     }
   }
 }

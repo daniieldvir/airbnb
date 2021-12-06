@@ -7,7 +7,7 @@
     font-size: rem(25px);
   }
   .avg-rating {
-    font-family: manrope-bold;
+    font-family: airbnb, sans-serif;
 
     span {
       margin: 5px;
@@ -48,7 +48,7 @@
         p {
           font-size: rem(16px);
           color: $clr2;
-          font-family: manrope;
+          font-family: airbnb-light, sans-serif;
 
           span {
             margin: 5px;
@@ -138,7 +138,7 @@
   }
 
   .reviews {
-    font-family: manrope;
+    font-family: airbnb-light, sans-serif;
     margin: 5px;
     color: $clr2;
     // text-decoration-line: underline;

@@ -5,13 +5,13 @@
 
   .order-price-container {
     color: $clr2;
-    font-family: manrope-bold;
+    font-family: airbnb-medium, sans-serif;
     .price {
       font-size: rem(22px);
       color: $clr2;
 
       span {
-        font-family: manrope;
+        font-family: airbnb-light, sans-serif;
         font-size: rem(16px);
       }
     }
@@ -24,7 +24,7 @@
     }
     p {
       font-size: rem(14px);
-      font-family: manrope-bold;
+      font-family: airbnb-medium, sans-serif;
       margin-right: 5px;
       color: $clr2;
     }
