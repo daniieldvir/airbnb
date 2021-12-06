@@ -16,9 +16,16 @@
           <h3>{{ name[0].toUpperCase() + name.substring(1) }}</h3>
           <h4>{{ msgs[idx] }}</h4>
         </div>
-        <div class="flex multi-choice">
-          <button class="reduce-btn" @click="addGuest(-1, name)">-</button>
-          <h2>{{ value }}</h2>
+        <div class="multi-choice flex">
+          <button
+            v-bind:class="{ 'not-allowed': !value, 'added-guests': value > 0 }"
+            class="reduce-btn"
+            @click="addGuest(-1, name)"
+          >
+            &ndash;
+          </button>
+
+          <div class="counter">{{ value }}</div>
           <button class="add-btn" @click="addGuest(1, name)">+</button>
         </div>
       </li>
