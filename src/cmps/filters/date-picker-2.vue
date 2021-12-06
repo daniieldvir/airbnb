@@ -2,12 +2,20 @@
   <section class="date-picker-cont">
     <div class="block flex column">
       <label>Check in</label>
-      <el-date-picker v-model="value1" type="date" placeholder="Add dates">
+      <el-date-picker
+        v-model="dates.checkInDate"
+        type="date"
+        placeholder="Add dates"
+      >
       </el-date-picker>
     </div>
     <div class="block flex column">
       <label>Check out</label>
-      <el-date-picker v-model="value2" type="date" placeholder="Add dates">
+      <el-date-picker
+        v-model="dates.checkOutDate"
+        type="date"
+        placeholder="Add dates"
+      >
       </el-date-picker>
     </div>
   </section>
@@ -46,8 +54,10 @@ export default {
           },
         ],
       },
-      value1: '',
-      value2: '',
+      dates: {
+        checkInDate: '',
+        checkOutDate: '',
+      },
     };
   },
   methods: {
