@@ -15,7 +15,12 @@
         ><font-awesome-icon :icon="['fas', 'heart']"
       /></span>
       <!-- <el-alert title="Added to wishlist" type="success"></el-alert> -->
-      <el-carousel trigger="click" arrow="always" :autoplay="false">
+      <el-carousel
+        trigger="click"
+        arrow="always"
+        :autoplay="false"
+        height="250px"
+      >
         <el-carousel-item v-for="(img, idx) in stay.imgUrls" :key="idx">
           <router-link class="router-link" :to="'/stay/' + stay._id">
             <img class="preview_img" :src="stay.imgUrls[idx]" />
