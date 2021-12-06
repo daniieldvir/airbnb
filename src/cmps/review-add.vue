@@ -4,11 +4,11 @@
                 <legend>
             <button class="add-btn" @click="toggleAddReview"> {{(this.reviewToggle) ? 'Cancel' : 'Add a review'}} </button></legend>
             <form class="form-review flex column" v-if= "reviewToggle" @submit.prevent="save" >
-                <label> Full Name: <input ref="input" id="fullName" v-model="stayReview.fName" type="text" placeholder="Your name..."> </label>
+                <!-- <label> Full Name: <input ref="input" id="fullName" v-model="stayReview.fName" type="text" placeholder="Your name..."> </label> -->
                 <div class="stars">
                     <span v-for="(num,idx) in 5" :key="idx" class="fa fa-star" :class="{checked:num <= stayReview.rate}" @click="changeColor(num)"></span>
                 </div>
-                <label> Read At: <input type="date" v-model="stayReview.readAt"></label>
+                <!-- <label> Created At: <input type="date" v-model="stayReview.createdAt"></label> -->
                 <label> <textarea v-model.trim="stayReview.text" cols="40" rows="5" placeholder="Add Free Text..."> </textarea> </label>
                 <button class="submit-btn btn">Submit Review</button>
             </form>

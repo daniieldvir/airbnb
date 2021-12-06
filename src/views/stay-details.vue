@@ -91,9 +91,9 @@
     </div>
     <div v-if="stay.reviews.length" class="reviews-section-container">
       <stay-rating :reviews="reviews" />
-      <!-- <el-button @click.stop="toggleReview">Add Review</el-button> -->
       <review-list :reviews="reviews" />
-      <review-add @addReview="addReview" @toggleReview="toggleReview" />
+      <!-- <el-button @click.stop="toggleReview">Add Review</el-button> -->
+      <!-- <review-add @addReview="addReview" @toggleReview="toggleReview" /> -->
     </div>
 
     <div class="map-section">
