@@ -5,9 +5,10 @@
       @filteredCity="filterCity"
       @filterClicked="enlargeSearchBtn"
     />
+    <!-- OLD DATE PICKER: -->
+    <!-- <date-picker @filtered="setDates" @filterClicked="enlargeSearchBtn" /> -->
 
     <date-picker @filtered="setDates" @filterClicked="enlargeSearchBtn" />
-
     <guest-filter @addedGuests="addGuests" @filterClicked="enlargeSearchBtn" />
     <div class="search-btn-container flex">
       <button class="flex search-btn" @click="filter">
@@ -19,7 +20,8 @@
 </template>
 
 <script>
-import datePicker from '../cmps/date-picker.vue';
+import datePicker from '../cmps/filters/date-picker-2.vue';
+// import datePicker from '../cmps/date-picker.vue';
 import guestFilter from '../cmps/guest-filter.vue';
 import cityFilter from '../cmps/city-filter-copy.vue';
 export default {

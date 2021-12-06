@@ -1,0 +1,61 @@
+.date-picker-cont {
+  display: flex;
+  border-left: 1px solid $clr7;
+  border-right: 1px solid $clr7;
+  font-size: 1rem;
+  line-height: 1.3em;
+  cursor: pointer;
+  // & label {
+  //   display: none;
+  // }
+
+  & .block:first-of-type {
+    border-right: 1px solid $clr7;
+  }
+  ::placeholder {
+    color: $clr4;
+  }
+}
+.block {
+  width: max-content;
+  //   background-color: lightgreen;
+  padding: 0px 80px 0px 23px;
+
+  & :last-child {
+    border-right: none;
+  }
+  & label {
+    font-size: 0.875rem;
+    font-weight: 800;
+    color: black;
+  }
+}
+.el-date-editor.el-input,
+.el-date-editor.el-input__inner {
+  width: max-content;
+  //   background-color: lightseagreen;
+}
+.el-input__inner {
+  width: 80px;
+  //   background-color: lightcoral;
+  border: none;
+  height: 23px;
+  font-size: 1rem;
+  font-family: manrope;
+}
+
+.el-input--prefix .el-input__inner {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.el-icon-date:before {
+  display: none;
+}
+
+// @media screen and (min-width: 1080px) {
+//   .date-picker-cont {
+//     & label {
+//       display: block;
+//     }
+//   }
+// }

@@ -3,7 +3,9 @@
     <!-- <button @click="toggleLocations">Where are you going?</button> -->
     <div class="toggel-btn" @click="toggleLocations">
       <label>Location</label>
-      {{ filterBy.city || 'Where are you going?' }}
+      <span>
+        {{ filterBy.city || 'Where are you going?' }}
+      </span>
     </div>
 
     <ul
