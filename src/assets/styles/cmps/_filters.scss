@@ -10,7 +10,7 @@
   display: grid;
   // grid-template-columns: repeat(var(--num-col), 1fr);
   // grid-template-columns: 32% 40% 1fr 8.1%;
-  grid-template-columns: 1.5fr 2fr 1fr 60px;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 60px;
   // grid-template-columns: 242px 359px 157px 65px;
   // grid-auto-rows: var(--row-height);
   // justify-content: center;
@@ -37,61 +37,66 @@
     align-items: center;
     // justify-content: center;
     // margin-left: 30px;
-    border-right: 1px solid rgb(196, 196, 196);
+    // border-right: 1px solid rgb(196, 196, 196);
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
   }
-  .date-picker {
-    grid-column: 2;
-    // grid-row: span 1;
-    border-right: 1px solid rgb(196, 196, 196);
 
-    .date-picker-label {
-      // width: max-content;
-      width: 100%;
-      // gap: 20px;
-      align-self: center;
-      // background-color: chartreuse;
-      display: flex;
-      justify-content: space-evenly;
-      margin: 0px;
-    }
-
-    .date-picker-table {
-      // display: flex;
-      // justify-content: end;
-      // justify-content: center;
-      // background-color: chocolate;
-      // justify-content: space-evenly;
-      height: 50%;
-    }
-    .el-range-editor {
-      // width: 0px;
-      display: flex;
-    }
-    .el-input__inner {
-      border: none;
-      display: flex;
-      // background-color: burlywood;
-      height: 20px;
-      width: 0px;
-      padding: 0px;
-      // align-self: center;
-      // display: none;
-      // justify-content: space-between;
-    }
-    .el-range__icon {
-      color: rgba(255, 255, 255, 0);
-    }
-    .el-range-separator {
-      margin-left: 35px;
-    }
+  .date-picker-cont {
+    grid-column: 2/4;
+    // grid-row: span 2;
   }
+  // .date-picker {
+  //   grid-column: 2;
+  //   // grid-row: span 1;
+  //   border-right: 1px solid rgb(196, 196, 196);
+
+  //   .date-picker-label {
+  //     // width: max-content;
+  //     width: 100%;
+  //     // gap: 20px;
+  //     align-self: center;
+  //     // background-color: chartreuse;
+  //     display: flex;
+  //     justify-content: space-evenly;
+  //     margin: 0px;
+  //   }
+
+  // .date-picker-table {
+  //   // display: flex;
+  //   // justify-content: end;
+  //   // justify-content: center;
+  //   // background-color: chocolate;
+  //   // justify-content: space-evenly;
+  //   height: 50%;
+  // }
+  // .el-range-editor {
+  //   // width: 0px;
+  //   display: flex;
+  // }
+  // .el-input__inner {
+  //   border: none;
+  //   display: flex;
+  //   // background-color: burlywood;
+  //   height: 20px;
+  //   width: 0px;
+  //   padding: 0px;
+  //   // align-self: center;
+  //   // display: none;
+  //   // justify-content: space-between;
+  // }
+  // .el-range__icon {
+  //   color: rgba(255, 255, 255, 0);
+  // }
+  // .el-range-separator {
+  //   margin-left: 35px;
+  // }
+  // }
   .guest-filter {
     // grid-column: 6 /8;
     // grid-row: span 1;
-    grid-column: 3;
+    grid-column: 4;
 
     align-items: center;
     // margin-left: 30px;
@@ -105,7 +110,7 @@
   .search-btn {
     // grid-column: 8 / 9;
     // grid-row: span 1;
-    grid-column: 4;
+    grid-column: 5;
     height: 45px;
     justify-content: center;
     align-items: center;
@@ -143,11 +148,11 @@
       margin: 0px 27px;
     }
   }
-  .el-range-input {
-    // background-color: chartreuse;
-    width: 148px;
-    height: 20px;
-  }
+  // .el-range-input {
+  //   // background-color: chartreuse;
+  //   width: 148px;
+  //   height: 20px;
+  // }
 
   .date-picker {
     align-self: center;
