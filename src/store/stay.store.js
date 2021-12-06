@@ -22,6 +22,7 @@ export const stayStore = {
       return state.filterBy;
     },
     staysToShow(state) {
+      console.log(state.stays);
       return state.stays;
     },
     avgPrice(state) {
