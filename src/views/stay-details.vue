@@ -84,15 +84,16 @@
           </div>
         </div>
       </div>
+
       <div class="stay-details-right-container">
         <stay-checkout :stay="stay"></stay-checkout>
       </div>
     </div>
     <div v-if="stay.reviews.length" class="reviews-section-container">
       <stay-rating :reviews="reviews" />
+      <review-list :reviews="reviews" />
       <!-- <el-button @click.stop="toggleReview">Add Review</el-button> -->
       <!-- <review-add @addReview="addReview" @toggleReview="toggleReview" /> -->
-      <review-list :reviews="reviews" />
     </div>
 
     <div class="map-section">
@@ -124,6 +125,7 @@ import stayCheckout from '@/cmps/stay-checkout.vue';
 import reviewList from '@/cmps/review-list.vue';
 import stayRating from '@/cmps/stay-rating.vue';
 import longText from '@/cmps/long-text.vue';
+import reviewAdd from '@/cmps/review-add.vue'
 // import '@fortawesome/fontawesome-free/js/all.js';
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // import {faHome,faWifi,faPaw,} from '@fortawesome/free-solid-svg-icons'
@@ -183,6 +185,6 @@ export default {
       // return 'wifi';
     },
   },
-  components: { GmapMap, stayCheckout, reviewList, stayRating, longText },
+  components: { GmapMap, stayCheckout, reviewList, stayRating, longText,reviewAdd },
 };
 </script>

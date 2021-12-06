@@ -1,36 +1,29 @@
-
-export default {
-    props: ['book'],
-    template: `
-        <section class="review-add" v-if="book">
+<template> 
+        <section class="review-add" v-if="stay">
             <fieldset>
                 <legend>
             <button class="add-btn" @click="toggleAddReview"> {{(this.reviewToggle) ? 'Cancel' : 'Add a review'}} </button></legend>
             <form class="form-review flex column" v-if= "reviewToggle" @submit.prevent="save" >
-                <label> Full Name: <input ref="input" id="fullName" v-model="bookReview.fName" type="text" placeholder="Your name..."> </label>
-                <!-- Rate: <select v-model="bookReview.rate" >
-                         <option>1</option>
-                         <option>2</option>
-                         <option>3</option>
-                         <option>4</option>
-                         <option>5</option>
-                     </select> -->
+                <!-- <label> Full Name: <input ref="input" id="fullName" v-model="stayReview.fName" type="text" placeholder="Your name..."> </label> -->
                 <div class="stars">
-                    <span v-for="num in 5" class="fa fa-star" :class="{checked:num <= bookReview.rate}" @click="changeColor(num)"></span>
+                    <span v-for="(num,idx) in 5" :key="idx" class="fa fa-star" :class="{checked:num <= stayReview.rate}" @click="changeColor(num)"></span>
                 </div>
-                <label> Read At: <input type="date" v-model="bookReview.readAt"></label>
-                <label> <textarea v-model.trim="bookReview.text" cols="40" rows="5" placeholder="Add Free Text..."> </textarea> </label>
+                <!-- <label> Created At: <input type="date" v-model="stayReview.createdAt"></label> -->
+                <label> <textarea v-model.trim="stayReview.text" cols="40" rows="5" placeholder="Add Free Text..."> </textarea> </label>
                 <button class="submit-btn btn">Submit Review</button>
             </form>
-</fieldset>
-        </section>
-    `,
+        </fieldset>
+    </section>
+</template>
 
+<script>
+export default {
+    props: ['stay'],
     data() {
         return {
-            // book: null,
-            bookReview: {
-                fName: 'Books Reader',
+            // stay: null,
+            stayReview: {
+                fName: 'Stays Reader',
                 rate: 3,
                 readAt: new Date().toDateString(),
                 text: '',
@@ -42,13 +35,13 @@ export default {
 
     },
     created() {
-        this.bookReview.readAt = this.currDate
+        this.stayReview.readAt = this.currDate
 
 
     },
     methods: {
         resetReview() {
-            this.bookReview = {
+            this.stayReview = {
                 text: '',
                 fullName: '',
                 readAt: new Date().toDateString(),
@@ -57,7 +50,7 @@ export default {
         },
 
         save() {
-            this.$emit('saveReview', this.bookReview)
+            this.$emit('saveReview', this.stayReview)
             this.resetReview()
             this.toggleAddReview();
 
@@ -85,9 +78,10 @@ export default {
             return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
         },
 
-        bookId() {
-            return this.$route.params.bookId
+        stayId() {
+            return this.$route.params.stayId
         },
     },
 
 }
+</script>
