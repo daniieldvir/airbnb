@@ -19,7 +19,6 @@ export const stayStore = {
     },
     currStay: null,
     emptyOrder: {
-      _id: '',
       hostId: '',
       createdAt: Date.now(),
       buyer: {
@@ -31,8 +30,6 @@ export const stayStore = {
         checkInDate: '',
         checkOutDate: '',
       },
-      startDate: '',
-      endDate: '',
       totalNights: 0,
       totalGuests: 0,
       stay: {

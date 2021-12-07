@@ -38,8 +38,11 @@
             <!-- <span><font-awesome-icon icon="chevron-down" /></span> -->
             <!-- </div> -->
           </div>
+          <span :class="{ 'show-alert': userAlert }" class="user-alert">{{
+            userAlert
+          }}</span>
           <div class="btn-checkout-container">
-            <button class="btn-checkout" @click="checkAvailability">
+            <button class="btn-checkout" @click="checkOut">
               {{ btnTxt }}
             </button>
           </div>
@@ -66,6 +69,7 @@
       </div>
     </section>
     <checkout-modal
+      :txt="userAlert"
       class="checkout-modal"
       v-if="isModalOpen"
       @closeModal="closeModal"
@@ -91,8 +95,9 @@ export default {
       isModalOpen: false,
       order: null,
       showOrderPreview: false,
+      isOrderReady: false,
       btnTxt: 'Check availability',
-      // guestShouldShow: false,
+      userAlert: 0,
     };
   },
 
@@ -102,14 +107,13 @@ export default {
   },
   computed: {
     formattedReviews() {
-      //maybe 0 reviews
       if (!this.stay.reviews.length) return `(new)`;
       if (this.stay.reviews.length === 1)
         return `(${this.stay.reviews.length} review)`;
       else if (this.stay.reviews.length > 1)
         return `(${this.stay.reviews.length} reviews)`;
     },
-    btnTxt() {},
+    // btnTxt() {},
     totalPrice() {
       return this.order.totalPrice;
     },
@@ -128,36 +132,46 @@ export default {
     },
     setGuests(numOfGuests) {
       console.log(numOfGuests);
-      this.order.guests = numOfGuests;
-      // this.filterBy.guests = filterBy.guests;
-      // this.filterBy.totalGuests = filterBy.totalGuests;
+      this.order.totalGuests = numOfGuests;
     },
-    checkAvailability() {
+    checkOut() {
       const { checkInDate, checkOutDate } = this.order.dates;
-      const { totalGuests } = this.order;
-      if (checkInDate && checkOutDate) {
-        this.prepareOrder();
-        this.btnTxt = 'Reserve';
+      if (!this.isOrderReady) {
+        if (checkInDate && checkOutDate) {
+          this.prepareOrder();
+        } else {
+          this.userAlert = 'Please enter dates';
+        }
       } else {
-        console.log('ENTER DATES');
+        this.userAlert = 'Thank you for booking!';
+        this.showCheckOutModal('Thank you for booking!');
+        this.$emit('orderReady', this.order);
       }
+      // const { totalGuests } = this.order;
     },
     prepareOrder() {
       const { checkInDate, checkOutDate } = this.order.dates;
       const difference = checkOutDate.getTime() - checkInDate.getTime();
       const nights = Math.ceil(difference / (1000 * 3600 * 24));
       const totalPrice = this.stay.price * nights;
-
+      if (totalPrice < 0) {
+        this.userAlert = 'Please Enter valid dates';
+        return;
+      }
+      this.btnTxt = 'Reserve';
       this.order.totalPrice = totalPrice;
       this.order.totalNights = nights;
 
+      this.isOrderReady = true;
+      this.userAlert = '';
       this.showOrderPreview = true;
     },
-    filter() {
-      this.$emit('filtered', this.filterBy);
-    },
-    checkout() {
+    // filter() {
+    //   this.$emit('filtered', this.filterBy);
+    // },
+    showCheckOutModal() {
       this.isModalOpen = true;
+      setTimeout(this.closeModal, 5000);
     },
     closeModal() {
       this.isModalOpen = false;
