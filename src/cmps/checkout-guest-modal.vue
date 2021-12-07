@@ -2,7 +2,7 @@
   <section class="checkout-guest-modal">
     <div class="toggle-btn">
       <label @click="toggleGuests"
-        >Guests
+        >GUESTS
         <span class="add-guests-input">Add Guests</span>
       </label>
       <font-awesome-icon icon="chevron-down" />

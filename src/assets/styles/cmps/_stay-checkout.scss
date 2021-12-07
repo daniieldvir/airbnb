@@ -122,7 +122,16 @@
       }
       .btn-checkout:hover,
       .btn-checkout:focus {
-        animation: animatedBackground 3s infinite alternate-reverse;
+        // animation: animatedBackground 3s infinite alternate-reverse;
+        --mouse-x: 0px;
+        --mouse-y: 0px;
+
+        // background-position:calc((100 - var(--mouse-x, 0))  calc((100 - var(--mouse-y, 0)) * 1%);
+        // background-position: calc(
+        //   (100% - -var(--mouse-x), 0) calc(100%) - -var(--mouse-y),
+        //   0
+        // );
+        background-position: var(--x) var(--y);
       }
       @keyframes animatedBackground {
         from {

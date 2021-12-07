@@ -5,7 +5,7 @@
 
 .main-container {
   display: grid;
-  grid-template-columns: 70px 1fr 70px;
+  grid-template-columns: $layout-padding * 1px 1fr $layout-padding * 1px;
 
   > * {
     grid-column: 2;
@@ -17,33 +17,32 @@
 
   @include for-narrow-layout {
     grid-template-columns:
-      minmax(70px, 1fr)
+      minmax($layout-padding * 1px, 1fr)
       minmax(auto, $mobile-breakpoint)
-      minmax(70px, 1fr);
+      minmax($layout-padding * 1px, 1fr);
   }
   @include for-normal-layout {
     grid-template-columns:
-      minmax(70px, 1fr)
+      minmax($layout-padding * 1px, 1fr)
       minmax(auto, $narrow-breakpoint)
-      minmax(70px, 1fr);
+      minmax($layout-padding * 1px, 1fr);
   }
   @include for-wide-layout {
     grid-template-columns:
-      minmax(70px, 1fr)
+      minmax($layout-padding * 1px, 1fr)
       minmax(auto, $normal-breakpoint)
-      minmax(70px, 1fr);
+      minmax($layout-padding * 1px, 1fr);
   }
-
-  @include for-wide-layout {
+  @include for-ex-wide-layout {
     grid-template-columns:
-      minmax(70px, 1fr)
+      minmax($layout-padding * 1px, 1fr)
       minmax(auto, $wide-breakpoint)
-      minmax(70px, 1fr);
+      minmax($layout-padding * 1px, 1fr);
   }
 }
 
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 70px;
+  grid-gap: $layout-padding * 1px;
 }

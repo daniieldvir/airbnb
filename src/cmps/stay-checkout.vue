@@ -39,6 +39,7 @@
             <!-- <span><font-awesome-icon icon="chevron-down" /></span> -->
             <!-- </div> -->
           </div>
+          <move> </move>
           <div class="btn-checkout-container">
             <button class="btn-checkout" @click="checkout">
               Check availability
@@ -60,6 +61,7 @@ import checkoutGuestModal from './checkout-guest-modal.vue';
 import datePicker from './filters/date-picker-2.vue';
 // import guestFilter from './guest-filter.vue';
 import checkoutModal from './checkout-modal.vue';
+import move from './move.vue';
 
 export default {
   props: {
@@ -118,6 +120,6 @@ export default {
       this.isModalOpen = false;
     },
   },
-  components: { datePicker, checkoutGuestModal, checkoutModal },
+  components: { datePicker, checkoutGuestModal, checkoutModal, move },
 };
 </script>
