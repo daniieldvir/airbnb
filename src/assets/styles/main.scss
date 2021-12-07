@@ -25,8 +25,10 @@
 @import 'cmps/review-preview';
 @import 'cmps/stay-rating';
 @import 'cmps/long-text';
-@import url('cmps/_home-page-list.scss');
-@import url('cmps/_checkout-modal.scss');
+@import 'cmps/_home-page-list.scss';
+@import 'cmps/_checkout-modal.scss';
+@import 'cmps/_app-footer.scss';
+@import 'cmps/_footer-list.scss';
 
 // Views
 @import 'views/home-page';

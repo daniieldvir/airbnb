@@ -1,0 +1,29 @@
+.footer {
+  background-color: $clr8;
+  border-top: 1px solid $clr8;
+  font-size: 1.75rem;
+  font-weight: 900;
+
+  .copy-rights {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    color: $clr2;
+
+    .host-link {
+      font-family: airbnb-medium, sans-serif;
+      margin-left: 5px;
+    }
+
+    .main-router-link {
+      width: max-content;
+      height: max-content;
+      text-decoration: none;
+      color: $clr2;
+    }
+
+    span {
+      margin: 5px;
+    }
+  }
+}
