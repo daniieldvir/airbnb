@@ -1,22 +1,22 @@
 <template>
   <section class="footer-container">
-    <!-- <div > -->
-    <ul class="footer-list clean-list">
-      <h4>Top Rated</h4>
-      <li
-        class="footer-card pointer"
-        v-for="place in places"
-        :key="place.name"
-        @click="cardClicked(place)"
-      >
-        <div class="top-footer">
-          <template v-if="place.avgRate"> </template>
-          <p>{{ place.name }}</p>
-          <p>{{ place.loc.city }}</p>
-        </div>
-      </li>
-    </ul>
-    <!-- </div> -->
+    <template>
+      <p class="list-title">{{ listTitle }}</p>
+
+      <ul class="footer-list clean-list">
+        <li
+          class="footer-card pointer"
+          v-for="place in places"
+          :key="place.name"
+          @click="cardClicked(place)"
+        >
+          <div class="top-footer">
+            <template v-if="place.avgRate" />
+            <p>{{ place.name }}</p>
+          </div>
+        </li>
+      </ul>
+    </template>
   </section>
 </template>
 

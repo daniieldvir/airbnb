@@ -1,10 +1,14 @@
-.footer-list {
-  font-size: 0.75rem;
-  h4 {
+.footer-container {
+  .list-title {
+    font-size: 0.8125rem;
     font-family: airbnb-medium, sans-serif;
   }
 
-  .footer-card {
-    padding-bottom: 5px;
+  .footer-list {
+    font-size: 0.75rem;
+
+    .footer-card {
+      padding-bottom: 5px;
+    }
   }
 }
