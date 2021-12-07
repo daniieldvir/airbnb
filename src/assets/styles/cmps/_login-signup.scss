@@ -1,0 +1,41 @@
+/* LOGIN-SIGNUP CMP */
+.login-signup {
+  width: 20em;
+  margin: 0 auto;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-signup form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-signup form label {
+  font-size: 1.1em;
+}
+
+.login-signup form input {
+  font-size: 1.1em;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.3em;
+  width: 12em;
+}
+
+.login-signup form button {
+  margin: 0.2em;
+}
+
+.login-signup form span {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-signup form p {
+  font-size: 1em;
+}

@@ -61,18 +61,18 @@ _createUsers();
 //   // socketService.emit('set-user-socket', user._id);
 //   // if (user) return _saveLocalUser(user)
 // }
-// async function signup(userCred) {
-//   userCred.score = 10000;
-//   const user = await storageService.post('user', userCred);
-//   // const user = await httpService.post('auth/signup', userCred)
-//   // socketService.emit('set-user-socket', user._id);
-//   return _saveLocalUser(user);
-// }
-// async function logout() {
-//   sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER);
-//   // socketService.emit('unset-user-socket');
-//   // return await httpService.post('auth/logout')
-// }
+async function signup(userCred) {
+  userCred.score = 10000;
+  const user = await storageService.post('user', userCred);
+  // const user = await httpService.post('auth/signup', userCred)
+  // socketService.emit('set-user-socket', user._id);
+  return _saveLocalUser(user);
+}
+async function logout() {
+  sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER);
+  // socketService.emit('unset-user-socket');
+  // return await httpService.post('auth/logout')
+}
 
 // async function changeScore(by) {
 //   const user = getLoggedInUser();
@@ -82,16 +82,16 @@ _createUsers();
 //   return user.score;
 // }
 
-// function _saveLocalUser(user) {
-//   sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user));
-//   return user;
-// }
+function _saveLocalUser(user) {
+  sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user));
+  return user;
+}
 
-// function getLoggedInUser() {
-//   return JSON.parse(
-//     sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || 'null'
-//   );
-// }
+function getLoggedInUser() {
+  return JSON.parse(
+    sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER) || 'null'
+  );
+}
 
 // // (async ()=>{
 // //     await userService.signup({fullname: 'Puki Norma', username: 'user1', password:'123',score: 10000, isAdmin: false})

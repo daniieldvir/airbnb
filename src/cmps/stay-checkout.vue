@@ -45,6 +45,7 @@
               class="select-guests-container flex space-between"
               @setGuests="setGuests"
             />
+            
 
             <!-- <div class="select-guests-container flex space-between"> -->
             <!-- <guest-filter/> -->
@@ -61,8 +62,8 @@
                         </div> -->
           </div>
           <div class="btn-checkout-container">
-            <button class="btn-checkout" @click="checkout">
-              Check availability
+            <button class="btn-checkout" @mousemove="changeBtnColor" @click="checkout">
+              <span>Check availability</span>
             </button>
           </div>
         </div>
@@ -124,6 +125,18 @@ export default {
     },
     filter() {
       this.$emit('filtered', this.filterBy);
+    },
+    changeBtnColor(e){
+      // const x = e.pageX - e.target.offsetLeft
+      // const y = e.pageY - e.target.offsetTop
+       const x = e.offsetX - e.target.offsetLeft
+      const y = e.offsetY - e.target.offsetLeft
+      e.target.style.setProperty('--x', `${x}px`)
+      e.target.style.setProperty('--y', `${y}px`)
+      // e.target.style.setProperty('--x', `${ x }px`)
+      // e.target.style.setProperty('--y', `${ y }px`)
+      console.log('e', e);
+      console.log('x,y',x,y);
     },
     checkout() {
       Swal.fire({

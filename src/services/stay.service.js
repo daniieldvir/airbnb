@@ -17,6 +17,7 @@ export const stayService = {
 };
 
 function query(filterBy) {
+  console.log('filterBy', filterBy);
   let stays;
   return storageService.query(STAYS_KEY).then((allStays) => {
     stays = allStays.filter((stay) => {
@@ -68,7 +69,7 @@ function save(stay) {
   return savedStay;
 }
 
-function getEmpty() {}
+function getEmpty() { }
 
 function _createStays() {
   const stays = [

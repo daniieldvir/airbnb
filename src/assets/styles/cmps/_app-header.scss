@@ -109,3 +109,21 @@ header {
     padding: 15px;
   }
 }
+.nav-content {
+  .dropdown {
+    .user-logo {
+      margin-top: 1px;
+      height: 27px;
+      width: 27px;
+      border-radius: 15px;
+      background-color: #ddd;
+      text-align: center;
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -31,19 +31,28 @@
             class="flex align-center user-btn dropbtn"
           >
             <font-awesome-icon icon="bars" class="bars" />
-            <font-awesome-icon icon="user-circle" />
+            <!-- <font-awesome-icon icon="user-circle" /> -->
+            <div class="user-logo"><img v-if="loggedInUser" :src="imgUrl" alt="user image" />
+                <font-awesome-icon v-else icon="user-circle" />
+            </div>
           </button>
           <div
-            id="myDropdown"
-            v-bind:class="{ show: showUserModal }"
-            class="dropdown-content"
-          >
-            <a href="#">Sign up</a>
-            <a href="#">Log in</a>
+            id="myDropdown" :class="{ show: showUserModal }" class="dropdown-content">
+              <!-- <router-link v-if="isLoggedInUser" :to="'/profile/' + userId" >
+              Profile
+                <span v-if="notifications"></span>
+              </router-link> -->
+              <!-- <router-link v-if="isLoggedInUser" :to="'/wishlist/' + userId" >
+                  <span>Wishlist</span>
+              </router-link> -->
+            <a @click.stop="toggleSignup">Sign up</a>
+            <a @click.stop="toggleLogin">Log in</a>
+            <a v-if="loggedInUser" @click.stop="logout">Log out</a>
             <hr />
             <a href="#">Host your home</a>
           </div>
         </div>
+        <!-- <login-signup v-if="showLogin"></login-signup> -->
       </div>
     </nav>
     <!-- <section class="loggedin-user" v-if="loggedInUser">
@@ -54,6 +63,7 @@
 </template>
 <script>
 import secondaryFilters from '../cmps/filters/secondary-filters.vue';
+// import loginSignup from './login-signup.vue';
 export default {
   data() {
     return {
@@ -61,6 +71,7 @@ export default {
       onExplorePage: false,
       showUserModal: false,
       topOfPage: true,
+      showLogin:false
     };
   },
   beforeMount() {
@@ -75,6 +86,19 @@ export default {
       immediate: true,
     },
   },
+  computed:{
+    loggedInUser() {
+      return this.$store.getters.loggedInUser;
+    }, 
+    imgUrl() {
+			const user = this.$store.getters.loggedInUser;
+			if (user && user?.imgUrl) {
+				return user.imgUrl
+			} else {
+				return ''
+			}
+		},
+  },
   methods: {
     toggleUserModal() {
       this.showUserModal = !this.showUserModal;
@@ -87,9 +111,22 @@ export default {
       if (window.pageYOffset > 0) this.topOfPage = false;
       else this.topOfPage = true;
     },
+    toggleLogin(){
+      this.$emit('toggleLogin');
+      this.showUserModal = false;
+    },
+    toggleSignup(){
+      this.$emit('toggleSignup');
+      this.showUserModal = false;
+    },
+    logout(){
+      this.$emit('logout');
+      this.showUserModal = false;
+    }
   },
   components: {
     secondaryFilters,
+    // loginSignup,
   },
 };
 </script>
