@@ -2,10 +2,13 @@
   <section class="city-filter flex">
     <!-- <button @click="toggleLocations">Where are you going?</button> -->
     <div class="toggel-btn" @click="toggleLocations">
-      <label>Location</label>
-      <span>
-        {{ filterBy.city || 'Where are you going?' }}
-      </span>
+      <span v-if="onExplorePage">{{ filterBy.city || 'Location' }}</span>
+      <template v-else>
+        <label>Location</label>
+        <span>
+          {{ filterBy.city || 'Where are you going?' }}
+        </span>
+      </template>
     </div>
 
     <ul
@@ -28,6 +31,7 @@ export default {
   name: 'city-filter',
   props: {
     currFilterBy: Object,
+    onExplorePage: Boolean,
   },
   data() {
     return {

@@ -3,18 +3,18 @@
     v-bind:class="{ 'white-header': !onHomePage, 'nav-scrolled': !topOfPage }"
     class="main-container"
   >
-    <nav class="main-nav main-container">
-      <div class="flex column">
-        <router-link class="main-router-link" to="/">
-          <!-- <div class="logo">RentMe<font-awesome-icon class="icon" icon="airbnb" /></div> -->
-          <div class="logo">
-            <font-awesome-icon :icon="['fab', 'airbnb']" />
-            <span>rentme</span>
-          </div>
-        </router-link>
-        <!-- FILTERS -->
-        <secondary-filters v-if="onExplorePage" />
-      </div>
+    <main-filters v-if="onExplorePage" :onExplorePage="onExplorePage" />
+    <nav class="main-nav">
+      <!-- <div class="logo-cont flex"> -->
+      <router-link class="main-router-link" to="/">
+        <!-- <div class="logo">RentMe<font-awesome-icon class="icon" icon="airbnb" /></div> -->
+        <div class="logo">
+          <font-awesome-icon :icon="['fab', 'airbnb']" />
+          <span>rentme</span>
+        </div>
+      </router-link>
+      <!-- </div> -->
+      <!-- FILTERS -->
 
       <div class="flex nav-content">
         <router-link class="main-router-link" to="/explore"
@@ -50,9 +50,13 @@
       <router-link :to="`/user/${loggedInUser._id}`"> {{}} </router-link>
       <span>{{ loggedInUser.score }}</span>
     </section> -->
+    <section>
+      <secondary-filters v-if="onExplorePage" />
+    </section>
   </header>
 </template>
 <script>
+import mainFilters from '../cmps/stay-filter.vue';
 import secondaryFilters from '../cmps/filters/secondary-filters.vue';
 export default {
   data() {
@@ -61,6 +65,7 @@ export default {
       onExplorePage: false,
       showUserModal: false,
       topOfPage: true,
+      showMainFilters: false,
     };
   },
   beforeMount() {
@@ -71,6 +76,7 @@ export default {
       handler() {
         this.onHomePage = this.$route.name !== 'Home' ? false : true;
         this.onExplorePage = this.$route.name === 'Explore' ? true : false;
+        console.log(this.onHomePage);
       },
       immediate: true,
     },
@@ -89,6 +95,7 @@ export default {
     },
   },
   components: {
+    mainFilters,
     secondaryFilters,
   },
 };

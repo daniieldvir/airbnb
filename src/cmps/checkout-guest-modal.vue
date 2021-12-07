@@ -1,17 +1,27 @@
 <template>
   <section class="checkout-guest-modal">
-    <label class="toggle-btn" @click="toggleGuests">Guests
-    <span class="add-guests-input">Add Guests</span>
-    </label>
+    <div class="toggle-btn">
+      <label @click="toggleGuests"
+        >Guests
+        <span class="add-guests-input">Add Guests</span>
+      </label>
+      <font-awesome-icon icon="chevron-down" />
+    </div>
     <!-- <button @click="toggleGuests">Add Guests</button> -->
     <div v-if="shouldShow" @blur="toggleGuests" class="add-guests">
-      <div class="guest-item flex space-between align-center" v-for="(value, name, idx) in filterBy.guests" :key="idx">
-        <div >
+      <div
+        class="guest-item flex space-between align-center"
+        v-for="(value, name, idx) in filterBy.guests"
+        :key="idx"
+      >
+        <div>
           <h3>{{ name[0].toUpperCase() + name.substring(1) }}</h3>
           <h4>{{ msgs[idx] }}</h4>
         </div>
         <div class="action-btns flex align-center justify-center">
-          <button class="reduce-btn" @click="addGuest(-1, name)">&ndash;</button>
+          <button class="reduce-btn" @click="addGuest(-1, name)">
+            &ndash;
+          </button>
           <div class="counter">{{ value }}</div>
           <button class="add-btn" @click="addGuest(1, name)">+</button>
         </div>
@@ -24,7 +34,7 @@
 <script>
 export default {
   name: 'checkout-guest-modal',
-  props: {  },
+  props: {},
   data() {
     return {
       filterBy: this.currFilterBy,
@@ -55,6 +65,3 @@ export default {
   components: {},
 };
 </script>
-
-
-

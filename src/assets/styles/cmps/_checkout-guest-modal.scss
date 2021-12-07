@@ -22,14 +22,26 @@
 
   .toggle-btn {
     display: flex;
-    flex-direction: column;
-    font-size: 0.8rem;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
     cursor: pointer;
+<<<<<<< HEAD
     margin-left: 30px;
     font-family: airbnb-medium;
     color: $clr2;
     height: 57px;
+=======
+    padding: 8px 15px;
+    width: 100%;
+    height: 100%;
+    font-family: manrope-bold;
+>>>>>>> 16bfaa51618fc637764fa9c17d46fd9fcfa48d90
 
+    & label {
+      display: flex;
+      flex-direction: column;
+    }
     span {
       font-family: airbnb-light, sans-serif;
     }

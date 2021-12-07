@@ -87,7 +87,6 @@ export default {
   },
   methods: {
     setFilter(filterBy) {
-      // console.log('setfilter home', filterBy);
       this.$store.dispatch({ type: 'setFilter', filterBy });
       this.$router.push('/explore');
     },

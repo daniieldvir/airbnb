@@ -8,7 +8,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999999;
+  z-index: 99;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,22 +20,38 @@ header {
   background: var(--background);
   color: var(--text);
 
+  .small-filter {
+    position: fixed;
+    left: 50%;
+    top: 1rem;
+    transform: translate(-50%);
+    z-index: 999;
+  }
+
   .main-nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    .logo-cont {
+      width: 0px;
+    }
 
     .main-router-link {
       width: max-content;
       height: max-content;
-      margin-right: 30px;
       text-decoration: none;
       color: var(--text);
-
+      &:not(:first-of-type) {
+        margin: 0px 12.5px;
+      }
       .logo {
-        width: max-content;
+        // background-color: blue;
+        // width: max-content;
         color: var(--logo);
         font-size: rem(25px);
         font-weight: bold;
+        // align-self:baseline;
+        // align-self: ;
         & .svg-inline--fa {
           font-size: 2rem;
         }
@@ -80,6 +96,7 @@ header {
 
   box-shadow: 0 3px 20px rgba($color: black, $alpha: 0.2);
 }
+
 .white-header {
   --background: white;
   --text: #222222;
@@ -87,6 +104,10 @@ header {
   border-bottom: 1px solid $clr8;
   background: var(--background);
   color: var(--text);
+
+  // background-color: blue;
+  // margin-left: auto;
+  // margin-right: auto;
 
   &.logo {
     color: var(--logo);
@@ -97,7 +118,8 @@ header {
 }
 
 .nav-content .dropdown-content {
-  right: 0;
+  // right: 0;
+  // margin-left: 30px;
 
   & a:first-of-type {
     font-weight: bold;
