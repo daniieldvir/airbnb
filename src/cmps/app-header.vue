@@ -4,10 +4,9 @@
     class="main-container"
   >
     <main-filters v-if="onExplorePage" :onExplorePage="onExplorePage" />
+
     <nav class="main-nav">
-      <!-- <div class="logo-cont flex"> -->
       <router-link class="main-router-link" to="/">
-        <!-- <div class="logo">RentMe<font-awesome-icon class="icon" icon="airbnb" /></div> -->
         <div class="logo">
           <font-awesome-icon :icon="['fab', 'airbnb']" />
           <span>rentme</span>
@@ -15,7 +14,6 @@
       </router-link>
       <!-- </div> -->
       <!-- FILTERS -->
-
       <div class="flex nav-content">
         <router-link class="main-router-link" to="/explore"
           >Explore</router-link
@@ -24,7 +22,6 @@
           >Become A Host</router-link
         >
 
-        <!-- <router-link class="main-router-link" to="/login"></router-link> -->
         <div class="dropdown" v-click-outside="onClickOutside">
           <button
             @click="toggleUserModal"
@@ -45,7 +42,9 @@
           </div>
         </div>
       </div>
+      <!-- <button class="btn-menu" onclick="toggleMenu()">☰</button> -->
     </nav>
+
     <!-- <section class="loggedin-user" v-if="loggedInUser">
       <router-link :to="`/user/${loggedInUser._id}`"> {{}} </router-link>
       <span>{{ loggedInUser.score }}</span>

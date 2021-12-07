@@ -19,6 +19,8 @@ export default {
     onMove(ev) {
       this.x = ev.clientX;
       this.y = ev.clientY;
+      console.log('x', ev.clientX);
+      console.log('y', ev.clientY);
     },
   },
 };

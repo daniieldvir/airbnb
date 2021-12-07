@@ -4,7 +4,7 @@
     <div class="review-details">
       <template>
         <font-awesome-icon icon="star" />
-        <span>{{ stay.avgRate }}</span>
+        <span class="rate">{{ stay.avgRate }}</span>
         <span class="reviews">{{ formattedReviews }}</span
         >&#183;
       </template>

@@ -5,13 +5,13 @@
 
   .order-price-container {
     color: $clr2;
-    font-family: manrope-bold;
+    font-family: airbnb-medium, sans-serif;
     .price {
       font-size: rem(22px);
       color: $clr2;
 
       span {
-        font-family: manrope;
+        font-family: airbnb-light, sans-serif;
         font-size: rem(16px);
       }
     }
@@ -24,7 +24,7 @@
     }
     p {
       font-size: rem(14px);
-      font-family: manrope-bold;
+      font-family: airbnb-medium, sans-serif;
       margin-right: 5px;
       color: $clr2;
     }
@@ -119,6 +119,10 @@
           color: white;
           border-radius: 10px;
 
+          // --mouse-x: 950px;
+          // --mouse-y: 1132px;
+          // background-position: 0px 0px;
+
           background-image: linear-gradient(
             to right,
             #9c1ee6,
@@ -134,6 +138,10 @@
       .btn-checkout:hover,
       .btn-checkout:focus {
         animation: animatedBackground 3s infinite alternate-reverse;
+        // --mouse-x: 950px;
+        // --mouse-y: 1132px;
+
+        // background-position: calc(100% - var(mouse-x)) calc(100% - var(mouse-y));
       }
       @keyframes animatedBackground {
         from {

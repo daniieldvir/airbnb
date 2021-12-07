@@ -19,6 +19,21 @@
         :places="topStays"
         :listTitle="'Top Rated'"
       />
+      <section>
+        <div class="become-a-host">
+          <h4>Become a host</h4>
+          <p>
+            earn extra income and unlock new opportunities by sharing your
+            space.
+          </p>
+
+          <router-link class="main-router-link" to="/become-host">
+            <button onclick="window.location.href=/'become-host'">
+              Learn more
+            </button>
+          </router-link>
+        </div>
+      </section>
     </section>
   </section>
 </template>

@@ -1,0 +1,41 @@
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.curtain-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+body.modal-open .curtain-screen {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/* MOBILE */
+@media (min-width: 860px) {
+  .main-layout {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+  //   .btn-menu {
+  //     display: none;
+  //   }
+  .main-containers {
+    overflow: scroll;
+  }
+}

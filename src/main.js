@@ -8,9 +8,6 @@ import store from './store';
 /// scss
 import './assets/styles/main.scss';
 
-// /// js
-// import observer from './services/observer.js';
-
 /// library's
 import locale from 'element-ui/lib/locale/lang/en';
 import ElementUI from 'element-ui';

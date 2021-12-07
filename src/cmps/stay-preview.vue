@@ -31,12 +31,12 @@
     <router-link class="router-link" :to="'/stay/' + stay._id">
       <p>
         <font-awesome-icon icon="star" />
-        <span class="avgRate">{{ stay.avgRate }} </span>
+        <span class="avg-rate">{{ stay.avgRate }} </span>
         <span class="review-rate"> {{ reviewCount }} </span>
       </p>
       <p class="stay-type">{{ stay.type }} · {{ stay.loc.city }}</p>
       <p class="stay-name">{{ sortTxt }}</p>
-      <p>
+      <p class="stay-price">
         <span>${{ stay.price }}</span> / night
       </p>
     </router-link>

@@ -82,6 +82,7 @@ import checkoutGuestModal from './checkout-guest-modal.vue';
 import datePicker from './filters/date-picker-2.vue';
 // import guestFilter from './guest-filter.vue';
 import checkoutModal from './checkout-modal.vue';
+import move from './move.vue';
 
 export default {
   props: {
@@ -181,6 +182,6 @@ export default {
       this.order = JSON.parse(JSON.stringify(emptyOrder));
     },
   },
-  components: { datePicker, checkoutGuestModal, checkoutModal },
+  components: { datePicker, checkoutGuestModal, checkoutModal, move },
 };
 </script>
