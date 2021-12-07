@@ -93,18 +93,22 @@ export default {
       if (name === 'adults' || name === 'children')
         this.filterBy.totalGuests += val;
 
-      this.$emit('setGuests', this.filterBy);
+      this.$emit('addedGuests', this.filterBy.totalGuests);
     },
     toggleDisabledBtns(val, name) {
       if (val === 1 && this.filterBy.totalGuests + 1 > this.stay.capacity) {
-        this.disabledBtns[name] = true;
+        if (name !== 'pets') {
+          this.disabledBtns[name] = true;
+        }
       } else {
         this.disabledBtns[name] = false;
       }
-      if (name === 'infants' && this.filterBy.guests.infants > 3) {
-        this.disabledBtns.infants = true;
-      } else {
-        this.disabledBtns[name] = false;
+      if (name === 'infants') {
+        if (this.filterBy.guests.infants > 3) {
+          this.disabledBtns.infants = true;
+        } else {
+          this.disabledBtns.infants = false;
+        }
       }
     },
     onClickOutside() {

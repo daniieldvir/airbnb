@@ -140,6 +140,23 @@
   }
 }
 
+.order-preview {
+  margin: 10px 0px;
+  text-align: center;
+  font-size: 0.9rem;
+  & :first-child {
+    margin-bottom: 10px;
+  }
+  & div {
+    // margin: 10px 0px;
+    justify-content: space-between;
+    &:last-of-type {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  }
+}
+
 // .swal2-actions {
 //   background-color: black;
 //   button {

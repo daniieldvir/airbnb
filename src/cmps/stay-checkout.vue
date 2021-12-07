@@ -33,19 +33,36 @@
                         </div> -->
         <div class="form-container">
           <div class="select-form">
-            <date-picker />
-            <checkoutGuestModal :stay="stay" />
+            <date-picker @filtered="setDates" />
+            <checkoutGuestModal @addedGuests="setGuests" :stay="stay" />
             <!-- <span><font-awesome-icon icon="chevron-down" /></span> -->
             <!-- </div> -->
           </div>
           <div class="btn-checkout-container">
-            <button class="btn-checkout" @click="checkout">
-              Check availability
+            <button class="btn-checkout" @click="checkAvailability">
+              {{ btnTxt }}
             </button>
           </div>
         </div>
         <!-- OUTPUT -->
-        <template> </template>
+        <template v-if="showOrderPreview">
+          <section class="order-preview flex column">
+            <span>You won't be charged yet</span>
+            <div class="flex">
+              <span>${{ stay.price }} x {{ totalNights }} nights</span>
+              <span>${{ totalPrice }}</span>
+            </div>
+            <div class="flex">
+              <span>Service fee</span>
+              <span>$0</span>
+            </div>
+            <hr />
+            <div class="flex">
+              <span>Total</span>
+              <span>${{ totalPrice }}</span>
+            </div>
+          </section>
+        </template>
       </div>
     </section>
     <checkout-modal
@@ -65,19 +82,23 @@ import checkoutModal from './checkout-modal.vue';
 export default {
   props: {
     stay: Object,
-    dates: Array,
+    // dates: Array,
   },
 
   data() {
     return {
       filterBy: null,
       isModalOpen: false,
+      order: null,
+      showOrderPreview: false,
+      btnTxt: 'Check availability',
       // guestShouldShow: false,
     };
   },
 
   created() {
     this.loadFilter();
+    this.loadEmptyOrder();
   },
   computed: {
     formattedReviews() {
@@ -88,6 +109,13 @@ export default {
       else if (this.stay.reviews.length > 1)
         return `(${this.stay.reviews.length} reviews)`;
     },
+    btnTxt() {},
+    totalPrice() {
+      return this.order.totalPrice;
+    },
+    totalNights() {
+      return this.order.totalNights;
+    },
   },
 
   methods: {
@@ -95,28 +123,48 @@ export default {
       const filterBy = this.$store.getters.filterBy;
       this.filterBy = JSON.parse(JSON.stringify(filterBy));
     },
-    // setDates(selectedDates) {
-    //   this.filterBy.dates = selectedDates;
-    // },
-    setGuests(filterBy) {
-      this.filterBy.guests = filterBy.guests;
-      this.filterBy.totalGuests = filterBy.totalGuests;
+    setDates(selectedDates) {
+      this.order.dates = selectedDates;
+    },
+    setGuests(numOfGuests) {
+      console.log(numOfGuests);
+      this.order.guests = numOfGuests;
+      // this.filterBy.guests = filterBy.guests;
+      // this.filterBy.totalGuests = filterBy.totalGuests;
+    },
+    checkAvailability() {
+      const { checkInDate, checkOutDate } = this.order.dates;
+      const { totalGuests } = this.order;
+      if (checkInDate && checkOutDate) {
+        this.prepareOrder();
+        this.btnTxt = 'Reserve';
+      } else {
+        console.log('ENTER DATES');
+      }
+    },
+    prepareOrder() {
+      const { checkInDate, checkOutDate } = this.order.dates;
+      const difference = checkOutDate.getTime() - checkInDate.getTime();
+      const nights = Math.ceil(difference / (1000 * 3600 * 24));
+      const totalPrice = this.stay.price * nights;
+
+      this.order.totalPrice = totalPrice;
+      this.order.totalNights = nights;
+
+      this.showOrderPreview = true;
     },
     filter() {
       this.$emit('filtered', this.filterBy);
     },
     checkout() {
       this.isModalOpen = true;
-      // Swal.fire({
-      //   title: 'Thank you for booking!',
-      //   text: 'Press done',
-      //   icon: 'success',
-      //   confirmButtonText: 'Done',
-      // });
-      // this.$router.push('/');
     },
     closeModal() {
       this.isModalOpen = false;
+    },
+    loadEmptyOrder() {
+      const emptyOrder = this.$store.getters.emptyOrder;
+      this.order = JSON.parse(JSON.stringify(emptyOrder));
     },
   },
   components: { datePicker, checkoutGuestModal, checkoutModal },
