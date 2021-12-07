@@ -5,6 +5,9 @@
 
   .block {
     padding-left: 25px;
+    // & label {
+    //   font-weight: lighter;
+    // }
   }
   & .block:last-of-type {
     border-left: 1px solid $clr7;
@@ -20,7 +23,7 @@
   }
   & label {
     font-size: 0.875rem;
-    font-family: manrope-bold;
+    font-family: airbnb-medium, sans-serif;
     color: black;
   }
 }

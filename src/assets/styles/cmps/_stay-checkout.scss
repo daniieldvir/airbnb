@@ -89,9 +89,9 @@
               }
             }
           }
-        }
-        &.date-picker-cont.block:last-of-type {
-          border-left: 0px;
+          & .date-picker-cont.block:last-of-type {
+            border-left: 0px;
+          }
         }
       }
       .filter-cont {
