@@ -1,7 +1,7 @@
 <template>
   <section class="checkout-guest-modal">
-    <div class="toggle-btn">
-      <label @click="toggleGuests"
+    <div class="toggle-btn" @click="toggleGuests">
+      <label
         >Guests
         <span class="add-guests-input">Add Guests</span>
       </label>

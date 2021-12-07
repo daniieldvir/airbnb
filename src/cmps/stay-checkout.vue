@@ -34,7 +34,6 @@
         <div class="form-container">
           <div class="select-form">
             <date-picker />
-            <!-- <div class="filter-cont flex"> -->
             <checkoutGuestModal />
             <!-- <span><font-awesome-icon icon="chevron-down" /></span> -->
             <!-- </div> -->
@@ -45,6 +44,8 @@
             </button>
           </div>
         </div>
+        <!-- OUTPUT -->
+        <template> </template>
       </div>
     </section>
     <checkout-modal
