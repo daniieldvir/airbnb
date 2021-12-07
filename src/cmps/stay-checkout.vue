@@ -34,7 +34,7 @@
         <div class="form-container">
           <div class="select-form">
             <date-picker />
-            <checkoutGuestModal />
+            <checkoutGuestModal :stay="stay" />
             <!-- <span><font-awesome-icon icon="chevron-down" /></span> -->
             <!-- </div> -->
           </div>
