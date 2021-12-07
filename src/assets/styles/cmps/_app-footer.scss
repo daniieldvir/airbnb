@@ -1,9 +1,10 @@
 .main-footer {
   background-color: $clr8;
   border-top: 1px solid rgb(238, 238, 238);
+  margin-top: 10px;
 
   .footer {
-    font-size: 1.75rem;
+    font-size: rem(22px);
     font-weight: 900;
 
     --gap: 20px;
@@ -50,7 +51,7 @@
 
       display: flex;
       align-items: center;
-      font-size: 0.75rem;
+      font-size: rem(14px);
       color: $clr2;
       border-top: 1px solid $clr8;
 

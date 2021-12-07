@@ -3,8 +3,8 @@
   background-image: url(https://res.cloudinary.com/disku3v4j/image/upload/v1638473513/ezra-jeffrey-comeau-r4M6ZlaDLLU-unsplash_hki13q.jpg);
   // background-image: url(https://res.cloudinary.com/disku3v4j/image/upload/v1638696203/luca-bravo-O453M2Liufs-unsplash_r09gd3.jpg);
 
-  height: 95vh;
-  background-position: center center;
+  height: 74vh;
+  background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -18,7 +18,7 @@
 
     .main-txt {
       font-family: airbnb-light, sans-serif;
-      font-size: rem(50px);
+      font-size: rem(38px);
       color: white;
       text-align: center;
     }
@@ -42,18 +42,18 @@
 
   h4 {
     color: white;
-    font-size: 2.6875rem;
+    font-size: rem(48px);
     padding-left: 83px;
     font-family: airbnb-medium, sans-serif;
   }
   p {
     color: white;
-    font-size: 1rem;
+    font-size: rem(18px);
     width: 60%;
     padding-left: 83px;
   }
   button {
-    font-size: 0.875rem;
+    font-size: rem(15px);
     padding: 13px 25px;
     border: none;
     border-radius: 8px;

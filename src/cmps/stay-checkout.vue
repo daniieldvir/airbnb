@@ -39,9 +39,9 @@
             <!-- <span><font-awesome-icon icon="chevron-down" /></span> -->
             <!-- </div> -->
           </div>
-          <move> </move>
-          <div class="btn-checkout-container">
-            <button class="btn-checkout" @click="checkout">
+          <div id="btn-checkout" class="btn-checkout-container">
+            <!-- <move></move> -->
+            <button id="btn-checkout" class="btn-checkout" @click="checkout">
               Check availability
             </button>
           </div>

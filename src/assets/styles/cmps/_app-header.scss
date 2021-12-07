@@ -14,8 +14,7 @@ header {
   align-items: center;
   padding-top: 1.2rem;
   padding-bottom: 1rem;
-  // padding: 2rem 3rem;
-  // margin-top: 2rem;
+
   transition: background 300ms ease-in;
   background: var(--background);
   color: var(--text);
@@ -28,10 +27,15 @@ header {
     z-index: 999;
   }
 
+  .nav-content {
+    align-items: center;
+  }
+
   .main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: rem(14px);
     .logo-cont {
       width: 0px;
     }
@@ -45,13 +49,10 @@ header {
         margin: 0px 12.5px;
       }
       .logo {
-        // background-color: blue;
-        // width: max-content;
         color: var(--logo);
         font-size: rem(25px);
-        font-weight: bold;
-        // align-self:baseline;
-        // align-self: ;
+        font-family: airbnb-medium, sans-serif;
+
         & .svg-inline--fa {
           font-size: 2rem;
         }
@@ -74,7 +75,6 @@ header {
       gap: 10px;
       font-size: 1.5em;
       color: $clr4;
-      // border: 1px solid $clr7;
       .bars {
         font-size: 0.5em;
         color: $clr2;

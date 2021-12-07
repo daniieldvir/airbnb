@@ -23,8 +23,7 @@
     border: none;
     border-radius: 30em;
     outline: 1px solid $clr7;
-    // font-family: airbnb-light, sans-serif ;
-    // font-size: 1em;
+    font-size: rem(14px);
 
     &.active {
       outline: 2px solid $clr2;

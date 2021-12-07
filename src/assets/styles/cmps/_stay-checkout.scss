@@ -108,6 +108,10 @@
           color: white;
           border-radius: 15px;
 
+          // --mouse-x: 950px;
+          // --mouse-y: 1132px;
+          // background-position: 0px 0px;
+
           background-image: linear-gradient(
             to right,
             #9c1ee6,
@@ -122,16 +126,11 @@
       }
       .btn-checkout:hover,
       .btn-checkout:focus {
-        // animation: animatedBackground 3s infinite alternate-reverse;
-        --mouse-x: 0px;
-        --mouse-y: 0px;
+        animation: animatedBackground 3s infinite alternate-reverse;
+        // --mouse-x: 950px;
+        // --mouse-y: 1132px;
 
-        // background-position:calc((100 - var(--mouse-x, 0))  calc((100 - var(--mouse-y, 0)) * 1%);
-        // background-position: calc(
-        //   (100% - -var(--mouse-x), 0) calc(100%) - -var(--mouse-y),
-        //   0
-        // );
-        background-position: var(--x) var(--y);
+        // background-position: calc(100% - var(mouse-x)) calc(100% - var(mouse-y));
       }
       @keyframes animatedBackground {
         from {

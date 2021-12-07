@@ -4,7 +4,7 @@
     <div class="review-details">
       <template>
         <font-awesome-icon icon="star" />
-        <span>{{ stay.avgRate }}</span>
+        <span class="rate">{{ stay.avgRate }}</span>
         <span class="reviews">{{ formattedReviews }}</span
         >&#183;
       </template>
@@ -125,7 +125,7 @@ import stayCheckout from '@/cmps/stay-checkout.vue';
 import reviewList from '@/cmps/review-list.vue';
 import stayRating from '@/cmps/stay-rating.vue';
 import longText from '@/cmps/long-text.vue';
-import reviewAdd from '@/cmps/review-add.vue'
+import reviewAdd from '@/cmps/review-add.vue';
 // import '@fortawesome/fontawesome-free/js/all.js';
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // import {faHome,faWifi,faPaw,} from '@fortawesome/free-solid-svg-icons'
@@ -185,6 +185,13 @@ export default {
       // return 'wifi';
     },
   },
-  components: { GmapMap, stayCheckout, reviewList, stayRating, longText,reviewAdd },
+  components: {
+    GmapMap,
+    stayCheckout,
+    reviewList,
+    stayRating,
+    longText,
+    reviewAdd,
+  },
 };
 </script>
