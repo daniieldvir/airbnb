@@ -1,8 +1,8 @@
 .date-picker-cont {
   // display: grid;
   // grid-template-columns: 1fr 1fr;
-  border-left: 1px solid $clr7;
-  border-right: 1px solid $clr7;
+  // border-left: 1px solid $clr7;
+  // border-right: 1px solid $clr7;
   font-size: 1rem;
   line-height: 1.3em;
   justify-content: start;
@@ -38,7 +38,7 @@
   }
   & label {
     font-size: 0.875rem;
-    font-weight: 800;
+    font-family: manrope-bold;
     color: black;
   }
 }
