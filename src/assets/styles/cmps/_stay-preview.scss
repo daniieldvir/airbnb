@@ -24,6 +24,15 @@
       z-index: 5;
     }
   }
+  .block-content {
+    .el-carousel__container {
+      .el-carousel__arrow {
+        opacity: 1;
+        color: rgba(157, 165, 157, 0);
+        background-color: rgba(245, 245, 245, 0);
+      }
+    }
+  }
   .block-content:hover {
     .el-carousel__container {
       .el-carousel__arrow {
