@@ -3,7 +3,12 @@
     v-bind:class="{ 'white-header': !onHomePage, 'nav-scrolled': !topOfPage }"
     class="main-container"
   >
-    <main-filters v-if="onExplorePage" :onExplorePage="onExplorePage" />
+    <main-filters
+      v-if="onExplorePage || (onHomePage && !topOfPage)"
+      :onExplorePage="onExplorePage"
+      :onHomePage="onHomePage"
+      :topOfPage="topOfPage"
+    />
 
     <nav class="main-nav">
       <router-link class="main-router-link" to="/">
@@ -18,7 +23,7 @@
         <router-link class="main-router-link" to="/explore"
           >Explore</router-link
         >
-        <router-link class="main-router-link" to="/become-host"
+        <router-link class="main-router-link" to="/user-profile"
           >Become A Host</router-link
         >
 
