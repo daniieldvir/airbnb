@@ -9,16 +9,11 @@ export const orderStore = {
     state: {
         currOrder: null,
         orders: [],
-
-
     },
     getters: {
 
     },
     mutations: {
-        removeOrder(state, payload) {
-            state.orders = state.orders.filter((order) => order._id !== payload.orderId)
-        },
         addOrder(state, payload) {
             state.orders.push(payload.order)
             console.log(state.orders);
@@ -27,10 +22,13 @@ export const orderStore = {
             const idx = state.orders.findIndex((order) => order._id === payload.order._id)
             state.orders.splice(idx, 1, payload.order)
         },
+        removeOrder(state, payload) {
+            state.orders = state.orders.filter((order) => order._id !== payload.orderId)
+        },
         setOrders(state, { orders }) {
             state.orders = orders
         },
-        getOrder(state, { order }) {
+        currOrder(state, { order }) {
             state.currOrder = order
         },
     },
