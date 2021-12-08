@@ -28,7 +28,10 @@
         <font-awesome-icon icon="search" />
         <span
           class="search"
-          v-if="largeSearchBtn && !onExplorePage && !topOfPage"
+          v-if="
+            (largeSearchBtn && !onExplorePage && !topOfPage) ||
+            (!topOfPage && onHomePage)
+          "
           >Search</span
         >
       </button>
