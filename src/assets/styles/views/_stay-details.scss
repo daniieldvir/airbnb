@@ -1,5 +1,5 @@
 .stay-details {
-  margin-top: 150px;
+  // margin-top: 150px;
   //anna
   margin-top: 110px;
   color: $clr2;
@@ -196,7 +196,7 @@
 .images-display-container {
   --gap: 8px;
   --num-col: 4;
-  --row-height: 300px;
+  // --row-height: 300px;
   //anna
   // --row-height: 200px;
   // --row-height: 250px;
@@ -204,9 +204,9 @@
   box-sizing: border-box;
 
   display: grid;
-  grid-template-columns: repeat(var(--num-col), 1fr);
+  // grid-template-columns: repeat(var(--num-col), 1fr);
   //anna
-  grid-auto-rows: var(--row-height);
+  // grid-auto-rows: var(--row-height);
   grid-template-columns: repeat(var(--num-col), minmax(250px, 1fr));
   // grid-auto-rows: var(--row-height);
   padding: 15px 0 30px;
