@@ -39,6 +39,12 @@
       minmax(auto, $wide-breakpoint)
       minmax($layout-padding * 1px, 1fr);
   }
+  // @include for-anna-layout {
+  //   grid-template-columns:
+  //     minmax(10 * 1px, 1fr)
+  //     minmax(auto, $anna-breakpoint)
+  //     minmax(10 * 1px, 1fr);
+  // }
 }
 
 .card-grid {

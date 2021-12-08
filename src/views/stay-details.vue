@@ -142,15 +142,17 @@ export default {
   },
   created() {
     const { stayId } = this.$route.params;
-    this.$store
-      .dispatch({ type: 'getStayById', stayId: stayId })
-      .then((stay) => {
-        this.stay = JSON.parse(JSON.stringify(stay));
-        const imgs = this.$store.getters.imgsToShow;
-        console.log('imgs', imgs);
-        this.imgs = imgs;
-        this.reviews = this.stay.reviews;
-      });
+    if(stayId){
+      this.$store
+        .dispatch({ type: 'getStayById', stayId: stayId })
+        .then((stay) => {
+          this.stay = JSON.parse(JSON.stringify(stay));
+          const imgs = this.$store.getters.imgsToShow;
+          console.log('imgs', imgs);
+          this.imgs = imgs;
+          this.reviews = this.stay.reviews;
+        });
+    }
   },
   // this.$store.dispatch.loadStay();
   computed: {
@@ -191,6 +193,10 @@ export default {
       return utilService.getIcon(amenity);
       // return 'wifi';
     },
+  },
+
+  mounted(){
+    window.scrollTo(0,0);
   },
   components: {
     GmapMap,

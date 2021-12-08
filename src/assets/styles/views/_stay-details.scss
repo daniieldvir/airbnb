@@ -1,5 +1,7 @@
 .stay-details {
   margin-top: 150px;
+  //anna
+  margin-top: 110px;
   color: $clr2;
 
   h2 {
@@ -140,6 +142,8 @@
       grid-row: span 1;
       position: sticky;
       top: 120px;
+      //anna
+      align-self: flex-start;
     }
   }
 
@@ -193,11 +197,14 @@
   --gap: 9px;
   --num-col: 4;
   --row-height: 300px;
+  //anna
+  // --row-height: 200px;
 
   box-sizing: border-box;
 
   display: grid;
   grid-template-columns: repeat(var(--num-col), 1fr);
+  //anna
   grid-auto-rows: var(--row-height);
   gap: var(--gap);
 

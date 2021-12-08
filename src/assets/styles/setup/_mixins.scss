@@ -30,6 +30,11 @@
   }
 }
 
+// @mixin for-anna-layout {
+//   @media (min-width: $anna-breakpoint + $layout-padding * 2) {
+//     @content;
+//   }
+// }
 /* Media  Mixins */
 @mixin aspect-ratio($width, $height) {
   position: relative;
