@@ -33,6 +33,12 @@
       minmax(auto, $normal-breakpoint)
       minmax($layout-padding * 1px, 1fr);
   }
+  @include for-anna-layout {
+    grid-template-columns:
+      minmax($layout-padding * 1px, 1fr)
+      minmax(auto, $wide-anna-breakpoint)
+      minmax($layout-padding * 1px, 1fr);
+  }
   @include for-ex-wide-layout {
     grid-template-columns:
       minmax($layout-padding * 1px, 1fr)

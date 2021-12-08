@@ -24,17 +24,23 @@
   }
 }
 
+// @mixin for-anna-layout {
+//   @media (min-width: $wide-anna-breakpoint + $layout-padding * 2) {
+//     @content;
+//   }
+// }
+
 @mixin for-ex-wide-layout {
   @media (min-width: $wide-breakpoint + $layout-padding * 2) {
     @content;
   }
 }
 
-// @mixin for-anna-layout {
-//   @media (min-width: $anna-breakpoint + $layout-padding * 2) {
-//     @content;
-//   }
-// }
+@mixin for-anna-layout {
+  @media (min-width: $wide-anna-breakpoint + $layout-padding * 2) {
+    @content;
+  }
+}
 @mixin for-extra-wide-layout {
   @media (min-width: $extra-wide-breakpoint + $layout-padding * 2) {
     @content;
