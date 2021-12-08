@@ -46,7 +46,11 @@
           <div class="btn-checkout-container">
             <!-- <button class="btn-checkout" @mousemove="changeBtnColor" @click="checkout">
               <span>Check availability</span> -->
-            <button class="btn-checkout" @mousemove="changeBtnColor" @click="checkOut">
+            <button
+              class="btn-checkout"
+              @mousemove="changeBtnColor"
+              @click="checkOut"
+            >
               <span>{{ btnTxt }}</span>
             </button>
           </div>
@@ -82,11 +86,10 @@
 </template>
 
 <script>
-import checkoutGuestModal from './checkout-guest-modal.vue';
-import datePicker from './filters/date-picker-2.vue';
+import checkoutGuestModal from '../details/checkout-guest-modal.vue';
+import datePicker from '../filters/date-picker-2.vue';
 // import guestFilter from './guest-filter.vue';
-import checkoutModal from './checkout-modal.vue';
-import move from './move.vue';
+import checkoutModal from '../details/checkout-modal.vue';
 
 export default {
   props: {
@@ -139,17 +142,17 @@ export default {
       console.log(numOfGuests);
       this.order.totalGuests = numOfGuests;
     },
-    changeBtnColor(e){
+    changeBtnColor(e) {
       // const x = e.pageX - e.target.offsetLeft
       // const y = e.pageY - e.target.offsetTop
-       const x = e.offsetX - e.target.offsetLeft
-      const y = e.offsetY - e.target.offsetLeft
-      e.target.style.setProperty('--x', `${x}px`)
-      e.target.style.setProperty('--y', `${y}px`)
+      const x = e.offsetX - e.target.offsetLeft;
+      const y = e.offsetY - e.target.offsetLeft;
+      e.target.style.setProperty('--x', `${x}px`);
+      e.target.style.setProperty('--y', `${y}px`);
       // e.target.style.setProperty('--x', `${ x }px`)
       // e.target.style.setProperty('--y', `${ y }px`)
       console.log('e', e);
-      console.log('x,y',x,y);
+      console.log('x,y', x, y);
     },
     checkout() {
       Swal.fire({
@@ -206,6 +209,6 @@ export default {
       this.order = JSON.parse(JSON.stringify(emptyOrder));
     },
   },
-  components: { datePicker, checkoutGuestModal, checkoutModal, move },
+  components: { datePicker, checkoutGuestModal, checkoutModal },
 };
 </script>

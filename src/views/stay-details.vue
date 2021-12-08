@@ -120,12 +120,12 @@
 
 <script>
 import { utilService } from '@/services/util.service';
-import GmapMap from '@/cmps/map.vue';
-import stayCheckout from '@/cmps/stay-checkout.vue';
-import reviewList from '@/cmps/review-list.vue';
-import stayRating from '@/cmps/stay-rating.vue';
-import longText from '@/cmps/long-text.vue';
-import reviewAdd from '@/cmps/review-add.vue';
+import GmapMap from '../cmps/details/map.vue';
+import stayCheckout from '../cmps/details/stay-checkout.vue';
+import reviewList from '../cmps/details/review-list.vue';
+import stayRating from '../cmps/details/stay-rating.vue';
+import longText from '../cmps/details/long-text.vue';
+import reviewAdd from '../cmps/details/review-add.vue';
 // import '@fortawesome/fontawesome-free/js/all.js';
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // import {faHome,faWifi,faPaw,} from '@fortawesome/free-solid-svg-icons'
@@ -142,7 +142,7 @@ export default {
   },
   created() {
     const { stayId } = this.$route.params;
-    if(stayId){
+    if (stayId) {
       this.$store
         .dispatch({ type: 'getStayById', stayId: stayId })
         .then((stay) => {
@@ -195,8 +195,8 @@ export default {
     },
   },
 
-  mounted(){
-    window.scrollTo(0,0);
+  mounted() {
+    window.scrollTo(0, 0);
   },
   components: {
     GmapMap,
