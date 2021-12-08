@@ -24,6 +24,12 @@
   }
 }
 
+@mixin for-anna-layout {
+  @media (min-width: $wide-anna-breakpoint + $layout-padding * 2) {
+    @content;
+  }
+}
+
 @mixin for-ex-wide-layout {
   @media (min-width: $wide-breakpoint + $layout-padding * 2) {
     @content;
