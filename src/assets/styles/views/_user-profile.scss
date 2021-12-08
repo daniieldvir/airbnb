@@ -1,0 +1,11 @@
+.user-page-container {
+  margin-top: 150px;
+
+  & nav {
+    text-align: center;
+    justify-content: center;
+  }
+  & ul {
+    gap: 20px;
+  }
+}

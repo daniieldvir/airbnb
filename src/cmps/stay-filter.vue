@@ -1,6 +1,9 @@
 <template>
   <section
-    v-bind:class="{ 'small-filter': onExplorePage }"
+    v-bind:class="{
+      'small-filter': onExplorePage,
+      'small-filter': onHomePage && !topOfPage,
+    }"
     class="main-filters"
   >
     <city-filter
@@ -37,12 +40,13 @@ import guestFilter from '../cmps/guest-filter.vue';
 import cityFilter from '../cmps/city-filter-copy.vue';
 export default {
   name: 'stay-filter',
-  props: ['onExplorePage'],
+  props: ['onExplorePage', 'topOfPage', 'onHomePage'],
 
   data() {
     return {
       filterBy: null,
       largeSearchBtn: false,
+      // showSmallFilter=false,
       // onExplorePage: false,
       // guestShouldShow: false,
     };
@@ -57,7 +61,6 @@ export default {
     },
     setDates(selectedDates) {
       this.filterBy.dates = selectedDates;
-      console.log('fron stay filter got:', this.filterBy);
     },
     addGuests(filterBy) {
       this.filterBy.guests = filterBy.guests;

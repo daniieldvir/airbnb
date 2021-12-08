@@ -4,6 +4,7 @@ import Home from '../views/home-page';
 import stayDetails from '../views/stay-details.vue';
 import Explore from '../views/stay-app';
 import BecomeHost from '../views/stay-edit';
+import userProfile from '../views/user-profile-page';
 
 Vue.use(VueRouter);
 
@@ -23,6 +24,12 @@ const routes = [
     name: 'BecomeHost',
     component: BecomeHost,
   },
+  {
+    path: '/user-profile',
+    name: 'userProfile',
+    component: userProfile,
+  },
+
   // {
   //   path: '/stay-app',
   //   name: 'stayApp',
