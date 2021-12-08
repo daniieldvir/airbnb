@@ -122,7 +122,6 @@ export default {
       this.showUserModal = false;
     },
     handelScroll() {
-      // console.log('test');
       if (window.pageYOffset > 0) this.topOfPage = false;
       else this.topOfPage = true;
     },
