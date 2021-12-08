@@ -5,6 +5,7 @@
   >
     <main-filters
       v-if="onExplorePage || (onHomePage && !topOfPage)"
+      @filtered="goToExplorePage"
       :onExplorePage="onExplorePage"
       :onHomePage="onHomePage"
       :topOfPage="topOfPage"
@@ -34,17 +35,21 @@
           >
             <font-awesome-icon icon="bars" class="bars" />
             <!-- <font-awesome-icon icon="user-circle" /> -->
-            <div class="user-logo"><img v-if="loggedInUser" :src="imgUrl" alt="user image" />
-                <font-awesome-icon v-else icon="user-circle" />
+            <div class="user-logo">
+              <img v-if="loggedInUser" :src="imgUrl" alt="user image" />
+              <font-awesome-icon v-else icon="user-circle" />
             </div>
           </button>
           <div
-            id="myDropdown" :class="{ show: showUserModal }" class="dropdown-content">
-              <!-- <router-link v-if="isLoggedInUser" :to="'/profile/' + userId" >
+            id="myDropdown"
+            :class="{ show: showUserModal }"
+            class="dropdown-content"
+          >
+            <!-- <router-link v-if="isLoggedInUser" :to="'/profile/' + userId" >
               Profile
                 <span v-if="notifications"></span>
               </router-link> -->
-              <!-- <router-link v-if="isLoggedInUser" :to="'/wishlist/' + userId" >
+            <!-- <router-link v-if="isLoggedInUser" :to="'/wishlist/' + userId" >
                   <span>Wishlist</span>
               </router-link> -->
             <a @click.stop="toggleSignup">Sign up</a>
@@ -79,7 +84,7 @@ export default {
       onExplorePage: false,
       showUserModal: false,
       topOfPage: true,
-      showLogin:false,
+      showLogin: false,
       showMainFilters: false,
     };
   },
@@ -96,18 +101,18 @@ export default {
       immediate: true,
     },
   },
-  computed:{
+  computed: {
     loggedInUser() {
       return this.$store.getters.loggedInUser;
-    }, 
+    },
     imgUrl() {
-			const user = this.$store.getters.loggedInUser;
-			if (user && user?.imgUrl) {
-				return user.imgUrl
-			} else {
-				return ''
-			}
-		},
+      const user = this.$store.getters.loggedInUser;
+      if (user && user?.imgUrl) {
+        return user.imgUrl;
+      } else {
+        return '';
+      }
+    },
   },
   methods: {
     toggleUserModal() {
@@ -121,18 +126,21 @@ export default {
       if (window.pageYOffset > 0) this.topOfPage = false;
       else this.topOfPage = true;
     },
-    toggleLogin(){
+    toggleLogin() {
       this.$emit('toggleLogin');
       this.showUserModal = false;
     },
-    toggleSignup(){
+    toggleSignup() {
       this.$emit('toggleSignup');
       this.showUserModal = false;
     },
-    logout(){
+    logout() {
       this.$emit('logout');
       this.showUserModal = false;
-    }
+    },
+    goToExplorePage() {
+      this.$router.push('/explore');
+    },
   },
   components: {
     mainFilters,
