@@ -80,6 +80,9 @@ header {
         color: $clr2;
       }
     }
+    & .dropdown-content {
+      right: 0;
+    }
   }
 }
 .nav-scrolled {

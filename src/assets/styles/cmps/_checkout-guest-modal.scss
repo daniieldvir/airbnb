@@ -34,11 +34,15 @@
     border-radius: 10px;
 
     & label {
+      font-family: airbnb-medium, sans-serif;
+      font-weight: bolder;
       display: flex;
       flex-direction: column;
     }
     span {
       font-family: airbnb-light, sans-serif;
+      color: $clr4;
+      font-weight: lighter;
     }
     // &.modal-open {
     //   border: 1px solid $clr2;
