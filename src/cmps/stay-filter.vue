@@ -1,7 +1,7 @@
 <template>
   <section
     v-bind:class="{
-      'small-filter': onExplorePage || (onHomePage && !topOfPage),
+      'small-filter': onExplorePage || (!topOfPage && onHomePage),
     }"
     class="main-filters"
   >
@@ -10,11 +10,13 @@
       :onExplorePage="onExplorePage"
       @filteredCity="filterCity"
       @filterClicked="enlargeSearchBtn"
+      :topOfPage="topOfPage"
+      :onHomePage="onHomePage"
     />
     <!-- OLD DATE PICKER: -->
     <!-- <date-picker @filtered="setDates" @filterClicked="enlargeSearchBtn" /> -->
 
-    <double-date-picker v-if="onExplorePage" />
+    <double-date-picker v-if="onExplorePage || (!topOfPage && onHomePage)" />
     <date-picker
       v-else
       @filtered="setDates"
@@ -24,7 +26,9 @@
     <div class="search-btn-container flex">
       <button class="flex search-btn" @click="filter">
         <font-awesome-icon icon="search" />
-        <span class="search" v-if="largeSearchBtn && !onExplorePage"
+        <span
+          class="search"
+          v-if="largeSearchBtn && !onExplorePage && !topOfPage"
           >Search</span
         >
       </button>
