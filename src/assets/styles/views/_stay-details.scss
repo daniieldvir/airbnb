@@ -194,11 +194,12 @@
 }
 
 .images-display-container {
-  --gap: 9px;
+  --gap: 8px;
   --num-col: 4;
   --row-height: 300px;
   //anna
   // --row-height: 200px;
+  // --row-height: 250px;
 
   box-sizing: border-box;
 
@@ -206,6 +207,10 @@
   grid-template-columns: repeat(var(--num-col), 1fr);
   //anna
   grid-auto-rows: var(--row-height);
+  grid-template-columns: repeat(var(--num-col), minmax(250px, 1fr));
+  // grid-auto-rows: var(--row-height);
+  padding: 15px 0 30px;
+  grid-template-rows: 250px 250px;
   gap: var(--gap);
 
   @media (max-width: 1024px) {
