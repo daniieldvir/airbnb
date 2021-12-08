@@ -101,7 +101,9 @@
   .guest-filter,
   .date-picker {
     label {
+      font-family: airbnb-medium, sans-serif;
       font-size: rem(12px);
+      font-weight: bold;
       letter-spacing: 0.04em;
       font-weight: bold;
       color: black;
@@ -120,10 +122,16 @@
       background-color: none;
       padding: 0px 1.5em;
       // cursor: pointer;
+      // &label {
+      //   font-weight: 500;
+      // }
     }
   }
   .city-filter .toggel-btn {
     padding: 0px 2.5em;
+    // & label {
+    //   font-weight: 800;
+    // }
   }
   // .el-range-input {
   //   // background-color: chartreuse;
@@ -234,6 +242,9 @@
 
   /// Modal - City Filter
   .city-filter {
+    // & label {
+    //   font-weight: 500;
+    // }
     & span {
       margin-top: 1px;
       font-size: rem(14px);
