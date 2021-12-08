@@ -1,7 +1,7 @@
 <template>
   <section
     v-bind:class="{
-      'small-filter': onExplorePage || (onHomePage && !topOfPage),
+      'small-filter': (onHomePage && !topOfPage) || onExplorePage,
     }"
     class="main-filters"
   >
