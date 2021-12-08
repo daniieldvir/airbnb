@@ -48,6 +48,7 @@
   .guest-item {
     &:not(:last-child) {
       // border-bottom: 1px solid #b0b0b0;
+      text-align: left;
       font-size: 0.9rem;
       & h4 {
         font-weight: lighter;

@@ -180,7 +180,7 @@ export default {
       const nights = Math.ceil(difference / (1000 * 3600 * 24));
       const totalPrice = this.stay.price * nights;
       if (totalPrice < 0) {
-        this.userAlert = 'Please Enter valid dates';
+        this.userAlert = 'Please enter valid dates';
         return;
       }
       this.btnTxt = 'Reserve';

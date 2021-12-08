@@ -1,5 +1,6 @@
 .main-filters {
   --gap: 9px;
+  font-size: rem(14px);
   // --num-col: 7;
   // --row-height: 60px;
   // padding: var(--gap);
@@ -23,7 +24,7 @@
   border-radius: 200px;
   max-width: 800px;
   // width: calc(70vw - 140px);
-  height: 70px;
+  height: 67px;
   // padding: 20px;
   // width: auto;
   // cursor: pointer;
@@ -31,6 +32,7 @@
   line-height: 1.3em;
 
   .city-filter {
+    cursor: pointer;
     // grid-column: 1/-2;
     grid-column: 1;
     // grid-column: 1/3;
@@ -99,7 +101,9 @@
   .guest-filter,
   .date-picker {
     label {
-      font-size: rem(14px);
+      font-family: airbnb-medium, sans-serif;
+      font-size: rem(12px);
+      font-weight: bold;
       letter-spacing: 0.04em;
       font-weight: bold;
       color: black;
@@ -117,10 +121,17 @@
       font-weight: 400;
       background-color: none;
       padding: 0px 1.5em;
+      // cursor: pointer;
+      // &label {
+      //   font-weight: 500;
+      // }
     }
   }
   .city-filter .toggel-btn {
     padding: 0px 2.5em;
+    // & label {
+    //   font-weight: 800;
+    // }
   }
   // .el-range-input {
   //   // background-color: chartreuse;
@@ -231,12 +242,16 @@
 
   /// Modal - City Filter
   .city-filter {
+    // & label {
+    //   font-weight: 500;
+    // }
+    & span {
+      margin-top: 1px;
+      font-size: rem(14px);
+    }
     select {
       border: 1px solid rgb(223, 223, 222);
       height: 40px;
-    }
-    & .toggel-btn {
-      // margin-left: 35px;
     }
     .dropdown-list {
       position: absolute;
@@ -270,10 +285,10 @@
     }
   }
   /// Hover
+  // .guest-filter:hover,
 
   // .main-filters:hover,
   // .city-filter:hover,
-  // .guest-filter:hover,
   // .date-picker:hover,
   // .location-btn:hover {
   //   background-color: #fff;
@@ -289,6 +304,7 @@
 }
 
 .main-filters.small-filter {
+  // font-size: rem(14px);
   margin-bottom: 10px;
   height: 45px;
   border: 1px solid $clr7;
@@ -308,11 +324,14 @@
     display: none;
   }
   & .guest-filter .toggel-btn {
+    & span {
+      font-size: rem(14px);
+    }
     // flex-direction: row;
     // width: max-content;
     padding-left: 10px;
     padding-right: 0px;
-    border-left: 1px solid $clr8;
+    // border-left: 1px solid $clr8;
     color: $clr7;
     // font-weight: bolder;
     // margin: 0px;
@@ -345,7 +364,8 @@
         background-color: rgba(0, 0, 0, 0);
         width: 100px;
         margin-top: 2px;
-        font-size: 0.9rem;
+        font-size: rem(14px);
+        // font-size: 0.9rem;
       }
       & input:last-of-type {
         display: none;
@@ -379,11 +399,20 @@
       grid-column: 2;
       display: grid;
       grid-template-columns: 1fr 1fr;
+      cursor: pointer;
     }
     .guest-filter {
+      & span {
+        font-size: rem(14px);
+      }
       grid-column: 3;
       align-items: center;
       display: block;
+      // border-left: 1px solid $clr8;
+      & .toggel-btn {
+        border-left: 1px solid $clr7;
+        cursor: pointer;
+      }
     }
   }
   .search-btn {
