@@ -4,6 +4,9 @@
   justify-content: start;
 
   .block {
+    & label {
+      font-size: rem(12px);
+    }
     padding-left: 25px;
     // & label {
     //   font-weight: lighter;
@@ -35,8 +38,9 @@
   width: 100px;
   border: none;
   height: 23px;
-  font-size: 1rem;
+  // font-size: 1rem;
   font-family: airbnb-light, sans-serif;
+  font-size: rem(14px);
 }
 
 .el-input--prefix .el-input__inner {

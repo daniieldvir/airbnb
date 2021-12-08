@@ -3,7 +3,7 @@
     <!-- <button @click="toggleGuests">Add Guests</button> -->
     <div class="toggel-btn" @click="toggleGuests">
       <label>Guests</label>
-      {{ guestsAdded }}
+      <span>{{ guestsAdded }}</span>
     </div>
     <ul
       v-click-outside="onClickOutside"
