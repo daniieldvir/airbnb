@@ -39,6 +39,12 @@
       minmax(auto, $wide-breakpoint)
       minmax($layout-padding * 1px, 1fr);
   }
+  @include for-extra-wide-layout {
+    grid-template-columns:
+      minmax($layout-padding * 1px, 1fr)
+      minmax(auto, $extra-wide-breakpoint)
+      minmax($layout-padding * 1px, 1fr);
+  }
 }
 
 .card-grid {
