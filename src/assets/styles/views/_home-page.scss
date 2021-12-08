@@ -1,9 +1,8 @@
 .pic {
   left: 0;
   background-image: url(https://res.cloudinary.com/disku3v4j/image/upload/v1638473513/ezra-jeffrey-comeau-r4M6ZlaDLLU-unsplash_hki13q.jpg);
-  // background-image: url(https://res.cloudinary.com/disku3v4j/image/upload/v1638696203/luca-bravo-O453M2Liufs-unsplash_r09gd3.jpg);
 
-  height: 80vh;
+  height: 100vh;
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,15 +13,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 75px;
 
     .main-txt {
-      font-family: airbnb-light, sans-serif;
+      font-family: airbnb-medium, sans-serif;
       font-size: rem(38px);
       color: white;
       text-align: center;
-      text-shadow: -1px -1px 0 $clr5, 1px -1px 0 $clr5, -1px 1px 0 $clr5,
-        1px 1px 0 $clr5;
+      text-shadow: -1px -1px 0 $clr4, 1px -1px 0 $clr4, -1px 1px 0 $clr4,
+        1px 1px 0 $clr4;
     }
   }
 }
