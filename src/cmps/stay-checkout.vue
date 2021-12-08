@@ -13,63 +13,67 @@
           </div>
         </div>
 
-        <div class="form-container">
-          <div class="select-form">
-            <div class="select-dates-container">
-              <label for="check-in"><span>Check-in</span>
-              <div class="label">
-                <label>CHECK-IN </label>
-                <label>CHECKOUT </label>
-              </div>
-
-              <el-date-picker
-                style="width: 100%"
-                v-model="dates"
-                type="daterange"
-                range-separator=""
-                start-placeholder="Add date "
-                end-placeholder="Add date"
-                ref="myDatePicker"
-              ></el-date-picker></label>
-                <!-- <label for="check-out"><span>Check-out</span>
-              <el-date-picker
-                style="width: 100%"
-                v-model="dates"
-                type="daterange"
-                range-separator=""
-                start-placeholder="Add date"
-                ref="myDatePicker"
-              ></el-date-picker></label> -->
-            </div>
-            <checkout-guest-modal
+        <!-- <checkout-guest-modal
               class="select-guests-container flex space-between"
               @setGuests="setGuests"
             />
             
+            /> -->
 
-            <!-- <div class="select-guests-container flex space-between"> -->
-            <!-- <guest-filter/> -->
-            <!-- <guest-filter :currFilterBy="filterBy" @addedGuests="addGuests" /> -->
+        <!-- <div class="select-guests-container flex space-between"> -->
+        <!-- <guest-filter/> -->
+        <!-- <guest-filter :currFilterBy="filterBy" @addedGuests="addGuests" /> -->
 
-            <!-- <div class="select-guests-container flex space-between"> -->
-            <!-- <guest-filter/> -->
-            <!-- <guest-filter @addedGuests="addGuests" /> -->
+        <!-- <div class="select-guests-container flex space-between"> -->
+        <!-- <guest-filter/> -->
+        <!-- <guest-filter @addedGuests="addGuests" /> -->
 
-            <!-- </div> -->
-            <!-- <div class="btn-checkout-container">
+        <!-- </div> -->
+        <!-- <div class="btn-checkout-container">
                             <button class="btn-checkout">Check availability
                             </button>
                         </div> -->
+        <div class="form-container">
+          <div class="select-form">
+            <date-picker @filtered="setDates" />
+            <checkoutGuestModal @addedGuests="setGuests" :stay="stay" />
+            <!-- <span><font-awesome-icon icon="chevron-down" /></span> -->
+            <!-- </div> -->
           </div>
+          <span :class="{ 'show-alert': userAlert }" class="user-alert">{{
+            userAlert
+          }}</span>
           <div class="btn-checkout-container">
-            <button class="btn-checkout" @mousemove="changeBtnColor" @click="checkout">
-              <span>Check availability</span>
+            <!-- <button class="btn-checkout" @mousemove="changeBtnColor" @click="checkout">
+              <span>Check availability</span> -->
+            <button class="btn-checkout" @mousemove="changeBtnColor" @click="checkOut">
+              <span>{{ btnTxt }}</span>
             </button>
           </div>
         </div>
+        <!-- OUTPUT -->
+        <template v-if="showOrderPreview">
+          <section class="order-preview flex column">
+            <span>You won't be charged yet</span>
+            <div class="flex">
+              <span>${{ stay.price }} x {{ totalNights }} nights</span>
+              <span>${{ totalPrice }}</span>
+            </div>
+            <div class="flex">
+              <span>Service fee</span>
+              <span>$0</span>
+            </div>
+            <hr />
+            <div class="flex">
+              <span>Total</span>
+              <span>${{ totalPrice }}</span>
+            </div>
+          </section>
+        </template>
       </div>
     </section>
     <checkout-modal
+      :txt="userAlert"
       class="checkout-modal"
       v-if="isModalOpen"
       @closeModal="closeModal"
@@ -79,35 +83,47 @@
 
 <script>
 import checkoutGuestModal from './checkout-guest-modal.vue';
-import guestFilter from './guest-filter.vue';
+import datePicker from './filters/date-picker-2.vue';
+// import guestFilter from './guest-filter.vue';
 import checkoutModal from './checkout-modal.vue';
+import move from './move.vue';
 
 export default {
   props: {
     stay: Object,
-    dates: Array,
+    // dates: Array,
   },
 
   data() {
     return {
       filterBy: null,
-      open: false,
       isModalOpen: false,
-      // guestShouldShow: false,
+      order: null,
+      showOrderPreview: false,
+      isOrderReady: false,
+      btnTxt: 'Check availability',
+      userAlert: 0,
     };
   },
 
   created() {
     this.loadFilter();
+    this.loadEmptyOrder();
   },
   computed: {
     formattedReviews() {
-      //maybe 0 reviews
       if (!this.stay.reviews.length) return `(new)`;
       if (this.stay.reviews.length === 1)
         return `(${this.stay.reviews.length} review)`;
       else if (this.stay.reviews.length > 1)
         return `(${this.stay.reviews.length} reviews)`;
+    },
+    // btnTxt() {},
+    totalPrice() {
+      return this.order.totalPrice;
+    },
+    totalNights() {
+      return this.order.totalNights;
     },
   },
 
@@ -116,15 +132,12 @@ export default {
       const filterBy = this.$store.getters.filterBy;
       this.filterBy = JSON.parse(JSON.stringify(filterBy));
     },
-    // setDates(selectedDates) {
-    //   this.filterBy.dates = selectedDates;
-    // },
-    setGuests(filterBy) {
-      this.filterBy.guests = filterBy.guests;
-      this.filterBy.totalGuests = filterBy.totalGuests;
+    setDates(selectedDates) {
+      this.order.dates = selectedDates;
     },
-    filter() {
-      this.$emit('filtered', this.filterBy);
+    setGuests(numOfGuests) {
+      console.log(numOfGuests);
+      this.order.totalGuests = numOfGuests;
     },
     changeBtnColor(e){
       // const x = e.pageX - e.target.offsetLeft
@@ -146,24 +159,53 @@ export default {
         confirmButtonText: 'Done',
       });
     },
-    openDate(){
-      this.open = !this.open;
+    checkOut() {
+      const { checkInDate, checkOutDate } = this.order.dates;
+      if (!this.isOrderReady) {
+        if (checkInDate && checkOutDate) {
+          this.prepareOrder();
+        } else {
+          this.userAlert = 'Please enter dates';
+        }
+      } else {
+        this.userAlert = 'Thank you for booking!';
+        this.showCheckOutModal('Thank you for booking!');
+        this.$emit('orderReady', this.order);
+      }
+      // const { totalGuests } = this.order;
     },
-      // this.$router.push('/');
-  
-      // this.isModalOpen = true;
-      // Swal.fire({
-      //   title: 'Thank you for booking!',
-      //   text: 'Press done',
-      //   icon: 'success',
-      //   confirmButtonText: 'Done',
-      // });
-      // this.$router.push('/');
+    prepareOrder() {
+      const { checkInDate, checkOutDate } = this.order.dates;
+      const difference = checkOutDate.getTime() - checkInDate.getTime();
+      const nights = Math.ceil(difference / (1000 * 3600 * 24));
+      const totalPrice = this.stay.price * nights;
+      if (totalPrice < 0) {
+        this.userAlert = 'Please Enter valid dates';
+        return;
+      }
+      this.btnTxt = 'Reserve';
+      this.order.totalPrice = totalPrice;
+      this.order.totalNights = nights;
+
+      this.isOrderReady = true;
+      this.userAlert = '';
+      this.showOrderPreview = true;
+    },
+    // filter() {
+    //   this.$emit('filtered', this.filterBy);
+    // },
+    showCheckOutModal() {
+      this.isModalOpen = true;
+      setTimeout(this.closeModal, 5000);
     },
     closeModal() {
       this.isModalOpen = false;
     },
-  
-  components: { checkoutGuestModal, guestFilter, checkoutModal },
+    loadEmptyOrder() {
+      const emptyOrder = this.$store.getters.emptyOrder;
+      this.order = JSON.parse(JSON.stringify(emptyOrder));
+    },
+  },
+  components: { datePicker, checkoutGuestModal, checkoutModal, move },
 };
 </script>

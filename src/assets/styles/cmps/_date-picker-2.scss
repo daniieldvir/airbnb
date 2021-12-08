@@ -1,23 +1,13 @@
 .date-picker-cont {
-  // display: grid;
-  // grid-template-columns: 1fr 1fr;
-  border-left: 1px solid $clr7;
-  border-right: 1px solid $clr7;
   font-size: 1rem;
   line-height: 1.3em;
   justify-content: start;
-  // cursor: pointer;
-  // & label {
-  //   display: none;
-  // }
-  // .checkIn {
-  //   grid-column: 1;
-  // }
-  // .checkIn {
-  //   grid-column: 2;
-  // }
+
   .block {
     padding-left: 25px;
+    // & label {
+    //   font-weight: lighter;
+    // }
   }
   & .block:last-of-type {
     border-left: 1px solid $clr7;
@@ -28,32 +18,25 @@
 }
 
 .block {
-  // width: max-content;
-  // align-self: start;
-  //   background-color: lightgreen;
-  // padding: 0px 80px 0px 23px;
-
   & :last-child {
     border-right: none;
   }
   & label {
     font-size: 0.875rem;
-    font-weight: 800;
+    font-family: airbnb-medium, sans-serif;
     color: black;
   }
 }
 .el-date-editor.el-input,
 .el-date-editor.el-input__inner {
   width: max-content;
-  //   background-color: lightseagreen;
 }
 .el-input__inner {
   width: 100px;
-  //   background-color: lightcoral;
   border: none;
   height: 23px;
   font-size: 1rem;
-  font-family: manrope;
+  font-family: airbnb-light, sans-serif;
 }
 
 .el-input--prefix .el-input__inner {
@@ -63,11 +46,3 @@
 .el-icon-date:before {
   display: none;
 }
-
-// @media screen and (min-width: 1080px) {
-//   .date-picker-cont {
-//     & label {
-//       display: block;
-//     }
-//   }
-// }

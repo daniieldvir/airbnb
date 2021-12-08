@@ -4,7 +4,7 @@
     <div class="review-details">
       <template>
         <font-awesome-icon icon="star" />
-        <span>{{ stay.avgRate }}</span>
+        <span class="rate">{{ stay.avgRate }}</span>
         <span class="reviews">{{ formattedReviews }}</span
         >&#183;
       </template>
@@ -86,7 +86,7 @@
       </div>
 
       <div class="stay-details-right-container">
-        <stay-checkout :stay="stay"></stay-checkout>
+        <stay-checkout @orderReady="placeOrder" :stay="stay"></stay-checkout>
       </div>
     </div>
     <div v-if="stay.reviews.length" class="reviews-section-container">
@@ -125,7 +125,7 @@ import stayCheckout from '@/cmps/stay-checkout.vue';
 import reviewList from '@/cmps/review-list.vue';
 import stayRating from '@/cmps/stay-rating.vue';
 import longText from '@/cmps/long-text.vue';
-import reviewAdd from '@/cmps/review-add.vue'
+import reviewAdd from '@/cmps/review-add.vue';
 // import '@fortawesome/fontawesome-free/js/all.js';
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // import {faHome,faWifi,faPaw,} from '@fortawesome/free-solid-svg-icons'
@@ -180,11 +180,25 @@ export default {
     },
   },
   methods: {
+    placeOrder(order) {
+      const { _id, name, price } = this.stay;
+      order.stay = { _id, name, price };
+
+      order.hostId = this.stay.host._id;
+      this.$store.dispatch({ type: 'addOrder', order });
+    },
     iconToShow(amenity) {
       return utilService.getIcon(amenity);
       // return 'wifi';
     },
   },
-  components: { GmapMap, stayCheckout, reviewList, stayRating, longText,reviewAdd },
+  components: {
+    GmapMap,
+    stayCheckout,
+    reviewList,
+    stayRating,
+    longText,
+    reviewAdd,
+  },
 };
 </script>

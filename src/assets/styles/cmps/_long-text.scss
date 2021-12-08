@@ -2,16 +2,18 @@
   p {
     color: $clr2;
     // width: 70%;
-    width: 100%;
+    // width: 100%;
+    font-size: rem(16px);
+    width: 70%;
     line-height: 25px;
   }
   .long-text-btn {
     background-color: rgba(255, 255, 255, 0);
     color: $clr2;
-    font-size: rem(18px);
+    font-size: rem(16px);
     cursor: pointer;
     transition: 0.3s;
-    font-family: manrope-bold;
+    font-family: airbnb-medium, sans-serif;
     text-transform: capitalize;
     border: none;
     text-decoration-line: underline;

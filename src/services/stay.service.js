@@ -1862,7 +1862,7 @@ function _createStays() {
       avgRate: 5,
       summary:
         'Bungalow avec vue sur lagon et accès direct à la mer. Idéal pour couple souhaitant visiter notre belle île tout en se sentant comme chez eux.',
-      capacity: '2',
+      capacity: 2,
       amenities: ['Coffee', 'Free parking'],
       host: {
         _id: 'bor101',

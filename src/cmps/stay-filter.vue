@@ -1,19 +1,30 @@
 <template>
-  <section class="main-filters">
+  <section
+    v-bind:class="{ 'small-filter': onExplorePage }"
+    class="main-filters"
+  >
     <city-filter
       :currFilterBy="filterBy"
+      :onExplorePage="onExplorePage"
       @filteredCity="filterCity"
       @filterClicked="enlargeSearchBtn"
     />
     <!-- OLD DATE PICKER: -->
     <!-- <date-picker @filtered="setDates" @filterClicked="enlargeSearchBtn" /> -->
 
-    <date-picker @filtered="setDates" @filterClicked="enlargeSearchBtn" />
+    <double-date-picker v-if="onExplorePage" />
+    <date-picker
+      v-else
+      @filtered="setDates"
+      @filterClicked="enlargeSearchBtn"
+    />
     <guest-filter @addedGuests="addGuests" @filterClicked="enlargeSearchBtn" />
     <div class="search-btn-container flex">
       <button class="flex search-btn" @click="filter">
         <font-awesome-icon icon="search" />
-        <span class="search" v-if="largeSearchBtn">Search</span>
+        <span class="search" v-if="largeSearchBtn && !onExplorePage"
+          >Search</span
+        >
       </button>
     </div>
   </section>
@@ -21,16 +32,18 @@
 
 <script>
 import datePicker from '../cmps/filters/date-picker-2.vue';
-// import datePicker from '../cmps/date-picker.vue';
+import doubleDatePicker from '../cmps/filters/double-date-picker.vue';
 import guestFilter from '../cmps/guest-filter.vue';
 import cityFilter from '../cmps/city-filter-copy.vue';
 export default {
   name: 'stay-filter',
+  props: ['onExplorePage'],
 
   data() {
     return {
       filterBy: null,
       largeSearchBtn: false,
+      // onExplorePage: false,
       // guestShouldShow: false,
     };
   },
@@ -54,7 +67,9 @@ export default {
       this.filterBy.city = filterBy.city;
     },
     filter() {
-      this.$emit('filtered', this.filterBy);
+      const filterBy = JSON.parse(JSON.stringify(this.filterBy));
+      this.$store.dispatch({ type: 'setFilter', filterBy });
+      this.$emit('filtered', filterBy);
     },
     // toggleGuests() {
     //   this.guestShouldShow = !this.guestShouldShow;
@@ -67,6 +82,7 @@ export default {
     datePicker,
     guestFilter,
     cityFilter,
+    doubleDatePicker,
   },
 };
 </script>

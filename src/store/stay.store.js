@@ -18,6 +18,27 @@ export const stayStore = {
       propertyType: '',
     },
     currStay: null,
+    emptyOrder: {
+      hostId: '',
+      createdAt: Date.now(),
+      buyer: {
+        _id: '',
+        fullname: '',
+      },
+      totalPrice: 0,
+      dates: {
+        checkInDate: '',
+        checkOutDate: '',
+      },
+      totalNights: 0,
+      totalGuests: 0,
+      stay: {
+        _id: '',
+        name: '',
+        price: 0,
+      },
+      status: 'pending',
+    },
   },
   getters: {
     filterBy(state) {
@@ -32,6 +53,9 @@ export const stayStore = {
       return state.stays.reduce((acc, stay) => {
         (acc + stay.price) / state.stays.length;
       });
+    },
+    emptyOrder(state) {
+      return state.emptyOrder;
     },
 
     imgsToShow(state) {

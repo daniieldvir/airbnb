@@ -1,5 +1,4 @@
 .reviews-ratings-container {
-  --gap: 20px;
   --num-col: 2;
   --num-row: 2;
   position: relative;
@@ -8,6 +7,7 @@
   display: grid;
   grid-template-columns: repeat(var(--num-col), 1fr);
   grid-template-rows: repeat(var(--row-col), 1fr);
+  gap: 0 10px;
 
   align-items: center;
 
@@ -17,7 +17,8 @@
 
     display: flex;
     align-items: center;
-    margin-top: 30px;
+    font-size: rem(22px);
+    font-weight: 800;
 
     .svg-inline--fa {
       color: $clr1;
@@ -40,12 +41,20 @@
     align-items: baseline;
 
     display: grid;
-    grid-template-columns: repeat(var(--num-col), 300px);
+    grid-template-columns: repeat(var(--num-col), 1fr);
     grid-auto-rows: var(--row-height);
+
+    p {
+      justify-items: end;
+      font-size: rem(16px);
+    }
 
     .progress-bar {
       .el-progress-bar__inner {
         background-color: $clr2;
+        position: relative;
+        line-height: 1;
+        justify-self: stretch;
       }
     }
   }
@@ -61,14 +70,29 @@
     margin-bottom: 20px;
     align-items: baseline;
 
+    // justify-items: end;
+
     display: grid;
-    grid-template-columns: repeat(var(--num-col), 300px);
+    grid-template-columns: repeat(var(--num-col), 1fr);
     grid-auto-rows: var(--row-height);
+
+    p {
+      justify-items: end;
+      font-size: rem(16px);
+    }
 
     .progress-bar {
       .el-progress-bar__inner {
         background-color: $clr2;
+        position: relative;
+        line-height: 1;
+        justify-self: stretch;
       }
     }
+  }
+}
+.el-progress {
+  .el-progress-bar {
+    width: 70%;
   }
 }

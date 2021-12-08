@@ -4,6 +4,7 @@
     <router-view />
     <login v-if="!loggedInUser && isLogin && !isSignUp" @toggleLogin="toggleLogin" @changeFormToSignup="changeFormToSignup"/>
     <signup v-if="!loggedInUser && isSignUp && !isLogin" @toggleSignup="toggleSignup" @changeFormToLogin="changeFormToLogin"/>
+    <app-footer />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import appHeader from './cmps/app-header';
 // import loginSignup from './cmps/login-signup.vue';
 import login from './cmps/login.vue';
 import signup from './cmps/signup.vue';
+import appFooter from './cmps/app-footer.vue';
 
 export default {
 data(){
@@ -52,7 +54,8 @@ methods:{
   components: {
     appHeader,
     login,
-    signup
+    signup,
+    appFooter,
   },
 };
 </script>

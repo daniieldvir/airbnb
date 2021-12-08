@@ -3,7 +3,7 @@
     <div class="review-user-info flex align-center">
       <img :src="review.by.imgUrl" />
       <div class="review-user">
-        <h4 class="name">{{ review.by.fullname }}</h4>
+        <h3>{{ review.by.fullname }}</h3>
         <h4 class="data">{{ review.createdAt }}</h4>
       </div>
     </div>

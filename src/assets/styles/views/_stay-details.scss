@@ -4,22 +4,27 @@
 
   h2 {
     color: $clr2;
-    font-size: rem(25px);
+    font-size: rem(26px);
+    font-family: airbnb-medium, sans-serif;
   }
   .avg-rating {
-    font-family: manrope-bold;
+    font-family: airbnb, sans-serif;
 
     span {
       margin: 5px;
     }
   }
   .review-details {
-    font-size: rem(16px);
+    font-size: rem(14px);
     color: $clr2;
 
     .svg-inline--fa {
       color: $clr1;
       margin-right: 5px;
+    }
+
+    .rate {
+      font-family: airbnb-medium, sans-serif;
     }
   }
 
@@ -45,10 +50,14 @@
       grid-row: span 1/2;
 
       .info-header {
+        h2 {
+          font-size: rem(22px);
+          line-height: rem(20px);
+        }
         p {
           font-size: rem(16px);
           color: $clr2;
-          font-family: manrope;
+          font-family: airbnb-light, sans-serif;
 
           span {
             margin: 5px;
@@ -81,7 +90,7 @@
           }
 
           .svg-inline--fa {
-            font-size: rem(24px);
+            font-size: rem(20px);
             margin-inline-end: 1rem;
           }
           p {
@@ -94,6 +103,8 @@
         .asset-details {
           h4 {
             margin: 0;
+            font-size: rem(16px);
+            font-family: airbnb-medium, sans-serif;
           }
           p {
             margin: 0;
@@ -103,12 +114,13 @@
       .stay-details-amenities {
         h2 {
           margin: 20px 0 20px 0;
+          font-size: rem(22px);
         }
         .amenities-content {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 16px;
-          // margin-bottom: 20px;
+          font-size: rem(18px);
 
           .font-amenity-icon {
             min-width: 24px;
@@ -116,7 +128,7 @@
           }
 
           .svg-inline--fa {
-            font-size: rem(24px);
+            font-size: rem(18px);
             margin-inline-end: 1rem;
           }
         }
@@ -134,14 +146,14 @@
   .map-section {
     h2 {
       margin-top: 20px;
+      font-size: rem;
     }
   }
 
   .reviews {
-    font-family: manrope;
+    font-family: airbnb-light, sans-serif;
     margin: 5px;
     color: $clr2;
-    // text-decoration-line: underline;
 
     .review-user-info {
       text-decoration-line: none;

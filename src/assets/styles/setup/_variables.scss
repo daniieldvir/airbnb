@@ -9,7 +9,21 @@ $clr7: #b9b7b7;
 $clr8: #b9b7b750;
 
 // LAYOUT BREAKPOINTS
+
+$layout-padding: 20;
+// $layoutPadding: 20px;
+
 $mobile-breakpoint: 460px;
 $narrow-breakpoint: 720px;
 $normal-breakpoint: 960px;
 $wide-breakpoint: 1500px;
+
+// $break-narrow: 460px;
+// $break-normal: 720px;
+// $break-wide: 960px;
+// $wide-breakpoint: 1670px;
+
+// $padded-break-narrow: $break-narrow + $layoutPadding * 2;
+// $padded-break-normal: $break-normal + $layoutPadding * 2;
+// $padded-break-wide: $break-wide + $layoutPadding * 2;
+// $padded-break-wide: $wide-breakpoint + $layoutPadding * 2;
