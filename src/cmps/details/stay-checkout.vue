@@ -139,7 +139,7 @@ export default {
       this.order.dates = selectedDates;
     },
     setGuests(numOfGuests) {
-      console.log(numOfGuests);
+      // console.log(numOfGuests);
       this.order.totalGuests = numOfGuests;
     },
     changeBtnColor(e) {
@@ -151,8 +151,8 @@ export default {
       e.target.style.setProperty('--y', `${y}px`);
       // e.target.style.setProperty('--x', `${ x }px`)
       // e.target.style.setProperty('--y', `${ y }px`)
-      console.log('e', e);
-      console.log('x,y', x, y);
+      // console.log('e', e);
+      // console.log('x,y', x, y);
     },
     // checkout() {
     //   Swal.fire({
