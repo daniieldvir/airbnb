@@ -46,7 +46,11 @@
           <div class="btn-checkout-container">
             <!-- <button class="btn-checkout" @mousemove="changeBtnColor" @click="checkout">
               <span>Check availability</span> -->
-            <button class="btn-checkout" @mousemove="changeBtnColor" @click="checkOut">
+            <button
+              class="btn-checkout"
+              @mousemove="changeBtnColor"
+              @click="checkOut"
+            >
               <span>{{ btnTxt }}</span>
             </button>
           </div>
@@ -139,26 +143,26 @@ export default {
       console.log(numOfGuests);
       this.order.totalGuests = numOfGuests;
     },
-    changeBtnColor(e){
+    changeBtnColor(e) {
       // const x = e.pageX - e.target.offsetLeft
       // const y = e.pageY - e.target.offsetTop
-       const x = e.offsetX - e.target.offsetLeft
-      const y = e.offsetY - e.target.offsetLeft
-      e.target.style.setProperty('--x', `${x}px`)
-      e.target.style.setProperty('--y', `${y}px`)
+      const x = e.offsetX - e.target.offsetLeft;
+      const y = e.offsetY - e.target.offsetLeft;
+      e.target.style.setProperty('--x', `${x}px`);
+      e.target.style.setProperty('--y', `${y}px`);
       // e.target.style.setProperty('--x', `${ x }px`)
       // e.target.style.setProperty('--y', `${ y }px`)
       console.log('e', e);
-      console.log('x,y',x,y);
+      console.log('x,y', x, y);
     },
-    checkout() {
-      Swal.fire({
-        title: 'Thank you for booking!',
-        text: 'Press done',
-        icon: 'success',
-        confirmButtonText: 'Done',
-      });
-    },
+    // checkout() {
+    //   Swal.fire({
+    //     title: 'Thank you for booking!',
+    //     text: 'Press done',
+    //     icon: 'success',
+    //     confirmButtonText: 'Done',
+    //   });
+    // },
     checkOut() {
       const { checkInDate, checkOutDate } = this.order.dates;
       if (!this.isOrderReady) {
@@ -168,7 +172,6 @@ export default {
           this.userAlert = 'Please enter dates';
         }
       } else {
-        this.userAlert = 'Thank you for booking!';
         this.showCheckOutModal('Thank you for booking!');
         this.$emit('orderReady', this.order);
       }
@@ -199,7 +202,9 @@ export default {
       setTimeout(this.closeModal, 5000);
     },
     closeModal() {
+      this.btnTxt = 'Check availability';
       this.isModalOpen = false;
+      this.showOrderPreview = false;
     },
     loadEmptyOrder() {
       const emptyOrder = this.$store.getters.emptyOrder;
