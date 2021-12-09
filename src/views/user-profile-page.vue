@@ -75,11 +75,11 @@
               <strong>{{ upperCaseFirstChar(columnHeader) }}</strong>
             </span>
             <template v-for="dataObject in dataForList">
-              <img :src="dataObject.imgUrl" alt="" />
-              <span>{{ dataObject.user }}</span>
-              <span>{{ dataObject.start }}</span>
-              <span>{{ dataObject.end }}</span>
-              <span>${{ dataObject.total }}</span>
+              <img :key="dataObject.imgUrl" :src="dataObject.imgUrl" />
+              <span :key="dataObject.user">{{ dataObject.user }}</span>
+              <span :key="dataObject.start">{{ dataObject.start }}</span>
+              <span :key="dataObject.end">{{ dataObject.end }}</span>
+              <span :key="dataObject.total">${{ dataObject.total }}</span>
             </template>
           </div>
         </template>
@@ -114,22 +114,21 @@ export default {
       this.currSection = 'Notifications';
     },
     async showListedStays() {
-      if (!this.user.isHost) return;
       const filterBy = { hostId: this.user._id };
       await this.$store.dispatch({ type: 'setFilter', filterBy });
+      if (!this.user.isHost) return;
       const stays = this.$store.getters.staysToShow;
-      console.log('showListed shold be LAST!', stays);
 
-      // stays.forEach((stay) => {
-      //   let data = {
-      //     imgUrl: stay.imgUrls[0],
-      //     name: stay.name,
-      //     address: stay.loc.address,
-      //     price: stay.price,
-      //     rating: stay.avgRate,
-      //   };
-      //   this.dataForList.push(data);
-      // });
+      stays.forEach((stay) => {
+        let data = {
+          imgUrl: stay.imgUrls[0],
+          name: stay.name,
+          address: stay.loc.address,
+          price: stay.price,
+          rating: stay.avgRate,
+        };
+        this.dataForList.push(data);
+      });
 
       this.currSection = 'Listed Stays';
     },

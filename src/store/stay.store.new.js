@@ -74,7 +74,7 @@ export const stayStore = {
     },
     setStays(state, { stays }) {
       state.stays = stays;
-      // console.log('stays', stays);
+      console.log('set stays store ', stays);
     },
     setStay(state, { stay }) {
       state.currStay = stay;
