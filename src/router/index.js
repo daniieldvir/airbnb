@@ -5,6 +5,7 @@ import stayDetails from '../views/stay-details.vue';
 import Explore from '../views/stay-app';
 import BecomeHost from '../views/stay-edit';
 import userProfile from '../views/user-profile-page';
+import stayEdit from '../views/stay-edit';
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,11 @@ const routes = [
     path: '/user-profile',
     name: 'userProfile',
     component: userProfile,
+  },
+  {
+    path: '/stay/:stayId?/edit',
+    component: stayEdit,
+    component: stayEdit,
   },
 
   // {
