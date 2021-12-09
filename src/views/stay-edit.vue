@@ -1,5 +1,5 @@
 <template>
-  <section v-if="stay" class="stay-details main-container">
+  <section v-if="stay" class="stay-details edit main-container">
     <label for="">
       <input class="stay-name" type="text" v-model="stay.name" />
     </label>
