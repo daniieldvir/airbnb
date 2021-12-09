@@ -1,11 +1,12 @@
 .checkout-modal {
   flex-direction: column;
   background-color: white;
-  border: 1px solid rgb(221, 221, 221);
-  box-shadow: 0 6px 16px -2px #d8d8d8;
+  border: 1px solid rgb(210, 209, 209);
+  box-shadow: 0 6px 16px -2px rgb(210, 209, 209);
 
   text-align: center;
-  width: 400px;
+  // width: 400px;
+  width: 92%;
   height: 100px;
   padding: 10px;
   border-radius: 13px;

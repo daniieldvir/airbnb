@@ -7,14 +7,19 @@
         <h4 class="data">{{ review.createdAt }}</h4>
       </div>
     </div>
-    <p class="txt">{{ review.txt }}</p>
+    <div>
+      <long-text v-bind:summary="review.txt"></long-text>
+    </div>
   </section>
 </template>
 
 <script>
+import longText from './long-text.vue';
 export default {
   props: {
     review: Object,
   },
+
+  components: { longText },
 };
 </script>

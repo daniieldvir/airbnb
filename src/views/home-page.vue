@@ -15,6 +15,7 @@
         :listTitle="'Popular destinations'"
       />
       <home-list
+        v-if="topStays"
         @cardClicked="cardClicked"
         :places="topStays"
         :listTitle="'Top Rated'"
@@ -27,7 +28,7 @@
             space.
           </p>
 
-          <router-link class="main-router-link" to="/become-host">
+          <router-link class="main-router-link" to="/user-profile">
             <button onclick="window.location.href=/'become-host'">
               Learn more
             </button>
@@ -77,13 +78,13 @@ export default {
       ],
     };
   },
-  created() {
+  async created() {
     this.clearAllFilters();
     this.loadFilter();
-    this.$store.dispatch({ type: 'loadStays' }).then(() => {
-      const stays = this.$store.getters.staysToShow;
-      this.topStays = stays.filter((stay) => stay.avgRate >= 4.5).slice(0, 4);
-    });
+    await this.$store.dispatch({ type: 'loadStays' });
+    const stays = this.$store.getters.staysToShow;
+    console.log(stays);
+    this.topStays = stays.filter((stay) => stay.avgRate >= 4.5).slice(0, 4);
   },
   methods: {
     setFilter(filterBy) {

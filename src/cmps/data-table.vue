@@ -1,19 +1,24 @@
 <template>
-  <section v-if="currSection === 'Notifications'">
-    <h2 v-if="!dataForList.length">No {{ titleForDisplay }} to display</h2>
-    <template v-else>
-      <div class="data-table">
-        <span v-for="(column, columnHeader, idx) in dataForList[0]" :key="idx">
-          <strong>{{ columnHeader }}</strong>
-        </span>
-        <template v-for="dataObject in dataForList">
-          <img :src="dataObject.imgUrl" alt="" />
-          <span>{{ dataObject.Date }}</span>
-          <span>{{ dataObject.User }}</span>
-          <span>{{ dataObject.Message }}</span>
-          <span>{{ dataObject.Stay }}</span>
-        </template>
-      </div>
+  <div class="data-table">
+    <span v-for="(columnHeader, idx) in data.headers" :key="idx">
+      <strong>{{ columnHeader }}</strong>
+    </span>
+    <template v-for="dataObject in dataForList">
+      <img :src="dataObject.imgUrl" alt="" />
+      <span>{{ dataObject.header1 }}</span>
+      <span>{{ dataObject.header2 }}</span>
+      <span>{{ dataObject.header3 }}</span>
+      <span>{{ dataObject.header4 }}</span>
     </template>
-  </section>
+  </div>
 </template>
+
+<script>
+export default {
+  name: 'data-table',
+  props: { data: Array },
+  data() {
+    return {};
+  },
+};
+</script>

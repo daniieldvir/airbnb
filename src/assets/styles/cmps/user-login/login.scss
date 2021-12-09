@@ -11,6 +11,8 @@
   top: 5%;
   left: 50%;
   transform: translate(-50%, 50%);
+  box-shadow: 0 6px 6px -6px $clr7;
+
   z-index: 999999;
 
   display: flex;
