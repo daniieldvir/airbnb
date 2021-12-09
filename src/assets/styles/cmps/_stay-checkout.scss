@@ -127,109 +127,36 @@
           cursor: pointer;
           outline: none;
           overflow: hidden;
-          border-radius: 20px;
+          border-radius: 10px;
 
           span {
             position: relative;
           }
           &::before {
             // --size: 0;
-            --size: 400px;
+            --size: 1000px;
             content: '';
             position: absolute;
             left: var(--x);
             top: var(--y);
             width: var(--size);
             height: var(--size);
-            background: radial-gradient(circle closest-side, #454ed4, transparent);
+
+            background-image: radial-gradient(
+              circle at center center,
+              rgb(255, 56, 92) 0%,
+              rgb(224, 40, 108) 50%,
+              rgb(202, 4, 159) 100%
+            );
             transform: translate(-50%, -50%);
             transition: width 0.2s ease, height 0.2s ease;
           }
 
           &:hover::before {
-            --size: 400px;
+            --size: 1000px;
           }
         }
       }
-      //     width: 99%;
-
-      //     font-size: rem(16px);
-      //     padding: 1em 2.5em;
-      //     background-color: royalblue;
-      //     color: white;
-      //     border-radius: 10px;
-
-      //     // --mouse-x: 950px;
-      //     // --mouse-y: 1132px;
-      //     // background-position: 0px 0px;
-
-      //     background-image: linear-gradient(
-      //       to right,
-      //       #9c1ee6,
-      //       #f52060,
-      //       #c752cf,
-      //       #f52060
-      //     );
-
-      //     background-size: 300%;
-      //     background-position: -100%;
-      //   }
-      // }
-      // .btn-checkout:hover,
-      // .btn-checkout:focus {
-      //   animation: animatedBackground 3s infinite alternate-reverse;
-      //   // --mouse-x: 950px;
-      //   // --mouse-y: 1132px;
-
-      //   // background-position: calc(100% - var(mouse-x)) calc(100% - var(mouse-y));
-      // }
-      // @keyframes animatedBackground {
-      //   from {
-      //     background-position: 0%;
-      //   }
-      //   to {
-      //     background-position: 100%;
-      //   }
-      // }
-
-      //   .btn-checkout {
-      //     width: 100%;
-      //     font-size: rem(16px);
-
-      //     padding: 1em 2.5em;
-      //     background-color: royalblue;
-      //     color: white;
-      //     border-radius: 15px;
-
-      //     background-image: linear-gradient(to right, #9c1ee6, #f52060, #c752cf, #f52060);
-
-      //     background-size: 300%;
-      //     background-position: -100%;
-      //   }
-      // }
-      // .btn-checkout:hover,
-      // .btn-checkout:focus {
-      //   animation: animatedBackground 3s infinite alternate-reverse;
-      // }
-      // @keyframes animatedBackground {
-      //   from {
-      //     background-position: 0%;
-      //   }
-      //   to {
-      //     background-position: 100%;
-      //   }
-      // }
-
-      // .swal2-actions {
-      //   background-color: black;
-      //   button {
-      //     background-color: black;
-      //   }
-      //   .swal2-confirm,
-      //   .swal2-styled {
-      //     background-color: black;
-      //   }
-      // }
     }
     .order-preview {
       margin: 10px 0px;

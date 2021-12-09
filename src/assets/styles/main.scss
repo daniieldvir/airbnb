@@ -34,7 +34,8 @@
 @import 'cmps/_footer-list.scss';
 // @import './mobile/main-mobile.scss';
 // @import './mobile/mobile-nav.scss';
-
+@import 'cmps/user-login/login.scss';
+@import 'cmps/user-login/singup.scss';
 // Views
 @import 'views/home-page';
 @import 'views/stay-details';
