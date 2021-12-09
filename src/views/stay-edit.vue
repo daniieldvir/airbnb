@@ -1,9 +1,9 @@
 <template>
   <section v-if="stay" class="stay-details main-container">
     <label for="">
-      <input type="text" />
+      <input class="stay-name" type="text" v-model="stay.name" />
     </label>
-    <h2>{{ formattedName }}</h2>
+    <!-- <h2>{{ formattedName }}</h2> -->
     <div class="review-details">
       <template>
         <font-awesome-icon icon="star" />
@@ -11,7 +11,10 @@
         <span class="reviews">{{ formattedReviews }}</span
         >&#183;
       </template>
-      <a class="details-location" href=""> {{ stay.loc.address }}</a>
+      <label for="">
+        <input class="" type="text" v-model="stay.loc.address" />
+      </label>
+
       <!-- <span class="details-location">{{ stay.loc.address }}</span> -->
 
       <!-- <a href=""> {{ stay.loc.address }}</a> -->
@@ -26,7 +29,14 @@
           <div>
             <h2>{{ stay.type }} hosted by {{ stay.host.fullname }}</h2>
             <p>
-              {{ stay.capacity }} guests <span> &#183; </span> {{ stay.type }}
+              <label for="">
+                <input class="" type="text" v-model="stay.capacity" />
+              </label>
+              guests <span> &#183; </span>
+              <label for="">
+                <input class="" type="text" v-model="stay.type" />
+              </label>
+
               <span> &#183;</span>
               {{ beds }}
             </p>
@@ -70,18 +80,34 @@
         </div>
         <hr />
         <div class="details-summary-container">
-          <long-text v-bind:summary="stay.summary"></long-text>
-          <!-- <p>{{ stay.summary }}</p> -->
+          <label for="summary">
+            <textarea
+              name="summary"
+              id=""
+              cols="100"
+              rows="10"
+              v-model="stay.summary"
+            ></textarea>
+          </label>
         </div>
         <hr />
         <div class="stay-details-amenities">
           <h2>What this place offers</h2>
           <div class="amenities-content">
-            <div v-for="(amenity, idx) in stay.amenities" :key="idx">
-              <font-awesome-icon
+            <div v-for="(amenity, idx) in amenities" :key="idx">
+              <label for="">
+                <input
+                  type="checkbox"
+                  :id="amenity"
+                  :value="amenity"
+                  v-model="stay.amenities"
+                />
+                <span class="amenity"></span>
+              </label>
+              <!-- <font-awesome-icon
                 class="font-amenity-icon"
                 :icon="iconToShow(amenity)"
-              />
+              /> -->
               {{ amenity }}
             </div>
           </div>
@@ -108,11 +134,29 @@ export default {
       isLoading: true,
       stay: null,
       imgs: null,
-      // iconToShow:'',
-      reviews: [],
+      amenities: [
+        'Kitchen',
+        'Wifi',
+        'TV',
+        'Coffee',
+        'Crib',
+        'Smoking allowed',
+        'No smoking',
+        'Pets allowed',
+        'Cooking basics',
+        'Air conditioning',
+        'Refrigerator',
+        'Free parking',
+        'Bathub',
+        'Heating',
+        'Pool',
+        'Accessible',
+        'Long term stays allowed',
+      ],
     };
   },
   created() {
+    console.log('stay edit');
     const { stayId } = this.$route.params;
     if (stayId) {
       this.$store

@@ -3,7 +3,7 @@
     <nav class="user-profile-nav flex">
       <ul class="clean-list flex">
         <li @click="showNotifications">Notifications</li>
-        <router-link to="/stay/qiO23/edit">
+        <router-link to="/stay/61ae2083033a3647ed7811ff/edit">
           <li>Add stay</li>
         </router-link>
         <li @click="showListedStays">Listed Stays</li>
