@@ -5,6 +5,7 @@
 
       <div class="top-rated">
         <footer-list
+          v-if="topStays"
           @cardClicked="cardClicked"
           :places="topStays"
           :listTitle="'Top Rated'"
@@ -76,8 +77,8 @@ export default {
       ],
     };
   },
-  created() {
-    this.$store.dispatch({ type: 'loadStays' });
+  async created() {
+    await this.$store.dispatch({ type: 'loadStays' });
     const stays = this.$store.getters.staysToShow;
     this.topStays = stays.filter((stay) => stay.avgRate >= 4.5).slice(0, 4);
   },
