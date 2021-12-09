@@ -83,7 +83,6 @@ export default {
     this.loadFilter();
     await this.$store.dispatch({ type: 'loadStays' });
     const stays = this.$store.getters.staysToShow;
-    console.log(stays);
     this.topStays = stays.filter((stay) => stay.avgRate >= 4.5).slice(0, 4);
   },
   methods: {

@@ -156,7 +156,6 @@ export default {
     };
   },
   created() {
-    console.log('stay edit');
     const { stayId } = this.$route.params;
     if (stayId) {
       this.$store
@@ -164,7 +163,6 @@ export default {
         .then((stay) => {
           this.stay = JSON.parse(JSON.stringify(stay));
           const imgs = this.$store.getters.imgsToShow;
-          console.log('imgs', imgs);
           this.imgs = imgs;
           this.reviews = this.stay.reviews;
         });

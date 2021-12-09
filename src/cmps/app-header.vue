@@ -96,7 +96,6 @@ export default {
       handler() {
         this.onHomePage = this.$route.name !== 'Home' ? false : true;
         this.onExplorePage = this.$route.name === 'Explore' ? true : false;
-        console.log(this.onHomePage);
       },
       immediate: true,
     },
