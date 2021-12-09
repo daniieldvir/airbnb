@@ -47,6 +47,7 @@ export default {
     return {
       filterBy: null,
       largeSearchBtn: false,
+
       // showSmallFilter=false,
       // onExplorePage: false,
       // guestShouldShow: false,

@@ -164,3 +164,26 @@ header {
     box-shadow: 0 3px 3px rgb(0 0 0 / 23%);
   }
 }
+
+@media screen and (max-width: 760px) {
+  header {
+    .main-nav {
+      .main-router-link {
+        width: max-content;
+        height: max-content;
+        text-decoration: none;
+        height: 50px;
+        color: var(--text);
+        &:not(:first-of-type) {
+          margin: 0px 12.5px;
+        }
+        .logo {
+          display: none;
+        }
+      }
+      .nav-content {
+        display: none;
+      }
+    }
+  }
+}

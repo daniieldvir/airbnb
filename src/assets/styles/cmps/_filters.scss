@@ -1,78 +1,32 @@
 .main-filters {
   --gap: 9px;
   font-size: rem(14px);
-  // --num-col: 7;
-  // --row-height: 60px;
-  // padding: var(--gap);
+
   position: relative;
   margin-bottom: 150px;
-  // margin-left: auto;
-  // margin-right: auto;
-  // justify-content: ;
-  // align-items: baseline;
-
   display: grid;
-  // grid-template-columns: repeat(var(--num-col), 1fr);
-  // grid-template-columns: 1.5fr 2fr 1fr 60px;
-  // grid-template-columns: 1fr 60px;
-  align-content: center;
-  // gap: var(--gap);
-  // align-items: end;
 
+  align-content: center;
   background-color: white;
-  // border: 1px solid rgba(240, 240, 239, 0.749);
   border-radius: 200px;
   max-width: 800px;
-  // width: calc(70vw - 140px);
   height: 67px;
-  // padding: 20px;
-  // width: auto;
-  // cursor: pointer;
+
   font-size: 1rem;
   line-height: 1.3em;
 
   .city-filter {
     cursor: pointer;
-    // grid-column: 1/-2;
     grid-column: 1;
-    // grid-column: 1/3;
-    // grid-row: span 1;
-    // align-content: center;
     align-items: center;
-    // justify-content: center;
-    // margin-left: 30px;
-    // border-right: 1px solid rgb(196, 196, 196);
-    // & span {
-    //   display: none;
-    // }
   }
 
-  // .date-picker-cont {
-  // grid-column: 2;
-  // display: none;
   .date-picker-cont {
     grid-column: 2;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    .checkIn {
-      // grid-column: 1;
-    }
-    .checkIn {
-      // grid-column: 2;
-    }
-    // }
-
-    // grid-row: span 2;
   }
 
   .guest-filter {
-    // grid-column: 6 /8;
-    // grid-row: span 1;
-    // display: none;
     grid-column: 4;
-
-    // align-items: center;
-    // margin-left: 30px;
   }
   .search-btn-container {
     display: flex;
@@ -80,9 +34,6 @@
     align-items: center;
 
     .search-btn {
-      // grid-column: 8 / 9;
-      // grid-row: span 1;
-      // grid-column: 4;
       height: 45px;
       justify-content: center;
       align-items: center;
@@ -121,25 +72,11 @@
       font-weight: 400;
       background-color: none;
       padding: 0px 1.5em;
-      // cursor: pointer;
-      // &label {
-      //   font-weight: 500;
-      // }
     }
   }
   .city-filter .toggel-btn {
     padding: 0px 2.5em;
-    // min-width: 140px;
-    // background-color: aqua;
-    // & label {
-    //   font-weight: 800;
-    // }
   }
-  // .el-range-input {
-  //   // background-color: chartreuse;
-  //   width: 148px;
-  //   height: 20px;
-  // }
 
   .date-picker {
     align-self: center;
@@ -201,7 +138,6 @@
     .reduce-btn,
     .add-btn {
       background-color: #fff;
-      // padding: 5px 8px;
       margin: 0 5px;
       width: 32px;
       height: 32px;
@@ -211,8 +147,6 @@
         color: $clr2;
         border: 1px solid $clr2;
       }
-      // font-size: 1.2rem;
-      // cursor: pointer;
     }
     .multi-choice {
       align-items: center;
@@ -234,19 +168,11 @@
         width: 32px;
         text-align: center;
       }
-      button {
-        // border: 1px solid $clr7;
-        // color: $clr7;
-        // border-radius: 50%;
-      }
     }
   }
 
   /// Modal - City Filter
   .city-filter {
-    // & label {
-    //   font-weight: 500;
-    // }
     & span {
       margin-top: 1px;
       font-size: rem(14px);
@@ -286,36 +212,19 @@
       }
     }
   }
-  /// Hover
-  // .guest-filter:hover,
-
-  // .main-filters:hover,
-  // .city-filter:hover,
-  // .date-picker:hover,
-  // .location-btn:hover {
-  //   background-color: #fff;
-  //   box-shadow: 0 0 25px 0 rgb(0 0 0 / 9%);
-  // }
-
-  // .main-filters,
-  // .city-filter:hover {
-  //   background-color: #fff;
-  //   box-shadow: 0 0 25px 0 rgb(0 0 0 / 9%);
-  //   border-start-end-radius: 30px;
-  // }
 }
 
 .main-filters.small-filter {
-  // font-size: rem(14px);
   margin-bottom: 10px;
   height: 45px;
   border: 1px solid $clr7;
   align-items: center;
   justify-content: center;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr) auto;
-  // margin-top: 150px;
   width: 31%;
+
   font-size: 0.9rem;
   & .search-btn {
     width: 35px;
@@ -329,45 +238,33 @@
     & span {
       font-size: rem(14px);
     }
-    // flex-direction: row;
-    // width: max-content;
+
     padding-left: 10px;
     padding-right: 0px;
-    // border-left: 1px solid $clr8;
     color: $clr7;
-    // font-weight: bolder;
-    // margin: 0px;
   }
   & .city-filter .toggel-btn {
     border-right: 1px solid $clr8;
     font-weight: bold;
     color: $clr2;
-    // margin-left: 0px;
-    // align-self: center;
+
     padding-right: 0px;
     padding-left: 20px;
   }
   & .double-picker-cont {
-    // width: 10px;
-
-    // background-color: chartreuse;
-
     & .el-date-editor {
       background-color: rgba(210, 105, 30, 0.836);
       padding: 0px;
       width: 0px;
-      // justify-content: center;
-      // align-items: center;
+
       & .el-input__inner {
         width: 80px;
-        // color: $clr4;
       }
       & input:first-of-type {
         background-color: rgba(0, 0, 0, 0);
         width: 100px;
         margin-top: 2px;
         font-size: rem(14px);
-        // font-size: 0.9rem;
       }
       & input:last-of-type {
         display: none;
@@ -390,11 +287,54 @@
       & .toggel-btn {
         border-right: 1px solid $clr7;
       }
+    }
+    .date-picker-cont {
+      grid-column: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      cursor: pointer;
+    }
+    .guest-filter {
       & span {
-        // text-overflow: ellipsis;
-        // white-space: nowrap;
-        // overflow: hidden;
-        // display: block;
+        font-size: rem(14px);
+      }
+      grid-column: 3;
+      align-items: center;
+      display: block;
+      & .toggel-btn {
+        border-left: 1px solid $clr7;
+        cursor: pointer;
+      }
+    }
+  }
+  .search-btn {
+    grid-column: 4;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    border-radius: 25px;
+    padding: 0px 15px;
+    & .search {
+      display: flex;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .main-filters {
+    grid-template-columns: 203px 2fr 1fr auto;
+    width: 60% !important;
+
+    .city-filter {
+      grid-column: 1;
+      align-items: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      display: block;
+      & .toggel-btn {
+        border-right: 1px solid $clr7;
       }
     }
     .date-picker-cont {
@@ -410,7 +350,6 @@
       grid-column: 3;
       align-items: center;
       display: block;
-      // border-left: 1px solid $clr8;
       & .toggel-btn {
         border-left: 1px solid $clr7;
         cursor: pointer;
