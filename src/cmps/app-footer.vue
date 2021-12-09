@@ -73,14 +73,6 @@ export default {
           name: 'Rome',
           address: 'Italy',
         },
-        {
-          name: 'Bora Bora',
-          address: 'Italy',
-        },
-        {
-          name: 'Maureillas-las-Illas',
-          address: 'France',
-        },
       ],
     };
   },

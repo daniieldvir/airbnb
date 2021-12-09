@@ -129,6 +129,8 @@
   }
   .city-filter .toggel-btn {
     padding: 0px 2.5em;
+    // min-width: 140px;
+    // background-color: aqua;
     // & label {
     //   font-weight: 800;
     // }
@@ -376,7 +378,7 @@
 
 @media screen and (min-width: 1080px) {
   .main-filters {
-    grid-template-columns: 1.5fr 2fr 1fr auto;
+    grid-template-columns: 203px 2fr 1fr auto;
 
     .city-filter {
       grid-column: 1;

@@ -53,6 +53,9 @@ header {
         font-size: rem(25px);
         font-family: airbnb-medium, sans-serif;
 
+        display: flex;
+        align-items: center;
+
         & .svg-inline--fa {
           font-size: 2rem;
         }
@@ -82,6 +85,10 @@ header {
     }
     & .dropdown-content {
       right: 0;
+
+      a {
+        cursor: pointer;
+      }
     }
   }
 }
@@ -136,6 +143,8 @@ header {
 }
 .nav-content {
   .dropdown {
+    border: 1px solid $clr8;
+    border-radius: 50px;
     .user-logo {
       margin-top: 1px;
       height: 27px;
@@ -150,5 +159,8 @@ header {
         width: 100%;
       }
     }
+  }
+  .dropdown:hover {
+    box-shadow: 0 3px 3px rgb(0 0 0 / 23%);
   }
 }

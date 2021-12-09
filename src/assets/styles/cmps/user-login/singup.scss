@@ -1,0 +1,108 @@
+.signup-modal {
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid $clr7;
+  text-align: center;
+  width: 500px;
+  height: 350px;
+
+  border-radius: 15px;
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 999999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 5px;
+
+  .signup-header {
+    button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    p {
+      font-size: rem(22px);
+      font-family: airbnb-medium, sans-serif;
+    }
+  }
+
+  .signup-input {
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      width: 300px;
+      height: 250px;
+
+      input {
+        width: 100%;
+        height: 100%;
+        border: 1px solid $clr7;
+        border-radius: 5px;
+        padding: 0 10px;
+        margin: 5px;
+      }
+
+      .checkout-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+
+        font-size: rem(16px);
+
+        padding: 1em 2.5em;
+        position: relative;
+        appearance: none;
+        background: #f72359;
+        border: none;
+        color: white;
+        cursor: pointer;
+        outline: none;
+        overflow: hidden;
+        border-radius: 10px;
+
+        span {
+          position: relative;
+        }
+
+        &::before {
+          --size: 0;
+
+          content: '';
+          position: absolute;
+          left: var(--x);
+          top: var(--y);
+          width: var(--size);
+          height: var(--size);
+          background: radial-gradient(
+            circle closest-side,
+            #fa50e6,
+            transparent
+          );
+          transform: translate(-50%, -50%);
+          transition: width 0.2s ease, height 0.2s ease;
+        }
+
+        &:hover::before {
+          --size: 700px;
+        }
+      }
+    }
+  }
+
+  .change-login-button {
+    padding-bottom: 20px;
+    button {
+      border-radius: 10px;
+    }
+  }
+}

@@ -87,8 +87,8 @@ export default {
   },
   methods: {
     setFilter(filterBy) {
-      this.$store.dispatch({ type: 'setFilter', filterBy });
       this.$router.push('/explore');
+      this.$store.dispatch({ type: 'setFilter', filterBy });
     },
     cardClicked(cardObject) {
       this.filterBy.city = cardObject.name;
