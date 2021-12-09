@@ -1,5 +1,6 @@
 .review-preview-container {
   color: $clr2;
+  margin: 10px;
   .review-user-info {
     img {
       width: 56px;
@@ -16,5 +17,13 @@
   .txt,
   h3 {
     font-size: rem(16px);
+  }
+
+  button {
+    background-color: white;
+    text-decoration-line: underline;
+    font-size: rem(16px);
+    padding: 0;
+    font-family: airbnb-medium, sans-serif;
   }
 }

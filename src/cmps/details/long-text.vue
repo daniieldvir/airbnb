@@ -23,13 +23,13 @@ export default {
   },
   computed: {
     textForDisplay() {
-      return this.expandText ? this.summary : this.summary.slice(0, 200);
+      return this.expandText ? this.summary : this.summary.slice(0, 210);
     },
     textButton() {
       return this.expandText ? 'Hide' : 'Show More >';
     },
     isLongTxt() {
-      return this.summary.length > 200;
+      return this.summary.length > 210;
     },
   },
 };
