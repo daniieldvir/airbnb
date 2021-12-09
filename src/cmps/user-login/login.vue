@@ -63,7 +63,9 @@ export default {
     changeFormToSignup() {
       this.$emit('changeFormToSignup');
     },
-    close() {},
+    close() {
+      this.$emit('close');
+    },
     changeBtnColor(e) {
       const x = e.offsetX - e.target.offsetLeft;
       const y = e.offsetY - e.target.offsetLeft;

@@ -75,7 +75,7 @@ export default {
       this.$emit('changeFormToLogin')
     },
     close(){
-
+      this.$emit('close');
     }
   },
 }

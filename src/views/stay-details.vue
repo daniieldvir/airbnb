@@ -67,7 +67,7 @@
         </div>
         <hr />
         <div class="details-summary-container">
-          <long-text v-bind:summary="stay.summary"></long-text>
+          <long-text :summary="stay.summary"></long-text>
           <!-- <p>{{ stay.summary }}</p> -->
         </div>
         <hr />
@@ -126,6 +126,7 @@ import reviewList from '../cmps/details/review-list.vue';
 import stayRating from '../cmps/details/stay-rating.vue';
 import longText from '../cmps/details/long-text.vue';
 import reviewAdd from '../cmps/details/review-add.vue';
+import {showMsg} from '../services/event-bus.service.js';
 // import '@fortawesome/fontawesome-free/js/all.js';
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // import {faHome,faWifi,faPaw,} from '@fortawesome/free-solid-svg-icons'
@@ -188,11 +189,21 @@ export default {
   },
   methods: {
     async placeOrder(order) {
-      const { _id, name, price } = this.stay;
-      order.stay = { _id, name, price };
-      order.hostId = this.stay.host._id;
-      console.log('stay-details-order', order);
-      await this.$store.dispatch({ type: 'addOrder', order });
+      try{
+        const { _id, name, price } = this.stay;
+        order.stay = { _id, name, price };
+        order.hostId = this.stay.host._id;
+        console.log('stay-details-order', order);
+        // if (!this.loggedInUser) {
+				//   this.$emit('toggleLogin')
+				//   return
+			  // }
+        // this.$store.dispatch({ type: 'logout' });
+        await this.$store.dispatch({ type: 'addOrder', order:order });
+        showMsg('The order was sent for approval')
+      }catch (err) {
+				showMsg('The order failed', 'error')
+			}
     },
     iconToShow(amenity) {
       return utilService.getIcon(amenity);
@@ -210,6 +221,7 @@ export default {
     stayRating,
     longText,
     reviewAdd,
+    showMsg
   },
 };
 </script>
