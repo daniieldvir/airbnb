@@ -71,9 +71,8 @@ export default {
       const y = e.offsetY - e.target.offsetLeft;
       e.target.style.setProperty('--x', `${x}px`);
       e.target.style.setProperty('--y', `${y}px`);
-
-      console.log('e', e);
-      console.log('x,y', x, y);
+      // console.log('e', e);
+      // console.log('x,y', x, y);
     },
   },
 
