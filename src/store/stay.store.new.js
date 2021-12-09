@@ -39,6 +39,7 @@ export const stayStore = {
             },
             status: 'pending',
         },
+        isLoading: false,
     },
     getters: {
         filterBy(state) {
@@ -63,9 +64,12 @@ export const stayStore = {
         },
     },
     mutations: {
+        setLoading(state, { isLoading }) {
+            state.isLoading = isLoading
+        },
         setFilter(state, { filterBy }) {
             state.filterBy = filterBy;
-            console.log('filter state', state.filterBy);
+            // console.log('filter state', state.filterBy);
         },
         setStays(state, { stays }) {
             state.stays = stays;
@@ -92,13 +96,18 @@ export const stayStore = {
     },
     actions: {
         async loadStays({ commit, state }) {
+            console.log('store: state.filterBy', state.filterBy)
+            commit({ type: 'setLoading', isLoading: true });
             try {
+                // const stays = await stayService.query();
                 const stays = await stayService.query(state.filterBy);
                 commit({ type: 'setStays', stays });
                 // console.log('stay', stays);
             } catch (err) {
                 console.log('stayStore: Error in loadStays', err);
                 throw err;
+            } finally {
+                commit({ type: 'setLoading', isLoading: false });
             }
         },
         setFilter({ commit, dispatch }, { filterBy }) {
@@ -118,11 +127,11 @@ export const stayStore = {
         //       commit({ type: 'setLoading', isLoading: false })
         //     })
         // },
-        async getById({ commit }, { stayId }) {
+        async getStayById({ commit }, { stayId }) {
             try {
                 const stay = await stayService.getById(stayId);
+                console.log('stay store: stay by id ', stay);
                 commit({ type: 'setStay', stay });
-                // console.log('stay', stay);
                 return stay;
             } catch (err) {
                 console.log('stayStore: Error in get stay', err);

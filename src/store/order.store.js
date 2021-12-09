@@ -9,9 +9,13 @@ export const orderStore = {
     state: {
         currOrder: null,
         orders: [],
+        emptyOrder: orderService.getEmptyOrder(),
+        notifications: []
     },
     getters: {
-
+        getEmptyOrder(state) {
+            return state.emptyOrder;
+        }
     },
     mutations: {
         addOrder(state, payload) {
@@ -34,44 +38,51 @@ export const orderStore = {
     },
     actions: {
         loadOrders({ commit }) {
-            orderService
-                .query()
-                .then((orders) => {
-                    commit({ type: 'setOrders', orders })
-                })
-
-        },
-        addOrder({ commit }, { order }) {
-            return orderService.save(order).then((savedOrder) => {
-                commit({ type: 'addOrder', order: savedOrder })
-                return savedOrder
-            })
-        },
-        updateOrder({ commit }, { order }) {
-            return orderService.save(order).then((savedOrder) => {
-                commit({ type: 'updateOrder', order: savedOrder })
-                return savedOrder
-            })
-        },
-        removeOrder({ commit }, { orderId }) {
-            return orderService.remove(orderId).then(() => {
-                commit({ type: 'removeOrder', orderId })
-            })
-        },
-        getOrder({ commit }, { orderId }) {
-            if (!orderId) {
-                return orderService.getEmptyOrder()
-            }
-            return orderService.getById(orderId).then((order) => {
-                commit({ type: 'getOrder', order })
-                return order
-            })
-        },
-
-        async saveOrder({ commit }, { newOrder }) {
-            return await orderService.saveCurrOrder(newOrder)
-
+            const orders = orderService.query();
+            commit({ type: 'setOrders', orders })
         }
 
     },
+    async addOrder({ commit }, { order }) {
+        try {
+            console.log('store: order', order);
+            const savedOrder = await orderService.save(order);
+            commit({ type: 'addOrder', order: savedOrder })
+            return savedOrder;
+        } catch (err) {
+            console.log('stayStore: Error in add order', err);
+            throw err;
+        }
+    },
+    async updateOrder({ commit }, { order }) {
+        try {
+            console.log('store: order', order);
+            const savedOrder = await orderService.save(order);
+            commit({ type: 'updateOrder', order: savedOrder })
+            return savedOrder;
+        } catch (err) {
+            console.log('stayStore: Error in update order', err);
+            throw err;
+        }
+    },
+    async removeOrder({ commit }, { orderId }) {
+        try {
+            await orderService.remove(orderId)
+            commit({ type: 'removeOrder', orderId })
+        } catch (err) {
+            console.log('stayStore: Error in remove order', err);
+            throw err;
+        }
+    },
+    async getOrder({ commit }, { orderId }) {
+        try {
+            const order = await orderService.getById(orderId);
+            commit({ type: 'getOrder', order });
+            return order;
+        } catch (err) {
+            console.log('stayStore: Error in getting order', err);
+            throw err;
+        }
+    },
+
 }

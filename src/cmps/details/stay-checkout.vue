@@ -12,27 +12,6 @@
             <span> {{ formattedReviews }}</span>
           </div>
         </div>
-
-        <!-- <checkout-guest-modal
-              class="select-guests-container flex space-between"
-              @setGuests="setGuests"
-            />
-            
-            /> -->
-
-        <!-- <div class="select-guests-container flex space-between"> -->
-        <!-- <guest-filter/> -->
-        <!-- <guest-filter :currFilterBy="filterBy" @addedGuests="addGuests" /> -->
-
-        <!-- <div class="select-guests-container flex space-between"> -->
-        <!-- <guest-filter/> -->
-        <!-- <guest-filter @addedGuests="addGuests" /> -->
-
-        <!-- </div> -->
-        <!-- <div class="btn-checkout-container">
-                            <button class="btn-checkout">Check availability
-                            </button>
-                        </div> -->
         <div class="form-container">
           <div class="select-form">
             <date-picker @filtered="setDates" />
@@ -44,8 +23,6 @@
             userAlert
           }}</span>
           <div class="btn-checkout-container">
-            <!-- <button class="btn-checkout" @mousemove="changeBtnColor" @click="checkout">
-              <span>Check availability</span> -->
             <button
               class="btn-checkout"
               @mousemove="changeBtnColor"
@@ -123,7 +100,7 @@ export default {
     },
     // btnTxt() {},
     totalPrice() {
-      return this.order.totalPrice;
+      return this.order.totalPrice.toLocaleString();
     },
     totalNights() {
       return this.order.totalNights;
@@ -205,7 +182,7 @@ export default {
       this.isModalOpen = false;
     },
     loadEmptyOrder() {
-      const emptyOrder = this.$store.getters.emptyOrder;
+      const emptyOrder = this.$store.getters.getEmptyOrder;
       this.order = JSON.parse(JSON.stringify(emptyOrder));
     },
   },
