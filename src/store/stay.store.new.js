@@ -5,6 +5,7 @@ export const stayStore = {
     state: {
         stays: [],
         filterBy: {
+            hostId: '',
             city: '',
             guests: '',
             dates: {

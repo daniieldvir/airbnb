@@ -9,12 +9,12 @@
     <login
       v-if="!loggedInUser && isLogin && !isSignUp"
       @toggleLogin="toggleLogin"
-      @changeFormToSignup="changeFormToSignup"
+      @changeFormToSignup="changeFormToSignup" @close="close"
     />
     <signup
       v-if="!loggedInUser && isSignUp && !isLogin"
       @toggleSignup="toggleSignup"
-      @changeFormToLogin="changeFormToLogin"
+      @changeFormToLogin="changeFormToLogin" @close="close"
     />
     <app-footer />
   </div>
@@ -60,6 +60,10 @@ export default {
       this.isLogin = false;
       this.isSignUp = false;
     },
+    close(){
+      this.isLogin = false;
+      this.isSignUp = false;
+    }
   },
   components: {
     appHeader,
