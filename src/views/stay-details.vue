@@ -126,7 +126,7 @@ import reviewList from '../cmps/details/review-list.vue';
 import stayRating from '../cmps/details/stay-rating.vue';
 import longText from '../cmps/details/long-text.vue';
 import reviewAdd from '../cmps/details/review-add.vue';
-import {showMsg} from '../services/event-bus.service.js';
+import { showMsg } from '../services/event-bus.service.js';
 // import '@fortawesome/fontawesome-free/js/all.js';
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // import {faHome,faWifi,faPaw,} from '@fortawesome/free-solid-svg-icons'
@@ -142,27 +142,28 @@ export default {
     };
   },
   async created() {
-      try{
-        const { stayId } = this.$route.params;
-        if (stayId) {
-          console.log('stayId', stayId)
-          const stay = await this.$store.dispatch({ type: 'getStayById', stayId: stayId });
-          this.stay = JSON.parse(JSON.stringify(stay));
-          const imgs = this.$store.getters.imgsToShow;
-          // console.log('imgs', imgs);
-          this.imgs = imgs;
-          this.reviews = this.stay.reviews;
-        }
-      }catch(err){
-        console.log('Cannot get stay with id:', stayId)
+    try {
+      const { stayId } = this.$route.params;
+      if (stayId) {
+        const stay = await this.$store.dispatch({
+          type: 'getStayById',
+          stayId: stayId,
+        });
+        this.stay = JSON.parse(JSON.stringify(stay));
+        const imgs = this.$store.getters.imgsToShow;
+        this.imgs = imgs;
+        this.reviews = this.stay.reviews;
       }
-    },
+    } catch (err) {
+      console.log('Cannot get stay with id:', stayId);
+    }
+  },
   // this.$store.dispatch.loadStay();
   computed: {
     // stay() {
     //   return this.$store.getters.currStay;
     // },
-    loggedInUser(){
+    loggedInUser() {
       return this.$store.getters.loggedInUser;
     },
     beds() {
@@ -189,21 +190,20 @@ export default {
   },
   methods: {
     async placeOrder(order) {
-      try{
+      try {
         const { _id, name, price } = this.stay;
         order.stay = { _id, name, price };
         order.hostId = this.stay.host._id;
-        console.log('stay-details-order', order);
         // if (!this.loggedInUser) {
-				//   this.$emit('toggleLogin')
-				//   return
-			  // }
+        //   this.$emit('toggleLogin')
+        //   return
+        // }
         // this.$store.dispatch({ type: 'logout' });
-        await this.$store.dispatch({ type: 'addOrder', order:order });
-        showMsg('The order was sent for approval')
-      }catch (err) {
-				showMsg('The order failed', 'error')
-			}
+        await this.$store.dispatch({ type: 'addOrder', order: order });
+        showMsg('The order was sent for approval');
+      } catch (err) {
+        showMsg('The order failed', 'error');
+      }
     },
     iconToShow(amenity) {
       return utilService.getIcon(amenity);
@@ -221,7 +221,7 @@ export default {
     stayRating,
     longText,
     reviewAdd,
-    showMsg
+    showMsg,
   },
 };
 </script>

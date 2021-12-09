@@ -94,12 +94,15 @@ export default {
   name: 'stay-app',
   data() {
     return {
+      user: null,
       navList: ['Notifications', 'Add stay', 'Listed Stays', 'Orders'],
       currSection: 'Notifications',
       dataForList: [],
     };
   },
-  created() {},
+  created() {
+    this.user = this.$store.getters.user;
+  },
   methods: {
     showNotifications() {
       // let data={
@@ -110,16 +113,21 @@ export default {
       // }
       this.currSection = 'Notifications';
     },
-    showListedStays() {
-      //  const stays= this.$store.getters.hostedStays
-      // this.stays.forEach(stay => {
-      //   let data={
+    async showListedStays() {
+      if (!this.user.isHost) return;
+      const filterBy = { hostId: this.user._id };
+      await this.$store.dispatch({ type: 'setFilter', filterBy });
+      const stays = this.$store.getters.staysToShow;
+      console.log('showListed shold be LAST!', stays);
+
+      // stays.forEach((stay) => {
+      //   let data = {
       //     imgUrl: stay.imgUrls[0],
       //     name: stay.name,
       //     address: stay.loc.address,
       //     price: stay.price,
       //     rating: stay.avgRate,
-      //   }
+      //   };
       //   this.dataForList.push(data);
       // });
 

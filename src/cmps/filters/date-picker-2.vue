@@ -62,18 +62,14 @@ export default {
   },
   created() {
     this.loadFilter();
-    console.log('creatred date 2', this.filterBy);
-    console.log();
   },
   methods: {
     loadFilter() {
       const filterBy = this.$store.getters.filterBy;
       this.filterBy = JSON.parse(JSON.stringify(filterBy));
-      console.log(this.filterBy);
     },
     filtered() {
       this.$emit('filterClicked');
-      console.log('from date picker sending', this.filterBy.dates);
       this.$emit('filtered', this.filterBy.dates);
     },
   },
