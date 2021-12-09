@@ -1,3 +1,5 @@
+import { httpService } from './http.service';
+
 export const stayService = {
     query,
     getById,
@@ -6,9 +8,43 @@ export const stayService = {
     getEmptyStay,
 }
 
-
+//to get the ownedStays need to send ({hostId: 'u101'})
 async function query(filterBy) {
+    console.log('filterBy frontend service', filterBy);
     return await httpService.get(`stay`, filterBy)
+    // let stays;
+    // let allStays = await httpService.get(`stay`, filterBy);
+    // stays = allStays.filter((stay) => {
+    //     const { totalGuests, priceRange, propertyType, amenities } = filterBy;
+    //     if (propertyType) {
+    //         return stay.type === propertyType;
+    //     }
+    //     if (amenities.length) {
+    //         return amenities.every((type) => stay.amenities.includes(type));
+    //     }
+
+    //     return (
+    //         stay.capacity >= totalGuests &&
+    //         stay.price >= priceRange[0] &&
+    //         stay.price <= priceRange[1]
+    //     );
+    // });
+
+    // if (filterBy.city) {
+    //     stays = stays.filter((stay) => {
+    //         if (filterBy.city === 'flexible') {
+    //             return (
+    //                 stay.loc.city === 'Bora Bora' ||
+    //                 stay.loc.city === 'Hawaii' ||
+    //                 stay.loc.city === 'France'
+    //             );
+    //         } else {
+    //             return stay.loc.city === filterBy.city;
+    //         }
+    //     });
+    //     return stays;
+    // }
+    // return stays;
 }
 
 async function getById(stayId) {

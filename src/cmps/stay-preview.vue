@@ -58,11 +58,9 @@ export default {
   computed: {
     reviewCount() {
       const reviews = this.stay.reviews;
-      // if (!reviews.length) return 'new';
-      // if (reviews.length > 1) return `${reviews.length} `;
-      // else if (reviews.length > 1) return `${reviews.length} reviews`;
-      if (reviews.length) return `(${reviews.length})`;
-      if (!reviews.length) return 'New';
+      if (!reviews.length) return '(new)';
+      if (reviews.length === 1) return `(${reviews.length} review)`;
+      else if (reviews.length > 1) return `(${reviews.length} reviews)`;
     },
     sortTxt() {
       const txt = this.stay.name;

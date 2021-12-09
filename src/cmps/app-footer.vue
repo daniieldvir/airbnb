@@ -77,10 +77,9 @@ export default {
     };
   },
   created() {
-    this.$store.dispatch({ type: 'loadStays' }).then(() => {
+      this.$store.dispatch({ type: 'loadStays' });
       const stays = this.$store.getters.staysToShow;
       this.topStays = stays.filter((stay) => stay.avgRate >= 4.5).slice(0, 4);
-    });
   },
   methods: {
     cardClicked(cardObject) {

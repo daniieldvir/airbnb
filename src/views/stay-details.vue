@@ -140,25 +140,30 @@ export default {
       reviews: [],
     };
   },
-  created() {
-    const { stayId } = this.$route.params;
-    if (stayId) {
-      this.$store
-        .dispatch({ type: 'getStayById', stayId: stayId })
-        .then((stay) => {
+  async created() {
+      try{
+        const { stayId } = this.$route.params;
+        if (stayId) {
+          console.log('stayId', stayId)
+          const stay = await this.$store.dispatch({ type: 'getStayById', stayId: stayId });
           this.stay = JSON.parse(JSON.stringify(stay));
           const imgs = this.$store.getters.imgsToShow;
-          console.log('imgs', imgs);
+          // console.log('imgs', imgs);
           this.imgs = imgs;
           this.reviews = this.stay.reviews;
-        });
-    }
-  },
+        }
+      }catch(err){
+        console.log('Cannot get stay with id:', stayId)
+      }
+    },
   // this.$store.dispatch.loadStay();
   computed: {
     // stay() {
     //   return this.$store.getters.currStay;
     // },
+    loggedInUser(){
+      return this.$store.getters.loggedInUser;
+    },
     beds() {
       return this.stay.capacity === 1
         ? this.stay.capacity + ' bed'
@@ -182,12 +187,12 @@ export default {
     },
   },
   methods: {
-    placeOrder(order) {
+    async placeOrder(order) {
       const { _id, name, price } = this.stay;
       order.stay = { _id, name, price };
-
       order.hostId = this.stay.host._id;
-      this.$store.dispatch({ type: 'addOrder', order });
+      console.log('stay-details-order', order);
+      await this.$store.dispatch({ type: 'addOrder', order });
     },
     iconToShow(amenity) {
       return utilService.getIcon(amenity);
