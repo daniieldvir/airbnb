@@ -26,9 +26,7 @@
     <div class="search-btn-container flex">
       <button class="flex search-btn" @click="filter">
         <font-awesome-icon icon="search" />
-        <span
-          class="search"
-          v-if="largeSearchBtn && !onExplorePage && !onHomePage"
+        <span class="search" v-if="largeSearchBtn && onHomePage && topOfPage"
           >Search</span
         >
       </button>
@@ -73,6 +71,7 @@ export default {
       this.filterBy.city = filterBy.city;
     },
     filter() {
+      console.log('emiting filter');
       const filterBy = JSON.parse(JSON.stringify(this.filterBy));
       this.$store.dispatch({ type: 'setFilter', filterBy });
       this.$emit('filtered', filterBy);

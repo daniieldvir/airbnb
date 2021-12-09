@@ -139,7 +139,7 @@ export default {
       this.order.dates = selectedDates;
     },
     setGuests(numOfGuests) {
-      console.log(numOfGuests);
+      // console.log(numOfGuests);
       this.order.totalGuests = numOfGuests;
     },
     changeBtnColor(e) {
@@ -151,17 +151,17 @@ export default {
       e.target.style.setProperty('--y', `${y}px`);
       // e.target.style.setProperty('--x', `${ x }px`)
       // e.target.style.setProperty('--y', `${ y }px`)
-      console.log('e', e);
-      console.log('x,y', x, y);
+      // console.log('e', e);
+      // console.log('x,y', x, y);
     },
-    checkout() {
-      Swal.fire({
-        title: 'Thank you for booking!',
-        text: 'Press done',
-        icon: 'success',
-        confirmButtonText: 'Done',
-      });
-    },
+    // checkout() {
+    //   Swal.fire({
+    //     title: 'Thank you for booking!',
+    //     text: 'Press done',
+    //     icon: 'success',
+    //     confirmButtonText: 'Done',
+    //   });
+    // },
     checkOut() {
       const { checkInDate, checkOutDate } = this.order.dates;
       if (!this.isOrderReady) {
@@ -171,7 +171,6 @@ export default {
           this.userAlert = 'Please enter dates';
         }
       } else {
-        this.userAlert = 'Thank you for booking!';
         this.showCheckOutModal('Thank you for booking!');
         this.$emit('orderReady', this.order);
       }
@@ -202,7 +201,9 @@ export default {
       setTimeout(this.closeModal, 5000);
     },
     closeModal() {
+      this.btnTxt = 'Check availability';
       this.isModalOpen = false;
+      this.showOrderPreview = false;
     },
     loadEmptyOrder() {
       const emptyOrder = this.$store.getters.emptyOrder;

@@ -12,10 +12,24 @@
         </li>
       </ul>
     </nav>
+    <hr />
     <div class="user-section-cont">
       <h1>{{ titleForDisplay }}</h1>
       <!-- notifications-->
-      <section class="user-list-container"></section>
+      <section>
+        <data-table />
+        <!-- <ul class="user-list-container">
+          <li class="flex section-list" v-for="header in headers" :key="header">
+            <strong>{{ header }}</strong>
+          </li>
+          <li class="flex section-list" v-for="item in test" :key="item">
+            <span>{{ item }}</span>
+          </li>
+        </ul> -->
+        <!-- <ul>
+    <li v-for="stay in stays"></li>
+</ul> -->
+      </section>
       <section class="user-list-container"></section>
       <section class="user-list-container"></section>
       <section class="user-list-container"></section>
@@ -24,6 +38,7 @@
 </template>
 
 <script>
+import dataTable from '../cmps/data-table.vue';
 export default {
   name: 'stay-app',
   data() {
@@ -34,6 +49,8 @@ export default {
       //           imgUrl:'https://res.cloudinary.com/disku3v4j/image/upload/v1638965794/bell-icon-line-alarm-symbol-vector-21085810_suwpjf.jpg',
       // listItems:[],
       // subHeaders:[],
+      headers: ['user', 'checkin', 'checkout', 'price'],
+      test: ['fsdjkgskjdfghsjkfghsjkfgsjfg', 'isdghsjkdghssdgsdg', '5634'],
       //       }
     };
   },
@@ -48,6 +65,9 @@ export default {
     titleForDisplay() {
       return this.currSection;
     },
+  },
+  components: {
+    dataTable,
   },
 };
 </script>

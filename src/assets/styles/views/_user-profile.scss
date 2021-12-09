@@ -9,3 +9,13 @@
     gap: 20px;
   }
 }
+.user-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-auto-rows: 50px;
+}
+.section-list {
+}
+.el-table {
+  max-height: 80vh;
+}
