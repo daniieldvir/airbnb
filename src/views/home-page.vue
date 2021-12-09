@@ -28,7 +28,7 @@
             space.
           </p>
 
-          <router-link class="main-router-link" to="/become-host">
+          <router-link class="main-router-link" to="/user-profile">
             <button onclick="window.location.href=/'become-host'">
               Learn more
             </button>
