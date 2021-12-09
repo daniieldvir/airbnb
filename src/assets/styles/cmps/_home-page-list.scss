@@ -56,3 +56,51 @@
     text-align: left;
   }
 }
+
+@media screen and (max-width: 760px) {
+  .list-container {
+    & .home-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+      // grid-auto-rows: 300px;
+      gap: 30px;
+
+      .card {
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 95%;
+          border-radius: 10px;
+          object-fit: cover;
+        }
+        & h4 {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          line-height: rem(17px);
+          font-weight: 400;
+          font-size: rem(15px);
+          margin: 0;
+        }
+        & div {
+          gap: 5px;
+          align-items: center;
+
+          .svg-inline--fa {
+            color: #ff385c;
+            font-size: rem(14px);
+            font-size: 0.9rem;
+          }
+          .review-rate {
+            color: #717171;
+            font-size: rem(14px);
+          }
+          .avgRate {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
