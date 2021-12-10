@@ -44,5 +44,8 @@ export default {
       return filter.city ? 'in ' + filter.city : 'to explore';
     },
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
 };
 </script>

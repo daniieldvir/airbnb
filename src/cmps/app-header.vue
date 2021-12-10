@@ -52,11 +52,22 @@
             <!-- <router-link v-if="isLoggedInUser" :to="'/wishlist/' + userId" >
                   <span>Wishlist</span>
               </router-link> -->
-            <a @click.stop="toggleSignup">Sign up</a>
-            <a @click.stop="toggleLogin">Log in</a>
-            <a v-if="loggedInUser" @click.stop="logout">Log out</a>
-            <hr />
-            <a href="#">Host your home</a>
+            <template v-if="!loggedInUser">
+              <a @click.stop="toggleLogin">Log in</a>
+              <a @click.stop="toggleSignup">Sign up</a>
+              <hr />
+              <a href="/stay/edit">Host your home</a>
+            </template>
+            <template v-else>
+              <a href="/user-profile">Notifications</a>
+              <a href="/trips">Trips</a>
+              <a>Wishlist</a>
+              <hr />
+              <a href="/stay/edit">Host your home</a>
+              <a href="/user-profile">User profile</a>
+              <hr />
+              <a @click.stop="logout">Log out</a>
+            </template>
           </div>
         </div>
         <!-- <login-signup v-if="showLogin"></login-signup> -->
