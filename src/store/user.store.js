@@ -8,9 +8,6 @@ export const userStore = {
     ownedStays: null,
   },
   getters: {
-    user(state) {
-      return state.loggedInUser;
-    },
     miniUser(state) {
       const _id = state.user._id;
       const fullname = state.user.fullname;
@@ -22,6 +19,7 @@ export const userStore = {
       };
     },
     loggedInUser(state) {
+      console.log('loggedin', state.loggedInUser);
       return state.loggedInUser;
     },
     reviewsByUser(state) {
