@@ -6,6 +6,7 @@ export const stayService = {
     remove,
     save,
     getEmptyStay,
+    getHostStays
 }
 
 //to get the ownedStays need to send ({hostId: 'u101'})
@@ -46,8 +47,20 @@ async function query(filterBy) {
     // }
     // return stays;
 }
+async function getHostStays(hostId) {
+    console.log('hostId', hostId);
+    // / if (filterBy) {
+    // const user = filterBy.userId ? `?userId=${filterBy.userId}` : ''
+    const host = hostId ? `?hostId=${hostId}` : ''
+    query = `${host}`
+    return await httpService.get(`stay${query}`)
+    // return await httpService.get(`stay/${hostId}`);
+    // return await httpService.get(`stay/`, hostId);
+    // }
+}
 
 async function getById(stayId) {
+    console.log('stayId service front', stayId);
     return await httpService.get(`stay/${stayId}`)
 }
 

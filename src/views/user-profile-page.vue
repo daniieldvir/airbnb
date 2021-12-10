@@ -91,17 +91,24 @@
 <script>
 import dataTable from '../cmps/data-table.vue';
 export default {
-  name: 'stay-app',
+  name: 'user-profile',
   data() {
     return {
-      user: null,
+      loggedInUser: null,
       navList: ['Notifications', 'Add stay', 'Listed Stays', 'Orders'],
       currSection: 'Notifications',
       dataForList: [],
     };
   },
-  created() {
-    this.user = this.$store.getters.user;
+  async created() {
+    this.loggedInUser = this.$store.getters.loggedInUser;
+    // if (this.loggedInUser.isHost){
+    //     const filterBy = { hostId: this.loggedInUser._id };
+    //     await this.$store.dispatch({ type: 'setFilter', filterBy });
+    // }
+  },
+  async destroy(){
+      this.$store.commit({ type: 'clearAllFilters' });
   },
   methods: {
     showNotifications() {
@@ -114,22 +121,23 @@ export default {
       this.currSection = 'Notifications';
     },
     async showListedStays() {
-      const filterBy = { hostId: this.user._id };
-      await this.$store.dispatch({ type: 'setFilter', filterBy });
-      if (!this.user.isHost) return;
-      const stays = this.$store.getters.staysToShow;
-
-      stays.forEach((stay) => {
-        let data = {
-          imgUrl: stay.imgUrls[0],
-          name: stay.name,
-          address: stay.loc.address,
-          price: stay.price,
-          rating: stay.avgRate,
-        };
-        this.dataForList.push(data);
-      });
-
+      if (!this.loggedInUser.isHost) return;
+        // const filterBy = { hostId: this.loggedInUser._id };
+        // await this.$store.dispatch({ type: 'setFilter', filterBy });
+      await this.$store.dispatch({ type: 'loadHostStays', hostId : this.loggedInUser._id });
+      const hostStays = this.$store.getters.hostStays;
+      if(hostStays){
+        hostStays.forEach((stay) => {
+          let data = {
+            imgUrl: stay.imgUrls[0],
+            name: stay.name,
+            address: stay.loc.address,
+            price: stay.price,
+            rating: stay.avgRate,
+          };
+          this.dataForList.push(data);
+        });
+      }
       this.currSection = 'Listed Stays';
     },
     showOrders() {
