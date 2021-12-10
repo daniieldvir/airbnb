@@ -6,7 +6,7 @@
       <h3>Login</h3>
     </div>
     <div class="login-input">
-      <form action="" @submit.prevent="login">
+      <form action="" @submit="login">
         <input
           type="text"
           placeholder="Enter username"

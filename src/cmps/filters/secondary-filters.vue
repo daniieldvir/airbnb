@@ -1,5 +1,5 @@
 <template>
-  <section v-click-outside="onClickOutside" class="secondary-filters">
+  <section v-click-outside="closeModal" class="secondary-filters">
     <!-- PRICE RANGE -->
     <div class="dropdown">
       <button
@@ -12,6 +12,7 @@
         v-bind:class="{ show: price.shouldShow }"
         class="dropdown-content price"
       >
+        <button class="close-btn" @click="closeModal">X</button>
         <p>The average nightly price is $220</p>
         <el-slider
           @change="dispatchToStore"
@@ -68,7 +69,7 @@
         v-bind:class="{ show: amenities.shouldShow }"
         class="dropdown-content amenities"
       >
-        <button v-if="amenities.shouldShow" @click="dispatchToStore">
+        <button v-if="amenities.shouldShow" @click="setAmenities">
           Show results
           <!-- <font-awesome-icon icon="search" /> -->
         </button>
@@ -159,11 +160,17 @@ export default {
       this.filterBy = JSON.parse(JSON.stringify(filterBy));
     },
     dispatchToStore() {
+      // this.closeModal();
       this.$store.dispatch({ type: 'setFilter', filterBy: this.filterBy });
       this.loadFilter();
     },
     setPropertyType(type) {
       this.filterBy.propertyType = type;
+      this.dispatchToStore();
+      this.closeModal();
+    },
+    setAmenities() {
+      this.closeModal();
       this.dispatchToStore();
     },
     clearSearch() {
@@ -172,7 +179,7 @@ export default {
       this.filterBy.propertyType = '';
       this.dispatchToStore();
     },
-    onClickOutside() {
+    closeModal() {
       if (this[this.previousBtn]) {
         this[this.previousBtn].shouldShow = false;
         this.previousBtn = '';
