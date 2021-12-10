@@ -26,12 +26,12 @@
             >
               <strong>{{ upperCaseFirstChar(columnHeader) }}</strong>
             </span>
-            <template v-for="dataObject in dataForList">
-              <img :src="dataObject.imgUrl" alt="" />
-              <span>{{ dataObject.date }}</span>
-              <span>{{ dataObject.user }}</span>
-              <span>{{ dataObject.message }}</span>
-              <span>{{ dataObject.stay }}</span>
+            <template v-for="(dataObject, idx) in dataForList">
+              <img :key="dataObject.idx" :src="dataObject.imgUrl" alt="" />
+              <span :key="dataObject.idx">{{ dataObject.date }}</span>
+              <span :key="dataObject.idx">{{ dataObject.user }}</span>
+              <span :key="dataObject.idx">{{ dataObject.message }}</span>
+              <span :key="dataObject.idx">{{ dataObject.stay }}</span>
             </template>
           </div>
         </template>
@@ -50,12 +50,12 @@
             >
               <strong>{{ upperCaseFirstChar(columnHeader) }}</strong>
             </span>
-            <template v-for="dataObject in dataForList">
-              <img :src="dataObject.imgUrl" alt="" />
-              <span>{{ dataObject.name }}</span>
-              <span>{{ dataObject.address }}</span>
-              <span>{{ dataObject.price }}</span>
-              <span>{{ dataObject.rating }}</span>
+            <template v-for="(dataObject, idx) in dataForList">
+              <img :key="dataObject.idx" :src="dataObject.imgUrl" alt="" />
+              <span :key="dataObject.idx">{{ dataObject.name }}</span>
+              <span :key="dataObject.idx">{{ dataObject.address }}</span>
+              <span :key="dataObject.idx">{{ dataObject.price }}</span>
+              <span :key="dataObject.idx">{{ dataObject.rating }}</span>
             </template>
           </div>
         </template>
@@ -198,6 +198,9 @@ export default {
     //   console.log('loggedUser', loggedUser);
     //   return state.loggedInUser;
     // },
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   },
   components: {
     dataTable,
