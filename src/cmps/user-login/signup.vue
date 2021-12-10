@@ -16,7 +16,7 @@
           placeholder="Enter username"
           v-model="userCred.username"
         />
-          <input
+        <input
           type="email"
           placeholder="Enter email"
           v-model="userCred.email"
@@ -41,19 +41,19 @@
 </template>
 
 <script>
-import { showMsg } from '@/services/event-bus.service'
+import { showMsg } from '@/services/event-bus.service';
 export default {
   data() {
     return {
       userCred: {
         username: '',
         fullname: '',
-        email:'',
+        email: '',
         password: '',
       },
-      msg:'',
+      msg: '',
       isLoading: false,
-    }
+    };
   },
   methods: {
     // toggleSignUp() {
@@ -62,21 +62,27 @@ export default {
     async signup() {
       try {
         this.isLoading = true;
-        if(!this.userCred.email || this.userCred.fullname || !this.userCred.password ||!this.userCred.username) 
-        return this.msg = 'Please fill up the form'
-        await this.$store.dispatch({type: 'signup',userCred: this.userCred,})
+        if (
+          !this.userCred.email ||
+          this.userCred.fullname ||
+          !this.userCred.password ||
+          !this.userCred.username
+        )
+          return (this.msg = 'Please fill up the form');
+        await this.$store.dispatch({ type: 'signup', userCred: this.userCred });
         // this.toggleSignUp()
-        showMsg('Signed up successfully!')
+        this.$router.push('/');
+        showMsg('Signed up successfully!');
       } catch (err) {
-        showMsg('Sign up failed!', 'error')
+        showMsg('Sign up failed!', 'error');
       }
     },
     changeFormToLogin() {
-      this.$emit('changeFormToLogin')
+      this.$emit('changeFormToLogin');
     },
-    close(){
+    close() {
       this.$emit('close');
-    }
+    },
   },
-}
+};
 </script>

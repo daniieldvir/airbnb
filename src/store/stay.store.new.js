@@ -4,6 +4,7 @@ export const stayStore = {
     strict: true,
     state: {
         stays: [],
+        hostStays: [],
         filterBy: {
             hostId: '',
             city: '',
@@ -48,7 +49,7 @@ export const stayStore = {
             return state.filterBy;
         },
         staysToShow(state) {
-            // console.log(state.stays);
+            console.log('stays to show fron store', state.stays);
             return state.stays;
         },
         avgPrice(state) {
@@ -63,10 +64,13 @@ export const stayStore = {
         imgsToShow(state) {
             return state.currStay.imgUrls.slice(0, 5);
         },
+        hostStays(state) {
+            return state.hostStays;
+        }
     },
     mutations: {
         setLoading(state, { isLoading }) {
-            state.isLoading = isLoading
+            state.isLoading = isLoading;
         },
         setFilter(state, { filterBy }) {
             state.filterBy = filterBy;
@@ -81,6 +85,7 @@ export const stayStore = {
         },
         clearAllFilters(state) {
             state.filterBy = {
+                hostId: '',
                 city: '',
                 guests: '',
                 dates: {
@@ -94,10 +99,13 @@ export const stayStore = {
                 propertyType: '',
             };
         },
+        setHostStays(state, { hostStays }) {
+            state.hostStays = hostStays;
+        }
     },
     actions: {
         async loadStays({ commit, state }) {
-            console.log('store: state.filterBy', state.filterBy)
+            console.log('store: state.filterBy', state.filterBy);
             commit({ type: 'setLoading', isLoading: true });
             try {
                 // const stays = await stayService.query();
@@ -111,8 +119,18 @@ export const stayStore = {
                 commit({ type: 'setLoading', isLoading: false });
             }
         },
+        async loadHostStays({ commit }, { hostId }) {
+            try {
+                console.log('store hostId', hostId);
+                const hostStays = await stayService.getHostStays(hostId)
+                console.log('hostStays', hostStays)
+                commit({ type: 'setHostStays', hostStays })
+            } catch (err) {
+                console.log('stayStore: Error in loadHostStays', err)
+            }
+        },
         setFilter({ commit, dispatch }, { filterBy }) {
-            // console.log('store set filter', filterBy);
+            console.log('store set filter', filterBy);
             commit({ type: 'setFilter', filterBy });
             dispatch({ type: 'loadStays' });
         },
