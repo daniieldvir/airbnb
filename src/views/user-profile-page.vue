@@ -107,36 +107,59 @@ export default {
     //     await this.$store.dispatch({ type: 'setFilter', filterBy });
     // }
   },
-  async destroy(){
-      this.$store.commit({ type: 'clearAllFilters' });
+  async destroy() {
+    this.$store.commit({ type: 'clearAllFilters' });
   },
+  // watch: {
+  //   user: {
+  //     handler() {
+  //       this.$store.dispatch({
+  //         type: 'loadAndWatchUser',
+  //         userId: this.loggedInUser._id,
+  //       });
+  //       console.log('watching user');
+  //     },
+  //     immediate: true,
+  //   },
+  // },
   methods: {
     showNotifications() {
-      // let data={
-      //   imgUrl:'https://res.cloudinary.com/disku3v4j/image/upload/v1638965856/bell-icon-line-alarm-symbol-vector-21085810_suwpjf.jpg',
-      //   date:'',
-      //   user:'',
-      //   messsage:'',
-      // }
+      this.dataForList = [];
+      // const data = [
+      //   {
+      //     imgUrl:
+      //       'https://res.cloudinary.com/disku3v4j/image/upload/v1638965856/bell-icon-line-alarm-symbol-vector-21085810_suwpjf.jpg',
+      //     date: '',
+      //     user: '',
+      //     messsage: '',
+      //   },
+      // ];
+      // this.dataForList = data;
       this.currSection = 'Notifications';
     },
     async showListedStays() {
-      if (!this.loggedInUser.isHost) return;
-        // const filterBy = { hostId: this.loggedInUser._id };
-        // await this.$store.dispatch({ type: 'setFilter', filterBy });
-      await this.$store.dispatch({ type: 'loadHostStays', hostId : this.loggedInUser._id });
-      const hostStays = this.$store.getters.hostStays;
-      if(hostStays){
-        hostStays.forEach((stay) => {
-          let data = {
-            imgUrl: stay.imgUrls[0],
-            name: stay.name,
-            address: stay.loc.address,
-            price: stay.price,
-            rating: stay.avgRate,
-          };
-          this.dataForList.push(data);
+      // console.log('loggedInUser', this.user);
+      if (this.loggedInUser && this.loggedInUser.isHost) {
+        this.dataForList = [];
+        await this.$store.dispatch({
+          type: 'loadHostStays',
+          hostId: this.loggedInUser._id,
         });
+        const hostStays = this.$store.getters.hostStays;
+
+        if (hostStays) {
+          const staysToShow = hostStays.map((stay) => {
+            const data = {
+              imgUrl: stay.imgUrls[0],
+              name: stay.name,
+              address: stay.loc.address,
+              price: stay.price,
+              rating: stay.avgRate,
+            };
+            return data;
+          });
+          this.dataForList = staysToShow;
+        }
       }
       this.currSection = 'Listed Stays';
     },
@@ -157,13 +180,24 @@ export default {
       this.currSection = 'Orders';
     },
     upperCaseFirstChar(str) {
-      return str[0].toUpperCase() + str.substring(1);
+      if (typeof str === 'string') {
+        return str[0].toUpperCase() + str.substring(1);
+      } else {
+        return str;
+      }
     },
   },
   computed: {
     titleForDisplay() {
       return this.currSection;
     },
+    // user() {
+    //   return this.$store.getters.watchedUser;
+    // },
+    // loggedUser() {
+    //   console.log('loggedUser', loggedUser);
+    //   return state.loggedInUser;
+    // },
   },
   components: {
     dataTable,

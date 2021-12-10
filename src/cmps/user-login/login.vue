@@ -1,12 +1,12 @@
 <template>
   <section class="login-modal" @click.stop>
     <div class="login-header">
-      <button @click="close"><span>X</span></button>
+      <button class="close-btn" @click="close"><span>X</span></button>
 
       <h3>Login</h3>
     </div>
     <div class="login-input">
-      <form action="" @submit.prevent="login">
+      <form action="" @submit="login">
         <input
           type="text"
           placeholder="Enter username"

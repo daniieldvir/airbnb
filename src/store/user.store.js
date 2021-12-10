@@ -90,11 +90,11 @@ export const userStore = {
       try {
         const user = await userService.getById(userId);
         commit({ type: 'setWatchedUser', user });
-        socketService.emit(SOCKET_EMIT_USER_WATCH, userId);
-        socketService.off(SOCKET_EVENT_USER_UPDATED);
-        socketService.on(SOCKET_EVENT_USER_UPDATED, (user) => {
-          commit({ type: 'setWatchedUser', user });
-        });
+        // socketService.emit(SOCKET_EMIT_USER_WATCH, userId);
+        // socketService.off(SOCKET_EVENT_USER_UPDATED);
+        // socketService.on(SOCKET_EVENT_USER_UPDATED, (user) => {
+        //   commit({ type: 'setWatchedUser', user });
+        // });
       } catch (err) {
         console.log('userStore: Error in loadAndWatchUser', err);
         throw err;

@@ -17,7 +17,7 @@
   & > * {
     margin-right: 10px;
   }
-  & button {
+  & button:not(.close-btn) {
     background-color: rgba(128, 128, 128, 0);
     padding: 10px 20px;
     border: none;
@@ -64,7 +64,7 @@
     font-weight: 400;
     padding: 20px 30px;
   }
-  & p:hover {
+  &:not(.price) p:hover {
     background-color: $clr8;
   }
   & div {
@@ -122,4 +122,21 @@
 .show {
   display: block;
   display: flex;
+}
+
+.close-btn {
+  background-color: #fff;
+  border: 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: $clr2;
+  margin: 10px;
+  transition: background-color 0.05s ease;
+  &:hover {
+    background-color: $clr8;
+  }
 }
