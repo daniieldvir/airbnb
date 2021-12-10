@@ -5,7 +5,7 @@
       <p>Sign up</p>
     </div>
     <div class="signup-input">
-      <form @submit="signup">
+      <form @submit.prevent="signup">
         <input
           type="text"
           placeholder="Enter fullname"
@@ -71,6 +71,7 @@ export default {
           return (this.msg = 'Please fill up the form');
         await this.$store.dispatch({ type: 'signup', userCred: this.userCred });
         // this.toggleSignUp()
+        this.$router.push('/');
         showMsg('Signed up successfully!');
       } catch (err) {
         showMsg('Sign up failed!', 'error');

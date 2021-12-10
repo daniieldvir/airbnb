@@ -6,7 +6,7 @@
       <h3>Login</h3>
     </div>
     <div class="login-input">
-      <form action="" @submit="login">
+      <form action="" @submit.prevent="login">
         <input
           type="text"
           placeholder="Enter username"
@@ -52,7 +52,7 @@ export default {
         if (!this.userCred.username || !this.userCred.password)
           return (this.msg = 'Please enter username/password');
         await this.$store.dispatch({ type: 'login', userCred: this.userCred });
-        // this.$router.push('/')
+        this.$router.push('/');
         showMsg('Logged in successfully');
         this.userCred = {};
       } catch (err) {

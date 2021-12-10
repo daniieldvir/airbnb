@@ -1,0 +1,49 @@
+.img-list-container {
+  margin: 8px;
+}
+.img-list-container img {
+  height: 100px;
+  margin-inline-end: 4px;
+}
+
+.loader {
+  height: 150px;
+}
+label {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+label img {
+  height: 100px;
+}
+.upload-input {
+  width: 0;
+  height: 0;
+}
+.drag {
+  color: grey;
+  background-color: rgb(245, 245, 245);
+  display: inline-block;
+  padding: 30px 5px;
+  //   width: 450px;
+  border: 1px dashed gray;
+  border-radius: 8px;
+}
+.not-drag {
+  color: grey;
+  background-color: rgb(243, 243, 243);
+  display: inline-block;
+  padding: 30px 5px;
+  border: 1px dashed gray;
+  border-radius: 8px;
+}
+.light {
+  font-weight: lighter;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
