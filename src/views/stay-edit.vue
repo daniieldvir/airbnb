@@ -164,6 +164,7 @@ export default {
           this.stay = JSON.parse(JSON.stringify(stay));
           const imgs = this.$store.getters.imgsToShow;
           this.imgs = imgs;
+          console.log(imgs);
           this.reviews = this.stay.reviews;
         });
     }
