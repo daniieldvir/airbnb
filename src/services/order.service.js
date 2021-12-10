@@ -30,6 +30,7 @@ async function save(order) {
         return savedOrder
 
     } else {
+        console.log('front service order', order)
         const savedOrder = await httpService.post(`order`, order)
         return savedOrder
     }
@@ -37,7 +38,7 @@ async function save(order) {
 
 function getEmptyOrder() {
     return {
-        _id: '',
+        // _id: '',
         hostId: '',
         createdAt: Date.now(),
         buyer: {
