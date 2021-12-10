@@ -15,6 +15,9 @@ export const orderStore = {
         getNotifications(state) {
             return state.notifications;
         },
+        ordersToShow(state) {
+            return state.orders;
+        }
     },
     mutations: {
         addOrder(state, { order }) {
@@ -31,7 +34,7 @@ export const orderStore = {
             );
         },
         setOrders(state, { orders }) {
-            console.log(orders);
+            // console.log(orders);
             state.orders = orders;
         },
         currOrder(state, { order }) {
@@ -41,7 +44,9 @@ export const orderStore = {
     actions: {
         async loadOrders({ commit }, { user }) {
             try {
-                const orders = await orderService.query(user.userId, user.userType);
+                console.log('store loadorders user', user)
+                const orders = await orderService.query(user);
+                console.log('orders store after load', orders)
                 commit({ type: 'setOrders', orders });
             } catch (err) {
                 console.log('orderStore: Error in load orders', err);

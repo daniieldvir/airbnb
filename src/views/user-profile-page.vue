@@ -163,7 +163,14 @@ export default {
       }
       this.currSection = 'Listed Stays';
     },
-    showOrders() {
+    async showOrders() {
+        const user = {
+          userId:this.loggedInUser._id,
+          userType: 'user'
+        }
+        await this.$store.dispatch({type: 'loadOrders', user});
+        this.orders = this.$store.getters.ordersToShow;
+        console.log('orderssssssssssssss', this.orders);
       // getUserByID for img url
       // const user=this.$store.getters.userById
       // const orders=this.$store.getters.ordersFromHost
@@ -199,6 +206,14 @@ export default {
     //   return state.loggedInUser;
     // },
   },
+  //   watch: {
+  //   userId: {
+  //     handler() {
+  //       this.$store.dispatch({ type: "loadAndWatchUser", userId: this.userId });
+  //     },
+  //     immediate: true,
+  //   },
+  // },
   components: {
     dataTable,
   },

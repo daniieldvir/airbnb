@@ -33,6 +33,7 @@ export default {
       isLogin: false,
     };
   },
+
   computed: {
     loggedInUser() {
       return this.$store.getters.loggedInUser;
