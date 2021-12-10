@@ -1,4 +1,6 @@
 import { orderService } from '../services/order.service.js';
+import { socketService, SOCKET_EVENT_ORDER_ADDED, SOCKET_EVENT_ORDER_ABOUT_YOU } from '../services/socket.service.js'
+
 
 export const orderStore = {
     strict: true,
@@ -48,6 +50,11 @@ export const orderStore = {
                 const orders = await orderService.query(user);
                 console.log('orders store after load', orders)
                 commit({ type: 'setOrders', orders });
+                socketService.off(SOCKET_EVENT_ORDER_ADDED)
+                socketService.on(SOCKET_EVENT_ORDER_ADDED, order => {
+                    console.log('Got order from socket', order);
+                    commit({ type: 'addOrder', order })
+                })
             } catch (err) {
                 console.log('orderStore: Error in load orders', err);
                 throw err;
