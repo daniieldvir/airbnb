@@ -6,7 +6,7 @@
 .main-container {
   display: grid;
   grid-template-columns: $layout-padding * 1px 1fr $layout-padding * 1px;
-
+  grid-auto-rows: max-content;
   > * {
     grid-column: 2;
 

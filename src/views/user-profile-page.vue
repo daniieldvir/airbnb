@@ -3,7 +3,7 @@
     <nav class="user-profile-nav flex">
       <ul class="clean-list flex">
         <li @click="showNotifications">Notifications</li>
-        <router-link to="/stay/61ae2083033a3647ed7811ff/edit">
+        <router-link to="/stay/edit">
           <li>Add stay</li>
         </router-link>
         <li @click="showListedStays">Listed Stays</li>
@@ -26,6 +26,7 @@
             >
               <strong>{{ upperCaseFirstChar(columnHeader) }}</strong>
             </span>
+            <span><strong>Actions</strong></span>
             <template v-for="(dataObject, idx) in dataForList">
               <img :key="dataObject.idx" :src="dataObject.imgUrl" alt="" />
               <span :key="dataObject.idx">{{ dataObject.date }}</span>
@@ -50,12 +51,16 @@
             >
               <strong>{{ upperCaseFirstChar(columnHeader) }}</strong>
             </span>
+            <span><strong>Actions</strong></span>
             <template v-for="(dataObject, idx) in dataForList">
-              <img :key="dataObject.idx" :src="dataObject.imgUrl" alt="" />
-              <span :key="dataObject.idx">{{ dataObject.name }}</span>
-              <span :key="dataObject.idx">{{ dataObject.address }}</span>
-              <span :key="dataObject.idx">{{ dataObject.price }}</span>
-              <span :key="dataObject.idx">{{ dataObject.rating }}</span>
+              <img :key="dataObject.imgUrl" :src="dataObject.imgUrl" alt="" />
+              <span :key="dataObject.name">{{ dataObject.name }}</span>
+              <span :key="dataObject.address">{{ dataObject.address }}</span>
+              <span :key="dataObject.price">{{ dataObject.price }}</span>
+              <span :key="dataObject.rating">{{ dataObject.rating }}</span>
+              <button @click="editStay(dataObject.name)" :key="idx">
+                Edit
+              </button>
             </template>
           </div>
         </template>
@@ -74,12 +79,14 @@
             >
               <strong>{{ upperCaseFirstChar(columnHeader) }}</strong>
             </span>
-            <template v-for="dataObject in dataForList">
+            <span><strong>Actions</strong></span>
+            <template v-for="(dataObject, idx) in dataForList">
               <img :key="dataObject.imgUrl" :src="dataObject.imgUrl" />
-              <span :key="dataObject.user">{{ dataObject.user }}</span>
+              <span :key="dataObject.name">{{ dataObject.name }}</span>
               <span :key="dataObject.start">{{ dataObject.start }}</span>
               <span :key="dataObject.end">{{ dataObject.end }}</span>
               <span :key="dataObject.total">${{ dataObject.total }}</span>
+              <button :key="idx">Approve</button>
             </template>
           </div>
         </template>
@@ -98,6 +105,7 @@ export default {
       navList: ['Notifications', 'Add stay', 'Listed Stays', 'Orders'],
       currSection: 'Notifications',
       dataForList: [],
+      hostStays: null,
     };
   },
   async created() {
@@ -146,6 +154,7 @@ export default {
           hostId: this.loggedInUser._id,
         });
         const hostStays = this.$store.getters.hostStays;
+        this.hostStays = hostStays;
 
         if (hostStays) {
           const staysToShow = hostStays.map((stay) => {
@@ -166,24 +175,23 @@ export default {
     async showOrders() {
       const user = {
         userId: this.loggedInUser._id,
-        userType: 'user',
+        userType: 'host',
       };
       await this.$store.dispatch({ type: 'loadOrders', user });
       this.orders = this.$store.getters.ordersToShow;
       console.log('orderssssssssssssss', this.orders);
-      // getUserByID for img url
-      // const user=this.$store.getters.userById
-      // const orders=this.$store.getters.ordersFromHost
-      // orders.forEach(order => {
-      //   let data={
-      //     imgUrl: user.imgUrl,
-      //     name: order.buyer.fullName,
-      //     start: order.dates.checkInDate,
-      //     end: order.dates.checkOutDate,
-      //     total: order.totalPrice
-      //   }
-      //   this.dataForList.push(data);
-      // });
+      const orders = this.orders.map((order) => {
+        console.log(order.buyer.fullname);
+        let data = {
+          imgUrl: order.buyer.imgUrl,
+          name: order.buyer.fullname,
+          start: new Date(order.dates.checkInDate).toLocaleDateString(),
+          end: new Date(order.dates.checkOutDate).toLocaleDateString(),
+          total: order.totalPrice,
+        };
+        return data;
+      });
+      this.dataForList = orders;
       this.currSection = 'Orders';
     },
     upperCaseFirstChar(str) {
@@ -192,6 +200,12 @@ export default {
       } else {
         return str;
       }
+    },
+    editStay(stayName) {
+      const stay = this.hostStays.find((stay) => {
+        return stay.name === stayName;
+      });
+      this.$router.push(`/stay/${stay._id}/edit`);
     },
   },
   computed: {
