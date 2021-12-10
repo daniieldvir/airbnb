@@ -11,9 +11,11 @@ export const orderService = {
     getEmptyOrder,
 }
 
-async function query() {
-    return httpService.get(`order`)
-
+async function query({ userId, userType }) {
+    // return httpService.get(`order`)
+    // return await httpService.get('order', { params: { user.userId, user.userType } })
+    console.log('frontend service: userId, userType', userId, userType)
+    return await httpService.get('order', { params: { userId, userType } })
 }
 
 async function getById(orderId) {
@@ -30,6 +32,7 @@ async function save(order) {
         return savedOrder
 
     } else {
+        console.log('front service order', order)
         const savedOrder = await httpService.post(`order`, order)
         return savedOrder
     }
@@ -37,7 +40,7 @@ async function save(order) {
 
 function getEmptyOrder() {
     return {
-        _id: '',
+        // _id: '',
         hostId: '',
         createdAt: Date.now(),
         buyer: {

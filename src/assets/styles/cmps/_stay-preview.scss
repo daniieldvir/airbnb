@@ -45,10 +45,13 @@
 
   .router-link {
     color: $clr2;
+    // margin-bottom: rem(12px);
 
     p {
       color: $clr2;
       line-height: 0.5rem;
+      margin-bottom: rem(12px);
+
       span {
         color: $clr2;
       }
@@ -71,6 +74,7 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
+      margin-bottom: rem(12px);
 
       font-size: rem(15px);
       line-height: rem(19px);
@@ -79,10 +83,14 @@
     }
     .stay-type {
       font-size: rem(15px);
+      margin-bottom: rem(12px);
       color: $clr2;
     }
   }
   .stay-price {
+    p {
+      margin-bottom: rem(12px);
+    }
     span {
       font-family: airbnb-medium, sans-serif;
     }
