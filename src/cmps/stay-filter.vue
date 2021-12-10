@@ -62,7 +62,9 @@ export default {
       this.filterBy = JSON.parse(JSON.stringify(filterBy));
     },
     setDates(selectedDates) {
+      console.log('set dates main filter selected', selectedDates);
       this.filterBy.dates = selectedDates;
+      console.log('set dates main filter this.filterBy', this.filterBy);
     },
     addGuests(filterBy) {
       this.filterBy.guests = filterBy.guests;
@@ -72,8 +74,11 @@ export default {
       this.filterBy.city = filterBy.city;
     },
     filter() {
-      console.log('emiting filter');
-      const filterBy = JSON.parse(JSON.stringify(this.filterBy));
+      // console.log('emiting filter');
+      // console.log('bedore STRINGIFY', this.filterBy);
+      // const filterBy = JSON.parse(JSON.stringify(this.filterBy));
+      // console.log('after STRINGIFY', filterBy);
+      const filterBy = this.filterBy;
       this.$store.dispatch({ type: 'setFilter', filterBy });
       this.$emit('filtered', filterBy);
     },

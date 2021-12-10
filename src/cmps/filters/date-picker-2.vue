@@ -6,7 +6,7 @@
         @blur="filtered"
         v-model="filterBy.dates.checkInDate"
         type="date"
-        placeholder="Add dates"
+        :placeholder="dateToStr(filterBy.dates.checkInDate) || 'Add date'"
       >
       </el-date-picker>
     </div>
@@ -16,7 +16,7 @@
         @blur="filtered"
         v-model="filterBy.dates.checkOutDate"
         type="date"
-        placeholder="Add dates"
+        :placeholder="dateToStr(filterBy.dates.checkOutDate) || 'Add date'"
       >
       </el-date-picker>
     </div>
@@ -71,6 +71,14 @@ export default {
     filtered() {
       this.$emit('filterClicked');
       this.$emit('filtered', this.filterBy.dates);
+      const filterBy = this.filterBy;
+      this.$store.dispatch({
+        type: 'setFilter',
+        filterBy: this.filterBy.dates,
+      });
+    },
+    dateToStr(date) {
+      return date.toString();
     },
   },
 };

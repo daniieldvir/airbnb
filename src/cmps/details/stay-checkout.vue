@@ -65,13 +65,11 @@
 <script>
 import checkoutGuestModal from '../details/checkout-guest-modal.vue';
 import datePicker from '../filters/date-picker-2.vue';
-// import guestFilter from './guest-filter.vue';
 import checkoutModal from '../details/checkout-modal.vue';
 
 export default {
   props: {
     stay: Object,
-    // dates: Array,
   },
 
   data() {
@@ -98,7 +96,6 @@ export default {
       else if (this.stay.reviews.length > 1)
         return `(${this.stay.reviews.length} reviews)`;
     },
-    // btnTxt() {},
     totalPrice() {
       return this.order.totalPrice.toLocaleString();
     },
@@ -113,23 +110,17 @@ export default {
       this.filterBy = JSON.parse(JSON.stringify(filterBy));
     },
     setDates(selectedDates) {
-      this.order.dates = selectedDates;
+      this.filterBy.dates = selectedDates;
+      this.order.dates = this.filterBy.dates;
     },
     setGuests(numOfGuests) {
-      // console.log(numOfGuests);
       this.order.totalGuests = numOfGuests;
     },
     changeBtnColor(e) {
-      // const x = e.pageX - e.target.offsetLeft
-      // const y = e.pageY - e.target.offsetTop
       const x = e.offsetX - e.target.offsetLeft;
       const y = e.offsetY - e.target.offsetLeft;
       e.target.style.setProperty('--x', `${x}px`);
       e.target.style.setProperty('--y', `${y}px`);
-      // e.target.style.setProperty('--x', `${ x }px`)
-      // e.target.style.setProperty('--y', `${ y }px`)
-      // console.log('e', e);
-      // console.log('x,y', x, y);
     },
     // checkout() {
     //   Swal.fire({
@@ -140,6 +131,7 @@ export default {
     //   });
     // },
     checkOut() {
+      this.order.dates = this.filterBy.dates;
       const { checkInDate, checkOutDate } = this.order.dates;
       if (!this.isOrderReady) {
         if (checkInDate && checkOutDate) {
@@ -151,11 +143,13 @@ export default {
         this.showCheckOutModal('Thank you for booking!');
         this.$emit('orderReady', this.order);
       }
-      // const { totalGuests } = this.order;
     },
     prepareOrder() {
-      const { checkInDate, checkOutDate } = this.order.dates;
-      const difference = checkOutDate.getTime() - checkInDate.getTime();
+      let { checkInDate, checkOutDate } = this.order.dates;
+      const checkIn = new Date(checkInDate);
+      const checkOut = new Date(checkOutDate);
+
+      const difference = checkOut.getTime() - checkIn.getTime();
       const nights = Math.ceil(difference / (1000 * 3600 * 24));
       const totalPrice = this.stay.price * nights;
       if (totalPrice <= 0) {
