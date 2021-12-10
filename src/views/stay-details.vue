@@ -14,7 +14,9 @@
       <!-- <a href=""> {{ stay.loc.address }}</a> -->
     </div>
     <div class="images-display-container">
-      <img v-for="(img, idx) in imgs" :key="idx" :src="img" alt="" />
+      <label v-for="(img, idx) in imgs" :key="idx">
+        <img :src="img" alt="" />
+      </label>
     </div>
 
     <div class="details-main-container flex">

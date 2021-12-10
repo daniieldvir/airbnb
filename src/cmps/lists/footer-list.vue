@@ -13,7 +13,6 @@
           <div class="top-footer">
             <template v-if="place.avgRate" />
             <p>{{ place.name }}</p>
-            <p>{{ place.address }}</p>
           </div>
         </li>
       </ul>

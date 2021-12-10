@@ -3,7 +3,6 @@
     <label for="">
       <input class="stay-name" type="text" v-model="stay.name" />
     </label>
-    <!-- <h2>{{ formattedName }}</h2> -->
     <div class="review-details">
       <template>
         <font-awesome-icon icon="star" />
@@ -14,14 +13,17 @@
       <label for="">
         <input class="" type="text" v-model="stay.loc.address" />
       </label>
-
-      <!-- <span class="details-location">{{ stay.loc.address }}</span> -->
-
-      <!-- <a href=""> {{ stay.loc.address }}</a> -->
     </div>
-    <div class="images-display-container">
-      <img v-for="(img, idx) in imgs" :key="idx" :src="img" alt="" />
-    </div>
+    <img-upload :imgUrls="imgs" @save="saveImg" />
+    <!-- <img-upload :imgUrls="imgUrls" @save="saveImg" /> -->
+
+    <!-- <div v-if="imgs" class=>
+     <img v-for="(img, idx) in imgs" :key="idx" :src="img" />
+      <img-upload @save="saveImg" /> 
+      
+
+    </div> -->
+    <img-list :imgUrls="imgUrls" />
 
     <div class="details-main-container flex">
       <div class="stay-details-left-container">
@@ -30,17 +32,35 @@
             <h2>{{ stay.type }} hosted by {{ stay.host.fullname }}</h2>
             <p>
               <label for="">
-                <input class="" type="text" v-model="stay.capacity" />
+                <input class="" type="number" v-model="stay.capacity" />
               </label>
               guests <span> &#183; </span>
               <label for="">
-                <input class="" type="text" v-model="stay.type" />
+                StayType:
+                <select v-model="stay.type">
+                  <option value="Entire home">Entire home</option>
+                  <option value="Entire condo">Entire condo</option>
+                  <option value="Entire rental unit">Entire rental unit</option>
+                  <option value="Entire loft">Entire loft</option>
+                  <option value="Entire bungalow">Entire bungalow</option>
+                  <option value="Private Room">
+                    Private room in rental unit
+                  </option>
+                </select>
               </label>
 
               <span> &#183;</span>
               {{ beds }}
+              <span> &#183;</span>
+
+              <label for="">
+                price:
+                <input class="" type="number" v-model="stay.price" />
+              </label>
+              <span>/ night </span>
             </p>
           </div>
+
           <img :src="stay.host.imgUrl" alt="" />
         </div>
         <hr />
@@ -113,25 +133,26 @@
           </div>
         </div>
       </div>
+      <div class="stay-details-right-container">
+        <button class="save-stay" @sava="saveEdit">Save</button>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 import { utilService } from '@/services/util.service';
-// import stayCheckout from '../cmps/details/stay-checkout.vue';
-// import reviewList from '../cmps/details/review-list.vue';
-// import stayRating from '../cmps/details/stay-rating.vue';
 import longText from '../cmps/details/long-text.vue';
-// import reviewAdd from '../cmps/details/review-add.vue';
-// import '@fortawesome/fontawesome-free/js/all.js';
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-// import {faHome,faWifi,faPaw,} from '@fortawesome/free-solid-svg-icons'
+import imgUpload from '../cmps/img-upload.vue';
+import imgList from '../cmps/img-list.vue';
+import { stayService } from '../services/stay.service.new';
+
 export default {
-  name: 'stayDetails',
+  name: 'edit-stay',
   data() {
     return {
-      isLoading: true,
+      imgUrls: [],
+
       stay: null,
       imgs: null,
       amenities: [
@@ -168,7 +189,6 @@ export default {
         });
     }
   },
-  // this.$store.dispatch.loadStay();
   computed: {
     // stay() {
     //   return this.$store.getters.currStay;
@@ -178,42 +198,32 @@ export default {
         ? this.stay.capacity + ' bed'
         : this.stay.capacity + ' beds';
     },
-    bath() {},
     formattedReviews() {
-      //maybe 0 reviews
-      if (!this.stay.reviews.length) return '(new)';
+      if (!this.stay.reviews.length) return 'New';
       if (this.stay.reviews.length === 1)
         return `(${this.stay.reviews.length} review)`;
       else if (this.stay.reviews.length > 1)
         return `(${this.stay.reviews.length} reviews)`;
     },
-    formattedName() {
-      const txt = this.stay.name;
-      const txtWithCapitalFirstLetter =
-        txt.charAt(0).toUpperCase() + txt.slice(1);
-      // if (txt.length > 25 < 50) return txt.slice(0, 22) + '...';
-      return txtWithCapitalFirstLetter;
-    },
   },
   methods: {
-    placeOrder(order) {
-      const { _id, name, price } = this.stay;
-      order.stay = { _id, name, price };
+    saveImg(imgUrl) {
+      // var newImg = this.stay.imgUrls = this.imgUrl;
+      this.stay.imgUrls = this.imgUrl;
 
-      order.hostId = this.stay.host._id;
-      this.$store.dispatch({ type: 'addOrder', order });
+      this.imgUrls.push(imgUrl);
     },
-    iconToShow(amenity) {
-      return utilService.getIcon(amenity);
-      // return 'wifi';
+    mounted() {
+      window.scrollTo(0, 0);
     },
-  },
-
-  mounted() {
-    window.scrollTo(0, 0);
+    saveEdit() {
+      stayService.save(this);
+    },
   },
   components: {
     longText,
+    imgUpload,
+    imgList,
   },
 };
 </script>

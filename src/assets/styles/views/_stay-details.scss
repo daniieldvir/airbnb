@@ -211,24 +211,31 @@
     --num-col: 2;
     --row-height: 200px;
   }
+
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  img:first-child {
+  label:first-child {
     grid-column: span 2;
     grid-row: span 2;
-    border-top-left-radius: 13px;
-    border-bottom-left-radius: 13px;
+    img {
+      border-top-left-radius: 13px;
+      border-bottom-left-radius: 13px;
+    }
   }
 
-  img:nth-child(3) {
-    border-top-right-radius: 13px;
+  label:nth-child(3) {
+    img {
+      border-top-right-radius: 13px;
+    }
   }
 
-  img:nth-child(5) {
-    border-bottom-right-radius: 13px;
+  label:nth-child(5) {
+    img {
+      border-bottom-right-radius: 13px;
+    }
   }
 }
 .review-preview-container {
@@ -255,33 +262,51 @@
 @media screen and (max-width: 760px) {
   .images-display-container {
     --gap: 5px;
-    --num-col: 4;
+    --num-col: 1;
 
     box-sizing: border-box;
     display: grid;
 
-    grid-template-columns: repeat(var(--num-col), minmax(100px, 1fr));
+    grid-template-columns: repeat(var(--num-col), minmax(30px));
     padding: 15px 0 30px;
-    // grid-template-rows: 100px 100px;
+    grid-template-rows: 100px 50px;
 
     gap: var(--gap);
   }
 
-  img:first-child {
+  label:first-child {
     grid-column: span 2;
     grid-row: span 2;
-    border-top-left-radius: 13px;
-    border-bottom-left-radius: 13px;
+    img {
+      border-top-left-radius: 13px;
+      border-top-right-radius: 13px;
+      border-bottom-left-radius: 0px !important;
+    }
   }
 
-  img:nth-child(3) {
-    border-top-right-radius: 13px;
+  label:nth-child(2) {
+    img {
+      border-bottom-left-radius: 13px;
+    }
   }
 
-  img:nth-child(5) {
-    border-bottom-right-radius: 13px;
+  label:nth-child(3) {
+    img {
+      border-bottom-right-radius: 13px;
+      border-top-right-radius: 0px !important;
+    }
+  }
+  label:nth-child(4) {
+    img {
+      display: none;
+    }
   }
 
+  label:nth-child(5) {
+    img {
+      display: none;
+    }
+  }
   .details-main-container {
     --num-row: 3;
 
