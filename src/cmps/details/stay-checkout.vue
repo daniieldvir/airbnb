@@ -27,6 +27,7 @@
               class="btn-checkout"
               @mousemove="changeBtnColor"
               @click="checkOut"
+              :disabled="btnTxt === 'Reserved!'"
             >
               <span>{{ btnTxt }}</span>
             </button>
@@ -140,6 +141,7 @@ export default {
           this.userAlert = 'Please enter dates';
         }
       } else {
+        this.btnTxt = 'Reserved!';
         this.showCheckOutModal('Thank you for booking!');
         this.$emit('orderReady', this.order);
       }
@@ -173,7 +175,7 @@ export default {
       setTimeout(this.closeModal, 5000);
     },
     closeModal() {
-      this.btnTxt = 'Check availability';
+      // this.btnTxt = 'Check availability';
       this.isModalOpen = false;
       this.showOrderPreview = false;
     },
