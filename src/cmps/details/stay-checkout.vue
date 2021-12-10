@@ -158,10 +158,11 @@ export default {
       const difference = checkOutDate.getTime() - checkInDate.getTime();
       const nights = Math.ceil(difference / (1000 * 3600 * 24));
       const totalPrice = this.stay.price * nights;
-      if (totalPrice < 0) {
+      if (totalPrice <= 0) {
         this.userAlert = 'Please enter valid dates';
         return;
       }
+
       this.btnTxt = 'Reserve';
       this.order.totalPrice = totalPrice;
       this.order.totalNights = nights;

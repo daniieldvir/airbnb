@@ -3,12 +3,13 @@
   background-color: white;
   border: 1px solid $clr7;
   text-align: center;
-  width: 500px;
+  width: 450px;
   height: 350px;
 
   border-radius: 15px;
   position: fixed;
-  top: 5%;
+  // top: 5%;
+  bottom: 50%;
   left: 50%;
   transform: translate(-50%, 50%);
   box-shadow: 0 6px 6px -6px $clr7;
