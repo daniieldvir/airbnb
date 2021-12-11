@@ -67,7 +67,7 @@
       </section>
 
       <!-- ORDERS -->
-      <section v-if="currSection === 'Orders'">
+      <section v-show="currSection === 'Orders'">
         <h3 v-if="!ordersToShow.length">
           No {{ titleForDisplay.toLowerCase() }} to display
         </h3>
@@ -109,11 +109,11 @@ export default {
       currSection: 'Notifications',
       dataForList: [],
       hostStays: null,
-      orders: null,
+      orders: [],
       user: null,
     };
   },
-  async created() {
+  created() {
     this.loadUser();
     this.loadOrders();
     // if (this.loggedInUser.isHost){
@@ -121,7 +121,7 @@ export default {
     //     await this.$store.dispatch({ type: 'setFilter', filterBy });
     // }
   },
-  async destroy() {
+  destroy() {
     this.$store.commit({ type: 'clearAllFilters' });
   },
   // watch: {
