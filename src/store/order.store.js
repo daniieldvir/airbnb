@@ -79,7 +79,7 @@ export const orderStore = {
       }
     },
     async removeOrder({ commit }, { orderId }) {
-      console.log('asked to remove order Store', orderId);
+      console.log('asked to remove order ', orderId);
       try {
         await orderService.remove(orderId);
         commit({ type: 'removeOrder', orderId });

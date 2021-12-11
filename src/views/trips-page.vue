@@ -8,7 +8,7 @@
     <section class="trip-list-container">
       <trip-preview
         @cancelOrder="cancelOrder"
-        v-for="trip in trips"
+        v-for="trip in tripsToSow"
         :trip="trip"
         :key="trip.id"
       />
@@ -36,6 +36,7 @@ export default {
   },
   methods: {
     async createTrips() {
+      this.trips = [];
       const user = {
         userId: this.loggedInUser._id,
         userType: 'user',
@@ -79,7 +80,11 @@ export default {
       }
     },
   },
-  computed: {},
+  computed: {
+    tripsToSow() {
+      return this.trips;
+    },
+  },
   mounted() {
     window.scrollTo(0, 0);
   },

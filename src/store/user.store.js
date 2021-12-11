@@ -7,6 +7,7 @@ export const userStore = {
     watchedUser: null,
     ownedStays: null,
     notifications: [],
+    // trips:[]
   },
   getters: {
     miniUser(state) {
