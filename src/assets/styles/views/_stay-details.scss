@@ -31,38 +31,40 @@
   }
 
   .details-main-container {
-    --num-col: 3;
-    --row-height: 100%;
+    // --row-height: 100%;
     margin-top: 45px;
 
     // padding: var(--gap);
 
-    position: relative;
+    // position: relative;
 
-    align-items: baseline;
+    // align-items: baseline;
 
     display: grid;
-    grid-template-columns: repeat(var(--num-col), 1fr);
-    grid-auto-rows: var(--row-height);
+    grid-template-columns: repeat(2, 1fr) 1.2fr;
 
     font-size: rem(18px);
 
     .stay-details-left-container {
       grid-column: 1/3;
-      grid-row: span 1/2;
+      // grid-row: span 1/2;
 
       .info-header {
-        h2 {
-          font-size: rem(22px);
-          line-height: rem(20px);
-        }
-        p {
-          font-size: rem(16px);
-          color: $clr2;
-          font-family: airbnb-light, sans-serif;
+        display: flex;
+        justify-content: space-between;
+        .info {
+          h2 {
+            font-size: rem(22px);
+            line-height: rem(20px);
+          }
+          p {
+            font-size: rem(16px);
+            color: $clr2;
+            font-family: airbnb-light, sans-serif;
 
-          span {
-            margin: 5px;
+            span {
+              margin: 5px;
+            }
           }
         }
         img {
@@ -140,11 +142,11 @@
 
     .stay-details-right-container {
       grid-column: 3/4;
-      grid-row: span 1;
       position: sticky;
       top: 120px;
       //anna
       align-self: flex-start;
+      justify-self: auto;
     }
   }
 
@@ -262,12 +264,8 @@
 @media screen and (max-width: 560px) {
   .images-display-container {
     --gap: 5px;
-    --num-col: 1;
+    grid-template-columns: repeat(1, 180px) 185px;
 
-    box-sizing: border-box;
-    display: grid;
-
-    grid-template-columns: repeat(var(--num-col), minmax(30px));
     padding: 15px 0 30px;
     grid-template-rows: 100px 50px;
 
@@ -308,17 +306,16 @@
     }
   }
   .details-main-container {
-    --num-row: 3;
-
     // --row-height: 100%;
     // margin-top: 45px;
 
-    grid-template-rows: repeat(var(--num-row), 1fr);
+    // grid-template-rows: repeat(var(--num-row), 1fr);
+    grid-template-rows: repeat(3, 1fr);
 
     // grid-auto-rows: var(--row-height);
 
     .stay-details-left-container {
-      grid-column: span 1;
+      grid-column: 1/2;
       grid-row: 1/2;
 
       .info-header {
@@ -408,7 +405,7 @@
     }
     .stay-details-right-container {
       // grid-column: 3/4;
-      grid-column: span 1;
+      // grid-column: span 1;
       grid-row: 2/3;
       // top: 120px;
 

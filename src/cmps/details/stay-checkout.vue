@@ -1,6 +1,6 @@
 <template>
-  <section class="stay-checkout flex column">
-    <section class="checkout-container flex">
+  <section class="stay-checkout">
+    <section class="checkout-container">
       <div class="checkout-form-container">
         <div class="checkout-form-header flex space-between align-center">
           <div class="order-price-container">
@@ -54,12 +54,15 @@
         </template>
       </div>
     </section>
-    <checkout-modal
-      :txt="userAlert"
-      class="checkout-modal"
-      v-if="isModalOpen"
-      @closeModal="closeModal"
-    ></checkout-modal>
+
+    <section class="section-checkout">
+      <checkout-modal
+        :txt="userAlert"
+        class="checkout-modal"
+        v-if="isModalOpen"
+        @closeModal="closeModal"
+      ></checkout-modal>
+    </section>
   </section>
 </template>
 
