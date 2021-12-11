@@ -71,7 +71,7 @@ export default {
     filtered() {
       this.$emit('filterClicked');
       this.$emit('filtered', this.filterBy.dates);
-      const filterBy = this.filterBy;
+      const filterBy = JSON.parse(JSON.stringify(this.filterBy));
       this.$store.dispatch({
         type: 'setFilter',
         filterBy: this.filterBy.dates,
