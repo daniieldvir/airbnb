@@ -51,6 +51,7 @@
             <template v-for="stay in staysToShow">
               <img :key="stay._id + 'img'" :src="stay.imgUrls[0]" alt="" />
               <span :key="stay._id + stay.name">{{ stay.name }}</span>
+              <span :key="stay._id + stay.type">{{ stay.type }}</span>
               <span :key="stay._id + stay.loc.address">{{
                 stay.loc.address
               }}</span>
@@ -92,7 +93,15 @@
               <span :key="order._id + order.totalPrice"
                 >${{ order.totalPrice }}</span
               >
-              <button :key="order._id">{{ ordersActionBtnTxt }}</button>
+              <span :key="order._id + order.status">{{ order.status }}</span>
+              <button
+                @click="orderActionBtnClicked(ordersActionBtnTxt, order)"
+                :key="order._id"
+              >
+                {{
+                  order.status === 'approved' ? 'Approved' : ordersActionBtnTxt
+                }}
+              </button>
             </template>
           </div>
         </template>
@@ -109,7 +118,7 @@ export default {
     return {
       loggedInUser: null,
       navList: ['Notifications', 'Add stay', 'Listed Stays', 'Orders'],
-      currSection: 'Notifications',
+      currSection: 'Orders',
       hostStays: null,
       user: null,
       dataForList: [],
@@ -175,6 +184,24 @@ export default {
     formateDate(date) {
       return new Date(date).toLocaleDateString();
     },
+    orderActionBtnClicked(action, orderId) {
+      if (action === 'Approve') {
+        this.approveOrder(orderId);
+      } else if (action === 'Cancel') {
+        this.cancelOrder(orderId);
+      } else {
+        return;
+      }
+    },
+    approveOrder(order) {
+      console.log('approve order:', order);
+      if (!this.loggedInUser.isHost) return;
+      order.status = 'approved';
+      this.$store.dispatch({ type: 'updateOrder', order });
+    },
+    cancelOrder(order) {
+      console.log('cancel order:', order);
+    },
   },
   computed: {
     titleForDisplay() {
@@ -190,9 +217,17 @@ export default {
     headersToShow() {
       const currSection = this.currSection;
       if (currSection === 'Orders') {
-        return ['imgUrl', 'From', 'Start', 'End', 'Total', 'Actions'];
+        return ['imgUrl', 'From', 'Start', 'End', 'Total', 'Status', 'Actions'];
       } else if (currSection === 'Listed Stays') {
-        return ['imgUrl', 'Name', 'Address', 'Price', 'Rating', 'Actions'];
+        return [
+          'imgUrl',
+          'Name',
+          'Type',
+          'Address',
+          'Price',
+          'Rating',
+          'Actions',
+        ];
       } else if (currSection === 'Notifications') {
         return ['imgUrl', 'User', 'Message', 'Stay', 'Date', 'Actions'];
       }

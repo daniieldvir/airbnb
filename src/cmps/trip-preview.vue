@@ -4,7 +4,7 @@
       <img v-for="(img, idx) in trip.imgUrls" :src="img" :key="idx" />
       <div class="preview-left flex column">
         <strong>{{ trip.stayName }}</strong>
-        <span>${{ trip.totalPrice }}</span>
+        <span>${{ returnLocaleString(trip.totalPrice) }}</span>
         <span>{{ trip.status }}</span>
       </div>
       <div class="preview-right flex column">
@@ -30,6 +30,9 @@ export default {
       } else {
         return str;
       }
+    },
+    returnLocaleString(num) {
+      return num.toLocaleString();
     },
   },
   computed: {

@@ -24,7 +24,7 @@
         <router-link class="main-router-link" to="/explore"
           >Explore</router-link
         >
-        <router-link class="main-router-link" to="/user-profile"
+        <router-link class="main-router-link" to="/become-host"
           >Become A Host</router-link
         >
 

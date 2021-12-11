@@ -6,6 +6,7 @@ export const userStore = {
     loggedInUser: userService.getLoggedInUser(),
     watchedUser: null,
     ownedStays: null,
+    notifications: [],
   },
   getters: {
     miniUser(state) {
@@ -28,6 +29,9 @@ export const userStore = {
     watchedUser({ watchedUser }) {
       return watchedUser;
     },
+    notification(state) {
+      return state.notification;
+    },
   },
   mutations: {
     setLoggedInUser(state, { user }) {
@@ -42,6 +46,9 @@ export const userStore = {
     },
     removeUser(state, { userId }) {
       state.users = state.users.filter((user) => user._id !== userId);
+    },
+    addNotification(state, notification) {
+      console.log('user store add notif', notification);
     },
   },
   actions: {
