@@ -13,7 +13,7 @@
 
 .secondary-filters {
   padding: 0px;
-  margin-top: 2.1em;
+  margin-top: rem(15px);
   & > * {
     margin-right: 10px;
   }
@@ -34,6 +34,9 @@
     &:hover {
       outline: 1px solid $clr2;
     }
+  }
+  .clear {
+    margin-top: 10px;
   }
 }
 
@@ -138,5 +141,12 @@
   transition: background-color 0.05s ease;
   &:hover {
     background-color: $clr8;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .secondary-filters {
+    padding: 0px;
+    margin-top: rem(37px);
   }
 }
