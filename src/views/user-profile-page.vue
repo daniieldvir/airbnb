@@ -92,7 +92,7 @@
               <span :key="order._id + order.totalPrice"
                 >${{ order.totalPrice }}</span
               >
-              <button :key="order._id">Approve</button>
+              <button :key="order._id">{{ ordersActionBtnTxt }}</button>
             </template>
           </div>
         </template>
@@ -133,6 +133,7 @@ export default {
         userId: this.loggedInUser._id,
         userType: !this.loggedInUser.isHost ? 'user' : 'host',
       };
+      console.log('user7777777', user);
 
       await this.$store.dispatch({ type: 'loadOrders', user });
       this.orders = this.$store.getters.ordersToShow;
@@ -183,7 +184,7 @@ export default {
       return this.$store.getters.ordersToShow;
     },
     staysToShow() {
-      if (!this.loggedInUser.isHost) return;
+      if (!this.loggedInUser.isHost) return [];
       return this.$store.getters.hostStays;
     },
     headersToShow() {
@@ -194,6 +195,13 @@ export default {
         return ['imgUrl', 'Name', 'Address', 'Price', 'Rating', 'Actions'];
       } else if (currSection === 'Notifications') {
         return ['imgUrl', 'User', 'Message', 'Stay', 'Date', 'Actions'];
+      }
+    },
+    ordersActionBtnTxt() {
+      if (!this.loggedInUser.isHost) {
+        return 'Cancel';
+      } else {
+        return 'Approve';
       }
     },
 
