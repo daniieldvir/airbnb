@@ -68,28 +68,25 @@
 
       <!-- ORDERS -->
       <section v-if="currSection === 'Orders'">
-        <h3 v-if="!ordersToShow.length">
+        <h3 v-if="!dataForList.length">
           No {{ titleForDisplay.toLowerCase() }} to display
         </h3>
         <template v-else>
           <div class="data-table">
-            <span v-for="(header, idx) in orderSecHeaders" :key="idx">
-              <strong>{{ header }}</strong>
+            <span
+              v-for="(column, columnHeader, idx) in dataForList[0]"
+              :key="idx"
+            >
+              <strong>{{ upperCaseFirstChar(columnHeader) }}</strong>
             </span>
-
-            <template v-for="(order, idx) in ordersToShow">
-              <img :key="order.buyer.imgUrl" :src="order.buyer.imgUrl" />
-              <span :key="order.buyer.fullname">{{
-                order.buyer.fullname
-              }}</span>
-              <span :key="order.dates.checkInDate">{{
-                formateDate(order.dates.checkInDate)
-              }}</span>
-              <span :key="order.dates.checkOutDate">{{
-                formateDate(order.dates.checkOutDate)
-              }}</span>
-              <span :key="order.totalPrice">${{ order.totalPrice }}</span>
-              <button :key="order._id">Approve</button>
+            <span><strong>Actions</strong></span>
+            <template v-for="(dataObject, idx) in dataForList">
+              <img :key="dataObject.imgUrl" :src="dataObject.imgUrl" />
+              <span :key="dataObject.name">{{ dataObject.name }}</span>
+              <span :key="dataObject.start">{{ dataObject.start }}</span>
+              <span :key="dataObject.end">{{ dataObject.end }}</span>
+              <span :key="dataObject.total">${{ dataObject.total }}</span>
+              <button :key="idx">Approve</button>
             </template>
           </div>
         </template>
@@ -104,18 +101,16 @@ export default {
   name: 'user-profile',
   data() {
     return {
-      // loggedInUser: null,
+      loggedInUser: null,
       navList: ['Notifications', 'Add stay', 'Listed Stays', 'Orders'],
       currSection: 'Notifications',
       dataForList: [],
       hostStays: null,
       orders: null,
-      user: null,
     };
   },
   async created() {
-    this.loadUser();
-    this.loadOrders();
+    this.loggedInUser = this.$store.getters.loggedInUser;
     // if (this.loggedInUser.isHost){
     //     const filterBy = { hostId: this.loggedInUser._id };
     //     await this.$store.dispatch({ type: 'setFilter', filterBy });
@@ -137,17 +132,6 @@ export default {
   //   },
   // },
   methods: {
-    async loadUser() {
-      const user = this.$store.getters.loggedInUser;
-      this.user = {
-        userId: user._id,
-        userType: !user.isHost ? 'user' : 'host',
-      };
-    },
-    async loadOrders() {
-      await this.$store.dispatch({ type: 'loadOrders', user: this.user });
-      this.orders = this.$store.getters.ordersToShow;
-    },
     showNotifications() {
       this.dataForList = [];
       // const data = [
@@ -190,25 +174,25 @@ export default {
       this.currSection = 'Listed Stays';
     },
     async showOrders() {
-      // const user = {
-      //   userId: this.loggedInUser._id,
-      //   userType: 'host',
-      // };
-      // await this.$store.dispatch({ type: 'loadOrders', user });
-      // this.orders = this.$store.getters.ordersToShow;
-      // console.log('orderssssssssssssss', this.orders);
-      // const orders = this.orders.map((order) => {
-      //   console.log(order.buyer.fullname);
-      //   let data = {
-      //     imgUrl: order.buyer.imgUrl,
-      //     name: order.buyer.fullname,
-      //     start: new Date(order.dates.checkInDate).toLocaleDateString(),
-      //     end: new Date(order.dates.checkOutDate).toLocaleDateString(),
-      //     total: order.totalPrice,
-      //   };
-      //   return data;
-      // });
-      // this.dataForList = orders;
+      const user = {
+        userId: this.loggedInUser._id,
+        userType: 'host',
+      };
+      await this.$store.dispatch({ type: 'loadOrders', user });
+      this.orders = this.$store.getters.ordersToShow;
+      console.log('orderssssssssssssss', this.orders);
+      const orders = this.orders.map((order) => {
+        console.log(order.buyer.fullname);
+        let data = {
+          imgUrl: order.buyer.imgUrl,
+          name: order.buyer.fullname,
+          start: new Date(order.dates.checkInDate).toLocaleDateString(),
+          end: new Date(order.dates.checkOutDate).toLocaleDateString(),
+          total: order.totalPrice,
+        };
+        return data;
+      });
+      this.dataForList = orders;
       this.currSection = 'Orders';
     },
     upperCaseFirstChar(str) {
@@ -224,24 +208,14 @@ export default {
       });
       this.$router.push(`/stay/${stay._id}/edit`);
     },
-    formateDate(date) {
-      return new Date(date).toLocaleDateString();
-    },
-    createId() {
-      return 'id' + new Date().getTime();
-    },
   },
   computed: {
     titleForDisplay() {
       return this.currSection;
     },
-    ordersToShow() {
-      return this.$store.getters.ordersToShow;
-    },
-    orderSecHeaders() {
-      return ['imgUrl', 'From', 'Start', 'End', 'Total', 'Actions'];
-    },
-
+    // user() {
+    //   return this.$store.getters.watchedUser;
+    // },
     // loggedUser() {
     //   console.log('loggedUser', loggedUser);
     //   return state.loggedInUser;
