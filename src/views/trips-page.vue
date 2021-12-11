@@ -62,7 +62,7 @@ export default {
         id: this.createId(),
         orderId: order._id,
       };
-      this.trips.push(trip);
+      this.trips.unshift(trip);
     },
     cancelOrder(orderId) {
       this.$store.dispatch({ type: 'removeOrder', orderId });
