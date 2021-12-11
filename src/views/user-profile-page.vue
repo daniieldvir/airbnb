@@ -2,19 +2,19 @@
   <section class="user-page-container flex column">
     <nav class="user-profile-nav flex">
       <ul class="clean-list flex">
-        <li @click="showNotifications">Notifications</li>
+        <li @click="showSection('Notifications')">Notifications</li>
         <router-link to="/stay/edit">
           <li>Add stay</li>
         </router-link>
-        <li @click="showListedStays">Listed Stays</li>
-        <li @click="showOrders">Orders</li>
+        <li @click="showSection('Listed Stays')">Listed Stays</li>
+        <li @click="showSection('Orders')">Orders</li>
       </ul>
     </nav>
     <hr />
     <div class="user-section-cont">
       <h1>{{ titleForDisplay }}</h1>
       <!-- NOTIFICATIONS -->
-      <section v-if="currSection === 'Notifications'">
+      <section v-show="currSection === 'Notifications'">
         <h3 v-if="!dataForList.length">
           No {{ titleForDisplay.toLowerCase() }} to display
         </h3>
@@ -39,60 +39,59 @@
       </section>
 
       <!-- LISTED STAYS -->
-      <section v-if="currSection === 'Listed Stays'">
-        <h3 v-if="!dataForList.length">
+      <section v-show="currSection === 'Listed Stays'">
+        <h3 v-if="!staysToShow.length">
           No {{ titleForDisplay.toLowerCase() }} to display
         </h3>
         <template v-else>
           <div class="data-table">
-            <span
-              v-for="(column, columnHeader, idx) in dataForList[0]"
-              :key="idx"
-            >
-              <strong>{{ upperCaseFirstChar(columnHeader) }}</strong>
+            <span v-for="(header, idx) in headersToShow" :key="idx">
+              <strong>{{ header }}</strong>
             </span>
-            <span><strong>Actions</strong></span>
-            <!-- <template v-for="(dataObject, idx) in dataForList">
-              <img :key="dataObject.imgUrl" :src="dataObject.imgUrl" alt="" />
-              <span :key="dataObject.name">{{ dataObject.name }}</span>
-              <span :key="dataObject.address">{{ dataObject.address }}</span>
-              <span :key="dataObject.price">{{ dataObject.price }}</span>
-              <span :key="dataObject.rating">{{ dataObject.rating }}</span>
-              <button @click="editStay(dataObject.name)" :key="idx">
+            <template v-for="stay in staysToShow">
+              <img :key="stay._id + 'img'" :src="stay.imgUrls[0]" alt="" />
+              <span :key="stay._id + stay.name">{{ stay.name }}</span>
+              <span :key="stay._id + stay.loc.address">{{
+                stay.loc.address
+              }}</span>
+              <span :key="stay._id + stay.price">{{ stay.price }}</span>
+              <span :key="stay._id + stay.avgRate">{{ stay.avgRate }}</span>
+              <button @click="editStay(stay._id)" :key="stay._id + 'edit'">
                 Edit
               </button>
-            </template> -->
+            </template>
           </div>
         </template>
       </section>
 
       <!-- ORDERS -->
-      <section v-if="currSection === 'Orders'">
+      <section v-show="currSection === 'Orders'">
         <h3 v-if="!ordersToShow.length">
           No {{ titleForDisplay.toLowerCase() }} to display
         </h3>
         <template v-else>
           <div class="data-table">
-            <span v-for="(header, idx) in orderSecHeaders" :key="idx">
+            <span v-for="(header, idx) in headersToShow" :key="idx">
               <strong>{{ header }}</strong>
             </span>
 
-            <template v-for="(order, idx) in ordersToShow">
+            <template v-for="order in ordersToShow">
               <img
-                v-if="order.buyer.imgUrl"
-                :key="order.buyer.imgUrl"
+                :key="order._id + order.buyer.imgUrl"
                 :src="order.buyer.imgUrl"
               />
-              <span :key="order.buyer.fullname">{{
+              <span :key="order._id + order.buyer.fullname">{{
                 order.buyer.fullname
               }}</span>
-              <span :key="order.dates.checkInDate">{{
+              <span :key="order._id + order.dates.checkInDate">{{
                 formateDate(order.dates.checkInDate)
               }}</span>
-              <span :key="order.dates.checkOutDate">{{
+              <span :key="order._id + order.dates.checkOutDate">{{
                 formateDate(order.dates.checkOutDate)
               }}</span>
-              <span :key="order.totalPrice">${{ order.totalPrice }}</span>
+              <span :key="order._id + order.totalPrice"
+                >${{ order.totalPrice }}</span
+              >
               <button :key="order._id">Approve</button>
             </template>
           </div>
@@ -108,53 +107,45 @@ export default {
   name: 'user-profile',
   data() {
     return {
-      // loggedInUser: null,
+      loggedInUser: null,
       navList: ['Notifications', 'Add stay', 'Listed Stays', 'Orders'],
       currSection: 'Notifications',
-      dataForList: [],
       hostStays: null,
-      orders: null,
       user: null,
+      dataForList: [],
+      // REMOVE THIS
     };
   },
   async created() {
     this.loadUser();
     this.loadOrders();
-    // this.loadHostStays()
-    // if (this.loggedInUser.isHost){
-    //     const filterBy = { hostId: this.loggedInUser._id };
-    //     await this.$store.dispatch({ type: 'setFilter', filterBy });
-    // }
+    this.loadHostStays();
   },
   async destroy() {
     this.$store.commit({ type: 'clearAllFilters' });
   },
-  // watch: {
-  //   user: {
-  //     handler() {
-  //       this.$store.dispatch({
-  //         type: 'loadAndWatchUser',
-  //         userId: this.loggedInUser._id,
-  //       });
-  //       console.log('watching user');
-  //     },
-  //     immediate: true,
-  //   },
-  // },
   methods: {
     async loadUser() {
-      const user = this.$store.getters.loggedInUser;
-      this.user = {
-        userId: user._id,
-        userType: !user.isHost ? 'user' : 'host',
-      };
+      this.loggedInUser = this.$store.getters.loggedInUser;
     },
     async loadOrders() {
-      await this.$store.dispatch({ type: 'loadOrders', user: this.user });
+      const user = {
+        userId: this.loggedInUser._id,
+        userType: !this.loggedInUser.isHost ? 'user' : 'host',
+      };
+
+      await this.$store.dispatch({ type: 'loadOrders', user });
       this.orders = this.$store.getters.ordersToShow;
     },
+    async loadHostStays() {
+      if (!this.loggedInUser.isHost) return;
+      await this.$store.dispatch({
+        type: 'loadHostStays',
+        hostId: this.loggedInUser._id,
+      });
+    },
     showNotifications() {
-      this.dataForList = [];
+      // this.dataForList = [];
       // const data = [
       //   {
       //     imgUrl:
@@ -167,54 +158,8 @@ export default {
       // this.dataForList = data;
       this.currSection = 'Notifications';
     },
-    async showListedStays() {
-      // console.log('loggedInUser', this.user);
-      // if (this.loggedInUser && this.loggedInUser.isHost) {
-      //   this.dataForList = [];
-      //   await this.$store.dispatch({
-      //     type: 'loadHostStays',
-      //     hostId: this.loggedInUser._id,
-      //   });
-      //   const hostStays = this.$store.getters.hostStays;
-      //   this.hostStays = hostStays;
-
-      //   if (hostStays) {
-      //     const staysToShow = hostStays.map((stay) => {
-      //       const data = {
-      //         imgUrl: stay.imgUrls[0],
-      //         name: stay.name,
-      //         address: stay.loc.address,
-      //         price: stay.price,
-      //         rating: stay.avgRate,
-      //       };
-      //       return data;
-      //     });
-      //     this.dataForList = staysToShow;
-      //   }
-      // }
-      this.currSection = 'Listed Stays';
-    },
-    async showOrders() {
-      // const user = {
-      //   userId: this.loggedInUser._id,
-      //   userType: 'host',
-      // };
-      // await this.$store.dispatch({ type: 'loadOrders', user });
-      // this.orders = this.$store.getters.ordersToShow;
-      // console.log('orderssssssssssssss', this.orders);
-      // const orders = this.orders.map((order) => {
-      //   console.log(order.buyer.fullname);
-      //   let data = {
-      //     imgUrl: order.buyer.imgUrl,
-      //     name: order.buyer.fullname,
-      //     start: new Date(order.dates.checkInDate).toLocaleDateString(),
-      //     end: new Date(order.dates.checkOutDate).toLocaleDateString(),
-      //     total: order.totalPrice,
-      //   };
-      //   return data;
-      // });
-      // this.dataForList = orders;
-      this.currSection = 'Orders';
+    showSection(section) {
+      this.currSection = section;
     },
     upperCaseFirstChar(str) {
       if (typeof str === 'string') {
@@ -223,17 +168,11 @@ export default {
         return str;
       }
     },
-    editStay(stayName) {
-      const stay = this.hostStays.find((stay) => {
-        return stay.name === stayName;
-      });
-      this.$router.push(`/stay/${stay._id}/edit`);
+    editStay(stayId) {
+      this.$router.push(`/stay/${stayId}/edit`);
     },
     formateDate(date) {
       return new Date(date).toLocaleDateString();
-    },
-    createId() {
-      return 'id' + new Date().getTime();
     },
   },
   computed: {
@@ -243,8 +182,19 @@ export default {
     ordersToShow() {
       return this.$store.getters.ordersToShow;
     },
-    orderSecHeaders() {
-      return ['imgUrl', 'From', 'Start', 'End', 'Total', 'Actions'];
+    staysToShow() {
+      if (!this.loggedInUser.isHost) return;
+      return this.$store.getters.hostStays;
+    },
+    headersToShow() {
+      const currSection = this.currSection;
+      if (currSection === 'Orders') {
+        return ['imgUrl', 'From', 'Start', 'End', 'Total', 'Actions'];
+      } else if (currSection === 'Listed Stays') {
+        return ['imgUrl', 'Name', 'Address', 'Price', 'Rating', 'Actions'];
+      } else if (currSection === 'Notifications') {
+        return ['imgUrl', 'User', 'Message', 'Stay', 'Date', 'Actions'];
+      }
     },
 
     // loggedUser() {
