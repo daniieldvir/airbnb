@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'home-list',
+  name: 'footer-list',
   props: ['places', 'listTitle'],
   data() {
     return {};

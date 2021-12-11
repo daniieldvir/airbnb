@@ -69,6 +69,7 @@ import datePicker from '../filters/date-picker-2.vue';
 import checkoutModal from '../details/checkout-modal.vue';
 
 export default {
+  name: 'stay-checkout',
   props: {
     stay: Object,
   },

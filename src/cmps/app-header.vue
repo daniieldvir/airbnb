@@ -89,6 +89,7 @@ import mainFilters from '../cmps/stay-filter.vue';
 import secondaryFilters from '../cmps/filters/secondary-filters.vue';
 // import loginSignup from './login-signup.vue';
 export default {
+  name: 'app-header',
   data() {
     return {
       onHomePage: false,

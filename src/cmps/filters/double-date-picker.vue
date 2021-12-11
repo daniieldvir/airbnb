@@ -15,6 +15,7 @@
 
 <script>
 export default {
+  name: 'double-date-picker',
   data() {
     return {
       pickerOptions: {

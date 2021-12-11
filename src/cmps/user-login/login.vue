@@ -35,6 +35,7 @@
 <script>
 import { showMsg } from '@/services/event-bus.service.js';
 export default {
+  name: 'login',
   data() {
     return {
       userCred: {

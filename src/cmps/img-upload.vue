@@ -45,6 +45,7 @@
 <script>
 import { uploadImg } from '../services/img-upload.js';
 export default {
+  name: 'img-upload',
   props: { imgUrls: Array },
   data() {
     return {

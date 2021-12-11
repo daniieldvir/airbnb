@@ -16,6 +16,7 @@
 <script>
 import longText from './long-text.vue';
 export default {
+  name: 'review-preview',
   props: {
     review: Object,
   },

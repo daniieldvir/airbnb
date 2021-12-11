@@ -43,6 +43,7 @@
 <script>
 import { showMsg } from '@/services/event-bus.service';
 export default {
+  name: 'signup',
   data() {
     return {
       userCred: {
