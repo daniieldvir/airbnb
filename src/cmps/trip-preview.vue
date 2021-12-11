@@ -4,13 +4,13 @@
       <img v-for="(img, idx) in trip.imgUrls" :src="img" :key="idx" />
       <div class="preview-left flex column">
         <strong>{{ trip.stayName }}</strong>
-        <span>${{ trip.totalPrice }}</span>
+        <span>${{ returnLocaleString(trip.totalPrice) }}</span>
         <span>{{ trip.status }}</span>
       </div>
       <div class="preview-right flex column">
         <span>{{ trip.checkInDate }}</span>
         <span>{{ trip.checkOutDate }}</span>
-        <span class="btn">Cancel order</span>
+        <span @click="cancelOrder(trip.orderId)" class="btn">Cancel order</span>
       </div>
     </div>
   </section>
@@ -24,12 +24,18 @@ export default {
     return {};
   },
   methods: {
+    cancelOrder(orderId) {
+      this.$emit('cancelOrder', { orderId });
+    },
     upperCaseFirstChar(str) {
       if (typeof str === 'string') {
         return str[0].toUpperCase() + str.substring(1);
       } else {
         return str;
       }
+    },
+    returnLocaleString(num) {
+      return num.toLocaleString();
     },
   },
   computed: {
