@@ -1,6 +1,6 @@
 .user-page-container {
   margin-top: 150px;
-  height: 100vh;
+  min-height: 100vh;
   top: 0;
   padding: 0px 100px; // justify-content: flex-start;
   & nav {

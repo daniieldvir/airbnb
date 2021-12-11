@@ -1,6 +1,6 @@
 .trips-page {
   margin-top: 150px;
-  height: 100vh;
+  min-height: 100vh;
   top: 0;
   & h1 {
     height: 50px;
@@ -21,17 +21,26 @@
       border-bottom: 2px solid $clr2;
     }
   }
-  //   & .trip-list-container{
-  // marg
-  //   }
+  & .trip-list-container {
+    // display: grid;
+    // grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    // grid-template-columns: repeat(auto-fill, 1fr);
+    // grid-auto-rows: minmax(70px, 130px);
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    // row-gap: 10px;
+    // gap: 20px;
+  }
 }
 .trip-preview-container {
-  width: 40%;
+  //   width: 35%;
   & .trip-preview {
     display: grid;
     grid-template-columns: repeat(3, minmax(100px, 200px));
-    grid-auto-rows: minmax(70, 130);
+    grid-auto-rows: minmax(66px, 133px);
     gap: 5px;
+    // margin-right: 20px;
     & :first-child {
       grid-column: span 2;
       grid-row: span 2;
