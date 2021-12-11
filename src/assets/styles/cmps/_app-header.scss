@@ -160,6 +160,8 @@ header {
     left: 0;
     right: 0;
     .main-nav {
+      .nav-content {
+      }
       .main-router-link {
         width: max-content;
         height: max-content;
@@ -169,12 +171,12 @@ header {
         &:not(:first-of-type) {
           margin: 0px 12.5px;
         }
-        .logo {
-          display: none;
-        }
       }
       .nav-content {
-        display: none;
+        align-items: flex-start;
+        .main-router-link {
+          display: none;
+        }
       }
     }
   }

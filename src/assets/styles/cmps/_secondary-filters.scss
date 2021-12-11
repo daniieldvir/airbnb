@@ -13,7 +13,7 @@
 
 .secondary-filters {
   padding: 0px;
-  margin-top: rem(15px);
+  margin-top: rem(70px);
   & > * {
     margin-right: 10px;
   }
@@ -152,6 +152,8 @@
   .dropdown-content {
     &.price {
       justify-content: space-evenly;
+      width: 450px;
+      height: 250px;
     }
   }
 
