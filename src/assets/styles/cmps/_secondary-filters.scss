@@ -79,9 +79,7 @@
 
   &.price {
     justify-content: space-evenly;
-    width: 25em;
-    padding: 32px 30px;
-    gap: 20px;
+    padding: 20px 25px;
 
     & :last-child {
       justify-content: space-between;
@@ -109,6 +107,7 @@
 .dropdown-content.amenities {
   overflow-y: scroll;
   height: 300px;
+  right: 0px;
   & button {
     margin: 10px;
     // position: absolute;
@@ -148,5 +147,28 @@
   .secondary-filters {
     padding: 0px;
     margin-top: rem(37px);
+  }
+
+  .dropdown-content {
+    &.price {
+      justify-content: space-evenly;
+    }
+  }
+
+  .dropdown-content.amenities {
+    overflow-y: scroll;
+    height: 300px;
+    right: auto;
+    & button {
+      margin: 10px;
+      // position: absolute;
+    }
+    & p {
+      pointer-events: none;
+    }
+    & div {
+      padding-left: 20px;
+      height: 3em;
+    }
   }
 }

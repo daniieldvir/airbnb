@@ -103,8 +103,6 @@ header {
   &.logo {
     color: var(--logo);
   }
-
-  box-shadow: 0 3px 20px rgba($color: rgb(191, 189, 189), $alpha: 0.1);
 }
 
 .white-header {
@@ -157,6 +155,10 @@ header {
 
 @media screen and (max-width: 760px) {
   header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     .main-nav {
       .main-router-link {
         width: max-content;
