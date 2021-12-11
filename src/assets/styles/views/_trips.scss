@@ -31,9 +31,10 @@
       .trip-preview {
         display: grid;
         grid-template-columns: repeat(3, minmax(100px, 150px));
-        grid-auto-rows: minmax(66px, 133px);
+        grid-auto-rows: minmax(66px, 130px);
 
         gap: 5px;
+        padding-bottom: 25px;
 
         img:first-child {
           grid-column: span 2;
