@@ -95,6 +95,7 @@
               >
               <span :key="order._id + order.status">{{ order.status }}</span>
               <button
+                :disabled="order.status === 'approved'"
                 @click="orderActionBtnClicked(ordersActionBtnTxt, order)"
                 :key="order._id"
               >

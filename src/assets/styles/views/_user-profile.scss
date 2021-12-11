@@ -65,8 +65,12 @@
     background-color: #fff;
     border: 1px solid $clr8;
     cursor: pointer;
-    &:hover {
+    &:hover :not(disabled) {
       border: 1px solid $clr7;
+    }
+    &:disabled {
+      border: none;
+      cursor: not-allowed;
     }
   }
 }
