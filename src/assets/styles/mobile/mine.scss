@@ -1,0 +1,220 @@
+@media screen and (max-width: 560px) {
+  /// home page
+  .pic {
+    .main-header {
+      .main-txt {
+        font-size: rem(25px);
+      }
+    }
+  }
+
+  /// become a host
+  .become-a-host {
+    background-position: bottom center;
+    height: 350px;
+
+    h4 {
+      font-size: rem(25px);
+      padding-left: 55px;
+    }
+    p {
+      font-size: rem(15px);
+      padding-left: 55px;
+    }
+    button {
+      margin-left: 55px;
+    }
+  }
+  /// filter
+  .main-filters {
+    grid-template-columns: 203px 2fr 1fr auto;
+    width: 90% !important;
+
+    .city-filter {
+      grid-column: 1;
+      align-items: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      display: block;
+      & .toggel-btn {
+        border-right: 1px solid $clr7;
+      }
+    }
+    .date-picker-cont {
+      grid-column: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      cursor: pointer;
+    }
+    .guest-filter {
+      & span {
+        font-size: rem(14px);
+      }
+      grid-column: 3;
+      align-items: center;
+      display: block;
+      & .toggel-btn {
+        border-left: 1px solid $clr7;
+        cursor: pointer;
+      }
+    }
+  }
+  .search-btn {
+    grid-column: 4;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    border-radius: 25px;
+    padding: 0px 15px;
+    & .search {
+      display: flex;
+    }
+  }
+
+  /// Secondary filter
+  .el-slider__bar {
+    background-color: $clr1;
+    border: 1px solid $clr1;
+    width: 50%;
+  }
+  .el-slider__button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid $clr1;
+  }
+  .el-slider__runway {
+    background-color: $clr7;
+  }
+
+  .secondary-filters {
+    padding: 0px;
+    margin-top: 2.1em;
+    background-color: gold;
+    & > * {
+      margin-right: 10px;
+    }
+    & button:not(.close-btn) {
+      background-color: rgba(128, 128, 128, 0);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30em;
+      outline: 1px solid $clr7;
+      font-size: rem(14px);
+
+      &.active {
+        outline: 2px solid $clr2;
+        &:hover {
+          outline: 2px solid $clr2;
+        }
+      }
+      &:hover {
+        outline: 1px solid $clr2;
+      }
+    }
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 15em;
+    min-height: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgb(223, 223, 222);
+    border-radius: 15px;
+    z-index: 9999;
+    flex-direction: column;
+
+    margin-top: 10px;
+    // font-size: rem(14px);
+    font-size: 1em;
+    & p {
+      margin: 0px;
+      font-size: 1rem;
+      font-weight: 400;
+      padding: 20px 30px;
+    }
+    &:not(.price) p:hover {
+      background-color: $clr8;
+    }
+    & div {
+      display: flex;
+      align-items: center;
+      //remove the second line in price
+      // margin-bottom: 10px;
+    }
+
+    &.price {
+      justify-content: space-evenly;
+      width: 25em;
+      padding: 32px 30px;
+      gap: 20px;
+
+      & :last-child {
+        justify-content: space-between;
+        align-items: center;
+
+        & p {
+          color: $clr4;
+          font-size: 0.7em;
+          width: 45%;
+          border-radius: 10px;
+          padding: 10px;
+          line-height: 2em;
+          border: 1px solid $clr7;
+        }
+
+        & span {
+          // margin-top: 10px;
+          color: $clr2;
+          font-size: 1.4em;
+        }
+      }
+    }
+  }
+
+  .dropdown-content.amenities {
+    overflow-y: scroll;
+    height: 300px;
+    & button {
+      margin: 10px;
+      // position: absolute;
+    }
+    & p {
+      pointer-events: none;
+    }
+    & div {
+      padding-left: 20px;
+      height: 3em;
+    }
+  }
+
+  .show {
+    display: block;
+    display: flex;
+  }
+
+  .close-btn {
+    background-color: #fff;
+    border: 0px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: $clr2;
+    margin: 10px;
+    transition: background-color 0.05s ease;
+    &:hover {
+      background-color: $clr8;
+    }
+  }
+}
