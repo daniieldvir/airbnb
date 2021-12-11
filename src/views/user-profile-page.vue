@@ -27,13 +27,13 @@
               <strong>{{ upperCaseFirstChar(columnHeader) }}</strong>
             </span>
             <span><strong>Actions</strong></span>
-            <template v-for="(dataObject, idx) in dataForList">
+            <!-- <template v-for="(dataObject, idx) in dataForList">
               <img :key="dataObject.idx" :src="dataObject.imgUrl" alt="" />
               <span :key="dataObject.idx">{{ dataObject.date }}</span>
               <span :key="dataObject.idx">{{ dataObject.user }}</span>
               <span :key="dataObject.idx">{{ dataObject.message }}</span>
               <span :key="dataObject.idx">{{ dataObject.stay }}</span>
-            </template>
+            </template> -->
           </div>
         </template>
       </section>
@@ -52,7 +52,7 @@
               <strong>{{ upperCaseFirstChar(columnHeader) }}</strong>
             </span>
             <span><strong>Actions</strong></span>
-            <template v-for="(dataObject, idx) in dataForList">
+            <!-- <template v-for="(dataObject, idx) in dataForList">
               <img :key="dataObject.imgUrl" :src="dataObject.imgUrl" alt="" />
               <span :key="dataObject.name">{{ dataObject.name }}</span>
               <span :key="dataObject.address">{{ dataObject.address }}</span>
@@ -61,7 +61,7 @@
               <button @click="editStay(dataObject.name)" :key="idx">
                 Edit
               </button>
-            </template>
+            </template> -->
           </div>
         </template>
       </section>
@@ -78,7 +78,11 @@
             </span>
 
             <template v-for="(order, idx) in ordersToShow">
-              <img :key="order.buyer.imgUrl" :src="order.buyer.imgUrl" />
+              <img
+                v-if="order.buyer.imgUrl"
+                :key="order.buyer.imgUrl"
+                :src="order.buyer.imgUrl"
+              />
               <span :key="order.buyer.fullname">{{
                 order.buyer.fullname
               }}</span>
@@ -116,6 +120,7 @@ export default {
   async created() {
     this.loadUser();
     this.loadOrders();
+    // this.loadHostStays()
     // if (this.loggedInUser.isHost){
     //     const filterBy = { hostId: this.loggedInUser._id };
     //     await this.$store.dispatch({ type: 'setFilter', filterBy });
@@ -164,29 +169,29 @@ export default {
     },
     async showListedStays() {
       // console.log('loggedInUser', this.user);
-      if (this.loggedInUser && this.loggedInUser.isHost) {
-        this.dataForList = [];
-        await this.$store.dispatch({
-          type: 'loadHostStays',
-          hostId: this.loggedInUser._id,
-        });
-        const hostStays = this.$store.getters.hostStays;
-        this.hostStays = hostStays;
+      // if (this.loggedInUser && this.loggedInUser.isHost) {
+      //   this.dataForList = [];
+      //   await this.$store.dispatch({
+      //     type: 'loadHostStays',
+      //     hostId: this.loggedInUser._id,
+      //   });
+      //   const hostStays = this.$store.getters.hostStays;
+      //   this.hostStays = hostStays;
 
-        if (hostStays) {
-          const staysToShow = hostStays.map((stay) => {
-            const data = {
-              imgUrl: stay.imgUrls[0],
-              name: stay.name,
-              address: stay.loc.address,
-              price: stay.price,
-              rating: stay.avgRate,
-            };
-            return data;
-          });
-          this.dataForList = staysToShow;
-        }
-      }
+      //   if (hostStays) {
+      //     const staysToShow = hostStays.map((stay) => {
+      //       const data = {
+      //         imgUrl: stay.imgUrls[0],
+      //         name: stay.name,
+      //         address: stay.loc.address,
+      //         price: stay.price,
+      //         rating: stay.avgRate,
+      //       };
+      //       return data;
+      //     });
+      //     this.dataForList = staysToShow;
+      //   }
+      // }
       this.currSection = 'Listed Stays';
     },
     async showOrders() {

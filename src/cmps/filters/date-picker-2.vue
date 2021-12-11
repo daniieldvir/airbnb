@@ -3,7 +3,7 @@
     <div class="block checkIn flex column">
       <label>Check in</label>
       <el-date-picker
-        @blur="filtered"
+        @blur="copyFilter"
         v-model="filterBy.dates.checkInDate"
         type="date"
         :placeholder="dateToStr(filterBy.dates.checkInDate) || 'Add date'"
@@ -13,7 +13,7 @@
     <div class="block checkOut flex column">
       <label>Check out</label>
       <el-date-picker
-        @blur="filtered"
+        @blur="copyFilter"
         v-model="filterBy.dates.checkOutDate"
         type="date"
         :placeholder="dateToStr(filterBy.dates.checkOutDate) || 'Add date'"
@@ -68,14 +68,18 @@ export default {
       const filterBy = this.$store.getters.filterBy;
       this.filterBy = JSON.parse(JSON.stringify(filterBy));
     },
-    filtered() {
+    filtered(filterBy) {
       this.$emit('filterClicked');
-      this.$emit('filtered', this.filterBy.dates);
-      const filterBy = JSON.parse(JSON.stringify(this.filterBy));
+      this.$emit('filtered', filterBy.dates);
+      // const filterBy = JSON.parse(JSON.stringify(this.filterBy));
       this.$store.dispatch({
         type: 'setFilter',
-        filterBy: this.filterBy.dates,
+        filterBy: filterBy.dates,
       });
+    },
+    copyFilter() {
+      const filterBy = JSON.parse(JSON.stringify(this.filterBy));
+      this.filtered(filterBy);
     },
     dateToStr(date) {
       return date.toString();
