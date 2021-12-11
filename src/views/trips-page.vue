@@ -6,7 +6,12 @@
       <li :class="{ active: showPast }">Past</li>
     </ul>
     <section class="trip-list-container">
-      <trip-preview v-for="trip in trips" :trip="trip" :key="trip.id" />
+      <trip-preview
+        @cancelOrder="cancelOrder"
+        v-for="trip in trips"
+        :trip="trip"
+        :key="trip.id"
+      />
     </section>
   </section>
 </template>
@@ -55,8 +60,13 @@ export default {
         totalPrice,
         status,
         id: this.createId(),
+        orderId: order._id,
       };
       this.trips.push(trip);
+    },
+    cancelOrder(orderId) {
+      this.$store.dispatch({ type: 'removeOrder', orderId });
+      // this.$store.dispatch({ type: 'setFilter', filterBy });
     },
     createId() {
       return 'id' + new Date().getTime();

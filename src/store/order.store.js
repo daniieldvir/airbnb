@@ -79,9 +79,11 @@ export const orderStore = {
       }
     },
     async removeOrder({ commit }, { orderId }) {
+      console.log('asked to remove order Store', orderId);
       try {
         await orderService.remove(orderId);
         commit({ type: 'removeOrder', orderId });
+        console.log('order removed');
       } catch (err) {
         console.log('stayStore: Error in remove order', err);
         throw err;

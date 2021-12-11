@@ -10,7 +10,7 @@
       <div class="preview-right flex column">
         <span>{{ trip.checkInDate }}</span>
         <span>{{ trip.checkOutDate }}</span>
-        <span class="btn">Cancel order</span>
+        <span @click="cancelOrder(trip.orderId)" class="btn">Cancel order</span>
       </div>
     </div>
   </section>
@@ -24,6 +24,9 @@ export default {
     return {};
   },
   methods: {
+    cancelOrder(orderId) {
+      this.$emit('cancelOrder', { orderId });
+    },
     upperCaseFirstChar(str) {
       if (typeof str === 'string') {
         return str[0].toUpperCase() + str.substring(1);
