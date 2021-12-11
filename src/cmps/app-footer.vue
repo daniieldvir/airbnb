@@ -1,54 +1,52 @@
 <template>
-  <footer>
-    <section class="main-footer main-container">
-      <section class="footer">
-        <p class="footer-header">Inspiration for future getaways</p>
+  <section class="main-footer main-container">
+    <section class="footer">
+      <p class="footer-header">Inspiration for future getaways</p>
 
-        <div class="top-rated">
-          <footer-list
-            v-if="topStays"
-            @cardClicked="cardClicked"
-            :places="topStays"
-            :listTitle="'Top Rated'"
-          />
-        </div>
+      <div class="top-rated">
+        <footer-list
+          v-if="topStays"
+          @cardClicked="cardClicked"
+          :places="topStays"
+          :listTitle="'Top Rated'"
+        />
+      </div>
 
-        <div class="top-nearby">
-          <footer-list
-            @cardClicked="cardClicked"
-            :places="topStays"
-            :listTitle="'Nearby'"
-          />
-        </div>
+      <div class="top-nearby">
+        <footer-list
+          @cardClicked="cardClicked"
+          :places="topStays"
+          :listTitle="'Nearby'"
+        />
+      </div>
 
-        <div class="top-cities">
-          <footer-list
-            @cardClicked="cardClicked"
-            :places="citiesForList"
-            :listTitle="'Cities'"
-          />
-        </div>
+      <div class="top-cities">
+        <footer-list
+          @cardClicked="cardClicked"
+          :places="citiesForList"
+          :listTitle="'Cities'"
+        />
+      </div>
 
-        <div class="copy-rights">
-          <p>@2021 rentme, Inc</p>
-          <span>·</span>
-          <router-link class="main-router-link" to="/">
-            <span>About</span>
-          </router-link>
-          <span>·</span>
+      <div class="copy-rights">
+        <p>@2021 rentme, Inc</p>
+        <span>·</span>
+        <router-link class="main-router-link" to="/">
+          <span>About</span>
+        </router-link>
+        <span>·</span>
 
-          <router-link class="main-router-link" to="/">
-            <span>Login</span>
-          </router-link>
-          <span>·</span>
+        <router-link class="main-router-link" to="/">
+          <span>Login</span>
+        </router-link>
+        <span>·</span>
 
-          <router-link class="main-router-link host-link" to="/become-host"
-            >Become A Host</router-link
-          >
-        </div>
-      </section>
+        <router-link class="main-router-link host-link" to="/become-host"
+          >Become A Host</router-link
+        >
+      </div>
     </section>
-  </footer>
+  </section>
 </template>
 
 <script>
