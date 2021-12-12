@@ -1,5 +1,5 @@
 <template>
-  <section class="user-page-container flex column">
+  <section class="user-page-container main-container flex column">
     <nav class="user-profile-nav flex">
       <ul class="nav_profile clean-list flex">
         <li class="nav_user" @click="showSection('Notifications')">
