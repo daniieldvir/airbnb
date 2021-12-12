@@ -116,7 +116,6 @@ export const stayStore = {
     getStayById({ commit }, { stayId }) {
       return stayService.getById(stayId).then((stay) => {
         commit({ type: 'setStay', stay });
-        // console.log('stay', stay);
         return stay;
       });
     },

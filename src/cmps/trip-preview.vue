@@ -1,48 +1,58 @@
 <template>
   <section class="trip-preview-container">
     <div class="trip-preview">
-      <img v-for="(img, idx) in trip.imgUrls" :src="img" :key="idx" />
+      <!-- <img v-for="(img, idx) in trip.imgUrls" :src="img" :key="idx" /> -->
       <div class="preview-left flex column">
-        <strong>{{ trip.stayName }}</strong>
+        <strong>{{ order.stay.name }}</strong>
         <span>${{ formattedPrice }}</span>
         <span>{{ capitalCharStatus }}</span>
       </div>
       <div class="preview-right flex column">
-        <span>{{ trip.checkInDate }}</span>
-        <span>{{ trip.checkOutDate }}</span>
-        <span @click="cancelOrder(trip.orderId)" class="btn">Cancel order</span>
+        <span>{{ formateDate(order.dates.checkInDate) }}</span>
+        <span>{{ formateDate(order.dates.checkOutDate) }}</span>
+        <span @click="cancelOrder(order._id)" class="btn">Cancel order</span>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import confirmModal from '../cmps/confirm-modal.vue';
 export default {
   name: 'trip-preview',
-  props: { trip: Object },
+  props: { order: Object },
   data() {
     return {};
+  },
+  created() {
+    // this.orderStatus();
   },
   methods: {
     cancelOrder(orderId) {
       this.$emit('cancelOrder', orderId);
     },
-    upperCaseFirstChar(str) {
-      if (typeof str === 'string') {
-        return str[0].toUpperCase() + str.substring(1);
-      } else {
-        return str;
-      }
+    formateDate(date) {
+      new Date(date).toLocaleDateString();
     },
+
+    // },
+    // async orderStatus() {
+    //   const order = await this.$store.dispatch({
+    //     type: 'getOrder',
+    //     orderId: this.trip.orderId,
+    //   });
+    //   console.log(this.trip);
+    //   console.log('this.trip.orderId', this.trip.orderId);
+    //   console.log(order);
+    //   this.status = order.status;
+    // },
   },
   computed: {
     capitalCharStatus() {
-      const status = this.trip.status;
+      const status = this.order.status;
       return status.charAt(0).toUpperCase() + status.slice(1);
     },
     formattedPrice() {
-      const price = this.trip.totalPrice;
+      const price = this.order.totalPrice;
       return price.toLocaleString();
     },
   },
