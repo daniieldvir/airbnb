@@ -38,13 +38,14 @@
       />
     </template>
     <!-- LOADER -->
-    <img class="loader" v-else :src="require('../assets/loader.gif')" alt="" />
+    <img class="loader" v-else :src="require('../assets/grid.svg')" alt="" />
   </div>
 </template>
 
 <script>
 import { uploadImg } from '../services/img-upload.js';
 export default {
+  name: 'img-upload',
   props: { imgUrls: Array },
   data() {
     return {

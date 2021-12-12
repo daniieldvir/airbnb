@@ -9,6 +9,7 @@
 
 <script>
 export default {
+  name: 'long-text',
   props: ['summary'],
   data() {
     return {

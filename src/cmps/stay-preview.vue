@@ -31,7 +31,7 @@
     <router-link class="router-link" :to="'/stay/' + stay._id">
       <p>
         <font-awesome-icon icon="star" />
-        <span class="avg-rate">{{ stay.avgRate }} </span>
+        <span class="avg-rate">{{ avgRate }} </span>
         <span class="review-rate"> {{ reviewCount }} </span>
       </p>
       <p class="stay-type">{{ stay.type }} · {{ stay.loc.city }}</p>
@@ -45,6 +45,7 @@
 <script>
 import priceRangeFilter from './price-range-filter.vue';
 import priceRange from './price-range-filter.vue';
+import { showMsg} from '../services/event-bus.service.js';
 // import { faHeart } from '@fortawesome/free-regular-svg-icons'
 export default {
   components: { priceRangeFilter },
@@ -69,15 +70,23 @@ export default {
       // if (txt.length > 25 < 50) return txt.slice(0, 22) + '...';
       return txtWithCapitalFirstLetter;
     },
+    avgRate() {
+      if (!this.stay.reviews.length) return 0;
+      const sum = this.stay.reviews.reduce((acc, review) => {
+        return acc + review.rate;
+      }, 0);
+      return (sum / this.stay.reviews.length).toFixed(1);
+    },
   },
   methods: {
-    toggleLikedStay() {
+    toggleLikedStay(stayId) {
       this.likedStay = !this.likedStay;
-      // if (this.likedStay) {
-      //   showMsg('Added to wishlist')
-      // } else {
-      //   showMsg('Removed from wishlist')
-      // }
+      this.$store.dispatch({ type: 'toggleLikedStay', stayId })
+      if (this.likedStay) {
+        showMsg('Added to wishlist')
+      } else {
+        showMsg('Removed from wishlist')
+      }
     },
   },
   components: {

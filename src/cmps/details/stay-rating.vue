@@ -55,6 +55,7 @@
 <script>
 // import { utilService } from '@/services/util.service.js'
 export default {
+  name: 'stay-rating',
   props: { reviews: Array },
   data() {
     return {

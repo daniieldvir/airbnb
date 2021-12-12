@@ -1,17 +1,17 @@
 <template>
   <section class="login-modal" @click.stop>
     <div class="login-header">
-      <button class="close-btn" @click="close"><span>X</span></button>
+      <button class="close-btn" @click="close"><span>✕</span></button>
 
       <h3>Login</h3>
     </div>
     <div class="login-input">
       <form action="" @submit.prevent="login">
         <input
+          ref="username"
           type="text"
           placeholder="Enter username"
           v-model="userCred.username"
-          ref="usernameInputRef"
         />
         <input
           type="password"
@@ -19,7 +19,7 @@
           v-model="userCred.password"
         />
         <button class="checkout-btn" @mousemove="changeBtnColor">
-          <span>Login</span>
+          <span>Continue</span>
         </button>
       </form>
       <div class="change-signup-button">
@@ -35,6 +35,7 @@
 <script>
 import { showMsg } from '@/services/event-bus.service.js';
 export default {
+  name: 'login',
   data() {
     return {
       userCred: {
@@ -44,6 +45,9 @@ export default {
       msg: '',
       isLoading: false,
     };
+  },
+  created(){
+    this.$nextTick(() => this.$refs.username.focus())
   },
   methods: {
     async login() {

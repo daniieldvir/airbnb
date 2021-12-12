@@ -1,6 +1,8 @@
 <template>
   <section>
-    <ul class="stay-list">
+    <div class="loader" v-if="isLoading"><img src="../assets/grid.svg"></div>
+    <!-- <img v-if="isLoading" src="grid.svg" alt=""> -->
+    <ul v-if="!isLoading" class="stay-list">
       <li class="clear-list stay-list" v-for="stay in stays" :key="stay._id">
         <stay-preview :stay="stay"> </stay-preview>
       </li>
@@ -15,8 +17,20 @@ import secondaryFilters from './filters/secondary-filters.vue';
 export default {
   name: 'stay-list',
   props: ['stays'],
+  data() {
+    return {
+      // isLoading:false
+      // stays: null,
+      // city: null,
+    };
+  },
   created() {
     this.$store.dispatch({ type: 'loadStays' });
+  },
+  computed:{
+    isLoading(){
+      return this.$store.getters.isLoading;
+    }
   },
   components: {
     stayPreview,
