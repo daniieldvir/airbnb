@@ -29,7 +29,6 @@ import signup from './cmps/user-login/signup.vue';
 import appFooter from './cmps/app-footer.vue';
 
 export default {
-  props: 'stayDetails',
   data() {
     return {
       isSignUp: false,

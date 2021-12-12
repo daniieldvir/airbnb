@@ -98,7 +98,7 @@
       <stay-rating :reviews="reviews" />
       <review-list :reviews="reviews" />
       <!-- <el-button @click.stop="toggleReview">Add Review</el-button> -->
-      <review-add @saveReview="addReview" @toggleReview="toggleReview" />
+      <!-- <review-add @saveReview="addReview" @toggleReview="toggleReview" /> -->
     </div>
 
     <div class="map-section">

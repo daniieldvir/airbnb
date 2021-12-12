@@ -23,7 +23,7 @@ export const orderStore = {
     },
     mutations: {
         addOrder(state, { order }) {
-            console.log('store state', state.orders);
+            console.log('store state', order);
             state.orders.push(order);
         },
         updateOrder(state, { order }) {
