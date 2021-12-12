@@ -87,7 +87,7 @@
       </div>
     </div>
 
-    <button @click="clearSearch">Clear search</button>
+    <button class="clear" @click="clearSearch">Clear search</button>
   </section>
 </template>
 

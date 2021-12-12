@@ -12,9 +12,14 @@
     color: $clr1;
     padding: 10px;
   }
-  .reviews {
-    grid-template-columns: 1fr 1fr;
-    display: grid;
-    column-gap: 50px;
+}
+
+@media screen and (min-width: 1080px) {
+  .review-list {
+    .reviews {
+      grid-template-columns: 1fr 1fr;
+      display: grid;
+      column-gap: 50px;
+    }
   }
 }

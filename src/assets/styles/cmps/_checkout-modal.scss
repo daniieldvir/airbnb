@@ -6,7 +6,7 @@
 
   text-align: center;
   // width: 400px;
-  width: 92%;
+  width: 100%;
   height: 100px;
   padding: 10px;
   border-radius: 13px;
@@ -19,5 +19,14 @@
 
     background-color: #ff385c;
     color: white;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .section-checkout {
+    margin-left: 60px;
+    .checkout-modal {
+      width: 100%;
+    }
   }
 }

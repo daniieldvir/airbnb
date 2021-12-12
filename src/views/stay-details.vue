@@ -23,8 +23,8 @@
 
     <div class="details-main-container flex">
       <div class="stay-details-left-container">
-        <div class="info-header flex align-center space-between">
-          <div>
+        <div class="info-header">
+          <div class="info">
             <h2>{{ stay.type }} hosted by {{ stay.host.fullname }}</h2>
             <p>
               {{ stay.capacity }} guests <span> &#183; </span> {{ stay.type }}
@@ -94,6 +94,7 @@
       </div>
     </div>
     <div v-if="stay.reviews.length" class="reviews-section-container">
+      <hr />
       <stay-rating :reviews="reviews" />
       <review-list :reviews="reviews" />
       <!-- <el-button @click.stop="toggleReview">Add Review</el-button> -->
@@ -144,6 +145,8 @@ export default {
       imgs: null,
       // iconToShow:'',
       reviews: [],
+      explorePage: true,
+      onDetailsPage: true,
     };
   },
   async created() {

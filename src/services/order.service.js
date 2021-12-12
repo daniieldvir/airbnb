@@ -23,6 +23,7 @@ async function getById(orderId) {
 }
 
 async function remove(orderId) {
+  console.log('front service order to delete', orderId);
   return httpService.delete(`order/${orderId}`);
 }
 

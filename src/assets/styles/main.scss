@@ -18,32 +18,34 @@
 @import 'cmps/date-picker-2';
 @import url('//unpkg.com/element-ui@2.15.7/lib/theme-chalk/index.css');
 @import 'cmps/secondary-filters';
-@import 'cmps/filters';
+@import 'cmps/confirm-modal';
+// @import 'cmps/filters';
+
 @import 'cmps/stay-checkout';
 @import 'cmps/checkout-guest-modal';
 @import 'cmps/review-list';
 @import 'cmps/review-preview';
 @import 'cmps/stay-rating';
 @import 'cmps/long-text';
-@import url('cmps/_home-page-list.scss');
-@import url('cmps/_checkout-modal.scss');
+@import 'cmps/_home-page-list.scss';
+@import 'cmps/_checkout-modal.scss';
 @import 'cmps/login-signup';
 @import 'cmps/_home-page-list.scss';
 @import 'cmps/_checkout-modal.scss';
 @import 'cmps/_app-footer.scss';
 @import 'cmps/_footer-list.scss';
-// @import './mobile/main-mobile.scss';
-// @import './mobile/mobile-nav.scss';
+
 @import 'cmps/user-login/login.scss';
 @import 'cmps/user-login/singup.scss';
 @import 'cmps/edit-stay.scss';
 @import 'cmps/wishlist.scss';
 
+@import 'cmps/filter-new.scss';
 // Views
 @import 'views/home-page';
-@import 'views/stay-details';
 @import 'views/stay-app';
 @import 'views/app';
 @import 'views/user-profile';
 @import 'views/edit-stay';
 @import 'views/trips';
+@import 'views/details-new';

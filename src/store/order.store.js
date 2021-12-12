@@ -19,7 +19,7 @@ export const orderStore = {
         },
         ordersToShow(state) {
             return state.orders;
-        }
+        },
     },
     mutations: {
         addOrder(state, { order }) {
@@ -104,3 +104,6 @@ export const orderStore = {
         },
     },
 };
+
+
+

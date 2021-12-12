@@ -13,7 +13,8 @@
 
 .secondary-filters {
   padding: 0px;
-  margin-top: 2.1em;
+  margin-top: rem(30px);
+
   & > * {
     margin-right: 10px;
   }
@@ -34,6 +35,9 @@
     &:hover {
       outline: 1px solid $clr2;
     }
+  }
+  .clear {
+    margin-top: 10px;
   }
 }
 
@@ -76,9 +80,7 @@
 
   &.price {
     justify-content: space-evenly;
-    width: 25em;
-    padding: 32px 30px;
-    gap: 20px;
+    padding: 20px 25px;
 
     & :last-child {
       justify-content: space-between;
@@ -106,6 +108,7 @@
 .dropdown-content.amenities {
   overflow-y: scroll;
   height: 300px;
+  right: 0px;
   & button {
     margin: 10px;
     // position: absolute;
@@ -138,5 +141,37 @@
   transition: background-color 0.05s ease;
   &:hover {
     background-color: $clr8;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .secondary-filters {
+    padding: 0px;
+    margin-top: rem(37px);
+  }
+
+  .dropdown-content {
+    &.price {
+      justify-content: space-evenly;
+      width: 450px;
+      height: 250px;
+    }
+  }
+
+  .dropdown-content.amenities {
+    overflow-y: scroll;
+    height: 300px;
+    right: auto;
+    & button {
+      margin: 10px;
+      // position: absolute;
+    }
+    & p {
+      pointer-events: none;
+    }
+    & div {
+      padding-left: 20px;
+      height: 3em;
+    }
   }
 }

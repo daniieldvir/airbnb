@@ -28,7 +28,7 @@ export const stayStore = {
       return state.filterBy;
     },
     staysToShow(state) {
-      console.log('stays to show fron store', state.stays);
+      // console.log('stays to show fron store', state.stays);
       return state.stays;
     },
     avgPrice(state) {
@@ -88,7 +88,7 @@ export const stayStore = {
   },
   actions: {
     async loadStays({ commit, state }) {
-      console.log('store: state.filterBy', state.filterBy);
+      // console.log('store: state.filterBy', state.filterBy);
       commit({ type: 'setLoading', isLoading: true });
       try {
         // const stays = await stayService.query();
@@ -96,7 +96,7 @@ export const stayStore = {
         commit({ type: 'setStays', stays });
         // console.log('stay', stays);
       } catch (err) {
-        console.log('stayStore: Error in loadStays', err);
+        // console.log('stayStore: Error in loadStays', err);
         throw err;
       } finally {
         commit({ type: 'setLoading', isLoading: false });
@@ -104,16 +104,16 @@ export const stayStore = {
     },
     async loadHostStays({ commit }, { hostId }) {
       try {
-        console.log('store hostId', hostId);
+        // console.log('store hostId', hostId);
         const hostStays = await stayService.getHostStays(hostId);
-        console.log('hostStays', hostStays);
+        // console.log('hostStays', hostStays);
         commit({ type: 'setHostStays', hostStays });
       } catch (err) {
         console.log('stayStore: Error in loadHostStays', err);
       }
     },
     setFilter({ commit, dispatch }, { filterBy }) {
-      console.log('store set filter', filterBy);
+      // console.log('store set filter', filterBy);
       commit({ type: 'setFilter', filterBy });
       dispatch({ type: 'loadStays' });
     },
@@ -132,7 +132,7 @@ export const stayStore = {
     async getStayById({ commit }, { stayId }) {
       try {
         const stay = await stayService.getById(stayId);
-        console.log('stay store: stay by id ', stay);
+        // console.log('stay store: stay by id ', stay);
         commit({ type: 'setStay', stay });
         return stay;
       } catch (err) {

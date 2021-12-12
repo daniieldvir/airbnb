@@ -1,7 +1,7 @@
 .stay-checkout {
   bottom: 20px;
-  align-items: end;
-  justify-content: flex-end;
+  // align-items: end;
+  // justify-content: flex-end;
 
   .order-price-container {
     color: $clr2;
@@ -36,7 +36,7 @@
   }
 
   .checkout-container {
-    width: 92%;
+    // width: 80%;
     justify-content: center;
     border: 1px solid rgba(0, 0, 0, 0.18823529411764706);
     border-radius: 10px;
@@ -173,6 +173,18 @@
           font-weight: bold;
         }
       }
+    }
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .stay-checkout {
+    bottom: 20px;
+    align-items: end;
+    justify-content: flex-end;
+
+    .checkout-container {
+      margin-left: 60px;
     }
   }
 }
