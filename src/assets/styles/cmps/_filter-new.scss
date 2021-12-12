@@ -221,7 +221,7 @@
 
 @media screen and (min-width: 1080px) {
   .main-filters.small-filter {
-    width: 25%;
+    width: 30%;
     .search-btn-container {
       .search-btn {
         width: 35px;
@@ -261,7 +261,6 @@
       overflow: hidden;
       display: block;
       cursor: pointer;
-      // min-width: 230px;
       min-width: 200px;
       & .toggel-btn {
         border-right: 1px solid $clr7;
