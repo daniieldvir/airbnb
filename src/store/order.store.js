@@ -45,27 +45,23 @@ export const orderStore = {
     currOrder(state, { order }) {
       state.currOrder = order;
     },
-    mutations: {
-      addOrder(state, { order }) {
-        console.log('store state', order);
-        state.orders.push(order);
-      },
-      updateOrder(state, { order }) {
-        const idx = state.orders.findIndex((order) => order._id === order._id);
-        state.orders.splice(idx, 1, order);
-      },
-      removeOrder(state, payload) {
-        state.orders = state.orders.filter(
-          (order) => order._id !== payload.orderId
-        );
-      },
-      setOrders(state, { orders }) {
-        // console.log(orders);
-        state.orders = orders;
-      },
-      currOrder(state, { order }) {
-        state.currOrder = order;
-      },
+  },
+  actions: {
+    async loadOrders({ commit }, { user }) {
+      try {
+        console.log('store loadorders user', user);
+        const orders = await orderService.query(user);
+        console.log('orders store after load', orders);
+        commit({ type: 'setOrders', orders });
+        socketService.off(SOCKET_EVENT_ORDER_ADDED);
+        socketService.on(SOCKET_EVENT_ORDER_ADDED, (order) => {
+          console.log('Got order from socket', order);
+          commit({ type: 'addOrder', order });
+        });
+      } catch (err) {
+        console.log('orderStore: Error in load orders', err);
+        throw err;
+      }
     },
     async addOrder({ commit }, { order }) {
       console.log('context', commit);
