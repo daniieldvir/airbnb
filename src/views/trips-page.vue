@@ -83,7 +83,11 @@ export default {
     },
     cancelOrder() {
       this.showConfirmModal = false;
-      this.$store.dispatch({ type: 'removeOrder', orderId });
+      // console.log('asking to remove order component',);
+      this.$store.dispatch({
+        type: 'removeOrder',
+        orderId: this.orderIdToCancel,
+      });
       const orderId = this.orderIdToCancel;
       const tripIdx = this.trips.findIndex((trip) => {
         return trip.orderId === orderId;
