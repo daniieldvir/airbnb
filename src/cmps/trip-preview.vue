@@ -4,8 +4,8 @@
       <img v-for="(img, idx) in trip.imgUrls" :src="img" :key="idx" />
       <div class="preview-left flex column">
         <strong>{{ trip.stayName }}</strong>
-        <span>${{ returnLocaleString(trip.totalPrice) }}</span>
-        <span>{{ trip.status }}</span>
+        <span>${{ formattedPrice }}</span>
+        <span>{{ capitalCharStatus }}</span>
       </div>
       <div class="preview-right flex column">
         <span>{{ trip.checkInDate }}</span>
@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     cancelOrder(orderId) {
-      this.$emit('cancelOrder', { orderId });
+      this.$emit('cancelOrder', orderId);
     },
     upperCaseFirstChar(str) {
       if (typeof str === 'string') {
@@ -34,13 +34,16 @@ export default {
         return str;
       }
     },
-    returnLocaleString(num) {
-      return num.toLocaleString();
-    },
   },
   computed: {
-    //   DO FORMATED DATE
-    // FORMATE PRICE
+    capitalCharStatus() {
+      const status = this.trip.status;
+      return status.charAt(0).toUpperCase() + status.slice(1);
+    },
+    formattedPrice() {
+      const price = this.trip.totalPrice;
+      return price.toLocaleString();
+    },
   },
   components: {},
 };

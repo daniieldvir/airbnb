@@ -63,11 +63,18 @@ export default {
         id: this.createId(),
         orderId: order._id,
       };
-      this.trips.unshift(trip);
+      this.trips.push(trip);
     },
     cancelOrder(orderId) {
-      this.$store.dispatch({ type: 'removeOrder', orderId });
-      // this.$store.dispatch({ type: 'setFilter', filterBy });
+      // this.$store.dispatch({ type: 'removeOrder', orderId });
+
+      const tripIdx = this.trips.findIndex((trip) => {
+        return trip.orderId === orderId;
+      });
+      console.log(tripIdx);
+      if (tripIdx > -1) {
+        this.trips.splice(tripIdx, 1);
+      }
     },
     createId() {
       return 'id' + new Date().getTime();
