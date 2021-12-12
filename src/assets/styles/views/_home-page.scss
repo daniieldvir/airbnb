@@ -17,8 +17,10 @@
 
     .main-txt {
       font-family: airbnb-medium, sans-serif;
-      font-size: rem(38px);
+      font-size: rem(30px);
       color: white;
+      // width: 80%;
+      margin: 0px;
       text-align: center;
       text-shadow: -1px -1px 0 $clr8, 1px -1px 0 $clr8, -1px 1px 0 $clr8,
         1px 1px 0 $clr8;
@@ -52,8 +54,8 @@
   }
   p {
     color: white;
-    font-size: rem(18px);
-    width: 60%;
+    font-size: rem(16px);
+    width: 80%;
     padding-left: 40px;
   }
   button {
