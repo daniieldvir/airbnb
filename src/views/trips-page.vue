@@ -7,17 +7,24 @@
     </ul>
     <section class="trip-list-container">
       <trip-preview
-        @cancelOrder="cancelOrder"
+        @cancelOrder="confirmCancellation"
         v-for="trip in tripsToSow"
         :trip="trip"
         :key="trip.id"
       />
     </section>
+    <confirm-modal
+      :message="'Cancel order?'"
+      @confirm="cancelOrder"
+      @closeModal="closeConfirmModal"
+      :shouldShow="showConfirmModal"
+    />
   </section>
 </template>
 
 <script>
 import tripPreview from '../cmps/trip-preview.vue';
+import confirmModal from '../cmps/confirm-modal.vue';
 
 export default {
   name: 'trips-page',
@@ -28,6 +35,8 @@ export default {
       showUpcoming: true,
       showPast: false,
       stay: null,
+      showConfirmModal: false,
+      orderIdToCancel: '',
     };
   },
   async created() {
@@ -65,16 +74,24 @@ export default {
       };
       this.trips.push(trip);
     },
-    cancelOrder(orderId) {
-      // this.$store.dispatch({ type: 'removeOrder', orderId });
-
+    confirmCancellation(orderId) {
+      this.orderIdToCancel = orderId;
+      this.showConfirmModal = true;
+    },
+    closeConfirmModal() {
+      this.showConfirmModal = false;
+    },
+    cancelOrder() {
+      this.showConfirmModal = false;
+      this.$store.dispatch({ type: 'removeOrder', orderId });
+      const orderId = this.orderIdToCancel;
       const tripIdx = this.trips.findIndex((trip) => {
         return trip.orderId === orderId;
       });
-      console.log(tripIdx);
       if (tripIdx > -1) {
         this.trips.splice(tripIdx, 1);
       }
+      this.orderIdToCancel = '';
     },
     createId() {
       return 'id' + new Date().getTime();
@@ -97,6 +114,7 @@ export default {
   },
   components: {
     tripPreview,
+    confirmModal,
   },
 };
 </script>

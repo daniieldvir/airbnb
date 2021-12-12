@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import confirmModal from '../cmps/confirm-modal.vue';
 export default {
   name: 'trip-preview',
   props: { trip: Object },
