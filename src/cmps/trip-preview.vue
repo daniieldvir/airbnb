@@ -21,19 +21,7 @@ export default {
   name: 'trip-preview',
   props: { order: Object },
   data() {
-    return {
-      status: '',
-      // const trip = {
-      imgUrls: stay.imgUrls.slice(0, 3),
-      stayName: stay.name,
-      checkInDate: new Date(order.dates.checkInDate).toLocaleDateString(),
-      checkOutDate: new Date(order.dates.checkOutDate).toLocaleDateString(),
-      totalPrice,
-      status,
-      id: this.createId(),
-      orderId: order._id,
-      // };
-    };
+    return {};
   },
   created() {
     // this.orderStatus();

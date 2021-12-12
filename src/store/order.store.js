@@ -42,6 +42,7 @@ export const orderStore = {
       state.orders.push(order);
     },
     updateOrder(state, { order }) {
+      console.log('updated orders state', order);
       const idx = state.orders.findIndex((order) => order._id === order._id);
       state.orders.splice(idx, 1, order);
     },
@@ -72,7 +73,7 @@ export const orderStore = {
         });
         socketService.off(SOCKET_EVENT_ORDER_UPDATED);
         socketService.on(SOCKET_EVENT_ORDER_UPDATED, (order) => {
-          console.log('Got updated order from ocket', order);
+          console.log('Got updated order from socket', order);
           commit({ type: 'updateOrder', order });
         });
       } catch (err) {
@@ -93,6 +94,7 @@ export const orderStore = {
       }
     },
     async updateOrder({ commit }, { order }) {
+      console.log('updating order');
       try {
         console.log('store: order', order);
         const savedOrder = await orderService.save(order);

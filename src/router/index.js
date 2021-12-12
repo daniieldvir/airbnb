@@ -5,10 +5,10 @@ import stayDetails from '../views/stay-details.vue';
 import Explore from '../views/stay-app';
 import BecomeHost from '../views/stay-edit';
 import userProfile from '../views/user-profile-page';
-// import userProfile from '../views/user-profile-page-anna';
+import trips from '../views/user-profile-page-anna';
 import stayEdit from '../views/stay-edit';
-import trips from '../views/trips-page';
-import userWishlist from '@/views/wishlist.vue'
+// import trips from '../views/trips-page';
+import userWishlist from '@/views/wishlist.vue';
 
 Vue.use(VueRouter);
 
