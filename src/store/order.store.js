@@ -2,7 +2,7 @@ import { orderService } from '../services/order.service.js';
 import {
   socketService,
   SOCKET_EVENT_ORDER_ADDED,
-  SOCKET_EVENT_ORDER_ABOUT_YOU,
+  SOCKET_EVENT_ORDER_UPDATED,
 } from '../services/socket.service.js';
 
 export const orderStore = {
@@ -12,6 +12,11 @@ export const orderStore = {
     orders: [],
     emptyOrder: orderService.getEmptyOrder(),
     notifications: 0,
+    trip: {
+      location: '',
+      dates: {},
+      totalGuests: 0,
+    },
   },
   getters: {
     getEmptyOrder(state) {
@@ -23,11 +28,18 @@ export const orderStore = {
     ordersToShow(state) {
       return state.orders;
     },
+    currTrip(state) {
+      return state.trip;
+    },
   },
   mutations: {
+    setTrip(state, { trip }) {
+      console.log(trip);
+      state.trip = trip;
+    },
     addOrder(state, { order }) {
-      console.log('store state  order added%%%%%%%%%%%', order);
-      state.orders.unshift(order);
+      console.log('store state', order);
+      state.orders.push(order);
     },
     updateOrder(state, { order }) {
       const idx = state.orders.findIndex((order) => order._id === order._id);
@@ -57,6 +69,11 @@ export const orderStore = {
         socketService.on(SOCKET_EVENT_ORDER_ADDED, (order) => {
           console.log('Got order from socket', order);
           commit({ type: 'addOrder', order });
+        });
+        socketService.off(SOCKET_EVENT_ORDER_UPDATED);
+        socketService.on(SOCKET_EVENT_ORDER_UPDATED, (order) => {
+          console.log('Got updated order from ocket', order);
+          commit({ type: 'updateOrder', order });
         });
       } catch (err) {
         console.log('orderStore: Error in load orders', err);

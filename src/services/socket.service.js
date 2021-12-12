@@ -5,12 +5,8 @@ import { httpService } from './http.service.js'
 // export const SOCKET_EVENT_USER_UPDATED = "user-updated";
 // export const SOCKET_EVENT_REVIEW_ADDED = "review-added";
 // export const SOCKET_EVENT_REVIEW_ABOUT_YOU = "review-about-you";
-
-// export const SOCKET_EMIT_ORDER_ADDED_WATCH = 'order-added-watch'
 export const SOCKET_EVENT_ORDER_ADDED = 'order-added'
-// export const SOCKET_EMIT_STAY_WATCH = 'stay-watch'
-// export const SOCKET_EMIT_ORDER_WATCH = 'order-watch'
-// export const SOCKET_EVENT_ORDER_UPDATED = 'order-updated'
+export const SOCKET_EVENT_ORDER_UPDATED = 'order-updated'
 
 const baseUrl = process.env.NODE_ENV === "production" ? "" : "//localhost:3030";
 export const socketService = createSocketService()

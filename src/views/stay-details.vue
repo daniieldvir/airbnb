@@ -211,22 +211,43 @@ export default {
       try {
         const { _id, name, price } = this.stay;
         order.stay = { _id, name, price };
+        order.stay.imgUrls = stay.imgUrls.slice(0, 3);
         order.hostId = this.stay.host._id;
         if (!this.loggedInUser) {
           showMsg('You must login first');
           this.$emit('toggleLogin');
           return;
         }
-        // this.$store.dispatch({ type: 'logout' });
-        await this.$store.dispatch({ type: 'addOrder', order: order });
+        const newOrder = await this.$store.dispatch({
+          type: 'addOrder',
+          order: order,
+        });
+        // this.createTrip(newOrder.insertedId, order);
         showMsg('The order was sent for approval');
       } catch (err) {
         showMsg('The order failed', 'error');
       }
     },
+    async createTrip(orderId, order) {
+      console.log('creatring trip gor order', order);
+      const trip = {
+        imgUrls: this.stay.imgUrls.slice(0, 3),
+        stayName: this.stay.name,
+        checkInDate: new Date(order.dates.checkInDate).toLocaleDateString(),
+        checkOutDate: new Date(order.dates.checkOutDate).toLocaleDateString(),
+        totalPrice: order.totalPrice,
+        status: order.status,
+        tripId: this.createId(),
+        orderId,
+      };
+      this.$store.commit({ type: 'addTrip', trip });
+    },
     iconToShow(amenity) {
       return utilService.getIcon(amenity);
       // return 'wifi';
+    },
+    createId() {
+      return 'id' + new Date().getTime();
     },
   },
 
