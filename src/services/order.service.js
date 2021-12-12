@@ -19,6 +19,7 @@ async function query({ userId, userType }) {
 }
 
 async function getById(orderId) {
+  console.log('front service get order', orderId);
   return httpService.get(`order/${orderId}`);
 }
 

@@ -96,12 +96,13 @@ export const orderStore = {
       }
     },
     async getOrder({ commit }, { orderId }) {
+      console.log('STORE ORDERID', orderId);
       try {
         const order = await orderService.getById(orderId);
         commit({ type: 'getOrder', order });
         return order;
       } catch (err) {
-        console.log('stayStore: Error in getting order', err);
+        console.log('orderStore: Error in getting order', err);
         throw err;
       }
     },

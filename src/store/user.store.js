@@ -7,7 +7,7 @@ export const userStore = {
     watchedUser: null,
     ownedStays: null,
     notifications: [],
-    // trips:[]
+    trips: [],
   },
   getters: {
     miniUser(state) {
@@ -33,6 +33,10 @@ export const userStore = {
     notification(state) {
       return state.notification;
     },
+    trips(state) {
+      console.log('state.trips', state.trips);
+      return state.trips;
+    },
   },
   mutations: {
     setLoggedInUser(state, { user }) {
@@ -50,6 +54,10 @@ export const userStore = {
     },
     addNotification(state, notification) {
       console.log('user store add notif', notification);
+    },
+    addTrip(state, { trip }) {
+      console.log('ISER STORE GOT TRIP:', trip);
+      state.trips.unshift(trip);
     },
   },
   actions: {

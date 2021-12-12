@@ -134,14 +134,26 @@ export default {
       e.target.style.setProperty('--x', `${x}px`);
       e.target.style.setProperty('--y', `${y}px`);
     },
-    // checkout() {
-    //   Swal.fire({
-    //     title: 'Thank you for booking!',
-    //     text: 'Press done',
-    //     icon: 'success',
-    //     confirmButtonText: 'Done',
-    //   });
-    // },
+    prepareOrder() {
+      let { checkInDate, checkOutDate } = this.order.dates;
+      const checkIn = new Date(checkInDate);
+      const checkOut = new Date(checkOutDate);
+
+      const difference = checkOut.getTime() - checkIn.getTime();
+      const nights = Math.ceil(difference / (1000 * 3600 * 24));
+      const totalPrice = this.stay.price * nights;
+      if (totalPrice <= 0) {
+        this.userAlert = 'Please enter valid dates';
+        return;
+      }
+      this.btnTxt = 'Reserve';
+      this.order.totalPrice = totalPrice;
+      this.order.totalNights = nights;
+
+      this.isOrderReady = true;
+      this.userAlert = '';
+      this.showOrderPreview = true;
+    },
     checkOut() {
       this.order.dates = this.filterBy.dates;
       const { checkInDate, checkOutDate } = this.order.dates;
@@ -157,30 +169,6 @@ export default {
         this.$emit('orderReady', this.order);
       }
     },
-    prepareOrder() {
-      let { checkInDate, checkOutDate } = this.order.dates;
-      const checkIn = new Date(checkInDate);
-      const checkOut = new Date(checkOutDate);
-
-      const difference = checkOut.getTime() - checkIn.getTime();
-      const nights = Math.ceil(difference / (1000 * 3600 * 24));
-      const totalPrice = this.stay.price * nights;
-      if (totalPrice <= 0) {
-        this.userAlert = 'Please enter valid dates';
-        return;
-      }
-
-      this.btnTxt = 'Reserve';
-      this.order.totalPrice = totalPrice;
-      this.order.totalNights = nights;
-
-      this.isOrderReady = true;
-      this.userAlert = '';
-      this.showOrderPreview = true;
-    },
-    // filter() {
-    //   this.$emit('filtered', this.filterBy);
-    // },
     showCheckOutModal() {
       this.isModalOpen = true;
       setTimeout(this.closeModal, 5000);

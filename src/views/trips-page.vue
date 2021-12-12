@@ -8,9 +8,9 @@
     <section class="trip-list-container">
       <trip-preview
         @cancelOrder="confirmCancellation"
-        v-for="trip in tripsToSow"
-        :trip="trip"
-        :key="trip.id"
+        v-for="order in ordersToShow"
+        :order="order"
+        :key="order._id"
       />
     </section>
     <confirm-modal
@@ -52,9 +52,9 @@ export default {
       };
       await this.$store.dispatch({ type: 'loadOrders', user });
       const orders = this.$store.getters.ordersToShow;
-      orders.forEach((order) => {
-        this.createTrip(order);
-      });
+      //   orders.forEach((order) => {
+      //     this.createTrip(order);
+      //   });
     },
     async createTrip(order) {
       const stay = await this.$store.dispatch({
@@ -109,8 +109,13 @@ export default {
     },
   },
   computed: {
-    tripsToSow() {
+    tripsToShow() {
       return this.trips;
+      // console.log('this.$store.getters.trips;', this.$store.getters.trips);
+      // return this.$store.getters.trips;
+    },
+    ordersToShow() {
+      return this.$store.getters.ordersToShow;
     },
   },
   mounted() {
