@@ -41,39 +41,48 @@ export default {
   },
   async created() {
     this.loggedInUser = this.$store.getters.loggedInUser;
-    this.createTrips();
+    this.loadOrders();
+    // this.createTrips();
   },
   methods: {
-    async createTrips() {
-      this.trips = [];
+    async loadOrders() {
       const user = {
         userId: this.loggedInUser._id,
-        userType: 'user',
+        userType: !this.loggedInUser.isHost ? 'user' : 'host',
       };
       await this.$store.dispatch({ type: 'loadOrders', user });
-      const orders = this.$store.getters.ordersToShow;
-      //   orders.forEach((order) => {
-      //     this.createTrip(order);
-      //   });
+      // this.orders = this.$store.getters.ordersToShow;
     },
-    async createTrip(order) {
-      const stay = await this.$store.dispatch({
-        type: 'getStayById',
-        stayId: order.stay._id,
-      });
-      const { totalPrice, status } = order;
-      const trip = {
-        imgUrls: stay.imgUrls.slice(0, 3),
-        stayName: stay.name,
-        checkInDate: new Date(order.dates.checkInDate).toLocaleDateString(),
-        checkOutDate: new Date(order.dates.checkOutDate).toLocaleDateString(),
-        totalPrice,
-        status,
-        id: this.createId(),
-        orderId: order._id,
-      };
-      this.trips.push(trip);
-    },
+    // async createTrips() {
+    //   this.trips = [];
+    //   const user = {
+    //     userId: this.loggedInUser._id,
+    //     userType: 'user',
+    //   };
+    //   await this.$store.dispatch({ type: 'loadOrders', user });
+    //   const orders = this.$store.getters.ordersToShow;
+    //   //   orders.forEach((order) => {
+    //   //     this.createTrip(order);
+    //   //   });
+    // },
+    // async createTrip(order) {
+    //   const stay = await this.$store.dispatch({
+    //     type: 'getStayById',
+    //     stayId: order.stay._id,
+    //   });
+    //   const { totalPrice, status } = order;
+    //   const trip = {
+    //     imgUrls: stay.imgUrls.slice(0, 3),
+    //     stayName: stay.name,
+    //     checkInDate: new Date(order.dates.checkInDate).toLocaleDateString(),
+    //     checkOutDate: new Date(order.dates.checkOutDate).toLocaleDateString(),
+    //     totalPrice,
+    //     status,
+    //     id: this.createId(),
+    //     orderId: order._id,
+    //   };
+    //   this.trips.push(trip);
+    // },
     confirmCancellation(orderId) {
       this.orderIdToCancel = orderId;
       this.showConfirmModal = true;
