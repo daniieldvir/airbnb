@@ -27,7 +27,7 @@ export const orderStore = {
   mutations: {
     addOrder(state, { order }) {
       console.log('store state  order added%%%%%%%%%%%', order);
-      state.orders.push(order);
+      state.orders.unshift(order);
     },
     updateOrder(state, { order }) {
       const idx = state.orders.findIndex((order) => order._id === order._id);
