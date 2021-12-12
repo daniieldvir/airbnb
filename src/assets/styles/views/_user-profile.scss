@@ -9,6 +9,9 @@
   }
   & ul {
     gap: 20px;
+    & li {
+      cursor: pointer;
+    }
   }
   & .user-section-cont {
     & h3 {
