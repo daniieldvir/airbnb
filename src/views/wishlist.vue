@@ -1,5 +1,5 @@
 <template>
-	<section class="user-wishlist-container">
+	<section class="wishlist-container">
 		<h2>Wishlist</h2>
 		<wishlist v-if="stays" :stays="stays" />
 		<h2 v-if="!loggedInUser || !stays">No items in your wishlist</h2>

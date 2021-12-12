@@ -60,7 +60,7 @@
               <a @click.stop="toggleLogin">Log in</a>
               <a @click.stop="toggleSignup">Sign up</a>
               <hr />
-              <router-link v-if="loggedInUser" :to="'/stay/edit'" >
+              <router-link :to="'/stay/edit'" >
                   <span>Host your home</span>
               </router-link>
               <!-- <a href="/stay/edit">Host your home</a> -->
