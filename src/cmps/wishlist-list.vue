@@ -5,7 +5,7 @@
         <stay-preview @click.stop :stay="stay"></stay-preview>
              </li>
     </ul>
-    <div v-else>No Available places</div>
+    <div v-else>No Available Stays</div>
   </section>
 </template>
 
