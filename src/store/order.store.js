@@ -16,7 +16,6 @@ export const orderStore = {
       return state.notifications;
     },
     ordersToShow(state) {
-      console.log('orders from store', state.orders);
       return state.orders;
     },
   },
@@ -67,11 +66,10 @@ export const orderStore = {
       }
     },
     async updateOrder({ commit }, { order }) {
-      console.log('store: order', order);
       try {
+        console.log('store: order', order);
         const savedOrder = await orderService.save(order);
         commit({ type: 'updateOrder', order: savedOrder });
-        console.log(savedOrder);
         return savedOrder;
       } catch (err) {
         console.log('stayStore: Error in update order', err);
@@ -79,11 +77,9 @@ export const orderStore = {
       }
     },
     async removeOrder({ commit }, { orderId }) {
-      console.log('asked to remove order Store', orderId);
       try {
         await orderService.remove(orderId);
         commit({ type: 'removeOrder', orderId });
-        console.log('order removed');
       } catch (err) {
         console.log('stayStore: Error in remove order', err);
         throw err;

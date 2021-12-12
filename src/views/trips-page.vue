@@ -7,17 +7,24 @@
     </ul>
     <section class="trip-list-container">
       <trip-preview
-        @cancelOrder="cancelOrder"
-        v-for="trip in trips"
+        @cancelOrder="confirmCancellation"
+        v-for="trip in tripsToSow"
         :trip="trip"
         :key="trip.id"
       />
     </section>
+    <confirm-modal
+      :message="'Cancel order?'"
+      @confirm="cancelOrder"
+      @closeModal="closeConfirmModal"
+      :shouldShow="showConfirmModal"
+    />
   </section>
 </template>
 
 <script>
 import tripPreview from '../cmps/trip-preview.vue';
+import confirmModal from '../cmps/confirm-modal.vue';
 
 export default {
   name: 'trips-page',
@@ -28,6 +35,8 @@ export default {
       showUpcoming: true,
       showPast: false,
       stay: null,
+      showConfirmModal: false,
+      orderIdToCancel: '',
     };
   },
   async created() {
@@ -36,6 +45,7 @@ export default {
   },
   methods: {
     async createTrips() {
+      this.trips = [];
       const user = {
         userId: this.loggedInUser._id,
         userType: 'user',
@@ -62,11 +72,26 @@ export default {
         id: this.createId(),
         orderId: order._id,
       };
-      this.trips.unshift(trip);
+      this.trips.push(trip);
     },
-    cancelOrder(orderId) {
+    confirmCancellation(orderId) {
+      this.orderIdToCancel = orderId;
+      this.showConfirmModal = true;
+    },
+    closeConfirmModal() {
+      this.showConfirmModal = false;
+    },
+    cancelOrder() {
+      this.showConfirmModal = false;
       this.$store.dispatch({ type: 'removeOrder', orderId });
-      // this.$store.dispatch({ type: 'setFilter', filterBy });
+      const orderId = this.orderIdToCancel;
+      const tripIdx = this.trips.findIndex((trip) => {
+        return trip.orderId === orderId;
+      });
+      if (tripIdx > -1) {
+        this.trips.splice(tripIdx, 1);
+      }
+      this.orderIdToCancel = '';
     },
     createId() {
       return 'id' + new Date().getTime();
@@ -79,12 +104,17 @@ export default {
       }
     },
   },
-  computed: {},
+  computed: {
+    tripsToSow() {
+      return this.trips;
+    },
+  },
   mounted() {
     window.scrollTo(0, 0);
   },
   components: {
     tripPreview,
+    confirmModal,
   },
 };
 </script>

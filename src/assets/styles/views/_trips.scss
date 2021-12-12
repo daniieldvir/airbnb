@@ -52,6 +52,9 @@
         & .preview-left {
           grid-column: span 2;
           font-size: rem(16px);
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
           strong {
             font-size: rem(18px);
             font-family: airbnb-medium;
