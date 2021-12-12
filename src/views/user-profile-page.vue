@@ -64,7 +64,6 @@
           </div>
         </template>
       </section>
-
       <!-- ORDERS -->
       <section v-show="currSection === 'Orders'">
         <h3 v-if="!ordersToShow.length">
