@@ -42,14 +42,18 @@
     padding-right: 0px;
     color: $clr7;
   }
-  & .city-filter .toggel-btn {
-    font-weight: bold;
-    color: $clr2;
-    cursor: pointer;
+  & .city-filter {
+    min-width: 30px;
+    .toggel-btn {
+      font-weight: bold;
+      color: $clr2;
+      cursor: pointer;
 
-    padding-right: 0px;
-    padding-left: 20px;
+      padding-right: 0px;
+      padding-left: 20px;
+    }
   }
+
   & .double-picker-cont {
     cursor: pointer;
     & .el-date-editor {
@@ -217,7 +221,7 @@
 
 @media screen and (min-width: 1080px) {
   .main-filters.small-filter {
-    width: 40%;
+    width: 30%;
     .search-btn-container {
       .search-btn {
         width: 35px;
@@ -257,7 +261,7 @@
       overflow: hidden;
       display: block;
       cursor: pointer;
-      min-width: 230px;
+      min-width: 200px;
       & .toggel-btn {
         border-right: 1px solid $clr7;
       }
