@@ -53,7 +53,9 @@ export default {
         if (!this.userCred.username || !this.userCred.password)
           return (this.msg = 'Please enter username/password');
         await this.$store.dispatch({ type: 'login', userCred: this.userCred });
-        this.$router.push('/');
+        if (this.$route.name !== 'Home') {
+          this.$router.push('/');
+        }
         showMsg('Logged in successfully');
         this.userCred = {};
       } catch (err) {

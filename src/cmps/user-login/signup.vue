@@ -71,8 +71,10 @@ export default {
         )
           return (this.msg = 'Please fill up the form');
         await this.$store.dispatch({ type: 'signup', userCred: this.userCred });
-        // this.toggleSignUp()
-        this.$router.push('/');
+
+        if (this.$route.name !== 'Home') {
+          this.$router.push('/');
+        }
         showMsg('Signed up successfully!');
       } catch (err) {
         showMsg('Sign up failed!', 'error');

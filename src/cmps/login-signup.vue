@@ -90,7 +90,10 @@ export default {
       if (!cred.email || !cred.password || !cred.username)
         return (this.msg = 'Please fill up the form');
       this.$store.dispatch({ type: 'signup', userCred: cred });
-      this.$router.push('/');
+      console.log('this.$route.params', this.$route.params);
+      if (this.$route.name !== 'Home') {
+        this.$router.push('/');
+      }
     },
     switchForm() {
       this.isSignedUp = !this.isSignedUp;
