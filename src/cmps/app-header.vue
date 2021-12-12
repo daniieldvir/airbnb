@@ -60,15 +60,31 @@
               <a @click.stop="toggleLogin">Log in</a>
               <a @click.stop="toggleSignup">Sign up</a>
               <hr />
-              <a href="/stay/edit">Host your home</a>
+              <router-link v-if="loggedInUser" :to="'/stay/edit'" >
+                  <span>Host your home</span>
+              </router-link>
+              <!-- <a href="/stay/edit">Host your home</a> -->
             </template>
             <template v-else>
-              <a href="/user-profile">Notifications</a>
-              <a href="/trips">Trips</a>
+           
+              <router-link v-if="loggedInUser" :to="'/user-profile'" >
+                  <span>Notifications</span>
+              </router-link>
+              <!-- <a href="/user-profile">Notifications</a> -->
+                <router-link v-if="loggedInUser" :to="'/trips'" >
+                  <span>Trips</span>
+              </router-link>
+              <!-- <a href="/trips">Trips</a> -->
               <!-- <a>Wishlist</a> -->
               <hr />
-              <a href="/stay/edit">Host your home</a>
-              <a href="/user-profile">User profile</a>
+                <router-link v-if="loggedInUser" :to="'/stay/edit'" >
+                  <span>Host your home</span>
+              </router-link>
+              <!-- <a href="/stay/edit">Host your home</a> -->
+              <!-- <a href="/user-profile">User profile</a> -->
+              <router-link v-if="loggedInUser" :to="'/user-profile'" >
+                  <span>User profile</span>
+              </router-link>
               <hr />
               <a @click.stop="logout">Log out</a>
             </template>
