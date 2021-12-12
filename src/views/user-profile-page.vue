@@ -94,7 +94,7 @@
                 formateDate(order.dates.checkOutDate)
               }}</span>
               <span :key="order._id + order.totalPrice"
-                >${{ order.totalPrice }}</span
+                >${{ order.totalPrice.toLocaleString() }}</span
               >
               <span class="status" :key="order._id + order.status">{{
                 order.status
