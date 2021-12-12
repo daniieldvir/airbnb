@@ -55,7 +55,7 @@
               <span :key="stay._id + stay.loc.address">{{
                 stay.loc.address
               }}</span>
-              <span :key="stay._id + stay.price">{{ stay.price }}</span>
+              <span :key="stay._id + stay.price">${{ stay.price }}</span>
               <span :key="stay._id + stay.avgRate">{{ stay.avgRate }}</span>
               <button @click="editStay(stay._id)" :key="stay._id + 'edit'">
                 Edit
