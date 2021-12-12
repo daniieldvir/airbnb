@@ -1,13 +1,17 @@
 <template>
   <section class="user-page-container flex column">
     <nav class="user-profile-nav flex">
-      <ul class="clean-list flex">
-        <li @click="showSection('Notifications')">Notifications</li>
+      <ul class="nav_profile clean-list flex">
+        <li class="nav_user" @click="showSection('Notifications')">
+          Notifications
+        </li>
         <router-link to="/stay/edit">
-          <li>Add stay</li>
+          <li class="nav">Add stay</li>
         </router-link>
-        <li @click="showSection('Listed Stays')">Listed Stays</li>
-        <li @click="showSection('Orders')">Orders</li>
+        <li class="nav_user" @click="showSection('Listed Stays')">
+          Listed Stays
+        </li>
+        <li class="nav_user" @click="showSection('Orders')">Orders</li>
       </ul>
     </nav>
     <hr />
@@ -93,7 +97,9 @@
               <span :key="order._id + order.totalPrice"
                 >${{ order.totalPrice }}</span
               >
-              <span :key="order._id + order.status">{{ order.status }}</span>
+              <span class="status" :key="order._id + order.status">{{
+                order.status
+              }}</span>
               <button
                 :disabled="order.status === 'approved'"
                 @click="orderActionBtnClicked(ordersActionBtnTxt, order)"

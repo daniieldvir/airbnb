@@ -64,30 +64,24 @@ Vue.use(VueGoogleMaps, {
     render: (h) => h(App),
   }).$mount('#app');
 
-/// *** Observer *** ///
-// const header = document.querySelector('header');
-// const sectionOne = document.querySelector('.pic .main-filters');
-// // const sectionTwo = document.querySelector('.stay-app');
+document.addEventListener('DOMContentLoaded', function () {
+  const selector = '.nav_user';
+  const elems = Array.from(document.querySelectorAll(selector));
+  console.log('elems', elems);
+  const navigation = document.querySelector('.nav_profile');
+  console.log('navigation', navigation);
 
-// const sectionOneOptions = {
-//   threshold: 0,
-//   rootMargin: '-10px 0px 0px 0px',
-// };
+  function makeActive(evt) {
+    const target = evt.target;
 
-// const sectionOneObserver = new IntersectionObserver(function (
-//   entries,
-//   sectionOneObserver
-// ) {
-//   console.log('hi');
-//   entries.forEach((entry) => {
-//     console.log(entry.target);
-//     if (!entry.isIntersecting) {
-//       header.classList.add('nav-scrolled');
-//     } else {
-//       header.classList.remove('nav-scrolled');
-//     }
-//   });
-// },
-// sectionOneOptions);
+    if (!target || !target.matches(selector)) {
+      return;
+    }
 
-// sectionOneObserver.observe(sectionOne);
+    elems.forEach((elem) => elem.classList.remove('active'));
+
+    evt.target.classList.add('active');
+  }
+
+  navigation.addEventListener('mousedown', makeActive);
+});

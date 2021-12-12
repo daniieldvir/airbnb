@@ -13,6 +13,7 @@
       cursor: pointer;
     }
   }
+
   & .user-section-cont {
     & h3 {
       margin-top: 20px;
@@ -41,6 +42,7 @@
   min-height: 400px;
   overflow-y: auto;
   grid-gap: 2px;
+  // background-color: yellow;
 
   justify-items: center;
   text-align: center;
@@ -51,6 +53,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: 1px solid $clr8;
+    align-self: center;
     // margin-inline-end: 1rem;
   }
   & span:first-of-type {
@@ -66,17 +69,17 @@
     padding: 8px 4px;
     // border-bottom: 1px solid $clr8;
   }
+
   button {
     font-size: rem(18px);
     padding: 10px;
-    // width: 60px;
     width: max-content;
-    // height: 35px;
     border-radius: 10px;
     align-self: center;
-    background-color: #fff;
     border: 1px solid $clr8;
     cursor: pointer;
+    // background-color: rgb(160, 233, 160);
+
     &:hover :not(disabled) {
       border: 1px solid $clr7;
     }
@@ -85,4 +88,9 @@
       cursor: not-allowed;
     }
   }
+}
+
+.nav_user.active {
+  font-family: airbnb-medium;
+  border-bottom: 2px solid black;
 }
