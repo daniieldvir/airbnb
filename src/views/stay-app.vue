@@ -10,6 +10,8 @@
       </p>
     </div>
     <hr />
+    <!-- <div class="loader" v-if="isLoading"><img src="../assets/grid.svg"></div> -->
+    <!-- <img v-if="isLoading" src="grid.svg" alt=""> -->
     <stay-list :stays="stays"> </stay-list>
   </section>
 </template>
@@ -24,11 +26,13 @@ export default {
   name: 'stay-app',
   data() {
     return {
+      // isLoading:true
       // stays: null,
       // city: null,
     };
   },
   created() {
+        // this.isLoading = false
     // this.stays = this.$store.getters.staysToShow;
     // this.city = this.$store.getters.filterBy.city;
   },
@@ -43,6 +47,7 @@ export default {
       const filter = this.$store.getters.filterBy;
       return filter.city ? 'in ' + filter.city : 'to explore';
     },
+  
   },
   mounted() {
     window.scrollTo(0, 0);

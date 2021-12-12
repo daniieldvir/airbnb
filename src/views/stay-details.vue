@@ -1,10 +1,12 @@
 <template>
-  <section v-if="stay" class="stay-details main-container">
+  <section>
+    <div class="loader" v-if="isLoading"><img src="../assets/grid.svg"></div>
+    <section v-if="stay && !isLoading" class="stay-details main-container">
     <h2>{{ formattedName }}</h2>
     <div class="review-details">
       <template>
         <font-awesome-icon icon="star" />
-        <span class="rate">{{ stay.avgRate }}</span>
+        <span class="rate">{{ avgRate }}</span>
         <span class="reviews">{{ formattedReviews }}</span
         >&#183;
       </template>
@@ -96,7 +98,7 @@
       <stay-rating :reviews="reviews" />
       <review-list :reviews="reviews" />
       <!-- <el-button @click.stop="toggleReview">Add Review</el-button> -->
-      <!-- <review-add @addReview="addReview" @toggleReview="toggleReview" /> -->
+      <review-add @saveReview="addReview" @toggleReview="toggleReview" />
     </div>
 
     <div class="map-section">
@@ -118,6 +120,7 @@
         />
       </div>
     </div>
+  </section>
   </section>
 </template>
 
@@ -154,6 +157,7 @@ export default {
           type: 'getStayById',
           stayId: stayId,
         });
+        this.isLoading = false;
         this.stay = JSON.parse(JSON.stringify(stay));
         const imgs = this.$store.getters.imgsToShow;
         this.imgs = imgs;
@@ -192,6 +196,13 @@ export default {
       // if (txt.length > 25 < 50) return txt.slice(0, 22) + '...';
       return txtWithCapitalFirstLetter;
     },
+    avgRate() {
+      if (!this.stay.reviews.length) return 0;
+      const sum = this.stay.reviews.reduce((acc, review) => {
+        return acc + review.rate;
+      }, 0);
+      return (sum / this.stay.reviews.length).toFixed(1);
+    },
   },
   methods: {
     async placeOrder(order) {
@@ -199,10 +210,11 @@ export default {
         const { _id, name, price } = this.stay;
         order.stay = { _id, name, price };
         order.hostId = this.stay.host._id;
-        // if (!this.loggedInUser) {
-        //   this.$emit('toggleLogin')
-        //   return
-        // }
+        if (!this.loggedInUser) {
+          showMsg('You must login first');
+          this.$emit('toggleLogin')
+          return
+        }
         // this.$store.dispatch({ type: 'logout' });
         await this.$store.dispatch({ type: 'addOrder', order: order });
         showMsg('The order was sent for approval');

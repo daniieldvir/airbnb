@@ -13,6 +13,7 @@
 <script>
 import reviewPreview from '../details/review-preview.vue';
 export default {
+  name: 'review-list',
   props: { reviews: Array },
   data() {
     return {};

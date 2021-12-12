@@ -53,9 +53,9 @@
               Profile
                 <span v-if="notifications"></span>
               </router-link> -->
-            <!-- <router-link v-if="isLoggedInUser" :to="'/wishlist/' + userId" >
+            <router-link v-if="loggedInUser" :to="'/wishlist/' + userId" >
                   <span>Wishlist</span>
-              </router-link> -->
+              </router-link>
             <template v-if="!loggedInUser">
               <a @click.stop="toggleLogin">Log in</a>
               <a @click.stop="toggleSignup">Sign up</a>
@@ -65,7 +65,7 @@
             <template v-else>
               <a href="/user-profile">Notifications</a>
               <a href="/trips">Trips</a>
-              <a>Wishlist</a>
+              <!-- <a>Wishlist</a> -->
               <hr />
               <a href="/stay/edit">Host your home</a>
               <a href="/user-profile">User profile</a>
@@ -93,6 +93,7 @@ import mainFilters from '../cmps/stay-filter.vue';
 import secondaryFilters from '../cmps/filters/secondary-filters.vue';
 // import loginSignup from './login-signup.vue';
 export default {
+  name: 'app-header',
   data() {
     return {
       onHomePage: false,
@@ -119,6 +120,9 @@ export default {
     },
   },
   computed: {
+    userId(){
+      return this.$store.getters.loggedInUser._id;
+    },
     loggedInUser() {
       return this.$store.getters.loggedInUser;
     },

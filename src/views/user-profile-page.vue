@@ -126,12 +126,12 @@ export default {
       // REMOVE THIS
     };
   },
-  async created() {
+  created() {
     this.loadUser();
     this.loadOrders();
     this.loadHostStays();
   },
-  async destroy() {
+  destroy() {
     this.$store.commit({ type: 'clearAllFilters' });
   },
   methods: {
