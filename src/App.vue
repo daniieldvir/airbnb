@@ -9,12 +9,14 @@
     <login
       v-if="!loggedInUser && isLogin && !isSignUp"
       @toggleLogin="toggleLogin"
-      @changeFormToSignup="changeFormToSignup" @close="close"
+      @changeFormToSignup="changeFormToSignup"
+      @close="close"
     />
     <signup
       v-if="!loggedInUser && isSignUp && !isLogin"
       @toggleSignup="toggleSignup"
-      @changeFormToLogin="changeFormToLogin" @close="close"
+      @changeFormToLogin="changeFormToLogin"
+      @close="close"
     />
     <app-footer />
   </div>
@@ -27,6 +29,7 @@ import signup from './cmps/user-login/signup.vue';
 import appFooter from './cmps/app-footer.vue';
 
 export default {
+  props: 'stayDetails',
   data() {
     return {
       isSignUp: false,
@@ -61,10 +64,10 @@ export default {
       this.isLogin = false;
       this.isSignUp = false;
     },
-    close(){
+    close() {
       this.isLogin = false;
       this.isSignUp = false;
-    }
+    },
   },
   components: {
     appHeader,

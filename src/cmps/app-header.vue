@@ -1,6 +1,10 @@
 <template>
   <header
-    v-bind:class="{ 'white-header': !onHomePage, 'nav-scrolled': !topOfPage }"
+    v-bind:class="{
+      'white-header': !onHomePage,
+      'nav-scrolled': !topOfPage,
+      'details-page': onDetailsPage,
+    }"
     class="main-container"
   >
     <main-filters
@@ -97,6 +101,7 @@ export default {
       topOfPage: true,
       showLogin: false,
       showMainFilters: false,
+      onDetailsPage: false,
     };
   },
   beforeMount() {
@@ -107,6 +112,8 @@ export default {
       handler() {
         this.onHomePage = this.$route.name !== 'Home' ? false : true;
         this.onExplorePage = this.$route.name === 'Explore' ? true : false;
+        this.onDetailsPage = this.$route.name === 'stayDetails' ? true : false;
+        console.log('this.$route.name', this.$route);
       },
       immediate: true,
     },
