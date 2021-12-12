@@ -12,7 +12,7 @@
         v-bind:class="{ show: price.shouldShow }"
         class="dropdown-content price"
       >
-        <button class="close-btn" @click="closeModal">X</button>
+        <button class="close-btn" @click="closeModal">✕</button>
         <p>The average nightly price is $220</p>
         <el-slider
           @change="dispatchToStore"

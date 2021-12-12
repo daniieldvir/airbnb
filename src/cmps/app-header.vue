@@ -28,7 +28,7 @@
         <router-link class="main-router-link" to="/explore"
           >Explore</router-link
         >
-        <router-link class="main-router-link" to="/become-host"
+        <router-link class="main-router-link" to="/user-profile"
           >Become A Host</router-link
         >
 
@@ -53,9 +53,9 @@
               Profile
                 <span v-if="notifications"></span>
               </router-link> -->
-            <router-link v-if="loggedInUser" :to="'/wishlist/' + userId" >
-                  <span>Wishlist</span>
-              </router-link>
+            <router-link v-if="loggedInUser" :to="'/wishlist/' + userId">
+              <span>Wishlist</span>
+            </router-link>
             <template v-if="!loggedInUser">
               <a @click.stop="toggleLogin">Log in</a>
               <a @click.stop="toggleSignup">Sign up</a>
@@ -136,7 +136,7 @@ export default {
     },
   },
   computed: {
-    userId(){
+    userId() {
       return this.$store.getters.loggedInUser._id;
     },
     loggedInUser() {

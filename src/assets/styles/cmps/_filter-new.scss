@@ -8,6 +8,7 @@
   border-radius: 200px;
   align-items: center;
   justify-content: center;
+  box-shadow: 4px 5px 10px -9px #22222296;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr) auto;
@@ -256,6 +257,7 @@
       overflow: hidden;
       display: block;
       cursor: pointer;
+      min-width: 230px;
       & .toggel-btn {
         border-right: 1px solid $clr7;
       }
