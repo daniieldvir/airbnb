@@ -38,7 +38,7 @@
       />
     </template>
     <!-- LOADER -->
-    <img class="loader" v-else :src="require('../assets/loader.gif')" alt="" />
+    <img class="loader" v-else :src="require('../assets/grid.svg')" alt="" />
   </div>
 </template>
 

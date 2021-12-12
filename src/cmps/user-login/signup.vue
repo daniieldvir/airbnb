@@ -1,12 +1,12 @@
 <template>
   <section @click.stop class="signup-modal">
     <div class="signup-header">
-      <button @click.stop="close"><span>X</span></button>
+      <button @click.stop="close"><span>✕</span></button>
       <p>Sign up</p>
     </div>
     <div class="signup-input">
       <form @submit.prevent="signup">
-        <input
+        <input ref="fullname"
           type="text"
           placeholder="Enter fullname"
           v-model="userCred.fullname"
@@ -27,7 +27,7 @@
           v-model="userCred.password"
         />
         <button class="checkout-btn" ref="myBtn">
-          <span>Signup</span>
+          <span>Continue</span>
         </button>
       </form>
       <div class="change-login-button">
@@ -55,6 +55,10 @@ export default {
       msg: '',
       isLoading: false,
     };
+  },
+  created(){
+    // this.$refs.fullname.focus()
+    this.$nextTick(() => this.$refs.fullname.focus())
   },
   methods: {
     // toggleSignUp() {

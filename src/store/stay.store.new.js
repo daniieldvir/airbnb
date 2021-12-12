@@ -42,6 +42,7 @@ export const stayStore = {
     hostStays(state) {
       return state.hostStays;
     },
+    isLoading({ isLoading }) { return isLoading },
   },
   mutations: {
     setLoading(state, { isLoading }) {
@@ -57,6 +58,13 @@ export const stayStore = {
     },
     setStay(state, { stay }) {
       state.currStay = stay;
+    },
+    updateStay(state, { stay }) {
+      console.log('state in store of stay', stay)
+      const idx = state.stays.findIndex((stay1) => stay1._id === stay._id)
+      console.log('stays in state in update stay', state.stays);
+      console.log('idx', idx)
+      state.stays.splice(idx, 1, stay)
     },
     clearAllFilters(state) {
       state.filterBy = {
@@ -132,6 +140,22 @@ export const stayStore = {
         throw err;
       }
     },
+    async toggleLikedStay({ commit, rootGetters }, { stayId }) {
+      try {
+        const stay = await stayService.getById(stayId);
+        console.log('rootGetters.loggedInUser._id', rootGetters.loggedInUser._id);
+        const idxLikedBy = stay.likedByUsers.findIndex((userId) =>
+          userId === rootGetters.loggedInUser._id)
+        if (idxLikedBy < 0) stay.likedByUsers.push(rootGetters.loggedInUser._id);
+        else stay.likedByUsers.splice(idxLikedBy, 1);
+        const updatedStay = await stayService.save(stay);
+        console.log('stay store updatedStay', updatedStay);
+        commit({ type: 'updateStay', stay: updatedStay })
+      } catch (err) {
+        console.log('stay Store: Error in toggling wishList', err)
+        throw err
+      }
+    }
   },
   modules: {},
 };

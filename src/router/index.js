@@ -8,6 +8,7 @@ import userProfile from '../views/user-profile-page';
 // import userProfile from '../views/user-profile-page-anna';
 import stayEdit from '../views/stay-edit';
 import trips from '../views/trips-page';
+import userWishlist from '@/views/wishlist.vue'
 
 Vue.use(VueRouter);
 
@@ -57,6 +58,10 @@ const routes = [
     path: '/stay/:stayId',
     name: 'stayDetails',
     component: stayDetails,
+  },
+  {
+    path: '/wishlist/:userId',
+    component: userWishlist,
   },
 ];
 

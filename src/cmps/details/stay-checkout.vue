@@ -8,7 +8,7 @@
           </div>
           <div class="check-rating-container flex align-center">
             <font-awesome-icon icon="star" />
-            <p>{{ stay.avgRate }}</p>
+            <p>{{ avgRate }}</p>
             <span> {{ formattedReviews }}</span>
           </div>
         </div>
@@ -103,6 +103,13 @@ export default {
     },
     totalNights() {
       return this.order.totalNights;
+    },
+    avgRate() {
+      if (!this.stay.reviews.length) return 0;
+      const sum = this.stay.reviews.reduce((acc, review) => {
+        return acc + review.rate;
+      }, 0);
+      return (sum / this.stay.reviews.length).toFixed(1);
     },
   },
 

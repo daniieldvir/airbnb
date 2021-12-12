@@ -78,7 +78,7 @@ export default {
     // },
 
     changeColor(num) {
-      this.bookReview.rate = num;
+      this.stayReview.rate = num;
     },
 
     toggleAddReview() {
