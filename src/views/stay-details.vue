@@ -142,6 +142,8 @@ export default {
       imgs: null,
       // iconToShow:'',
       reviews: [],
+      explorePage: true,
+      onDetailsPage: true,
     };
   },
   async created() {

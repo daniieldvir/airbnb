@@ -92,6 +92,7 @@ header {
     }
   }
 }
+
 .nav-scrolled {
   --text: black;
   --text-inverse: #333;
@@ -160,8 +161,6 @@ header {
     left: 0;
     right: 0;
     .main-nav {
-      .nav-content {
-      }
       .main-router-link {
         width: max-content;
         height: max-content;
@@ -171,11 +170,34 @@ header {
         &:not(:first-of-type) {
           margin: 0px 12.5px;
         }
+        .logo {
+          display: none;
+        }
       }
       .nav-content {
-        align-items: flex-start;
         .main-router-link {
           display: none;
+        }
+        .user-btn {
+          display: none;
+        }
+      }
+    }
+  }
+  .details-page {
+    .main-nav {
+      display: flex;
+      align-items: flex-start;
+      align-content: center;
+      .main-router-link {
+        .logo {
+          display: block;
+        }
+      }
+      .nav-content {
+        .user-btn {
+          display: block;
+          display: flex;
         }
       }
     }
