@@ -54,6 +54,7 @@ export default {
   data() {
     return {
       // likedStay: false,
+    
     };
   },
   computed: {
@@ -78,9 +79,11 @@ export default {
       return (sum / this.stay.reviews.length).toFixed(1);
     },
     userId(){
-      return this.$store.getters.loggedInUser._id;
+      const user = this.$store.getters.loggedInUser;
+      if(user) return this.$store.getters.loggedInUser._id;
     },
     likedStay(){
+      if(!this.userId) return false;
       const idxLikedBy = this.stay.likedByUsers.findIndex((id) =>
           id === this.userId)
       if(idxLikedBy < 0) return false;
@@ -90,6 +93,8 @@ export default {
   methods: {
     toggleLikedStay(stayId) {
       // this.likedStay = !this.likedStay;
+      if(!this.userId) return;
+        // showMsg('You must login first')
       this.$store.dispatch({ type: 'toggleLikedStay', stayId })
       if (this.likedStay) {
         showMsg('Added to wishlist')
