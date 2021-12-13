@@ -55,8 +55,8 @@ export default {
         userType: !this.loggedInUser.isHost ? 'user' : 'host',
       };
       await this.$store.dispatch({ type: 'loadOrders', user });
-      const orders = this.$store.getters.ordersToShow;
-      console.log('LOADED ORDERS FOR TRIP', orders);
+      // const orders = this.$store.getters.ordersToShow;
+      // console.log('LOADED ORDERS FOR TRIP', orders);
     },
     // async createTrips() {
     //   this.trips = [];

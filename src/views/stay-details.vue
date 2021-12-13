@@ -91,7 +91,7 @@
           </div>
         </div>
 
-        <div class="stay-details-right-container">
+        <div id="right" class="stay-details-right-container">
           <stay-checkout @orderReady="placeOrder" :stay="stay"></stay-checkout>
         </div>
       </div>
@@ -100,7 +100,7 @@
         <stay-rating :reviews="reviews" />
         <review-list :reviews="reviews" />
         <!-- <el-button @click.stop="toggleReview">Add Review</el-button> -->
-        <review-add @saveReview="addReview" @toggleReview="toggleReview" />
+        <!-- <review-add @saveReview="addReview" @toggleReview="toggleReview" /> -->
       </div>
 
       <div class="map-section">
@@ -135,6 +135,7 @@ import stayRating from '../cmps/details/stay-rating.vue';
 import longText from '../cmps/details/long-text.vue';
 import reviewAdd from '../cmps/details/review-add.vue';
 import { showMsg } from '../services/event-bus.service.js';
+
 // import '@fortawesome/fontawesome-free/js/all.js';
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // import {faHome,faWifi,faPaw,} from '@fortawesome/free-solid-svg-icons'

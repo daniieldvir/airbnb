@@ -2,7 +2,7 @@
   <div class="container home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <ul class="order-list">
-      <li v-for="order in orders" :key="order._id">
+      <li v-for="(order,idx) in orders" :key="idx">
         <h3>{{ order._id }}</h3>
         {{ order.status }}
 
@@ -17,7 +17,9 @@
 export default {
   name: 'home',
   data() {
-    return {};
+    return {
+      user:null
+    };
   },
   computed: {
     orders() {
@@ -36,7 +38,6 @@ export default {
     // this.$store.dispatch({type: 'loadUsers'})
     this.loadUser();
     await this.$store.dispatch({ type: 'loadOrders', user: this.user });
-    console.log();
   },
   methods: {
     async loadUser() {

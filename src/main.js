@@ -67,9 +67,9 @@ Vue.use(VueGoogleMaps, {
 document.addEventListener('DOMContentLoaded', function () {
   const selector = '.nav_user';
   const elems = Array.from(document.querySelectorAll(selector));
-  console.log('elems', elems);
-  const navigation = document.querySelector('nav');
-  console.log('navigation', navigation);
+  // console.log('elems', elems);
+  const navigation = document.querySelector('.nav_profile');
+  // console.log('navigation', navigation);
 
   function makeActive(evt) {
     const target = evt.target;

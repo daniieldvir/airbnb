@@ -43,7 +43,7 @@
     color: $clr7;
   }
   & .city-filter {
-    min-width: 110px;
+    min-width: 100px;
     .toggel-btn {
       font-weight: bold;
       color: $clr2;
@@ -71,13 +71,16 @@
         width: 100px;
         margin-top: 2px;
         font-size: rem(14.4px);
-        align-self: flex-start;
+        align-self: baseline;
         color: $clr2;
       }
       & input:last-of-type {
         display: none;
       }
     }
+  }
+  .search-btn-container {
+    padding-right: 5px;
   }
 }
 
