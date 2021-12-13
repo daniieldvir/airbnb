@@ -1,4 +1,4 @@
-table {
+.user-table {
   border: 1px solid #ddd;
   border-collapse: collapse;
   margin: 0;
@@ -45,7 +45,7 @@ table {
 }
 
 @media screen and (max-width: 600px) {
-  table {
+  .user-table {
     border: 0;
 
     caption {
