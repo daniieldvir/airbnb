@@ -11,6 +11,14 @@ export const orderService = {
   getEmptyOrder,
 };
 
+function _getUrl(id = '') {
+  const BASE_URL =
+    process.env.NODE_ENV !== 'development'
+      ? '/api/rentme'
+      : '//localhost:3000/api/rentme';
+  return `${BASE_URL}/${id}`;
+}
+
 async function query({ userId, userType }) {
   // return httpService.get(`order`)
   // return await httpService.get('order', { params: { user.userId, user.userType } })

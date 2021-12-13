@@ -17,6 +17,14 @@ export const userService = {
   // changeScore,
 };
 
+function _getUrl(id = '') {
+  const BASE_URL =
+    process.env.NODE_ENV !== 'development'
+      ? '/api/rentme'
+      : '//localhost:3000/api/rentme';
+  return `${BASE_URL}/${id}`;
+}
+
 // Debug technique
 window.userService = userService;
 

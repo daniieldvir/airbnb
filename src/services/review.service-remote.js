@@ -9,6 +9,14 @@ export const reviewService = {
   remove,
 };
 
+function _getUrl(id = '') {
+  const BASE_URL =
+    process.env.NODE_ENV !== 'development'
+      ? '/api/rentme'
+      : '//localhost:3000/api/rentme';
+  return `${BASE_URL}/${id}`;
+}
+
 // More ways to send query params:
 // return axios.get('api/toy/?id=1223&balance=13')
 // return axios.get('api/toy/?', {params: {id: 1223, balanse:13}})
