@@ -43,8 +43,10 @@ export const orderStore = {
         },
         updateOrder(state, { order }) {
             console.log('updated order in updateOrder mutation', order);
-            const idx = state.orders.findIndex((order) => order._id === order._id);
+            const idx = state.orders.findIndex((o) => o._id === order._id);
             state.orders.splice(idx, 1, order);
+            // state.orders = state.orders.map(or => (or._id === order._id));
+
         },
         removeOrder(state, payload) {
             state.orders = state.orders.filter(

@@ -211,7 +211,7 @@ export default {
       try {
         const { _id, name, price } = this.stay;
         order.stay = { _id, name, price };
-        // order.stay.imgUrls = stay.imgUrls.slice(0, 3);
+        order.stay.imgUrls = this.stay.imgUrls.slice(0, 3);
         order.hostId = this.stay.host._id;
         if (!this.loggedInUser) {
           showMsg('You must login first');

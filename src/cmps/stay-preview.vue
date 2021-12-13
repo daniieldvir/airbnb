@@ -53,7 +53,7 @@ export default {
   props: ['stay'],
   data() {
     return {
-      likedStay: false,
+      // likedStay: false,
     };
   },
   computed: {
@@ -77,10 +77,19 @@ export default {
       }, 0);
       return (sum / this.stay.reviews.length).toFixed(1);
     },
+    userId(){
+      return this.$store.getters.loggedInUser._id;
+    },
+    likedStay(){
+      const idxLikedBy = this.stay.likedByUsers.findIndex((id) =>
+          id === this.userId)
+      if(idxLikedBy < 0) return false;
+      else return true;
+    }
   },
   methods: {
     toggleLikedStay(stayId) {
-      this.likedStay = !this.likedStay;
+      // this.likedStay = !this.likedStay;
       this.$store.dispatch({ type: 'toggleLikedStay', stayId })
       if (this.likedStay) {
         showMsg('Added to wishlist')
