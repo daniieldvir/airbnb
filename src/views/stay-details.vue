@@ -91,7 +91,7 @@
           </div>
         </div>
 
-        <div class="stay-details-right-container">
+        <div id="right" class="stay-details-right-container">
           <stay-checkout @orderReady="placeOrder" :stay="stay"></stay-checkout>
         </div>
       </div>
@@ -135,6 +135,7 @@ import stayRating from '../cmps/details/stay-rating.vue';
 import longText from '../cmps/details/long-text.vue';
 import reviewAdd from '../cmps/details/review-add.vue';
 import { showMsg } from '../services/event-bus.service.js';
+
 // import '@fortawesome/fontawesome-free/js/all.js';
 // import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // import {faHome,faWifi,faPaw,} from '@fortawesome/free-solid-svg-icons'
@@ -222,6 +223,7 @@ export default {
           type: 'addOrder',
           order: order,
         });
+        // this.$store.commit({ type: 'clearAllFilters' });
         // this.createTrip(newOrder.insertedId, order);
         showMsg('The order was sent for approval');
       } catch (err) {

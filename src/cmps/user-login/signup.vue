@@ -1,12 +1,13 @@
 <template>
   <section @click.stop class="signup-modal">
     <div class="signup-header">
-      <button @click.stop="close"><span>✕</span></button>
+      <button class="close-btn" @click.stop="close"><span>✕</span></button>
       <p>Sign up</p>
     </div>
     <div class="signup-input">
       <form @submit.prevent="signup">
-        <input ref="fullname"
+        <input
+          ref="fullname"
           type="text"
           placeholder="Enter fullname"
           v-model="userCred.fullname"
@@ -56,9 +57,9 @@ export default {
       isLoading: false,
     };
   },
-  created(){
+  created() {
     // this.$refs.fullname.focus()
-    this.$nextTick(() => this.$refs.fullname.focus())
+    this.$nextTick(() => this.$refs.fullname.focus());
   },
   methods: {
     // toggleSignUp() {

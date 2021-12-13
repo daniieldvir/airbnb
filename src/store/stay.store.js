@@ -42,7 +42,7 @@ export const stayStore = {
   },
   getters: {
     filterBy(state) {
-      // console.log('store filter', state.filterBy);
+      console.log('store filter', state.filterBy);
       return state.filterBy;
     },
     staysToShow(state) {

@@ -20,6 +20,7 @@
 @import 'cmps/secondary-filters';
 @import 'cmps/confirm-modal';
 // @import 'cmps/filters';
+@import 'cmps/table-new';
 
 @import 'cmps/stay-checkout';
 @import 'cmps/checkout-guest-modal';
@@ -39,7 +40,7 @@
 @import 'cmps/user-login/singup.scss';
 @import 'cmps/edit-stay.scss';
 @import 'cmps/wishlist.scss';
-
+@import 'cmps/checkout-mobile.scss';
 @import 'cmps/filter-new.scss';
 // Views
 @import 'views/home-page';
