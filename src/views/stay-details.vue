@@ -223,6 +223,7 @@ export default {
           type: 'addOrder',
           order: order,
         });
+        this.$store.commit({ type: 'clearAllFilters' });
         // this.createTrip(newOrder.insertedId, order);
         showMsg('The order was sent for approval');
       } catch (err) {
