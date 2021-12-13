@@ -173,7 +173,9 @@ export default {
       this.showUserModal = false;
     },
     goToExplorePage() {
-      this.$router.push('/explore');
+      if (!this.$route.name === 'Explore') {
+        this.$router.push('/explore');
+      } else return;
     },
   },
   components: {
