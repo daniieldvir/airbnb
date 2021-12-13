@@ -48,6 +48,7 @@
             id="myDropdown"
             :class="{ show: showUserModal }"
             class="dropdown-content"
+            @click="toggleUserModal"
           >
             <!-- <router-link v-if="isLoggedInUser" :to="'/profile/' + userId" >
               Profile
