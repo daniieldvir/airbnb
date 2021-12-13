@@ -29,6 +29,7 @@
       th,
       td {
         padding: 0.625em;
+        font-size: rem(16px);
         text-align: center;
         & img {
           width: 40px;
@@ -41,6 +42,9 @@
         & button {
           border-radius: 5px;
           height: 25px;
+          background-color: $clr7;
+          width: 70px;
+          height: 30px;
         }
       }
     }
@@ -48,10 +52,11 @@
 }
 
 .order-approved {
-  background-color: rgb(176, 251, 176);
+  background-color: rgba(176, 251, 176, 0.19);
+  // background-color: #5ed9c236;
 }
 .order-pending {
-  // background-color: rgb(236, 234, 234);
+  // background-color: rgb(249, 165, 101, 0.19);
 }
 
 @media screen and (max-width: 600px) {
