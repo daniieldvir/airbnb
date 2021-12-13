@@ -12,6 +12,10 @@
         :order="order"
         :key="order._id"
       />
+      <!-- <span v-for="order in ordersToShow">
+        {{ order.status }}
+        {{ order._id }}
+      </span> -->
     </section>
     <confirm-modal
       :message="'Cancel order?'"
@@ -51,7 +55,8 @@ export default {
         userType: !this.loggedInUser.isHost ? 'user' : 'host',
       };
       await this.$store.dispatch({ type: 'loadOrders', user });
-      // this.orders = this.$store.getters.ordersToShow;
+      // const orders = this.$store.getters.ordersToShow;
+      // console.log('LOADED ORDERS FOR TRIP', orders);
     },
     // async createTrips() {
     //   this.trips = [];
@@ -125,6 +130,9 @@ export default {
     },
     ordersToShow() {
       return this.$store.getters.ordersToShow;
+    },
+    createId() {
+      return 'id' + new Date().getTime();
     },
   },
   mounted() {

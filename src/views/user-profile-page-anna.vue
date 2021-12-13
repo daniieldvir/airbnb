@@ -2,15 +2,14 @@
   <div class="container home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <ul class="order-list">
-      <li v-for="order in orders" :key="order._id">
-  
-        <h3>{{order._id}}</h3>
+      <li v-for="(order,idx) in orders" :key="idx">
+        <h3>{{ order._id }}</h3>
+        {{ order.status }}
 
         <hr />
       </li>
     </ul>
     <hr />
-
   </div>
 </template>
 
@@ -19,17 +18,21 @@ export default {
   name: 'home',
   data() {
     return {
- 
-    }
+      user:null
+    };
   },
   computed: {
     orders() {
+      console.log(
+        'this.$store.getters.ordersToShow;',
+        this.$store.getters.ordersToShow
+      );
       return this.$store.getters.ordersToShow;
     },
 
     loggedInUser() {
-      return this.$store.getters.loggedInUser
-    }
+      return this.$store.getters.loggedInUser;
+    },
   },
   async created() {
     // this.$store.dispatch({type: 'loadUsers'})
@@ -48,8 +51,6 @@ export default {
     //   await this.$store.dispatch({type: 'addReview', review: this.reviewToEdit})
     //   this.reviewToEdit = {txt: '', aboutUserId: null}
     // }
-  }
-
-  
-}
+  },
+};
 </script>
