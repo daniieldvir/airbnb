@@ -19,11 +19,36 @@
       v-if="shouldShow"
       @blur="toggleLocations"
     >
-      <p @click="filterCity('London')">London</p>
-      <p @click="filterCity('Tel Aviv')">Tel Aviv</p>
-      <p @click="filterCity('Hong Kong')">Hong Kong</p>
-      <p @click="filterCity('Rome')">Rome</p>
-      <p @click="filterCity('flexible')">I'm flexible</p>
+      <p @click="filterCity('London')">
+        <img
+          src="https://res.cloudinary.com/disku3v4j/image/upload/v1639404739/travel%20posters/london1_u0cqhx.jpg"
+        />
+        London
+      </p>
+      <p @click="filterCity('Tel Aviv')">
+        <img
+          src="https://res.cloudinary.com/disku3v4j/image/upload/v1639404955/travel%20posters/3t_h2o25l.jpg"
+        />
+        Tel Aviv
+      </p>
+      <p @click="filterCity('Hong Kong')">
+        <img
+          src="https://res.cloudinary.com/disku3v4j/image/upload/v1639404955/travel%20posters/2h_ldod24.jpg"
+        />
+        Hong Kong
+      </p>
+      <p @click="filterCity('Rome')">
+        <img
+          src="https://res.cloudinary.com/disku3v4j/image/upload/v1639404041/travel%20posters/roma_veffst.jpg"
+        />
+        Rome
+      </p>
+      <p @click="filterCity('flexible')">
+        <img
+          src="https://res.cloudinary.com/disku3v4j/image/upload/v1639404040/travel%20posters/flex_o4lqla.jpg"
+        />
+        I'm flexible
+      </p>
     </ul>
   </section>
 </template>

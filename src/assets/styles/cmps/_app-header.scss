@@ -89,6 +89,9 @@ header {
       a {
         cursor: pointer;
       }
+      a:hover {
+        background-color: $clr8;
+      }
     }
   }
 }

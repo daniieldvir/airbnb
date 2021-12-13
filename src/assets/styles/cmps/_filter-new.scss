@@ -131,6 +131,16 @@
       font-size: rem(14px);
       padding: 10px 30px;
       color: $clr2;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid $clr8;
+    }
+    & img {
+      width: 35px;
+      height: 35px;
+      border-radius: 10%;
+      margin-inline-end: 10px;
+      object-fit: cover;
     }
     & p:hover {
       background-color: $clr8;
@@ -306,6 +316,7 @@
         border: 0;
         cursor: pointer;
         color: #fff;
+        margin-right: 25px;
       }
     }
 
@@ -347,20 +358,74 @@
       cursor: pointer;
       width: 350px;
       & p {
-        padding: 20px 30px;
+        // padding: 20px 30px;
+        display: flex;
+        font-size: rem(18px);
+        align-items: center;
+        border-bottom: 1px solid $clr8;
+      }
+      & img {
+        width: 70px;
+        height: 70px;
+        border-radius: 10%;
+        margin-inline-end: 20px;
+        object-fit: cover;
       }
     }
   }
 
-  /// Modal - City Filter
-  .city-filter {
-    .dropdown-list {
-      cursor: pointer;
-      width: 350px;
-      & p {
-        padding: 20px 30px;
-        color: $clr2;
+  .add-guests {
+    width: 350px;
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(199, 195, 195, 0.774);
+
+      .selection {
+        h3 {
+          margin-bottom: 5px;
+        }
+
+        h4 {
+          margin-bottom: 10px;
+        }
       }
     }
+
+    li:last-child {
+      padding-bottom: 10px;
+      align-items: center;
+
+      h4 {
+        display: none;
+      }
+    }
+
+    .add-btn {
+      width: 30px;
+      height: 30px;
+    }
+    .multi-choice {
+      .counter {
+        width: 20px;
+      }
+      .reduce-btn {
+        width: 30px;
+        height: 30px;
+
+        &.added-guests {
+          color: $clr7;
+          border: 1px solid $clr7;
+        }
+      }
+    }
+  }
+}
+
+.main-filters.small-filter {
+  .search-btn {
+    margin-right: 10px;
   }
 }
