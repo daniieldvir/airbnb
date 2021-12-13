@@ -178,6 +178,7 @@ export default {
       hostStays: null,
       user: null,
       dataForList: [],
+      orders: null,
       // REMOVE THIS
     };
   },
@@ -201,6 +202,11 @@ export default {
       console.log('user7777777', user);
 
       await this.$store.dispatch({ type: 'loadOrders', user });
+      // this.orders = this.$store.getters.ordersToShow;
+
+      // this.orders = JSON.parse(
+      //   JSON.stringify(this.$store.getters.ordersToShow)
+      // );
       this.orders = this.$store.getters.ordersToShow;
     },
     async loadHostStays() {

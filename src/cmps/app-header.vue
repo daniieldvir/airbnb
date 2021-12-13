@@ -60,30 +60,29 @@
               <a @click.stop="toggleLogin">Log in</a>
               <a @click.stop="toggleSignup">Sign up</a>
               <hr />
-              <router-link :to="'/stay/edit'" >
-                  <span>Host your home</span>
+              <router-link :to="'/stay/edit'">
+                <span>Host your home</span>
               </router-link>
               <!-- <a href="/stay/edit">Host your home</a> -->
             </template>
             <template v-else>
-           
-              <router-link v-if="loggedInUser" :to="'/user-profile'" >
-                  <span>Notifications</span>
+              <router-link v-if="loggedInUser" :to="'/user-profile'">
+                <span>Notifications</span>
               </router-link>
               <!-- <a href="/user-profile">Notifications</a> -->
-                <router-link v-if="loggedInUser" :to="'/trips'" >
-                  <span>Trips</span>
+              <router-link v-if="loggedInUser" :to="'/trips'">
+                <span>Trips</span>
               </router-link>
               <!-- <a href="/trips">Trips</a> -->
               <!-- <a>Wishlist</a> -->
               <hr />
-                <router-link v-if="loggedInUser" :to="'/stay/edit'" >
-                  <span>Host your home</span>
+              <router-link v-if="loggedInUser" :to="'/stay/edit'">
+                <span>Host your home</span>
               </router-link>
               <!-- <a href="/stay/edit">Host your home</a> -->
               <!-- <a href="/user-profile">User profile</a> -->
-              <router-link v-if="loggedInUser" :to="'/user-profile'" >
-                  <span>User profile</span>
+              <router-link v-if="loggedInUser" :to="'/user-profile'">
+                <span>User profile</span>
               </router-link>
               <hr />
               <a @click.stop="logout">Log out</a>
@@ -130,7 +129,6 @@ export default {
         this.onHomePage = this.$route.name !== 'Home' ? false : true;
         this.onExplorePage = this.$route.name === 'Explore' ? true : false;
         this.onDetailsPage = this.$route.name === 'stayDetails' ? true : false;
-        console.log('this.$route.name', this.$route);
       },
       immediate: true,
     },
