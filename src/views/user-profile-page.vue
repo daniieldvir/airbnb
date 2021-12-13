@@ -87,7 +87,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="order in ordersToShow" :key="order._id">
+            <tr v-for="(order, idx) in ordersToShow" :key="idx">
               <td data-label="imgUrl">
                 <img :src="order.buyer.imgUrl" />
               </td>
@@ -240,18 +240,18 @@ export default {
     formateDate(date) {
       return new Date(date).toLocaleDateString();
     },
-    orderActionBtnClicked(action, orderId) {
+    orderActionBtnClicked(action, order) {
       if (action === 'Approve') {
-        this.approveOrder(orderId);
+        this.approveOrder(order);
       } else if (action === 'Cancel') {
-        this.cancelOrder(orderId);
+        this.cancelOrder(order._id);
       } else {
         return;
       }
     },
     approveOrder(order) {
-      console.log('approve order:', order);
       if (!this.loggedInUser.isHost) return;
+      // order = JSON.parse(JSON.stringify(order));
       order.status = 'approved';
       this.$store.dispatch({ type: 'updateOrder', order });
     },
