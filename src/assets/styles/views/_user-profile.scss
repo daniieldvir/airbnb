@@ -2,7 +2,6 @@
   margin-top: 150px;
   min-height: 100vh;
   top: 0;
-  padding: 0px 100px; // justify-content: flex-start;
   & nav {
     text-align: center;
     justify-content: center;
@@ -11,6 +10,7 @@
     gap: 20px;
     & li {
       cursor: pointer;
+      font-size: rem(14px);
     }
   }
 
@@ -28,6 +28,8 @@
   }
   & h1 {
     margin-top: 10px;
+    font-size: rem(18px);
+    font-family: airbnb-medium;
   }
 }
 
@@ -110,7 +112,14 @@
       gap: 20px;
       & li {
         cursor: pointer;
+        font-size: rem(20px);
+        padding: 10px;
       }
+    }
+    & h1 {
+      margin-top: 10px;
+      font-size: rem(22px);
+      font-family: airbnb-light;
     }
 
     & .user-section-cont {
@@ -140,12 +149,6 @@
     min-height: 400px;
     overflow-y: auto;
     grid-gap: 2px;
-    background-color: yellow;
-
-    strong {
-      // background-color: blue;
-      font-family: airbnb-medium;
-    }
 
     & img {
       width: 56px;
