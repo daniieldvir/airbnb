@@ -62,9 +62,6 @@
       position: absolute;
       width: 1px;
       tr {
-        & th:first-of-type {
-          visibility: hidden;
-        }
       }
     }
     tr {
@@ -82,6 +79,8 @@
         display: block;
         font-size: rem(14px);
         text-align: right;
+        display: flex;
+        justify-content: space-between;
       }
       td::before {
         content: attr(data-label);

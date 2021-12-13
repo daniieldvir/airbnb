@@ -4,6 +4,7 @@
       'white-header': !onHomePage,
       'nav-scrolled': !topOfPage,
       'details-page': onDetailsPage,
+      'user-profile': onUserProfile,
     }"
     class="main-container"
   >
@@ -119,6 +120,7 @@ export default {
       showLogin: false,
       showMainFilters: false,
       onDetailsPage: false,
+      onUserProfile: false,
     };
   },
   beforeMount() {
@@ -130,6 +132,10 @@ export default {
         this.onHomePage = this.$route.name !== 'Home' ? false : true;
         this.onExplorePage = this.$route.name === 'Explore' ? true : false;
         this.onDetailsPage = this.$route.name === 'stayDetails' ? true : false;
+        this.onUserProfile = this.$route.name === 'userProfile' ? true : false;
+
+        // userProfile
+        console.log(this.$route);
       },
       immediate: true,
     },

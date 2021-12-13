@@ -179,6 +179,7 @@ export default {
       user: null,
       dataForList: [],
       orders: null,
+      onUserProfile: true,
       // REMOVE THIS
     };
   },
