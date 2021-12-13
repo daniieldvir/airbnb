@@ -119,7 +119,7 @@
     z-index: 9999;
 
     margin-top: 35px;
-    padding: 5px 0px;
+    padding: 20px 0px;
     left: 0%;
 
     max-width: 500px;
@@ -247,9 +247,14 @@
   }
 
   .main-filters {
+    &:not(.small-filter) .city-filter {
+      width: 228px;
+    }
+    &:not(.small-filter) .guest-filter {
+      width: 128px;
+    }
     --gap: 9px;
     font-size: rem(14px);
-
     position: relative;
     margin-bottom: 70px;
     display: grid;
@@ -271,7 +276,8 @@
       overflow: hidden;
       display: block;
       cursor: pointer;
-      min-width: 200px;
+      // min-width: 200px;
+
       & .toggel-btn {
         border-right: 1px solid $clr7;
       }
