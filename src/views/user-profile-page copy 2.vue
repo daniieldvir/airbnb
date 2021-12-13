@@ -43,7 +43,6 @@
       </section>
 
       <!-- LISTED STAYS -->
-
       <section v-show="currSection === 'Listed Stays'">
         <h3 v-if="!staysToShow.length">
           No {{ titleForDisplay.toLowerCase() }} to display
@@ -71,55 +70,6 @@
       </section>
       <!-- ORDERS -->
       <section v-show="currSection === 'Orders'">
-        <h3 v-if="!ordersToShow.length">
-          No {{ titleForDisplay.toLowerCase() }} to display
-        </h3>
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">imgUrl</th>
-              <th scope="col">From</th>
-              <th scope="col">Start</th>
-              <th scope="col">End</th>
-              <th scope="col">Total</th>
-              <th scope="col">Status</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="order in ordersToShow" :key="order._id">
-              <td data-label="imgUrl">
-                <img :src="order.buyer.imgUrl" />
-              </td>
-              <td data-label="From">{{ order.buyer.fullname }}</td>
-              <td data-label="Start">
-                {{ formateDate(order.dates.checkInDate) }}
-              </td>
-              <td data-label="End">
-                {{ formateDate(order.dates.checkOutDate) }}
-              </td>
-              <td data-label="Total">
-                {{ order.totalPrice.toLocaleString() }}
-              </td>
-              <td data-label="Status">{{ order.status }}</td>
-              <td data-label="Actions">
-                <button
-                  :disabled="order.status === 'approved'"
-                  @click="orderActionBtnClicked(ordersActionBtnTxt, order)"
-                  :key="order._id"
-                >
-                  {{
-                    order.status === 'approved'
-                      ? 'Approved'
-                      : ordersActionBtnTxt
-                  }}
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <!-- <section v-show="currSection === 'Orders'">
         <h3 v-if="!ordersToShow.length">
           No {{ titleForDisplay.toLowerCase() }} to display
         </h3>
@@ -161,7 +111,7 @@
             </template>
           </div>
         </template>
-      </section> -->
+      </section>
     </div>
   </section>
 </template>
