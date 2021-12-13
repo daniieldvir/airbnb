@@ -1,5 +1,5 @@
 <template>
-  <section class="stay-checkout">
+  <section id="checkoutContainer" class="stay-checkout">
     <section class="checkout-container">
       <div class="checkout-form-container">
         <div class="checkout-form-header flex space-between align-center">
@@ -63,6 +63,10 @@
         @closeModal="closeModal"
       ></checkout-modal>
     </section>
+
+    <section class="mobile-checkout">
+      <checkoutMobile></checkoutMobile>
+    </section>
   </section>
 </template>
 
@@ -70,6 +74,7 @@
 import checkoutGuestModal from '../details/checkout-guest-modal.vue';
 import datePicker from '../filters/date-picker-2.vue';
 import checkoutModal from '../details/checkout-modal.vue';
+import checkoutMobile from '../details/checkout-mobile.vue';
 
 export default {
   name: 'stay-checkout',
@@ -183,6 +188,6 @@ export default {
       this.order = JSON.parse(JSON.stringify(emptyOrder));
     },
   },
-  components: { datePicker, checkoutGuestModal, checkoutModal },
+  components: { datePicker, checkoutGuestModal, checkoutModal, checkoutMobile },
 };
 </script>
