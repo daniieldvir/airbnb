@@ -74,7 +74,7 @@
         <h3 v-if="!ordersToShow.length">
           No {{ titleForDisplay.toLowerCase() }} to display
         </h3>
-        <table>
+        <table class="user-table">
           <thead>
             <tr>
               <th scope="col">imgUrl</th>
@@ -179,6 +179,7 @@ export default {
       user: null,
       dataForList: [],
       orders: null,
+      onUserProfile: true,
       // REMOVE THIS
     };
   },

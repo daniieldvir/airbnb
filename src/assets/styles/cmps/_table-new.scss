@@ -1,4 +1,4 @@
-table {
+.user-table {
   border: 1px solid #ddd;
   border-collapse: collapse;
   margin: 0;
@@ -45,7 +45,7 @@ table {
 }
 
 @media screen and (max-width: 600px) {
-  table {
+  .user-table {
     border: 0;
 
     caption {
@@ -62,9 +62,6 @@ table {
       position: absolute;
       width: 1px;
       tr {
-        & th:first-of-type {
-          visibility: hidden;
-        }
       }
     }
     tr {
@@ -82,6 +79,8 @@ table {
         display: block;
         font-size: rem(14px);
         text-align: right;
+        display: flex;
+        justify-content: space-between;
       }
       td::before {
         content: attr(data-label);
