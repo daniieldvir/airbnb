@@ -12,10 +12,10 @@
         :order="order"
         :key="order._id"
       />
-      <span v-for="order in ordersToShow">
+      <!-- <span v-for="order in ordersToShow">
         {{ order.status }}
-        {{ order._id }}
-      </span>
+        {{ order._id }} -->
+      <!-- </span> -->
     </section>
     <confirm-modal
       :message="'Cancel order?'"
