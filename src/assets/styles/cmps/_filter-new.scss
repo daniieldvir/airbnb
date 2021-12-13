@@ -79,9 +79,6 @@
       }
     }
   }
-  .search-btn-container {
-    padding-right: 5px;
-  }
 }
 
 .el-picker-panel {
@@ -316,7 +313,7 @@
         border: 0;
         cursor: pointer;
         color: #fff;
-        margin-right: 25px;
+        // margin-right: 25px;
       }
     }
 
@@ -424,8 +421,8 @@
   }
 }
 
-.main-filters.small-filter {
-  .search-btn {
-    margin-right: 10px;
-  }
-}
+// .main-filters.small-filter {
+//   .search-btn {
+//     margin-right: 10px;
+//   }
+// }

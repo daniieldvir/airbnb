@@ -5,7 +5,7 @@
       <div class="preview-left flex column">
         <strong>{{ order.stay.name }}</strong>
         <span>${{ formattedPrice }}</span>
-        <span>{{ capitalCharStatus }}</span>
+        <span :class="status">{{ capitalCharStatus }}</span>
       </div>
       <div class="preview-right flex column">
         <span>{{ formateDate(order.dates.checkInDate) }}</span>
@@ -54,6 +54,11 @@ export default {
     formattedPrice() {
       const price = this.order.totalPrice;
       return price.toLocaleString();
+    },
+    status() {
+      if (this.order.status === 'pending') return 'pending';
+      if (this.order.status === 'approved') return 'approved';
+      console.log(this.order.status);
     },
   },
   components: {},

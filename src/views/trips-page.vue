@@ -41,6 +41,8 @@ export default {
       stay: null,
       showConfirmModal: false,
       orderIdToCancel: '',
+      onTripPage: true,
+
       // orders: null,
     };
   },

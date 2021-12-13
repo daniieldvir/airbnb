@@ -59,6 +59,14 @@
             font-size: rem(18px);
             font-family: airbnb-medium;
           }
+          .approved {
+            color: green;
+            font-family: airbnb-medium;
+          }
+          .pending {
+            color: red;
+            font-family: airbnb-medium;
+          }
         }
         & .preview-right {
           text-align: right;

@@ -87,7 +87,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(order, idx) in ordersToShow" :key="idx">
+            <tr
+              :class="{
+                'order-approved': order.status === 'approved',
+                'order-pending': order.status === 'pending',
+              }"
+              v-for="(order, idx) in ordersToShow"
+              :key="idx"
+            >
               <td data-label="imgUrl">
                 <img :src="order.buyer.imgUrl" />
               </td>
@@ -101,7 +108,9 @@
               <td data-label="Total">
                 ${{ order.totalPrice.toLocaleString() }}
               </td>
-              <td data-label="Status">{{ order.status }}</td>
+              <td data-label="Status">
+                {{ order.status }}
+              </td>
               <td data-label="Actions">
                 <button
                   :disabled="order.status === 'approved'"
@@ -267,6 +276,11 @@ export default {
     },
   },
   computed: {
+    anna() {
+      if (this.order.status === 'pending') return 'pending';
+      if (this.order.status === 'approved') return 'approved';
+      console.log('this.order.status', this.order.status);
+    },
     titleForDisplay() {
       return this.currSection;
     },

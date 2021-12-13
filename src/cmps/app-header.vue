@@ -5,6 +5,7 @@
       'nav-scrolled': !topOfPage,
       'details-page': onDetailsPage,
       'user-profile': onUserProfile,
+      'trips-page': onTripPage,
     }"
     class="main-container"
   >
@@ -121,6 +122,7 @@ export default {
       showMainFilters: false,
       onDetailsPage: false,
       onUserProfile: false,
+      onTripPage: false,
     };
   },
   beforeMount() {
@@ -133,8 +135,8 @@ export default {
         this.onExplorePage = this.$route.name === 'Explore' ? true : false;
         this.onDetailsPage = this.$route.name === 'stayDetails' ? true : false;
         this.onUserProfile = this.$route.name === 'userProfile' ? true : false;
+        // this.onTripPage = this.$route.name === 'trips' ? true : false;
 
-        // userProfile
         console.log(this.$route);
       },
       immediate: true,

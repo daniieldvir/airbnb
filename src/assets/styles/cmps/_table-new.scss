@@ -5,6 +5,9 @@
   padding: 0;
   width: 100%;
   table-layout: fixed;
+
+  border-radius: 55px;
+
   thead {
     tr {
       border: 1px solid #ddd;
@@ -22,6 +25,7 @@
   }
   tbody {
     tr {
+      border: 1px solid $clr8;
       th,
       td {
         padding: 0.625em;
@@ -35,13 +39,19 @@
           align-self: center;
         }
         & button {
-          background-color: rgb(178, 238, 178);
-          border-radius: 10px;
+          border-radius: 5px;
           height: 25px;
         }
       }
     }
   }
+}
+
+.order-approved {
+  background-color: rgb(176, 251, 176);
+}
+.order-pending {
+  // background-color: rgb(236, 234, 234);
 }
 
 @media screen and (max-width: 600px) {
