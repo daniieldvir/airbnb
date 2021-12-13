@@ -72,10 +72,12 @@ export default {
       this.$emit('filterClicked');
       this.$emit('filtered', filterBy.dates);
       // const filterBy = JSON.parse(JSON.stringify(this.filterBy));
-      this.$store.dispatch({
-        type: 'setFilter',
-        filterBy: filterBy.dates,
-      });
+      if (this.$route.name !== 'stayDetails') {
+        this.$store.dispatch({
+          type: 'setFilter',
+          filterBy: filterBy.dates,
+        });
+      }
     },
     copyFilter() {
       const filterBy = JSON.parse(JSON.stringify(this.filterBy));

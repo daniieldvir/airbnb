@@ -8,7 +8,7 @@
     <section class="trip-list-container">
       <trip-preview
         @cancelOrder="confirmCancellation"
-        v-for="order in ordersToShow"
+        v-for="(order, idx) in ordersToShow"
         :order="order"
         :key="order._id"
       />
@@ -41,6 +41,7 @@ export default {
       stay: null,
       showConfirmModal: false,
       orderIdToCancel: '',
+      // orders: null,
     };
   },
   async created() {
@@ -55,7 +56,7 @@ export default {
         userType: !this.loggedInUser.isHost ? 'user' : 'host',
       };
       await this.$store.dispatch({ type: 'loadOrders', user });
-      // const orders = this.$store.getters.ordersToShow;
+      // this.orders = this.$store.getters.ordersToShow;
       // console.log('LOADED ORDERS FOR TRIP', orders);
     },
     // async createTrips() {
@@ -111,9 +112,9 @@ export default {
       }
       this.orderIdToCancel = '';
     },
-    createId() {
-      return 'id' + new Date().getTime();
-    },
+    // createId() {
+    //   return 'id' + new Date().getTime();
+    // },
     upperCaseFirstChar(str) {
       if (typeof str === 'string') {
         return str[0].toUpperCase() + str.substring(1);
@@ -131,9 +132,9 @@ export default {
     ordersToShow() {
       return this.$store.getters.ordersToShow;
     },
-    createId() {
-      return 'id' + new Date().getTime();
-    },
+    // createId() {
+    //   return 'id' + new Date().getTime();
+    // },
   },
   mounted() {
     window.scrollTo(0, 0);

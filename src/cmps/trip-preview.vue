@@ -1,7 +1,7 @@
 <template>
   <section class="trip-preview-container">
-    <div class="trip-preview">
-      <!-- <img v-for="(img, idx) in trip.imgUrls" :src="img" :key="idx" /> -->
+    <div v-if="order.stay.imgUrls" class="trip-preview">
+      <img v-for="(img, idx) in order.stay.imgUrls" :src="img" :key="idx" />
       <div class="preview-left flex column">
         <strong>{{ order.stay.name }}</strong>
         <span>${{ formattedPrice }}</span>
@@ -31,7 +31,7 @@ export default {
       this.$emit('cancelOrder', orderId);
     },
     formateDate(date) {
-      new Date(date).toLocaleDateString();
+      return new Date(date).toLocaleDateString();
     },
 
     // },

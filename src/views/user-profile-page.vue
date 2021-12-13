@@ -87,7 +87,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="order in ordersToShow" :key="order._id">
+            <tr v-for="(order, idx) in ordersToShow" :key="idx">
               <td data-label="imgUrl">
                 <img :src="order.buyer.imgUrl" />
               </td>
@@ -99,7 +99,7 @@
                 {{ formateDate(order.dates.checkOutDate) }}
               </td>
               <td data-label="Total">
-                {{ order.totalPrice.toLocaleString() }}
+                ${{ order.totalPrice.toLocaleString() }}
               </td>
               <td data-label="Status">{{ order.status }}</td>
               <td data-label="Actions">
@@ -178,6 +178,7 @@ export default {
       hostStays: null,
       user: null,
       dataForList: [],
+      orders: null,
       // REMOVE THIS
     };
   },
@@ -201,6 +202,11 @@ export default {
       console.log('user7777777', user);
 
       await this.$store.dispatch({ type: 'loadOrders', user });
+      // this.orders = this.$store.getters.ordersToShow;
+
+      // this.orders = JSON.parse(
+      //   JSON.stringify(this.$store.getters.ordersToShow)
+      // );
       this.orders = this.$store.getters.ordersToShow;
     },
     async loadHostStays() {
@@ -240,18 +246,18 @@ export default {
     formateDate(date) {
       return new Date(date).toLocaleDateString();
     },
-    orderActionBtnClicked(action, orderId) {
+    orderActionBtnClicked(action, order) {
       if (action === 'Approve') {
-        this.approveOrder(orderId);
+        this.approveOrder(order);
       } else if (action === 'Cancel') {
-        this.cancelOrder(orderId);
+        this.cancelOrder(order._id);
       } else {
         return;
       }
     },
     approveOrder(order) {
-      console.log('approve order:', order);
       if (!this.loggedInUser.isHost) return;
+      // order = JSON.parse(JSON.stringify(order));
       order.status = 'approved';
       this.$store.dispatch({ type: 'updateOrder', order });
     },
