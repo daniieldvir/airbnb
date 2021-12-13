@@ -17,6 +17,19 @@ export const SOCKET_EVENT_ORDER_ADDED = 'order-added'
 const baseUrl = process.env.NODE_ENV === "production" ? "" : "//localhost:3030";
 export const socketService = createSocketService()
 
+    //user-service frontend 
+    async function login(userCred) {
+        const user = await httpService.post('auth/login', userCred);
+        socketService.emit('set-user-socket', user._id);
+        if (user) return _saveLocalUser(user);
+    }
+
+    //socket-service backend
+    socket.on('set-user-socket', userId => {
+        logger.debug(`Setting (${socket.id}) socket.userId = ${userId}`)
+        socket.userId = userId
+    })
+    
 //store.js
 async loadOrders({ commit }, { user }) {
     try {
@@ -60,15 +73,3 @@ async function add(order) {
         throw err;
     }
 
-    //user-service frontend 
-    async function login(userCred) {
-        const user = await httpService.post('auth/login', userCred);
-        socketService.emit('set-user-socket', user._id);
-        if (user) return _saveLocalUser(user);
-    }
-
-    //socket-service backend
-    socket.on('set-user-socket', userId => {
-        logger.debug(`Setting (${socket.id}) socket.userId = ${userId}`)
-        socket.userId = userId
-    })
