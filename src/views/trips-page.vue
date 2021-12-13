@@ -112,9 +112,9 @@ export default {
       }
       this.orderIdToCancel = '';
     },
-    createId() {
-      return 'id' + new Date().getTime();
-    },
+    // createId() {
+    //   return 'id' + new Date().getTime();
+    // },
     upperCaseFirstChar(str) {
       if (typeof str === 'string') {
         return str[0].toUpperCase() + str.substring(1);
@@ -132,9 +132,9 @@ export default {
     ordersToShow() {
       return this.$store.getters.ordersToShow;
     },
-    createId() {
-      return 'id' + new Date().getTime();
-    },
+    // createId() {
+    //   return 'id' + new Date().getTime();
+    // },
   },
   mounted() {
     window.scrollTo(0, 0);
