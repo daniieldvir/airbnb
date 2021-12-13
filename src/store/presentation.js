@@ -10,12 +10,8 @@ async function emitToUser({ type, data, userId }) {
     }
 }
 
-
 //socket-service frontend
-import io from 'socket.io-client'
 export const SOCKET_EVENT_ORDER_ADDED = 'order-added'
-const baseUrl = process.env.NODE_ENV === "production" ? "" : "//localhost:3030";
-export const socketService = createSocketService()
 
     //user-service frontend 
     async function login(userCred) {
@@ -29,17 +25,14 @@ export const socketService = createSocketService()
         logger.debug(`Setting (${socket.id}) socket.userId = ${userId}`)
         socket.userId = userId
     })
-    
+
 //store.js
 async loadOrders({ commit }, { user }) {
     try {
-        console.log('store loadorders user', user)
         const orders = await orderService.query(user);
-        console.log('orders store after load', orders)
         commit({ type: 'setOrders', orders });
         socketService.off(SOCKET_EVENT_ORDER_ADDED)
         socketService.on(SOCKET_EVENT_ORDER_ADDED, order => {
-            console.log('Got order from socket', order);
             commit({ type: 'addOrder', order })
         })
     } catch (err) {
@@ -49,27 +42,15 @@ async loadOrders({ commit }, { user }) {
 },
 
 //order-service backend
-async function add(order) {
+async function addOrder(req, res) {
     try {
-        const buyer = {
-            _id: ObjectId(order.buyer.id),
-            fullname: order.buyer.fullname,
-            imgUrl: order.buyer.imgUrl,
-        };
-        order.buyer = buyer;
-        order.hostId = ObjectId(order.hostId);
-        const stay = {
-            _id: ObjectId(order.stay._id),
-            name: order.stay.name,
-            price: order.stay.price,
-        };
-        order.stay = stay;
-        const collection = await dbService.getCollection('order');
-        const addedOrder = await collection.insertOne(order);
-        socketService.emitToUser({ type: 'order-added', data: order, userId: order.hostId, });
-        return addedOrder;
+      var order = req.body;
+      const addedOrder = await orderService.add(order);
+      socketService.emitToUser({ type: 'order-added', data: order, userId: order.hostId })
+      res.json(addedOrder);
     } catch (err) {
-        logger.error('cannot insert order', err);
-        throw err;
+      logger.error('Failed to add order', err);
+      res.status(500).send({ err: 'Failed to add order' });
     }
+  }
 
