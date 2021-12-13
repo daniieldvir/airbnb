@@ -99,7 +99,7 @@
                 {{ formateDate(order.dates.checkOutDate) }}
               </td>
               <td data-label="Total">
-                {{ order.totalPrice.toLocaleString() }}
+                ${{ order.totalPrice.toLocaleString() }}
               </td>
               <td data-label="Status">{{ order.status }}</td>
               <td data-label="Actions">
