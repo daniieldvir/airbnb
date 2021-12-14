@@ -26,11 +26,13 @@
   tbody {
     tr {
       border: 1px solid $clr8;
+
       th,
       td {
         padding: 0.625em;
         font-size: rem(16px);
         text-align: center;
+
         & img {
           width: 40px;
           height: 40px;
@@ -76,8 +78,6 @@
       padding: 0;
       position: absolute;
       width: 1px;
-      tr {
-      }
     }
     tr {
       border-bottom: 3px solid #ddd;
@@ -96,6 +96,12 @@
         text-align: right;
         display: flex;
         justify-content: space-between;
+
+        align-items: center;
+      }
+      & td:first-of-type {
+        color: rgba(245, 222, 179, 0);
+        height: 50px;
       }
       td::before {
         content: attr(data-label);
