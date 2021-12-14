@@ -1,6 +1,4 @@
 .trips-page {
-  margin-top: 150px;
-  min-height: 100vh;
   top: 0;
   & h1 {
     height: 50px;
@@ -8,6 +6,7 @@
     font-family: airbnb-medium, sans-serif;
   }
   & ul {
+    margin-top: 50px;
     gap: 25px;
     border-bottom: 1px solid $clr8;
     margin-bottom: 40px;
@@ -25,13 +24,13 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: 20px;
+    justify-content: space-between;
 
     .trip-preview-container {
-      justify-content: space-between;
       .trip-preview {
         display: grid;
         grid-template-columns: repeat(3, minmax(100px, 150px));
-        grid-auto-rows: minmax(66px, 130px);
+        grid-auto-rows: minmax(66px, 100px);
 
         gap: 5px;
         padding-bottom: 25px;
@@ -64,8 +63,7 @@
             font-family: airbnb-medium;
           }
           .pending {
-            color: red;
-            font-family: airbnb-medium;
+            color: blue;
           }
         }
         & .preview-right {
