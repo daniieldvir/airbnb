@@ -22,8 +22,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 25px;
-    padding: 0px 15px;
-    margin: 0px 10px;
+    // padding: 0px 15px;
+    // margin: 10px 10px;
     background-color: $clr1;
     border: 0;
     cursor: pointer;
@@ -253,6 +253,9 @@
     &:not(.small-filter) .guest-filter {
       width: 128px;
     }
+    &:not(.small-filter) .search-btn {
+      margin: 0px 10px;
+    }
     --gap: 9px;
     font-size: rem(14px);
     position: relative;
@@ -314,7 +317,6 @@
         align-items: center;
         border-radius: 25px;
         padding: 0px 15px;
-        margin: 0px 10px;
         background-color: $clr1;
         border: 0;
         cursor: pointer;
