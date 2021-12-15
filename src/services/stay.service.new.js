@@ -19,7 +19,6 @@ function _getUrl(id = '') {
 
 //to get the ownedStays need to send ({hostId: 'u101'})
 async function query(filterBy) {
-  console.log('filterBy frontend service', filterBy);
   return await httpService.get(`stay`, filterBy);
   // let stays;
   // let allStays = await httpService.get(`stay`, filterBy);
@@ -56,7 +55,6 @@ async function query(filterBy) {
   // return stays;
 }
 async function getHostStays(hostId) {
-  console.log('hostId', hostId);
   // / if (filterBy) {
   // const user = filterBy.userId ? `?userId=${filterBy.userId}` : ''
   const host = hostId ? `?hostId=${hostId}` : '';
@@ -68,7 +66,6 @@ async function getHostStays(hostId) {
 }
 
 async function getById(stayId) {
-  console.log('stayId service front', stayId);
   return await httpService.get(`stay/${stayId}`);
 }
 

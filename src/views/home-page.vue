@@ -3,7 +3,7 @@
     <div class="pic full">
       <div class="main-header">
         <section>
-          <stayFilter @filtered="setFilter" />
+          <stayFilter />
           <h1 class="main-txt">Find a place to stay anywhere. Anytime.</h1>
         </section>
       </div>
@@ -86,10 +86,10 @@ export default {
     this.topStays = stays.filter((stay) => stay.avgRate >= 4.5).slice(0, 4);
   },
   methods: {
-    setFilter(filterBy) {
-      this.$router.push('/explore');
-      this.$store.dispatch({ type: 'setFilter', filterBy });
-    },
+    // setFilter(filterBy) {
+    //   this.$router.push('/explore');
+    //   this.$store.dispatch({ type: 'setFilter', filterBy });
+    // },
     cardClicked(cardObject) {
       this.filterBy.city = cardObject.name;
       if (cardObject._id) {
@@ -97,7 +97,9 @@ export default {
       } else {
         // const filterBy = { city: cardObject.name };
         // this.setFilter({ ...filterBy });
-        this.setFilter(this.filterBy);
+        // this.setFilter(this.filterBy);
+        this.$store.dispatch({ type: 'setFilter', filterBy: this.filterBy });
+        this.$router.push('/explore');
       }
     },
     loadFilter() {

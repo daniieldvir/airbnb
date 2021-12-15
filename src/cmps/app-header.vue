@@ -136,8 +136,6 @@ export default {
         this.onDetailsPage = this.$route.name === 'stayDetails' ? true : false;
         this.onUserProfile = this.$route.name === 'userProfile' ? true : false;
         this.onTripsPage = this.$route.name === 'trips' ? true : false;
-
-        console.log(this.$route);
       },
       immediate: true,
     },

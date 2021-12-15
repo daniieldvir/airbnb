@@ -39,7 +39,7 @@ export const orderStore = {
     },
     addOrder(state, { order }) {
       console.log('added order in addOrder mutation', order);
-      state.orders.unshift(order);
+      state.orders.push(order);
     },
     updateOrder(state, { order }) {
       console.log('updated order in updateOrder mutation', order);
