@@ -15,6 +15,7 @@ export const stayService = {
 };
 
 function query(filterBy) {
+  console.log('query front service', filterBy);
   let stays;
   return storageService.query(STAYS_KEY).then((allStays) => {
     stays = allStays.filter((stay) => {

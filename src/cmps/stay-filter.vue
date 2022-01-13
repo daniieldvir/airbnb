@@ -6,23 +6,28 @@
     class="main-filters"
   >
     <city-filter
-      :currFilterBy="filterBy"
+      :currCity="'' + filterBy.city"
       :onExplorePage="onExplorePage"
       @filteredCity="filterCity"
       @filterClicked="enlargeSearchBtn"
       :topOfPage="topOfPage"
       :onHomePage="onHomePage"
     />
-    <!-- OLD DATE PICKER: -->
-    <!-- <date-picker @filtered="setDates" @filterClicked="enlargeSearchBtn" /> -->
-
-    <double-date-picker v-if="onExplorePage || (!topOfPage && onHomePage)" />
+    <double-date-picker
+      :selectedDates="filterBy.dates"
+      v-if="onExplorePage || (!topOfPage && onHomePage)"
+    />
     <date-picker
       v-else
       @filtered="setDates"
       @filterClicked="enlargeSearchBtn"
     />
-    <guest-filter @addedGuests="addGuests" @filterClicked="enlargeSearchBtn" />
+    <guest-filter
+      @addedGuests="addGuests"
+      @filterClicked="enlargeSearchBtn"
+      :currGuests="filterBy.guests"
+      :currTotalGuests="filterBy.totalGuests"
+    />
     <div class="search-btn-container flex">
       <button class="flex search-btn" @click="filter">
         <font-awesome-icon icon="search" />
@@ -46,6 +51,10 @@ export default {
   data() {
     return {
       filterBy: null,
+      localFilterBy: {
+        guests: { adults: 0, children: 0, infants: 0, pets: 0 },
+        totalGuests: 0,
+      },
       largeSearchBtn: false,
     };
   },
@@ -58,19 +67,18 @@ export default {
       this.filterBy = JSON.parse(JSON.stringify(filterBy));
     },
     setDates(selectedDates) {
-      this.filterBy.dates = selectedDates;
+      this.localFilterBy.dates = selectedDates;
     },
     addGuests(filterBy) {
-      this.filterBy.guests = filterBy.guests;
-      this.filterBy.totalGuests = filterBy.totalGuests;
+      this.localFilterBy.guests = filterBy.guests;
+      this.localFilterBy.totalGuests = filterBy.totalGuests;
     },
-    filterCity(filterBy) {
-      this.filterBy.city = filterBy.city;
+    filterCity(city) {
+      this.localFilterBy.city = city;
     },
     filter() {
-      const filterBy = this.filterBy;
+      const filterBy = this.localFilterBy;
       this.$store.dispatch({ type: 'setFilter', filterBy });
-      // this.$emit('filtered', filterBy);
       if (this.$route.name !== 'Explore') {
         this.$router.push('/explore');
       } else return;

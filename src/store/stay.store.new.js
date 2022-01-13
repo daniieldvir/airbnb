@@ -24,7 +24,8 @@ export const stayStore = {
   },
   getters: {
     filterBy(state) {
-      // console.log('store filter', state.filterBy);
+      console.log('getting filterby from store', state.filterBy);
+      // return JSON.parse(JSON.stringify(filterBy))
       return state.filterBy;
     },
     staysToShow(state) {
@@ -42,15 +43,18 @@ export const stayStore = {
     hostStays(state) {
       return state.hostStays;
     },
-    isLoading({ isLoading }) { return isLoading },
+    isLoading({ isLoading }) {
+      return isLoading;
+    },
   },
   mutations: {
     setLoading(state, { isLoading }) {
       state.isLoading = isLoading;
     },
     setFilter(state, { filterBy }) {
-      state.filterBy = filterBy;
-      // console.log('filter state', state.filterBy);
+      state.filterBy = Object.assign(state.filterBy, filterBy);
+      // state.filterBy = filterBy;
+      console.log('filter state', state.filterBy);
     },
     setStays(state, { stays }) {
       state.stays = stays;
@@ -60,11 +64,11 @@ export const stayStore = {
       state.currStay = stay;
     },
     updateStay(state, { stay }) {
-      console.log('state in store of stay', stay)
-      const idx = state.stays.findIndex((stay1) => stay1._id === stay._id)
+      console.log('state in store of stay', stay);
+      const idx = state.stays.findIndex((stay1) => stay1._id === stay._id);
       console.log('stays in state in update stay', state.stays);
-      console.log('idx', idx)
-      state.stays.splice(idx, 1, stay)
+      console.log('idx', idx);
+      state.stays.splice(idx, 1, stay);
     },
     clearAllFilters(state) {
       state.filterBy = {
@@ -113,6 +117,7 @@ export const stayStore = {
       }
     },
     setFilter({ commit, dispatch }, { filterBy }) {
+      // const updatedFilterBy = Object.assign(target, source);
       // console.log('store set filter', filterBy);
       commit({ type: 'setFilter', filterBy });
       dispatch({ type: 'loadStays' });
@@ -143,19 +148,24 @@ export const stayStore = {
     async toggleLikedStay({ commit, rootGetters }, { stayId }) {
       try {
         const stay = await stayService.getById(stayId);
-        console.log('rootGetters.loggedInUser._id', rootGetters.loggedInUser._id);
-        const idxLikedBy = stay.likedByUsers.findIndex((userId) =>
-          userId === rootGetters.loggedInUser._id)
-        if (idxLikedBy < 0) stay.likedByUsers.push(rootGetters.loggedInUser._id);
+        console.log(
+          'rootGetters.loggedInUser._id',
+          rootGetters.loggedInUser._id
+        );
+        const idxLikedBy = stay.likedByUsers.findIndex(
+          (userId) => userId === rootGetters.loggedInUser._id
+        );
+        if (idxLikedBy < 0)
+          stay.likedByUsers.push(rootGetters.loggedInUser._id);
         else stay.likedByUsers.splice(idxLikedBy, 1);
         const updatedStay = await stayService.save(stay);
         console.log('stay store updatedStay', updatedStay);
-        commit({ type: 'updateStay', stay: updatedStay })
+        commit({ type: 'updateStay', stay: updatedStay });
       } catch (err) {
-        console.log('stay Store: Error in toggling wishList', err)
-        throw err
+        console.log('stay Store: Error in toggling wishList', err);
+        throw err;
       }
-    }
+    },
   },
   modules: {},
 };

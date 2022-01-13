@@ -1,6 +1,5 @@
 <template>
   <section class="guest-filter flex">
-    <!-- <button @click="toggleGuests">Add Guests</button> -->
     <div class="toggel-btn" @click="toggleGuests">
       <label>Guests</label>
       <span>{{ guestsAdded }}</span>
@@ -11,7 +10,7 @@
       @blur="toggleGuests"
       class="clear-list add-guests"
     >
-      <li v-for="(value, name, idx) in filterBy.guests" :key="idx">
+      <li v-for="(value, name, idx) in currGuests" :key="idx">
         <div class="selection">
           <h3>{{ name[0].toUpperCase() + name.substring(1) }}</h3>
           <h4>{{ msgs[idx] }}</h4>
@@ -37,33 +36,34 @@
 export default {
   name: 'guest-filter',
   props: {
-    // currFilterBy: Object,
+    currGuests: Object,
+    currTotalGuests: Number,
   },
   data() {
     return {
-      filterBy: null,
+      localFilterBy: {
+        guests: {},
+        totalGuests: 0,
+      },
       msgs: ['Ages 13 or above', 'Ages 2-12', 'Under 2', ''],
       shouldShow: false,
     };
   },
   created() {
-    this.loadFilter();
+    this.localFilterBy.guests = this.currGuests;
+    this.localFilterBy.totalGuests = this.currTotalGuests;
   },
   methods: {
-    loadFilter() {
-      const filterBy = this.$store.getters.filterBy;
-      this.filterBy = JSON.parse(JSON.stringify(filterBy));
-    },
     toggleGuests() {
       this.$emit('filterClicked');
       this.shouldShow = !this.shouldShow;
     },
     addGuest(val, name) {
-      if (!this.filterBy.guests[name] && val === -1) return;
-      this.filterBy.guests[name] += val;
+      if (!this.currGuests[name] && val === -1) return;
+      this.localFilterBy.guests[name] += val;
       if (name === 'adults' || name === 'children')
-        this.filterBy.totalGuests += val;
-      this.$emit('addedGuests', this.filterBy);
+        this.localFilterBy.totalGuests += val;
+      this.$emit('addedGuests', this.localFilterBy);
     },
     onClickOutside() {
       this.shouldShow = false;
@@ -71,7 +71,7 @@ export default {
   },
   computed: {
     guestsAdded() {
-      const totalGuests = this.filterBy.totalGuests;
+      const totalGuests = this.localFilterBy.totalGuests;
       let res;
       if (totalGuests) {
         const str = totalGuests > 1 ? 'Guests' : 'Guest';

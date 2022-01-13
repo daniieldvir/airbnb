@@ -45,7 +45,6 @@
         v-bind:class="{ show: propertyType.shouldShow }"
         class="dropdown-content"
       >
-        <!-- <div v-for="type in propertyType.types" :key="type"> -->
         <p
           v-for="type in propertyType.types"
           :key="type"
@@ -54,7 +53,6 @@
         >
           {{ type }}
         </p>
-        <!-- </div> -->
       </div>
     </div>
     <!-- Amenities -->
@@ -71,7 +69,6 @@
       >
         <button v-if="amenities.shouldShow" @click="setAmenities">
           Show results
-          <!-- <font-awesome-icon icon="search" /> -->
         </button>
         <div v-for="(type, idx) in amenities.types" :key="idx">
           <input
@@ -138,8 +135,6 @@ export default {
   },
   created() {
     this.loadFilter();
-    // this.$store.dispatch({ type: 'loadStays' });
-    // this.showedStays = this.$store.getters.staysToShow;
   },
   methods: {
     toggleModal(currBtn) {
@@ -160,7 +155,6 @@ export default {
       this.filterBy = JSON.parse(JSON.stringify(filterBy));
     },
     dispatchToStore() {
-      // this.closeModal();
       this.$store.dispatch({ type: 'setFilter', filterBy: this.filterBy });
       this.loadFilter();
     },
@@ -185,11 +179,6 @@ export default {
         this.previousBtn = '';
       }
     },
-  },
-  computed: {
-    // avgPrice() {
-    //   return this.$store.getters.avgPrice;
-    // },
   },
 };
 </script>

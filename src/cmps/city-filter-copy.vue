@@ -3,12 +3,12 @@
     <!-- <button @click="toggleLocations">Where are you going?</button> -->
     <div class="toggel-btn" @click="toggleLocations">
       <span v-if="onExplorePage || (!topOfPage && onHomePage)">{{
-        filterBy.city || 'Location'
+        city || 'Location'
       }}</span>
       <template v-else>
         <label>Location</label>
         <span>
-          {{ filterBy.city || 'Where are you going?' }}
+          {{ city || 'Where are you going?' }}
         </span>
       </template>
     </div>
@@ -57,14 +57,14 @@
 export default {
   name: 'city-filter',
   props: {
-    currFilterBy: Object,
+    currCity: String,
     onExplorePage: Boolean,
     topOfPage: Boolean,
     onHomePage: Boolean,
   },
   data() {
     return {
-      filterBy: this.currFilterBy,
+      city: this.currCity,
       // city: ['London', 'Tel Aviv', 'Hong Kong'],
       shouldShow: false,
     };
@@ -74,8 +74,8 @@ export default {
   },
   methods: {
     filterCity(city) {
-      this.filterBy.city = city;
-      this.$emit('filteredCity', this.filterBy);
+      this.city = city;
+      this.$emit('filteredCity', city);
       this.toggleLocations();
     },
     toggleLocations() {

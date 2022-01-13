@@ -16,6 +16,9 @@
 <script>
 export default {
   name: 'double-date-picker',
+  props: {
+    selectedDates: Object,
+  },
   data() {
     return {
       pickerOptions: {
@@ -51,6 +54,11 @@ export default {
       },
       dates: [],
     };
+  },
+  created() {
+    this.dates.push(this.selectedDates.checkInDate);
+    this.dates.push(this.selectedDates.checkOutDate);
+    console.log(this.dates);
   },
   methods: {
     filtered() {
