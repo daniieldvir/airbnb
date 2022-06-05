@@ -1,24 +1,10 @@
-# frontend
+Main Technology: Vue.js with CLI
+Server Side: Node.js
+Database: Mongodb (on Atlas cloud)
+Style: SASS
+Other Technologies: Session Storage
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+• Allows users and guests to explore, search and book various stays in popular locations, as well as leave 
+ reviews and feedback about their experience.
+• A user can become a host, add and edit stays for rent and view rental requests from other users.
+• Developed using Vue.js Node.js and MongoDB.
